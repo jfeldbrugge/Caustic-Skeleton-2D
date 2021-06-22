@@ -1,1 +1,1 @@
-# Writing the Caustic Skeleon 2D papers
+# Writing the Caustic Skeleton 2D papers
