@@ -1,0 +1,13 @@
+*.bin
+*.exe
+*.DS_Store
+*.toc
+*.gz
+*.log
+*.aux
+*.out
+*.bbl
+*.blg
+Analytics.pdf
+*.xcodeproj
+*.swp

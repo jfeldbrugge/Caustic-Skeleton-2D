@@ -1,0 +1,113 @@
+\documentclass[11pt]{article}
+%\documentclass[11pt, draft]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{color}
+\usepackage[margin=1.7 cm]{geometry}
+\usepackage[hidelinks=true]{hyperref}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{tikz}
+\usepackage{datetime}
+\usetikzlibrary{positioning,arrows}
+\usetikzlibrary{decorations.pathmorphing}
+\usetikzlibrary{decorations.markings}
+
+
+\usepackage[]{units}
+\usepackage{amsmath,amsfonts}
+\usepackage{amssymb, young,framed}
+\usepackage{amsthm}
+
+\newtheorem{thr}{Theorem:}
+
+\title{Statistics of caustics in the large-scale structure}
+\author{Job Feldbrugge, Rien van de Weygaert, Johan Hidding}
+\date{\today, compiled at \currenttime} 
+
+\begin{document}
+\maketitle
+\begin{abstract}
+\noindent test
+\end{abstract}
+ 
+%\tableofcontents
+
+\section{Geometric statistics}
+\label{sec:statistics}
+Above we described the conditions under which caustics form in Lagrangian fluid dynamics. We here show how the caustics conditions in combination with the fluid dynamics can be used to predict the statistical properties of caustics in Lagrangian fluids with random initial conditions. The study of large-scale structure formation is a good example of a fluid originating from random initial conditions. In this case the initial conditions can accurately be modeled by realizations of Gaussian random fields. We here only give a formal description. For a quantitative analysis we refer to \cite{}.\\
+\indent Considering the expectation value of a statistic $\chi[s_t]$ at time $t$,
+\begin{align*}
+\langle \chi \rangle = \int \chi[s_t] P_E[s_t] \mathcal{D}s_t,
+\end{align*}
+which should be interpreted as a functional integral with $P_E$ the probability density function of the displacement map $s_t=s(\cdot,t)$ at time $t$. Now consider the functional $\varphi_t$ mapping the initial conditions (we here assume the initial density) $\rho_i$ to the displacement map $s_t$.
+\begin{framed}
+\indent For the Zel'dovich approximation,
+\begin{align*}
+\varphi_t[\rho_i]=-D_+(t) \nabla_q \Psi(q),
+\end{align*}
+with the linearized velocity potential $\Psi(q)$ and growing mode $D_+(t)$. The growing mode can be obtained from linear Eulerian perturbation theory. Up to linear order, the linearized velocity potential is proportional to the linearly extrapolated gravitational potential at the current epoch $\phi_0(q)$, i.e.
+\begin{align}
+\Psi(q)=\frac{2}{3\Omega_0 H_0^2}\phi_0(q).
+\end{align}  
+\end{framed}
+\noindent If we assume the functional $\varphi_t$ to be bijective we can express the exception value in terms of the density function of the initial condition $\rho_i$ as
+\begin{align*}
+\langle \chi \rangle = \int \chi\left[\varphi_t[\rho_i]\right]  P_L[\rho_i] \mathcal{D}\rho_i
+\end{align*}
+with the change of coordinates
+\begin{align*}
+P_E[\varphi_t(\rho_i)]=\left| \frac{\delta s_t}{\delta \rho_i} \right| P_L[\rho_i],
+\end{align*}
+with $P_L$ the probability density function of the initial condition. For Gaussian initial conditions, the initial density function is given by
+\begin{align*}
+P_L[\rho_i]\propto e^{-\frac{1}{2} \int \rho_i(q) K(q-q') \rho_i(q')\mathrm{d}q \mathrm{d}q'},
+\end{align*}
+with $K$ the inverse of the two-point correlation function $\xi$, defined by
+\begin{align*}
+\int K(q-q')\xi(q'-q'')\mathrm{d}q'=\delta(q-q''),
+\end{align*}
+with $\delta$ the Dirac delta function. We can compute statistics of the caustics in Lagrangian fluids by selecting the statistic $\chi$. Note that for local statistics $\chi$ the path integral reduces to an ordinary integral.\\
+\indent For point densities, for example the density of $A_3^+$ points, we use a generalization of Rice's formula. Consider three independent conditions $c_i[f]=0$ specifying a set of points, with $f$ a smooth function mapping $\mathbb{R}^3$ to $\mathbb{R}$. If the points $\Lambda=\{x \in \mathbb{R}^3|c_i[f]=0\}$ are isolated, the number density of points characterized by the statistic
+\begin{align}
+\chi[f]=\left|\frac{\partial c}{\partial x} \right|\prod_i\delta(c_i[f]),
+\end{align}
+with $c=(c_1,c_2,c_3)$. The two point correlation function of these points with a second class of points, specified by the conditions $k_i[f] = 0 $, is characterized by the statistic 
+\begin{align}
+\chi[f]= \left|\frac{\partial c}{\partial x} \right|\left|\frac{\partial k}{\partial x} \right|\prod_i\delta(c_i[f])\delta(k_i[f]).
+\end{align}
+\indent The average line length of curves, also known as the flux, in two-dimensional fluid described by the condition $S[f]=0$ can be computed using the statistic
+\begin{align}
+\chi[f] = \|\nabla S[f]\| \delta (S[f]).
+\end{align}
+For a three-dimensional random field, curves are specified with two independent conditions $S[f]=0$ and $T[s]=0$. The average length per volume, or flux, of these lines is characterized by the statistic
+\begin{align}
+\chi[f] = \|\nabla S[f] \times \nabla T[f] \| \delta(S[f]) \delta(T[f]).
+\end{align}
+ \indent In a similar fashion we can consider other properties, such as the curvature of curves and sheets and average area of sheets in three dimensional simulations.
+ 
+\subsubsection{Area density}
+The average area of a sheet defined by $S[f]=0$ per unit volume is given by $\langle \chi(f) \rangle$ with
+\begin{align}
+\chi[f]= \sqrt{S_1^2 S_2^2+S_1^2S_3^2+S_2^2S_3^2} \delta(S[f])
+\end{align}
+with $S_i$ the derivative of $S[f]$ in the $i^\text{th}$ direction.
+\begin{framed}
+Consider the functional in the $x_1$-$x_2$-plane. The length of the iso-contour in the $x_1$-$x_2$ plane is the length of the vector $(S_1,S_2,0)$. In the $x_1$-$x_3$-plane the length is the length of the vector $(S_1,0,S_3)$. The area of region spanned by these two vectors is the length of $(S_1,S_2,0)\times (S_1,0,S_3)$ which is $\| (S_2 S_3, S_1 S_3, - S_1 S_2)\|=\sqrt{S_1^2S_2^2+S_1^2S_3^2 + S_2^2 S_3^2}$. Note that although in the derivation we singled out the $x_1$-direction, the result is symmetric.
+\end{framed}
+
+\subsection{Curvature}
+The curvature of a line is given by
+\begin{align}
+\kappa = \frac{\| u \times \dot{u}|}{\| u \|^3},
+\end{align}
+with $u$ a tangent vector along the curve. In two dimensions this gives the statistic
+\begin{align}
+\chi[f]= \frac{\| \nabla S[f] \cdot (\nabla \nabla S[f]) \cdot \nabla S[f]\|}{\|\nabla S[f]\|^3}\delta(S[f])
+\end{align}
+in three dimensions
+\begin{align}
+\chi[f]=\frac{\|(\nabla S[f] \times \nabla T[f])\times \left[(\nabla S[f] \times T[f])\cdot \nabla ( \nabla S[f] \times \nabla T[f])\right]\|}{\| \nabla S[f] \times T[f] \|^3}\delta(S[f])\delta(T[f]).
+\end{align}
+
+\end{document}
