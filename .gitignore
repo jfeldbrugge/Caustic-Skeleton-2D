@@ -1,0 +1,17 @@
+*.bin
+*.exe
+*.DS_Store
+*.toc
+*.gz
+*.log
+*.aux
+*.out
+*.bbl
+*.blg
+Analytics.pdf
+2D Caustic Skeleton II.pdf
+*.xcodeproj
+*.swp
+*.nb
+Constraint Calculations/nbody2d
+Constraint Calculations/nbody2d
