@@ -741,7 +741,7 @@ is a critical point. The nature of the critical point is determined by the Hessi
 \mathcal{H}\left[\det (I- b_+ \bm{\psi})\right] =
 \begin{pmatrix} 
 2(T_{111}T_{122} -T_{112}^2) & T_{111}T_{222}-T_{112}T_{122} \\
-T_{111}T_{222}-T_{112}T_{122} & 2(T_{112}T_{222}-2T_{122}^2)
+T_{111}T_{222}-T_{112}T_{122} & 2(T_{112}T_{222}-T_{122}^2)
 \end{pmatrix}\,.
 \end{align}
 Note that the Hessian is fully determined by the third order derivatives of the deformation potential. When the critical point is a maximum, or a minimum, \textit{i.e.},
@@ -762,6 +762,20 @@ T_{111}T_{222}-T_{112}T_{122}&=0\,,\\
 T_{111}T_{122} -T_{112}^2 &\geq T_{112}T_{222}-2T_{122}^2\,.
 \end{align}
 However, it is easier to evaluate the eigenvector numerically for a realization and rotate the second and third order derivatives of the deformation tensor to obtain the required orientation (see appendix \ref{ap:rotations}). The angle of the wedge of the fold curve is determined by the ratio of the eigenvalues $\beta = 2 \arctan(\sqrt{|\nu_1/\nu_2|})$.
+
+\begin{figure}
+\centering
+\begin{subfigure}[b]{0.32\textwidth}
+\includegraphics[width=\textwidth]{Hyperbollic_mean_Phi}
+\end{subfigure}~
+\begin{subfigure}[b]{0.32\textwidth}
+\includegraphics[width=\textwidth]{Hyperbollic_mean_L}
+\end{subfigure}~
+\begin{subfigure}[b]{0.32\textwidth}
+\includegraphics[width=\textwidth]{Hyperbollic_mean_Z}
+\end{subfigure}
+\caption{The mean hyperbollic caustic. \text{Left:} the gravitational potential. \textit{Centre:} the first eigenvalue and eigenvector fields. \textit{Right:} The Zel'dovich approximation}\label{fig:meanSwallowtail}
+\end{figure}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
