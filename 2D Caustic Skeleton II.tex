@@ -542,7 +542,7 @@ and the covariance
 \end{align}
 with the covariance of the random field and the constraints $\xi_{i}(\bm{q}) = \text{cov}( f(\bm{q}), C_i)$ and the constraints $\xi_{ij} = \text{cov}( C_i ,C_j)$. Note that the covariance is independent of the values $\bm{c}$ the constraints $\bm{C}$ assume. This is a special property of Gaussian distributions. Consequently, the probability density takes the form
 \begin{align}
-p(f|\Gamma) \propto  e^{-\frac{1}{2} \iint \delta{f}(\bm{q}_1) \tilde{K}(\bm{q}_1,\bm{q}_2) \delta f(\bm{q}_2)\mathrm{d}\bm{q}_1 \mathrm{d}\bm{q}_2 }\,,\label{eq:constraint2}
+p( f|\Gamma) \propto  e^{-\frac{1}{2} \iint \delta{f}(\bm{q}_1) \tilde{K}(\bm{q}_1,\bm{q}_2) \delta f(\bm{q}_2)\mathrm{d}\bm{q}_1 \mathrm{d}\bm{q}_2 }\,,\label{eq:constraint2}
 \end{align}
 with the residue $\delta f = f-\langle f(\bm{q})|\Gamma\rangle$ and the constrained kernel $\tilde{K}$ defined as the inverse of the constrained two-point correlation function, \textit{i.e.},
 \begin{align}
@@ -607,7 +607,7 @@ Note that the curvature of $\mathcal{M}_\mathcal{C}$ generally makes the induced
 The problem of generating realizations of the more general constraints fields is reduced to sampling realizations of the distribution $p(\bm{c}|\bm{c}\in \mathcal{M}_\mathcal{C})$, using the Hoffman-Ribak method.
 
 \item
-The mean field of takes the surprisingly simple form 
+The mean field of takes the surprisingly beautiful form 
 \begin{framed}
 \begin{align}
 \bar{f}_{\mathcal{C}}(\bm{q}) =\bar{f}_{\bar{\bm{c}}}(\bm{q})\,
@@ -617,13 +617,13 @@ with the mean constraint
 \begin{align}
 \bar{\bm{c}} &\equiv \langle \bm{c} \,|\, \Gamma\rangle = \int_{\bm{c} \in \mathcal{M}_{\mathcal{C}}}  \bm{c}\, p(\bm{c}\,|\,\bm{c}\in \mathcal{M}_{\mathcal{C}}) \mathrm{d}\bm{c}\,,
 \end{align}
-from the realization that 
+following from the realization  
 \begin{align}
 \bar{f}_{\mathcal{C}}(\bm{q}) 
 &=\left\langle f(\bm{q})|\Gamma\right \rangle \nonumber\\
 &= \int_{\bm{c} \in \mathcal{M}_{\mathcal{C}}} \bar{f}_{\bm{c}}(\bm{q})\, p(\bm{c}|\bm{c}\in \mathcal{M}_{\mathcal{C}}) \mathrm{d}\bm{c}\nonumber\\
-&= \sum_{i,j=1}^n\xi_i(\bm{q}) \xi_{ij}^{-1}\int_{\bm{c} \in \mathcal{M}_{\mathcal{C}}}  c_i\, p(\bm{c}|\bm{c}\in \mathcal{M}_{\mathcal{C}}) \mathrm{d}\bm{c}\nonumber\\
-&= \sum_{i,j=1}^n \xi_i(\bm{q}) \xi_{ij}^{-1} \bar{c}_i\nonumber\\
+&= \sum_{i,j=1}^n\xi_i(\bm{q}) \xi_{ij}^{-1}\int_{\bm{c} \in \mathcal{M}_{\mathcal{C}}}  c_j\, p(\bm{c}|\bm{c}\in \mathcal{M}_{\mathcal{C}}) \mathrm{d}\bm{c}\nonumber\\
+&= \sum_{i,j=1}^n \xi_i(\bm{q}) \xi_{ij}^{-1} \bar{c}_j\nonumber\\
 &= \bar{f}_{\bar{\bm{c}}}(\bm{q})\,.
 \end{align}
 
@@ -707,19 +707,53 @@ showing their non-linear dependence on the deformation potential. In the study b
 \begin{align}
 P(k)=k^{-1}
 \end{align}
-with a Gaussian smoothing at a scale $\sigma = 5 \text{ Mpc}$.
+with a Gaussian smoothing $W(\bm{k})=e^{-\sigma^2 \|\bm{k}\|^2}$ at a scale $\sigma = 5 \text{ Mpc}$.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Cusp filament}
-A cusp caustic forming at time $t$ corresponding to the largest eigenvalue field $\lambda_1$ satisfies the conditions
+The cusp caustic forming at time $t$, corresponding to the largest eigenvalue field $\lambda_1$, satisfies the conditions
 \begin{align}
-b_+(t) \lambda_1(\bm{q}) = 1\,, \quad \bm{v}_1(\bm{q}) \cdot \nabla\lambda_1(\bm{q}) = 0\,.
+b_+(t) \lambda_1(\bm{q}) &= 1\,, \\
+ \bm{v}_1(\bm{q}) \cdot \nabla\lambda_1(\bm{q}) &= 0\,.
 \end{align}
 The orientation of the cusp is determined by the normal vector
 \begin{align}
-\bm{n} =  \nabla(\bm{v}_1(\bm{q}) \cdot \nabla\lambda_1(\bm{q}))\,.
+\bm{n} =  \nabla(\bm{v}_1(\bm{q}) \cdot \nabla\lambda_1(\bm{q}))\,,
 \end{align}
-In the eigenframe, for which $\bm{v}_1=(1,0)$ and $\bm{v}_2=(0,1)$, these conditions simplify to a set of linear conditions on the second and third order derivatives of the deformation potential
+which makes an angle 
+\begin{align}
+\alpha = \text{sign}(\bm{v}_2\cdot \bm{n}) \arccos\left(\frac{|\bm{v}_1\cdot \bm{n}|}{\|\bm{n}\|}\right)
+\end{align}
+with respect the corresponding eigenvector $\bm{v}_1$. As both the cusp curve and the eigenvector field consist of lines, the angle $\alpha$ assumes a value between $-\pi/2$ and $\pi/2$. 
+
+In figure \ref{fig:meanCusp}, we plot the mean field of the cusp filament with the condition that centre of the box has a cusp caustic oriented along the vertical direction. The gravitational potential is close to a dipole. The blue central structure yields an inflow of matter, whereas two red structures around the blue structure yield two outflow regions. The critical curve in the eigenvalue field consists of an elongated oval which forms the traditional Zel'dovich pancake in the Zel'dovich approximation, with a cusp curve bisecting the oval and the pancake. In the $N$-body simulation, the mass elements virialize around the cups curve.
+
+The orientation of cusp curve is on average normal to the corresponding eigenvector field, as can be seen from figure \ref{fig:alpha}. The distribution of the angle $\alpha$ is roughly Gaussian, with peak at $\alpha =0$ and an exponential fall off towards $\alpha =\pm \pi/2$.
+
+\begin{figure}
+\centering
+\begin{subfigure}[b]{0.32\textwidth}
+\includegraphics[width=\textwidth]{Cusp_mean_Phi}
+\end{subfigure}~
+\begin{subfigure}[b]{0.32\textwidth}
+\includegraphics[width=\textwidth]{Cusp_mean_L}
+\end{subfigure}~
+\begin{subfigure}[b]{0.32\textwidth}
+\includegraphics[width=\textwidth]{Cusp_mean_Z}
+\end{subfigure}
+\caption{The mean cusp caustic. \text{Left:} the gravitational potential. \textit{Centre:} the first eigenvalue and eigenvector fields. \textit{Right:} The Zel'dovich approximation}\label{fig:meanCusp}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=0.5\textwidth]{alpha}
+\caption{The distribution of the angle $\alpha$} 
+\label{fig:alpha}
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Sampling the constraint manifold}
+To analyze the constraint field of the cusp caustic, we work in the eigenframe of the deformation tensor for which $\bm{v}_1=(1,0)$ and $\bm{v}_2=(0,1)$. In this frame, the caustic conditions yield a set of linear conditions on the second and third order derivatives of the deformation potential
 \begin{align}
 T_{11}=1/b_+(t)\,, \quad T_{12}=0\,,\quad T_{22}\leq T_{11}\,,\quad T_{111}=0\,.
 \end{align}
@@ -727,19 +761,19 @@ The normal vector yields the non-linear form
 \begin{align}
 \bm{n}=\left(T_{1111} + \frac{3T_{112}^2}{T_{11}-T_{22}}, T_{1112} + \frac{3T_{112}T_{122}}{T_{11}-T_{22}}\right)\,.
 \end{align}
-More specifically, the normal vector makes an angle $\alpha = \text{sign}(\bm{v}_2\cdot \bm{n}) \arccos\left(|\bm{v}_1\cdot \bm{n}|/ \|\bm{n}\|\right)$ with respect to the eigenvector $\bm{v}_1$.
+For a derivation of these identities see appendix \ref{ap:eigenvalueRel}.
 
-Let's first consider the configuration of a cusp curve going through the origin of the box while ignoring the orientation of the line. The cusp caustic in the eigenvector frame is fully determined by the derivatives $Y=(T_{11},T_{12},T_{22},T_{111})$, whose probability density factorizes into the density of the joint distribution of $T_{11}$ and $T_{22}$ and the one-dimensional Gaussian distributions for $T_{12}$ and $T_{111}$, \textit{i.e.},
+For simplicity, let's first ignore the orientation of the cusp curve and consider a cusp curve passing through the center of the box, with the relevant linear statistics $Y=(T_{11},T_{12},T_{22},T_{111})$, whose probability density factorizes into the density of the joint distribution of $T_{11}$ and $T_{22}$ and the one-dimensional Gaussian distributions for $T_{12}$ and $T_{111}$, \textit{i.e.},
 \begin{align}
-p(T_{11},T_{12},T_{22},T_{111}) = p(T_{11},T_{22})p(T_{12})p(T_{111}).
+p(T_{11},T_{12},T_{22},T_{111}) = p(T_{11},T_{22})p(T_{12})p(T_{111})\,.
 \end{align}
-The conditional density corresponding to the cusp conditions reduces to the conditional probability density of $T_{22}$ given $T_{11}$, \textit{i.e.},
+Generally, two derivatives of a Gaussian random field at a point are independent if and only if they together consist of an odd number of derivatives in either the $q_1$ or the $q_2$ direction. The conditional probability density takes the form
 \begin{align}
 p&(T_{11},T_{12},T_{22},T_{111}|,T_{22}\leq T_{11}=1/b_+,T_{12}=0,T_{111}=0) \\
 &= p(T_{22}| T_{22} \leq T_{11}=1/b_+)\\
-&= \mathcal{N} e^{-\frac{3(T_{11} + T_{22})^2 - 8 T_{11} T_{22}}{2 \sigma_2^2}}\big|_{T_{11}=1/b_+}
+&= \mathcal{N} e^{-\frac{3(T_{11} + T_{22})^2 - 8 T_{11} T_{22}}{2 \sigma_2^2}}\big|_{T_{11}=1/b_+}\,,
 \end{align}
-with the normalization constant $\mathcal{N}$. After sampling $T_{22}$ from this distribution, we can use linear constrained random field theory to obtain the corresponding realization. Note that this is equivalent to generating realizations for the linear constraints $T_{11}=1/b_+,T_{12}=T_{111}=0$ and rejecting realizations for which $T_{22} > 1/b_+$. The mean field is determined by the expectation value $\langle T_{22} \rangle$. The variance is fully determined by the variables $T_{11},T_{12},T_{22},T_{111}$.
+with the normalization constant $\mathcal{N}$. After sampling $T_{22}$ from this distribution, we can use linear constrained random field theory to obtain the corresponding realization. Note that this procedure is equivalent to generating realizations for the linear constraints $T_{11}=1/b_+,T_{12}=T_{111}=0$ and rejecting realizations for which $T_{22} > 1/b_+$. Give these realizations, it is straightforward to compute the angle $\alpha$ and sample the distribution (see figure \ref{fig:alpha}).
 
 The orientation of the cusp curve is fully characterized by the derivatives  
 \begin{align}
@@ -751,18 +785,7 @@ with the conditional distribution
 &=
 p(T_{11},T_{22},T_{1111}|T_{22}\leq T_{11}=1/b_+)p(T_{12}T_{1112}|T_{12}=0)p(T_{111},T_{122}|T_{111}=0)p(T_{112})\,.
 \end{align}
-Alternatively, we can sample from this distribution using the constraint realizations described above. The distribution for $\alpha$ is centred around $\alpha=0$, \textit{i.e.}, the cusp curve is biased to be normal to the eigenvector field $\bm{v}_1$ (see figure \ref{fig:alpha}).
-
-\begin{figure}
-\centering
-\includegraphics[width=0.5\textwidth]{alpha}
-\caption{The distribution of the angle $\alpha$} 
-\label{fig:alpha}
-\end{figure}
-
-There are two ways in which we can fix the orientation of the cusp curve in the constraint realizations. Firstly, note that the orientation of the cusp curve is fully determined by the second, third, and fourth order derivatives of the deformation potential. For the first method, we sample the second, third, and fourth order derivatives from the conditional distribution with the conditions that $b_+\lambda_1=1, \bm{v}_1 \cdot \nabla \lambda = 0$ and $\bm{n}\cdot (0,1) = 0$. Given this sample, we can use linear constraint theory to find the realization. However, by fixing the orientation of the normal $\bm{n}$ we lose the freedom to rotate to the eigenframe $\bm{v}_1=(1,0), \bm{v}_2=(0,1)$ of the deformation tensor, making such a calculation difficult to execute. Alternatively, we can start with a realization of the cusp curve without the required orientation in the eigenframe and compute the corresponding second, third, and fourth order derivatives. Given the derivatives of the realization we evaluate the angle $\alpha$ and rotate these derivatives to the configuration for which the cusp curve is vertical in the origin (see appendix \ref{ap:rotations}). We can use these rotated derivatives to generate a realization for which the cusp curve passes vertically through the origin. By sampling the second, third, and fourth order derivatives of the rotated configuration, we can evaluate the mean field and the variance of the oriented cusp curve (see figure \ref{fig:meanCusp}).
-
-We see that the cusp caustic caustic is an elongated blob. The presence of a cusp curve significantly influences its environment up to about a radius of $20\text{ Mpc}$ on a smoothing scale of $\sigma = 5 \text{ Mpc}$.
+We can generate realizations for which the cusp curve is vertical in the centre of the box, by sampling this distribution with the additional constraint that $\bm{n} \propto (1,0)$. However, for this paper, we will use the a slightly different method based on the sampling method described above. Given an realization, we first evaluate all second, third, and fourth order derivatives and evaluate the angle $\alpha$. Subsequently, rotate these derivatives by an angle $\alpha$ (following appendix \ref{ap:rotations}). The resulting derivatives form a representative sample of a cusp curve running vertical through the centre of the box. By generating a linear constraint realizations with these rotates derivatives, we obtain a realization of the Gaussian random field required cusp curve.
 
 
 \begin{figure}
@@ -785,19 +808,6 @@ We see that the cusp caustic caustic is an elongated blob. The presence of a cus
 
 
 
-\begin{figure}
-\centering
-\begin{subfigure}[b]{0.32\textwidth}
-\includegraphics[width=\textwidth]{Cusp_mean_Phi}
-\end{subfigure}~
-\begin{subfigure}[b]{0.32\textwidth}
-\includegraphics[width=\textwidth]{Cusp_mean_L}
-\end{subfigure}~
-\begin{subfigure}[b]{0.32\textwidth}
-\includegraphics[width=\textwidth]{Cusp_mean_Z}
-\end{subfigure}
-\caption{The mean cusp caustic. \text{Left:} the gravitational potential. \textit{Centre:} the first eigenvalue and eigenvector fields. \textit{Right:} The Zel'dovich approximation}\label{fig:meanCusp}
-\end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Swallowtail cluster}
@@ -1082,7 +1092,7 @@ with $\Gamma = \{\bm{C} = \bm{c}\}$ is a Gaussian density as both $p(f,\Gamma)$ 
 \end{align}
 For conciseness, we will use the Einstein summation convention over the repeated dummy indices.
 
-Define an auxiliary function $g(\bm{q}) = f(\bm{q}) + \bm{A}(\bm{q}) \cdot \bm{C}$ with $A_i(\bm{q}) = -\xi_i(\bm{q}) \xi_{ij}^{-1}$. The function $g$ is by construction independent of the variable $\bm{C}$, as they are jointly normally distributed and their covariance matrix vanishes, \textit{i.e.}, 
+Define an auxiliary function $g(\bm{q}) = f(\bm{q}) + \bm{A}(\bm{q}) \cdot \bm{C}$ with $A_i(\bm{q}) = -\xi_j(\bm{q}) \xi_{ji}^{-1}$. The function $g$ is by construction independent of the variable $\bm{C}$, as they are jointly normally distributed and their covariance matrix vanishes, \textit{i.e.}, 
 \begin{align}
 \text{cov}(g(\bm{q}),\bm{C})
 &=\text{cov}(f(\bm{q}),\bm{C}) +  \text{cov}(\bm{C},\bm{C}) \bm{A}(\bm{q}) \\
