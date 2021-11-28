@@ -183,7 +183,7 @@ It follows from the Poisson equation (see section \ref{sec:Zeldovich}), that the
 \begin{align}
 \delta_0 \propto \nabla^2 \phi_0 = \text{Tr}[\mathcal{H}\phi_0] \propto \mu_{t,1} + \mu_{t,2}\,,
 \end{align}
-demonstrating a non-trivial correlation between the initial eigenvalue fields. The eigenvalue fields splits the Gaussian initial density perturbations into parts which influence the linear regime of gravitational collapse in distinct ways. As we will show below, the orientation and geometry of the shell-crossing regions is further described by the eigenvector fields (see the lines in the lower panels of figure \ref{fig:Initial_Conditions}). At initial times, the eigenvector fields are normal, $\bm{v}_{t,1}\cdot \bm{v}_{t,2}=0$, as the deformation tensor $\nabla \bm{s}_t \propto \mathcal{H} \phi_0$ is symmetric. We observe that the eigenvector fields show an interesting correlation with the eigenvalue fields. Roughly speaking, the eigenvector fields are normal to the ridges of the corresponding eigenvalue fields. This observation will play an important role in the discussion of the caustic skeleton below. 
+with the Hessian $\mathcal{H}$, demonstrating a non-trivial correlation between the initial eigenvalue fields. The eigenvalue fields splits the Gaussian initial density perturbations into parts which influence the linear regime of gravitational collapse in distinct ways. As we will show below, the orientation and geometry of the shell-crossing regions is further described by the eigenvector fields (see the lines in the lower panels of figure \ref{fig:Initial_Conditions}). At initial times, the eigenvector fields are normal, $\bm{v}_{t,1}\cdot \bm{v}_{t,2}=0$, as the deformation tensor $\nabla \bm{s}_t \propto \mathcal{H} \phi_0$ is symmetric. We observe that the eigenvector fields show an interesting correlation with the eigenvalue fields. Roughly speaking, the eigenvector fields are normal to the ridges of the corresponding eigenvalue fields. This observation will play an important role in the discussion of the caustic skeleton below. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Caustics Lagrangian fluids}
@@ -198,35 +198,35 @@ The shell-crossing condition leads to a set of \textit{caustic conditions} descr
 
 Lagrangian catastrophe theory classifies the shell-crossing regions into a finite set of caustics that stably occur in nature. These caustics have a direct connection to the walls, filaments and clusters of the cosmic web. The region for which the density spikes, \textit{i.e.}, 
 \begin{align}
-1+\mu_{t,i}(\bm{q})=0
+1+\mu_{t,i}(\bm{q}_c)=0
 \end{align}
 for $i=1$ or $2$, forms the fold curve $A_2$ consisting of the points that shell-cross at time $t$. Note that the fold curve is independent of the eigenvector fields and trivially satisfies the shell-crossing condition \eqref{eq:shellCrossingCondition}. The fold curve bounds the different multi-stream regions (see the red curves in figure \ref{fig:caustics_Examples_Big}). In figure \ref{fig:caustics_Examples_Big} we illustrate the caustic skeleton for the Zel'dovich approximation (see section \ref{sec:Zeldovich}). However, the discussion applies to Lagrangian fluids in general.
 
 The fold curve can develop a non-differentiable point in the cusp caustic $A_3$, when the fold curve in Lagrangian space is parallel to the corresponding eigenvector field, \textit{i.e.}, 
 \begin{align}
-1+\mu_{t,i}(\bm{q})=0\,,\\
-\bm{v}_{t,i} \cdot \nabla \mu_{t,i}=0\,,\label{eq:cuspCondition}
+1+\mu_{t,i}(\bm{q}_c)=0\,,\\
+\bm{v}_{t,i}(\bm{q}_c) \cdot \nabla \mu_{t,i}(\bm{q}_c)=0\,,\label{eq:cuspCondition}
 \end{align}
 See the intersection of the red and blue curves in figure \ref{fig:caustics_Examples_Big}, where the tangent vector of the red line is parallel to the eigenvector field. The term $\bm{v}_{t,i} \cdot \nabla \mu_{t,i}$ arises from the shell-crossing condition \eqref{eq:shellCrossingCondition} from the observation that the tangent vector of the fold curve $\bm{T}$ is normal to the gradient of the eigenvalue field $\nabla \mu_{t,i}$. Over time, the cusp point defines the cusp curve which is associated to the filaments of the cosmic web. See the blue curve in the first row of figure \ref{fig:caustics_Examples_Big} for an example of a fold curve and its relation to the filaments of the cosmic web. 
 
 In turn, the cusp curve develops a non-differentiable point known as a swallowtail caustic $A_4$ when the cusp curve in Lagrangian space is parallel to the eigenvector field, \textit{i.e.},
 \begin{align}
-1+\mu_{t,i}(\bm{q})=0\,,\\
-\bm{v}_{t,i} \cdot \nabla \mu_{t,i}=0\,,\\
-\bm{v}_{t,i} \cdot \nabla (\bm{v}_{t,i} \cdot \nabla \mu_{t,i}) = 0\,.
+1+\mu_{t,i}(\bm{q}_c)=0\,,\\
+\bm{v}_{t,i}(\bm{q}_c) \cdot \nabla \mu_{t,i}(\bm{q}_c)=0\,,\\
+\bm{v}_{t,i}(\bm{q}_c) \cdot \nabla (\bm{v}_{t,i}(\bm{q}_c) \cdot \nabla \mu_{t,i}(\bm{q}_c)) = 0\,.
 \end{align}
 The swallowtail caustic only exists for an instance and marks the location of a cluster, highlighting the location where different cusp curves join (see the second row of figure \ref{fig:caustics_Examples_Big}). 
 
 In addition to the swallowtail caustic, the Lagrangian fluid also develops point-like caustics when both eigenvalue fields lead to a spike in the density field. The points for which
 \begin{align}
-1+\mu_{t,1}=0\,,\\
-1+\mu_{t,2} = 0\,,
+1+\mu_{t,1}(\bm{q}_c) =0\,,\\
+1+\mu_{t,2}(\bm{q}_c) = 0\,,
 \end{align}
 are known as the umbilic caustics $D_4^\pm$. The umbilic caustics consist of the elliptic $D_4^+$ and hyperbolic caustics $D_4^-$, both related to the clusters of the cosmic web. The umbilic caustics mark the locations where the cusp curves corresponding to the first and the second eigenvalue fields join (see the third and fourth rows of figure \ref{fig:caustics_Examples_Big}). 
 
 Finally, caustic skeleton theory includes a set of Morse points, at which the multi-stream regions emerge, vanish and merge, changing the topology and connectivity of the cosmic web. The Morse points are defined as the critical points of the eigenvalue fields, satisfying the condition
 \begin{align}
-\nabla \mu_{t,i}=\bm{0}\,.
+\nabla \mu_{t,i}(\bm{q}_c)=\bm{0}\,.
 \end{align}
 The maxima and minima of the eigenvalue field $\mu_i$ mark the locations and times at which a multi-stream region emerges or disappears. A critical point that undergoes shell-crossing always lies on a cusp curves, as a point for which $\nabla \mu_{t,i}=\bm{0}$ automatically satisfies equation \eqref{eq:cuspCondition}. The maxima and minima are kown as a  $A_3^+$ point. The saddle points of the eigenvalue field $\mu_{t,i}$ mark the location and time at which two multi-stream regions merge to form a larger structure. At these $A_3^-$ points, two cusp curves corresponding to two filaments join. The Morse points determining the connectivity of the cosmic web. 
 
@@ -713,12 +713,12 @@ with a Gaussian smoothing $W(\bm{k})=e^{-\sigma^2 \|\bm{k}\|^2}$ at a scale $\si
 \subsection{Cusp filament}
 The cusp caustic forming at time $t$, corresponding to the largest eigenvalue field $\lambda_1$, satisfies the conditions
 \begin{align}
-b_+(t) \lambda_1(\bm{q}) &= 1\,, \\
- \bm{v}_1(\bm{q}) \cdot \nabla\lambda_1(\bm{q}) &= 0\,.
+b_+(t) \lambda_1(\bm{q}_c) &= 1\,, \\
+ \bm{v}_1(\bm{q}_c) \cdot \nabla\lambda_1(\bm{q}_c) &= 0\,.
 \end{align}
 The orientation of the cusp is determined by the normal vector
 \begin{align}
-\bm{n} =  \nabla(\bm{v}_1(\bm{q}) \cdot \nabla\lambda_1(\bm{q}))\,,
+\bm{n} =  \nabla(\bm{v}_1(\bm{q}_c) \cdot \nabla\lambda_1(\bm{q}_c))\,,
 \end{align}
 which makes an angle 
 \begin{align}
@@ -813,9 +813,9 @@ We can generate realizations for which the cusp curve is vertical in the centre 
 \subsection{Swallowtail cluster}
 The swallowtail caustic forming at time $t$, corresponding to the largest eigenvalue field $\lambda_1$, satisfies the conditions
 \begin{align}
-b_+(t) \lambda_1(\bm{q}) = 1\,,\\
-\quad \bm{v}_1(\bm{q}) \cdot \nabla\lambda_1(\bm{q}) = 0\,,\\
- \quad\bm{v}_1\cdot \nabla( \bm{v}_1(\bm{q}) \cdot \nabla\lambda_1(\bm{q})) = 0\,.
+b_+(t) \lambda_1(\bm{q}_c) = 1\,,\\
+\quad \bm{v}_1(\bm{q}_c) \cdot \nabla\lambda_1(\bm{q}_c) = 0\,,\\
+ \quad\bm{v}_1(\bm{q}_c)\cdot \nabla( \bm{v}_1(\bm{q}_c) \cdot \nabla\lambda_1(\bm{q}_c)) = 0\,.
 \end{align}
 The cusp curve in the swallowtail caustic is parallel to the eigenvector field $\bm{v}_1$ since $\bm{v}_1 \cdot \bm{n}=0$ or equivalently $\alpha = \pm \pi/2$. The swallowtail caustic does not require us to fix its orientation. However, we do need to specify the direction, normal to the fold curve, in which the swallowtail structure forms. We will here use the condition $\bm{v}_2 \cdot \nabla \lambda_1(\bm{q}) <0$.
 
@@ -896,40 +896,78 @@ with the Heaviside step function $\Theta$. Hence, we obtain samples of the targe
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Umbilic cluster}
-The umbilic caustics form when $\lambda_1(\bm{q}) = \lambda_2(\bm{q}) = 1/b_+(t)$, corresponding to the linear conditions
+The umbilic caustic forming at time $t$ satisfies the conditions
 \begin{align}
-T_{11}=T_{22}=1/b_+(t)\,, \quad T_{12}=0\,.
+b_+(t) \lambda_1(\bm{q}_c) = b_+(t) \lambda_2(\bm{q}_c) = 1\,.
 \end{align}
-In the umbilic caustic, the determinant 
+In terms of the second order derivatives of the displacement potential, these eigenvalue conditions can be expressed in terms of three linear conditions
 \begin{align}
-\det (I- b_+ \bm{\psi})
+T_{11}&=T_{22}=1/b_+(t)\,,\\
+T_{12}&=0\,.
 \end{align}
-is a critical point. The nature of the critical point is determined by the Hessian
+At the umbilic points, the determinant 
+\begin{align}
+\det(\nabla \bm{x}_t) = \det (I- b_+ \bm{\psi})
+\end{align}
+assumes a critical point, whose nature is determined by the Hessian
 \begin{align}
 \mathcal{H}\left[\det (I- b_+ \bm{\psi})\right] =
 \begin{pmatrix} 
 2(T_{111}T_{122} -T_{112}^2) & T_{111}T_{222}-T_{112}T_{122} \\
 T_{111}T_{222}-T_{112}T_{122} & 2(T_{112}T_{222}-T_{122}^2)
-\end{pmatrix}\,.
+\end{pmatrix}\,,
 \end{align}
-Note that the Hessian is fully determined by the third order derivatives of the deformation potential. When the critical point is a maximum, or a minimum, \textit{i.e.},
+and its determinant
 \begin{align}
-\det (\mathcal{H}\left[\det (I- b_+ \bm{\psi})\right]) >0\,,
+&\det\left( \mathcal{H}\left[\det (I- b_+ \bm{\psi})\right]\right) \\
+&=
+- 4 (T_{111} T_{122}^3 + T_{112}^3 T_{222}) + 3 T_{112}^2 T_{122}^2 +  6 T_{111} T_{112} T_{122} T_{222} - T_{111}^2 T_{222}^2\,.
 \end{align}
-the umbilic caustic is an elliptic caustic. When the critical point is a saddle point, \textit{i.e.},
+Note that the Hessian at the critical point only depends on the third order derivatives of the deformation potential. The fourth order derivatives cancel when $T_{11}=T_{22}=1/b_+$ and $T_{12}=0$. The umbilic point is an elliptic caustic $D_4^+$ when the critical point is a maximum, or a minimum, \textit{i.e.}, for which 
 \begin{align}
-\det (\mathcal{H}\left[\det (I- b_+ \bm{\psi})\right]) <0\,,
+\det (\mathcal{H}\left[\det (I- b_+ \bm{\psi})\right]) >0\,.
 \end{align}
-the umbilic caustic is a hyperbolic caustic. The easiest way to obtain realizations of these umbilic caustics is to implement the linear constraints and determine the determinant is positive or negative.
+The umbilic point is an hyperbolic caustic when the critical point is a saddle point, \textit{i.e.},
+\begin{align}
+\det (\mathcal{H}\left[\det (I- b_+ \bm{\psi})\right]) <0\,.
+\end{align}
+This condition should be contrasted with the condition presented in [REFS] based on the sign of 
+\begin{align}
+\delta = \frac{1}{2}(-T_{112}^2 + T_{111} T_{122} - T_{122}^2 + T_{112} T_{222}).
+\end{align} 
+In fact, this condition describes the behaviour of the eigenvector field in the vicinity of the umbilic point and does not differentiates between the elliptic and hyperbolic caustics. Note that for the elliptic caustic we always have $\delta <0$.
 
-The orientation of the elliptic umbilic caustic is determined by the behaviour of the eigenvector fields of the deformation tensor in the vicinity of the caustic. The fold curve in the vicinity of the elliptic umbilic caustic is a small circle, which forms three cusp caustics when the eigenvector field is parallel to the eigenvector field, $\bm{v}_i \cdot \bm{m} = 0$ with $\bm{m}$ the vector normal to this circle.
-
-The orientation and configuration of the hyperbolic umbilic caustic is determined by the eigenvalues $\lambda_i$ and eigenvectors $\bm{w}_i$ of the Hessian $\mathcal{H}\left[\det (I- b_+ \bm{\psi})\right]$. The cusp curve of the hyperbolic umbilic is directed towards the eigenvector corresponding to the positive eigenvalue field. We can fix the orientation by implementing the conditions
+More generally, expand the displacement field $\bm{s}_t$ to quadratic order in $q_1$ and $q_2$ around a umbilic point at the origin $(q_1,q_2)=(0,0)$. The determinant of the gradient $\nabla \bm{x}_t$ has a critical point at the origin, of the form
 \begin{align}
-T_{111}T_{222}-T_{112}T_{122}&=0\,,\\
-T_{111}T_{122} -T_{112}^2 &\geq T_{112}T_{222}-2T_{122}^2\,.
+\det \nabla \bm{x}_t&=\det(I + \nabla \bm{s}_t)\\
+&= 
+A q_1^2 + B q_1 q_2 + C q_2^2 + D q_1 + E q_2+ O(q_1^3,q_1^2 q_2,q_1 q_2^2,q_2^3)\,.
 \end{align}
-However, it is easier to evaluate the eigenvector numerically for a realization and rotate the second and third order derivatives of the deformation tensor to obtain the required orientation (see appendix \ref{ap:rotations}). The angle of the wedge of the fold curve is determined by the ratio of the eigenvalues $\beta = 2 \arctan(\sqrt{|\nu_1/\nu_2|})$.
+for some constants $A,B,C,E,$ and $E$.
+%with
+%\begin{align}
+%A&= s_{1,11} s_{2,12}-s_{1,12} s_{2,11}\,,\\
+%B&= s_{1,11} s_{2,22}-s_{1,22} s_{2,11}\,,\\
+%C&= s_{1,12} s_{2,22}-s_{1,22} s_{2,12}\,, 
+%\end{align}
+%where we write the displacement field as $\bm{s}_t=(s_1,s_2)$ and the partial derivatives as $s_{i,jk}=\partial_j \partial_k s_{i}$. 
+For small $q_1$ and $q_2$, the level set $\det \nabla \bm{x}_t =0$ approaches a conic section; an ellipse when the discriminant $B^2 - 4AC$ is negative corresponding to the $D_4^+$ caustic, a hyperbole when the discriminant $B^2 - 4AC$ is positive corresponding to the $D_4^-$ caustic, and a parabola when the discriminant $B^2 - 4AC$ vanishes, corresponding to the $D_5$ caustic (which does not feature in the 2D cosmic web). Note that the discriminant coincides wit the negative of the determinant of the Hessian, \textit{i.e.},
+\begin{align}
+B^2-4AC = -\det \left(\mathcal{H} \left[\det \nabla \bm{x}_t \right]\right)\,.
+\end{align}
+When the displacement field is a gradient field, the constants $D$ and $E$ vanish and the condition reduces to the constant discussed above.
+
+
+The orientation of the elliptic umbilic caustic is determined by the behaviour of the eigenvector fields of the deformation tensor in the vicinity of the caustic. The fold curve in the vicinity of the elliptic umbilic caustic is a small ellipse, which forms three cusp caustics when the eigenvector field is parallel to the eigenvector field, $\bm{v}_i \cdot \bm{m} = 0$ with $\bm{m}$ the vector normal to this circle.
+
+The orientation and configuration of the hyperbolic umbilic caustic is determined by the eigenvalues $\nu_i$ and eigenvectors $\bm{w}_i$ of the Hessian $\mathcal{H}\left[\det (I- b_+ \bm{\psi})\right]$. The cusp curve of the hyperbolic umbilic is directed towards the eigenvector corresponding to the positive eigenvalue. The angle $\beta = 2 \arctan(\sqrt{|\nu_1/\nu_2|})$ describes the angle between the two wedges of the fold curves. 
+
+
+In figure \ref{fig:meanHyperbolic}, we plot the mean field of the elliptic and the swallowtail caustic. Observe that the umbilic caustics join three cusp curves and are naturally associated to the clusters of the cosmic web.
+
+\begin{framed}
+{\color{red} I need to compute the mean field of the elliptic caustic}
+\end{framed}
 
 \begin{figure}
 \centering
@@ -944,6 +982,16 @@ However, it is easier to evaluate the eigenvector numerically for a realization 
 \end{subfigure}
 \caption{The mean hyperbolic caustic. \text{Left:} the gravitational potential. \textit{Centre:} the first eigenvalue and eigenvector fields. \textit{Right:} The Zel'dovich approximation}\label{fig:meanHyperbolic}
 \end{figure}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Sampling the constraint manifold}
+We implement the umbilic caustics by sampling random fields with the linear constraints
+\begin{align}
+T_{11}&=T_{22}=1/b_+\,,\\
+T_{12}&=0\,.
+\end{align}
+We subsequently determine the sign of the determinant $\det\left( \mathcal{H}\left[\det (I- b_+ \bm{\psi})\right]\right)$ to identify whether it is an elliptic or an hyperbolic caustic. Given the identification, we compute its orientation. By rotating the second order and third order derivatives (using appendix \ref{ap:rotations}), we generate linear constraint conditions corresponding to elliptic and hyperbolic caustics with a specified orientation. Given the appropriate sampling of the constraint manifold $\mathcal{M}_\mathcal{C}$, we can evaluate the mean field, the variance of the residue and representative realiations.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
