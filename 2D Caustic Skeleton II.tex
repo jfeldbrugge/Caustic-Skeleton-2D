@@ -300,10 +300,10 @@ Morse point & $A_3^-$ & merger point & saddle point of the eigenvalue field $\la
 %%%%%%%%%%
 %%%%%%%%%%
 \begin{subfigure}[b]{0.3\textwidth}
-\includegraphics[width=\textwidth]{Hyperbollic_L}
+\includegraphics[width=\textwidth]{Hyperbolic_L}
 \end{subfigure}~
 \begin{subfigure}[b]{0.3\textwidth}
-\includegraphics[width=\textwidth]{Hyperbollic_Z}
+\includegraphics[width=\textwidth]{Hyperbolic_Z}
 \end{subfigure}~
 \begin{subfigure}[b]{0.3\textwidth}
 \includegraphics[width=\textwidth]{Todo}
@@ -366,7 +366,7 @@ Initially, the growing mode $b_+$ vanishes and the universe consists of a single
 \includegraphics[width=\textwidth]{Elliptic_Z_Zoom}
 \end{subfigure}~
 \begin{subfigure}[b]{0.24\textwidth}
-\includegraphics[width=\textwidth]{Hyperbollic_Z_Zoom}
+\includegraphics[width=\textwidth]{Hyperbolic_Z_Zoom}
 \end{subfigure}\\
 \begin{subfigure}[b]{0.24\textwidth}
 \includegraphics[width=\textwidth]{Todo}
@@ -380,7 +380,7 @@ Initially, the growing mode $b_+$ vanishes and the universe consists of a single
 \begin{subfigure}[b]{0.24\textwidth}
 \includegraphics[width=\textwidth]{Todo}
 \end{subfigure}
-\caption{Zoom in with a $(20 \text{ Mpc})^2$ box centred around the caustic. From left to right, we see the cusp, the swallowtail, the elliptic umbilic, and the hyperbollic umbilic caustics. The upper and lower panels display the Zel'dovich approximation and the $N$-body simulation.}\label{fig:caustics_Examples_Small}
+\caption{Zoom in with a $(20 \text{ Mpc})^2$ box centred around the caustic. From left to right, we see the cusp, the swallowtail, the elliptic umbilic, and the hyperbolic umbilic caustics. The upper and lower panels display the Zel'dovich approximation and the $N$-body simulation.}\label{fig:caustics_Examples_Small}
 \end{figure}
 
 The role of the different elements of the caustic skeleton can be clearly observed from the zoom of figure \ref{fig:caustics_Examples_Big} centered on the caustic in Lagrangian space (see figure \ref{fig:caustics_Examples_Small}). Observe that the cusp curve bisects the multi-stream region, marking the location where the mass elements turn around to form a line-like structure. The swallowtail, elliptic and hyperbolic caustics form where different cusp curves meet up to form a knot. The swallowtail caustic marks the place where the cusp curve corresponding to a single eigenvalue field becomes non-differentiable. The elliptic and hyperbolic caustics mark the location where the multi-stream regions of different eigenvalue fields merge. Since the formation history of these different point caustics differs, it is natural to expect the properties of the different clusters to vary in nature. Note that the cluster caustics are rarely isolated. They will generally cluster and form an intricate multi-stream structure. This way, a cluster can connect more than three filaments.
@@ -726,9 +726,9 @@ which makes an angle
 \end{align}
 with respect the corresponding eigenvector $\bm{v}_1$. As both the cusp curve and the eigenvector field consist of lines, the angle $\alpha$ assumes a value between $-\pi/2$ and $\pi/2$. 
 
-In figure \ref{fig:meanCusp}, we plot the mean field of the cusp filament with the condition that centre of the box has a cusp caustic oriented along the vertical direction. The gravitational potential is close to a dipole. The blue central structure yields an inflow of matter, whereas two red structures around the blue structure yield two outflow regions. The critical curve in the eigenvalue field consists of an elongated oval which forms the traditional Zel'dovich pancake in the Zel'dovich approximation, with a cusp curve bisecting the oval and the pancake. In the $N$-body simulation, the mass elements virialize around the cups curve.
+In figure \ref{fig:meanCusp}, we plot the mean field of the cusp filament with the condition that centre of the box has a cusp caustic oriented along the vertical direction. The gravitational potential is close to a dipole. The blue central structure yields an inflow of matter, whereas two red structures around the blue structure yield two outflow regions. The critical curve in the eigenvalue field consists of an elongated oval which forms the traditional Zel'dovich pancake in the Zel'dovich approximation. The cusp curve bisects the oval in Lagranian space and the pancake Eulerian space. In the $N$-body simulation, the mass elements virialize around the cups curve.
 
-The orientation of cusp curve is on average normal to the corresponding eigenvector field, as can be seen from figure \ref{fig:alpha}. The distribution of the angle $\alpha$ is roughly Gaussian, with peak at $\alpha =0$ and an exponential fall off towards $\alpha =\pm \pi/2$.
+On average, the orientation of cusp curve is normal to the eigenvector field $\bm{v}_1$. Figure \ref{fig:alpha} plots the distribution  of the angle $\alpha$. The distribution consists of a bell curve centered at $\alpha =0$ and an exponential fall off towards the angles $\alpha =\pm \pi/2$.
 
 \begin{figure}
 \centering
@@ -787,23 +787,23 @@ p(T_{11},T_{22},T_{1111}|T_{22}\leq T_{11}=1/b_+)p(T_{12}T_{1112}|T_{12}=0)p(T_{
 \end{align}
 We can generate realizations for which the cusp curve is vertical in the centre of the box, by sampling this distribution with the additional constraint that $\bm{n} \propto (1,0)$. However, for this paper, we will use the a slightly different method based on the sampling method described above. Given an realization, we first evaluate all second, third, and fourth order derivatives and evaluate the angle $\alpha$. Subsequently, rotate these derivatives by an angle $\alpha$ (following appendix \ref{ap:rotations}). The resulting derivatives form a representative sample of a cusp curve running vertical through the centre of the box. By generating a linear constraint realizations with these rotates derivatives, we obtain a realization of the Gaussian random field required cusp curve.
 
-
-\begin{figure}
-\centering
-\begin{subfigure}[b]{0.32\textwidth}
-\includegraphics[width=\textwidth]{Cusp_mean}
-\caption{$\text{mean}(\Psi)$}
-\end{subfigure}~
-\begin{subfigure}[b]{0.32\textwidth}
-\includegraphics[width=\textwidth]{Cusp_variance}
-\caption{$\text{variance}(\Psi)$}
-\end{subfigure}~
-\begin{subfigure}[b]{0.32\textwidth}
-\includegraphics[width=\textwidth]{Cusp_E_Mean}
-\caption{Zel'dovich}
-\end{subfigure}
-\caption{The mean and variance field of the cusp filament}\label{fig:meanCusp}
-\end{figure}
+%
+%\begin{figure}
+%\centering
+%\begin{subfigure}[b]{0.32\textwidth}
+%\includegraphics[width=\textwidth]{Cusp_mean}
+%\caption{$\text{mean}(\Psi)$}
+%\end{subfigure}~
+%\begin{subfigure}[b]{0.32\textwidth}
+%\includegraphics[width=\textwidth]{Cusp_variance}
+%\caption{$\text{variance}(\Psi)$}
+%\end{subfigure}~
+%\begin{subfigure}[b]{0.32\textwidth}
+%\includegraphics[width=\textwidth]{Cusp_E_Mean}
+%\caption{Zel'dovich}
+%\end{subfigure}
+%\caption{The mean and variance field of the cusp filament}\label{fig:meanCusp}
+%\end{figure}
 
 
 
@@ -811,36 +811,19 @@ We can generate realizations for which the cusp curve is vertical in the centre 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Swallowtail cluster}
-The swallowtail caustic is determined by the conditions
+The swallowtail caustic forming at time $t$, corresponding to the largest eigenvalue field $\lambda_1$, satisfies the conditions
 \begin{align}
-b_+(t) \lambda_1(\bm{q}) = 1\,, \quad \bm{v}_1(\bm{q}) \cdot \nabla_{\bm{q}}\lambda_1(\bm{q}) = 0\,, \quad\bm{v}_1\cdot \nabla_{\bm{q}}( \bm{v}_1(\bm{q}) \cdot \nabla_{\bm{q}}\lambda_1(\bm{q})) = 0\,.
+b_+(t) \lambda_1(\bm{q}) = 1\,,\\
+\quad \bm{v}_1(\bm{q}) \cdot \nabla\lambda_1(\bm{q}) = 0\,,\\
+ \quad\bm{v}_1\cdot \nabla( \bm{v}_1(\bm{q}) \cdot \nabla\lambda_1(\bm{q})) = 0\,.
 \end{align}
-In the eigenframe, the caustic conditions for the cusp take the form
-\begin{align}
-T_{11}=1/b_+(t)\,, \quad T_{12}=0\,,\quad T_{22}\leq T_{11}\,,\quad T_{111}=0\,, \quad T_{1111}+\frac{3T_{112}^2}{T_{11}-T_{22}} =0\,.
-\end{align}
-The cusp curve in the swallowtail caustic is parallel to the eigenvector field $\bm{v}_1$ since $\bm{v}_1 \cdot \bm{n}=0$ or $\alpha = \pm \pi/2$. Hence, the swallowtail caustic does not require us to fix its orientation.
+The cusp curve in the swallowtail caustic is parallel to the eigenvector field $\bm{v}_1$ since $\bm{v}_1 \cdot \bm{n}=0$ or equivalently $\alpha = \pm \pi/2$. The swallowtail caustic does not require us to fix its orientation. However, we do need to specify the direction, normal to the fold curve, in which the swallowtail structure forms. We will here use the condition $\bm{v}_2 \cdot \nabla \lambda_1(\bm{q}) <0$.
 
-The swallowtail caustic is determined by the variables $Y=(T_{11},T_{12},T_{22},T_{111},T_{112},T_{1111})$ with the probability density
-\begin{align}
-p(T_{11},T_{12},T_{22},T_{111},T_{112},T_{1111})=p(T_{11},T_{22},T_{1111})p(T_{12})p(T_{111})p(T_{112})\,.
-\end{align}
-The constraint distribution takes the form
-\begin{align}
-&p\left(T_{22},T_{112},T_{1111}|T_{22}\leq T_{11}=1/b_+, T_{12}=0,T_{111}=0,T_{1111}+\frac{3T_{112}^2}{T_{11}-T_{22}}=0\right)\\
-=&\, p\left(T_{22},T_{112}, T_{1111}|T_{22}\leq T_{11}=1/b_+, T_{1111}+\frac{3T_{112}^2}{T_{11}-T_{22}}=0\right)\,.
-\end{align}
-The first condition can be straightforwardly implemented using the discussion for the cusp curve. The second condition is more subtle due to its non-linear nature. However, there exists an efficient method using rejection sampling based on the independence of the variable $T_{112}$ in the joint distribution.
 
-Firstly, consider the conditional distribution
-\begin{align}
-p(T_{22},T_{1111}|T_{11}=1/b_+)\,.
-\end{align}
-Since the joint distribution $p(T_{11},T_{22},T_{1111})$ is Gaussian with vanishing mean $\bm{\mu}=\bm{0}$, and the covariance matrix $\begin{pmatrix} a & \bm{b} \\ \bm{b}^T & \Sigma \end{pmatrix}$, the constraint distribution $p(T_{22},T_{1111}|T_{11}=1/b_+)$, with $a=5 \sigma_3^2/16$, is agian a multidimensional Gaussian distribution, with mean $\bar{\bm{\mu}}=\frac{\bm{b}}{a b_+}$ and the covariance matrix $\bar{\Sigma}=\Sigma -\frac{1}{a} \bm{b}\bm{b}^T$. After sampling from this distribution, we can reject realizations for which $T_{22}>1/b_+$ or $T_{1111}>0$ to obtain samples from the auxiliary probability density $p(T_{22},T_{1111}| T_{22} \leq T_{11}=1/b_+,T_{1111}\leq 0)$. Finally, note that the non-linear condition fully determines $T_{112}^2$ in terms of $T_{11},T_{22},T_{1111}$ when $T_{22} < T_{11}$ and $T_{1111}\leq 0$. The variable $T_{112}$ in the joint distribution is an independent Gaussian variable with zero mean $\langle T_{112}\rangle = 0$ and variance $\langle T_{112}^2\rangle = \sigma_3^2/16$. We can thus write the unnormalized density of the conditional density as a product of the conditional density $p(T_{22},T_{1111}|T_{22}\leq T_{11}=1/b_+,T_{1111})$ and a function between $0$ and $1$,
-\begin{align}
-p(T_{22},T_{1111}) \propto e^{-\frac{1}{2}((T_{22},T_{1111})-\bar{\bm{\mu}})\bar{\Sigma}^{-1}((T_{22},T_{1111})-\bar{\bm{\mu}}) }\Theta(1/b_+-T_{22})\Theta(-T_{1111})e^{ \frac{8T_{1111} (1/b_+ - T_{22})}{3 \sigma_3^2}}
-\end{align}
-with the Heaviside step function $\Theta$. We can thus obtain realizations of the target conditional density by sampling from the distribution $p(T_{22},T_{1111}|T_{22}\leq T_{11}=1/b_+,T_{1111})$ and accepting the realization with probability $\exp\left[ \frac{8T_{1111} (1/b_+ - T_{22})}{3 \sigma_3^2}\right]$. The mean and variance fields can be evaluating the expectation values of the second, third, and fourth order derivatives of the deformation potential (see figure \ref{fig:meanSwallowtail}).
+
+
+
+In figure \ref{fig:meanSwallowtail}, we plot the mean field of the swallowtail cluster. The gravitational potential is again close to a dipole. However, note the development of an asymmetry with respect to the horizontal axis. The blue central structure yields an inflow of matter, whereas two red structures around the blue structure yield two outflow regions. The critical curve in the eigenvalue field consists of an elongated oval with two bifurcation in the upper half plane. The cusp curves form a trident inside the fold curve. In the Zel'dovich approximation, the caustic skeleton consists of a Zel'dovich pancake with two whiskers in the upper half plane. In the $N$-body simulation, the mass elements virialize around the cusp curves.
 
 
 
@@ -857,6 +840,59 @@ with the Heaviside step function $\Theta$. We can thus obtain realizations of th
 \end{subfigure}
 \caption{The mean swallowtail caustic. \text{Left:} the gravitational potential. \textit{Centre:} the first eigenvalue and eigenvector fields. \textit{Right:} The Zel'dovich approximation}\label{fig:meanSwallowtail}
 \end{figure}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Sampling the constraint manifold}
+In the eigenframe, the caustic conditions for the cusp take the form
+\begin{align}
+T_{11}=1/b_+(t)\,, \quad T_{12}=0\,,\quad T_{22}\leq T_{11}\,,\quad T_{111}=0\,, \quad T_{1111}+\frac{3T_{112}^2}{T_{11}-T_{22}} =0\,.
+\end{align}
+The condition that specifies the direction in which the swallowtail develops, $\bm{v}_2 \cdot \nabla \lambda_1  <0$, yields the simple form 
+\begin{align}
+T_{112} <0\,.
+\end{align}
+See appendix \ref{ap:eigenvalueRel} for a detailed derivation. 
+
+The swallowtail caustic is determined by the linear statistics $Y=(T_{11},T_{12},T_{22},T_{111},T_{112},T_{1111})$ with the probability density
+\begin{align}
+p(T_{11},T_{12},T_{22},T_{111},T_{112},T_{1111})=p(T_{11},T_{22},T_{1111})p(T_{12})p(T_{111})p(T_{112})\,,
+\end{align}
+and the constraint distribution 
+\begin{align}
+&p\left(T_{22},T_{112},T_{1111}|T_{22}\leq T_{11}=1/b_+, T_{12}=0,T_{111}=0,T_{1111}+\frac{3T_{112}^2}{T_{11}-T_{22}}=0\right)\\
+=&\, p\left(T_{22},T_{112}, T_{1111}|T_{22}\leq T_{11}=1/b_+, T_{1111}+\frac{3T_{112}^2}{T_{11}-T_{22}}=0\right)\,.
+\end{align}
+
+For the cusp caustic, it sufficed to construct realizations with the linear constraints $T_{11}=1/b_+$, $T_{12}=0$, $T_{111}=0$ and reject realizations for which $T_{22} > T_{11}$. For the swallowtail caustic, we implement a more advanced rejection scheme to efficiently sample the constrained manifold.
+
+In the joint distribution of the statistic $(T_{11},T_{22},T_{112},T_{1111})$, the variable $T_{112}$ is independent of the statistics $T_{11}, T_{22}$ and $T_{1111}$. Moreover, note that the conditions $T_{1111}+\frac{3T_{112}^2}{T_{11}-T_{22}}=0$ and $T_{112}<0$ fully specify $T_{112}$ in terms of the variables $T_{11},T_{22}$ and $T_{1111}$. We use these properties to construct a rejection sampling scheme in which we sample the Gaussian distribution for $(T_{22},T_{1111})$ and accept a sample with a probability determined by the joint distribution for $(T_{22},T_{112},T_{1111})$.
+
+Consider the Gaussian joint distribution $p(T_{11},T_{22},T_{1111})$ with vanishing mean $\bm{\mu}=\bm{0}$ and the covariance matrix $\begin{pmatrix} a & \bm{b} \\ \bm{b}^T & \Sigma \end{pmatrix}$ consisting of the elements
+\begin{align}
+a=\frac{3 \sigma_2^2}{8}\,, \quad
+\bm{b}=\left(\frac{\sigma_2^2}{8}, -\frac{5 \sigma_3^2}{16}\right)\,,\quad
+\Sigma = \begin{pmatrix} \frac{3 \sigma_2^2}{8} & -\frac{\sigma_3^2}{16} \\ -\frac{\sigma_3^2}{16} & \frac{35 \sigma_4^2}{128}\end{pmatrix}, 
+\end{align}
+and the independent statistics $T_{112}$, which is normally distributed with zero mean $\langle T_{112}\rangle = 0$ and variance $\langle T_{112}^2\rangle = \sigma_3^2/16$. The conditional distribution $p(T_{22},T_{1111}|T_{11}=1/b_+)$ is a bivariate Gaussian distribution with non-zero mean $\bar{\bm{\mu}}=\frac{\bm{b}}{a b_+}$ and the covariance matrix $\bar{\Sigma}=\Sigma -\frac{1}{a} \bm{b}\bm{b}^T$. After sampling from this distribution, we first reject samples for which $T_{22}>1/b_+$ or $T_{1111}>0$ to obtain samples from the auxiliary probability density 
+\begin{align}
+p(T_{22},T_{1111}| T_{22} < T_{11}=1/b_+,T_{1111}\leq 0)\,.
+\end{align}
+
+ The variables $T_{22},T_{1111}$ fully determine the variable $T_{112}$,
+\begin{align}
+T_{112}= -\sqrt{-\frac{T_{1111}(T_{11}-T_{22})}{3}}\,,
+\end{align}
+when $T_{22} < T_{11}$ and $T_{1111}\leq 0$.  The unnormalized conditional density is the product of the conditional density $p(T_{22},T_{1111}|T_{22}\leq T_{11}=1/b_+,T_{1111}\leq 0)$ and a function assuming values between $0$ and $1$,
+\begin{align}
+&p(T_{22},T_{1111}|T_{22}\leq T_{11}=1/b_+, T_{1111}+3T_{112}^2/(T_{11}-T_{22}) =0)\\
+& \propto e^{-\frac{1}{2}((T_{22},T_{1111})-\bar{\bm{\mu}})\bar{\Sigma}^{-1}((T_{22},T_{1111})-\bar{\bm{\mu}}) }\Theta(1/b_+-T_{22})\Theta(-T_{1111})e^{ \frac{8T_{1111} (1/b_+ - T_{22})}{3 \sigma_3^2}}
+\end{align}
+with the Heaviside step function $\Theta$. Hence, we obtain samples of the target distribution by sampling from the conditional density $p(T_{22},T_{1111}|T_{22}\leq T_{11}=1/b_+,T_{1111}\leq 0)$ and accepting samples with probability 
+\begin{align}
+\exp\left[ \frac{8T_{1111} (1/b_+ - T_{22})}{3 \sigma_3^2}\right]\,.
+\end{align}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Umbilic cluster}
@@ -898,15 +934,15 @@ However, it is easier to evaluate the eigenvector numerically for a realization 
 \begin{figure}
 \centering
 \begin{subfigure}[b]{0.32\textwidth}
-\includegraphics[width=\textwidth]{Hyperbollic_mean_Phi}
+\includegraphics[width=\textwidth]{Hyperbolic_mean_Phi}
 \end{subfigure}~
 \begin{subfigure}[b]{0.32\textwidth}
-\includegraphics[width=\textwidth]{Hyperbollic_mean_L}
+\includegraphics[width=\textwidth]{Hyperbolic_mean_L}
 \end{subfigure}~
 \begin{subfigure}[b]{0.32\textwidth}
-\includegraphics[width=\textwidth]{Hyperbollic_mean_Z}
+\includegraphics[width=\textwidth]{Hyperbolic_mean_Z}
 \end{subfigure}
-\caption{The mean hyperbollic caustic. \text{Left:} the gravitational potential. \textit{Centre:} the first eigenvalue and eigenvector fields. \textit{Right:} The Zel'dovich approximation}\label{fig:meanSwallowtail}
+\caption{The mean hyperbolic caustic. \text{Left:} the gravitational potential. \textit{Centre:} the first eigenvalue and eigenvector fields. \textit{Right:} The Zel'dovich approximation}\label{fig:meanHyperbolic}
 \end{figure}
 
 
