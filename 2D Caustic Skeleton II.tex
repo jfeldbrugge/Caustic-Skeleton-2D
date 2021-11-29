@@ -937,13 +937,13 @@ This condition should be contrasted with the condition presented in [REFS] based
 \end{align} 
 In fact, this condition describes the behaviour of the eigenvector field in the vicinity of the umbilic point and does not differentiates between the elliptic and hyperbolic caustics. Note that for the elliptic caustic we always have $\delta <0$.
 
-More generally, expand the displacement field $\bm{s}_t$ to quadratic order in $q_1$ and $q_2$ around a umbilic point at the origin $(q_1,q_2)=(0,0)$. The determinant of the gradient $\nabla \bm{x}_t$ has a critical point at the origin, of the form
+More generally, expand the displacement field $\bm{s}_t$ to quadratic order in $q_1$ and $q_2$ around a umbilic point at the origin $(q_1,q_2)=(0,0)$. The determinant of the gradient $\nabla \bm{x}_t$ has a critical point at the origin, as it is the product of two eigenvalue fields that vanish at the origin. The determinant takes the general form
 \begin{align}
 \det \nabla \bm{x}_t&=\det(I + \nabla \bm{s}_t)\\
 &= 
-A q_1^2 + B q_1 q_2 + C q_2^2 + D q_1 + E q_2+ O(q_1^3,q_1^2 q_2,q_1 q_2^2,q_2^3)\,.
+A q_1^2 + B q_1 q_2 + C q_2^2 + O(q_1^3,q_1^2 q_2,q_1 q_2^2,q_2^3)\,.
 \end{align}
-for some constants $A,B,C,E,$ and $E$.
+for some constants $A,B,$ and $C$.
 %with
 %\begin{align}
 %A&= s_{1,11} s_{2,12}-s_{1,12} s_{2,11}\,,\\
@@ -951,7 +951,13 @@ for some constants $A,B,C,E,$ and $E$.
 %C&= s_{1,12} s_{2,22}-s_{1,22} s_{2,12}\,, 
 %\end{align}
 %where we write the displacement field as $\bm{s}_t=(s_1,s_2)$ and the partial derivatives as $s_{i,jk}=\partial_j \partial_k s_{i}$. 
-For small $q_1$ and $q_2$, the level set $\det \nabla \bm{x}_t =0$ approaches a conic section; an ellipse when the discriminant $B^2 - 4AC$ is negative corresponding to the $D_4^+$ caustic, a hyperbole when the discriminant $B^2 - 4AC$ is positive corresponding to the $D_4^-$ caustic, and a parabola when the discriminant $B^2 - 4AC$ vanishes, corresponding to the $D_5$ caustic (which does not feature in the 2D cosmic web). Note that the discriminant coincides wit the negative of the determinant of the Hessian, \textit{i.e.},
+For small $q_1$ and $q_2$, the level set $\det \nabla \bm{x}_t =0$ approaches a conic section:
+\begin{itemize}
+\item an ellipse when the discriminant $B^2 - 4AC$ is negative corresponding to the $D_4^+$ caustic,
+\item a hyperbole when the discriminant $B^2 - 4AC$ is positive corresponding to the $D_4^-$ caustic,
+\item a parabola when the discriminant $B^2 - 4AC$ vanishes, corresponding to the $D_5$ caustic (which does not feature in the 2D cosmic web).
+\end{itemize}
+Note that the discriminant coincides wit the negative of the determinant of the Hessian, \textit{i.e.},
 \begin{align}
 B^2-4AC = -\det \left(\mathcal{H} \left[\det \nabla \bm{x}_t \right]\right)\,.
 \end{align}
