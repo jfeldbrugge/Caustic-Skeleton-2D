@@ -474,15 +474,11 @@ with the deviation from the mean $\Delta \bm{Y} = \bm{Y} - \langle \bm{Y}\rangle
 M = \text{cov}(\bm{Y},\bm{Y}) = \langle \Delta \bm{Y}^T \Delta \bm{Y}\rangle\,.
 \end{align}
 
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{Generating realizations}
-
 The distribution of the discrete Fourier modes $\bm{Y}(\hat{f}(\bm{k}_1),\hat{f}(\bm{k}_1),\dots)$ takes the form 
 \begin{align}
 p(\hat{f}(\bm{k}_1), \hat{f}(\bm{k}_2), \dots) = \prod_{i} \frac{1}{\sqrt{2\pi P(\| \bm{k}_i\|)}} e^{-\frac{|\hat{f}(\bm{k}_i)|^2}{2P(\|\bm{k}_i\|)}},
 \end{align}
-yielding an efficient method to generate realizations. Firstly, generate Gaussian white noise on a lattice with zero mean and unit standard deviation. Secondly, Fourier transform the lattice with a FFT routine and multiply the resulting field with the square root of the power spectrum $\sqrt{P(\bm{k})}$. Finally, perform a inverse Fourier transform to obtain a realization of the random field.
+yielding an efficient method to generate realizations (see appendix \ref{ap:GRF}).
 
 
 \begin{framed}
@@ -554,17 +550,14 @@ Note that earlier papers [REFS] worked in the space of functions satisfying the 
 \end{align}
 which vanishes on the constraints. Away from the constraints, the variance of the residue approaches the variance of the unconstrained  field $\text{var}(f)=\sigma_0^2$.
 
+The Hoffman-Ribak method cleverly uses the property that the statistics of the residue $\delta f$ are independent of $c_i$, to generate realizations of the constraint Gaussian random field. Firstly, generate a realization $g$ of the unconstraint Gaussian random field with the required power spectrum. Secondly, evaluate the constraints for this realization $C_i[g;\bm{q}'_i]=d_i$ and the corresponding mean field $\bar{g}$. The statistical properties of the residue with respect to this mean field $\delta g = g-\bar{g}$ are independent of the value the constraints assume and thus identical to the properties of the residue $\delta f$. We can thus identify the residue of the field $g$ with the residue of the constrained field $f$. By adding the residue of the unconstraint field to the mean field with the required constraints, we obtain the realization of the constrained Gaussian random field. For more details see appendix \ref{ap:GRF}.
+
+
 To judge the relevance of a particular set of constraints, it is useful to evaluate the $\chi^2$ of the set of values $c_i$,
 \begin{align}
 \chi^2 = \sum_{i,j=1}^M c_i\, \xi_{ij}^{-1}c_j.
 \end{align}
 The probability that this constraint yields a $\chi^2$ higher than the this number is given by $\Gamma_Q(M/2, \chi^2/2)$ with the incomoplete gamma function $\Gamma_Q$.
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{Generating realizations}
-The Hoffman-Ribak method cleverly uses the property that the statistics of the residue $\delta f$ are independent of $c_i$, to generate realizations of the constraint Gaussian random field. Firstly, generate a realization $g$ of the unconstraint Gaussian random field with the required power spectrum. Secondly, evaluate the constraints for this realization $C_i[g;\bm{q}'_i]=d_i$ and the corresponding mean field $\bar{g}$. The statistical properties of the residue with respect to this mean field $\delta g = g-\bar{g}$ are independent of the value the constraints assume and thus identical to the properties of the residue $\delta f$. We can thus identify the residue of the field $g$ with the residue of the constrained field $f$. By adding the residue of the unconstraint field to the mean field with the required constraints, we obtain the realization of the constrained Gaussian random field.
-
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Non-linear constraints: formalism}
@@ -1077,6 +1070,152 @@ See figure \ref{fig:composite} for an illustration of a realization with four ei
 \newpage
 \appendix
 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Gaussian random fields algorithms}\label{ap:GRF}
+Gaussian random fields are most naturally expressed in Fourier space, as the Fourier modes of an unconstrained Gaussian random field are normally and independently distributed, 
+\begin{align}
+p(\hat{f}(\bm{k}_1), \hat{f}(\bm{k}_2), \dots) = \prod_{i} \frac{1}{\sqrt{2\pi P(\| \bm{k}_i\|)}} e^{-\frac{|\hat{f}(\bm{k}_i)|^2}{2P(\|\bm{k}_i\|)}},
+\end{align}
+up to the reality condition, $\hat{f}(\bm{k})=\hat{f}^*(-\bm{k})$. In this paper, we use Fast Fourier Transform routines to efficiently generate realizations of both unconstrained and linearly constrained Gaussian random.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Unconstrained Gaussian random fields}
+We can efficiently generate realizations of an unconstrained Gaussian random fields on a rectangular lattice using Fast Fourier Transform routines. The Fourier modes of an isotropic and homogeneous Gaussian random field are independent distributed Gaussian variables with zero mean, $\mu=0$, and the standard deviation $\sigma = \sqrt{P(\|\bm{k}\|)}$. Using this observation we generate the realization by multiplying the Fourier transform of white noise with the square root of the power spectrum:\\
+
+\begin{algorithm}[H]
+\SetAlgoLined
+\begin{enumerate}[itemsep=1ex, leftmargin=0cm, rightmargin=1cm]
+\item Generate a realization of white noise $n_w(\bm{q})$, consisting of identically independently distributed normal numbers $\mathcal{N}(\mu=0,\sigma^2=1)$ on a regular rectangular lattice.
+\item Fast Fourier transform the white noise $\hat{n}_w(\bm{k}) = \text{FFT}[n_w(\bm{q})]$. The Fourier modes are independently normally distributed satisfying the reality condition $\hat{n}_w(\bm{k}) = \hat{n}_w^*(-\bm{k})$.
+\item Rescale the Fourier modes with the power spectrum $\hat{f}(\bm{k}) = \sqrt{P(\bm{k})}\hat{n}_w(\bm{k})$.
+\item Evaluate the inverse fast Fourier transform the rescaled modes to obtain the realization of the unconstrained Gaussian random field $f(\bm{q}) = \text{FFT}^{-1}[\hat{f}(\bm{k})]$.
+\end{enumerate}
+ \caption{Generating a realization of an unconstrained Gaussian random field on a rectangular lattice}
+ \label{alg:GRF}
+\end{algorithm}$ $\\
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Linearly constrained Gaussian random fields}
+We efficiently generate realizations of constrained Gaussian random fields, satisfying a set of linear constraints $\Gamma=\{\bm{C}[f]=\bm{c}\}$, using the Hoffman Ribak algorithm. The algorithm is based on the observation that the residue of the random field with respect to the mean field, $\delta f = f - \langle f | \Gamma\rangle$, is a Gaussian random field whose properties are independent of the constraint values $\bm{c}$. Note that this is a special property of Gaussianity of the random field and the linearity of the constraints $\bm{C}$.
+
+Given a free function $f$, we compute the value of the linear constraint $C_i$ using the convolution theorem
+\begin{align}
+C_i[f,\bm{q}_i]=\text{FFT}^{-1}[\hat{C}_i^*(\bm{k}) \hat{f}(\bm{k})](\bm{0})
+\end{align}
+evaluated at the origin, with the Fourier transform of the constraint $\hat{C}_i$. Assuming that the unconstrained mean field vanishes, $\langle f \rangle =0$, we evaluate the constrained mean field using the formula
+\begin{align}
+\langle f(\bm{q}) | \Gamma\rangle = \sum_{i,j} \xi_i(\bm{q})\xi_{ij}^{-1} c_j\,,
+\end{align}
+with the covariance between the random field and the constraint
+\begin{align}
+\xi_i(\bm{q}) = \text{FFT}^{-1}[\hat{C}_i(\bm{k}) P(\|\bm{k}\|)]\,,
+\end{align}
+and the covariance matrix of the constraints
+\begin{align}
+\xi_{ij}=\text{FFT}^{-1}[\hat{C}_i^*(\bm{k}) \hat{C}_i(\bm{k}) P(\|\bm{k}\|)](\bm{0})\,,
+\end{align}
+evaluated at the origin. Note that the vector $\bm{\xi}(\bm{q})=[\sum_i \xi_i(\bm{q}) \xi_{ij}^{-1}]$ is a normal basis of the constraints. The mean field is the inner product of $\bm{x}$ with the constraint values, 
+\begin{align}
+\langle f(\bm{q}) | \Gamma\rangle = \bm{\xi}(\bm{q})\cdot \bm{c}\,.
+\end{align}
+We use these routines to implement the Hoffman-Ribak method:\\
+
+\begin{algorithm}[H]
+\SetAlgoLined
+\begin{enumerate}[itemsep=1ex, leftmargin=0cm, rightmargin=1cm]
+\item Generate a realization of an unconstrained Gaussian random field $g$ with the required power spectrum using algorithm \ref{alg:GRF}.
+\item Evaluate the linear constraints $C_i$ of the unconstrained field $g$,
+\begin{align}
+d_i = C_i[g;\bm{q}_i]\,.
+\end{align} 
+\item Evaluate the mean field corresponding to the constraint values $d_i$,
+\begin{align}
+\bar{g}(\bm{q}) = \sum_{ij}\xi_i(\bm{q}) \xi^{-1}_{ij} d_j\,.
+\end{align}
+\item Evaluate the residue of the unconstrained field 
+\begin{align}
+G=g - \bar{g}\,.
+\end{align}
+\item Since the residue $G$ is statistically independent of the values $d_j$, we can identify $G$ with the residue $F$ of the constrained random field. The realization of the constrained Gaussian random field takes the form
+\begin{align}
+f(\bm{q}) = \sum_{ij}\xi_i(\bm{q}) \xi^{-1}_{ij} c_j + G(\bm{q})\,.
+\end{align}
+\end{enumerate}
+ \caption{The Hoffman-Ribak method for Gaussian random fields with linear constraints}
+ \label{alg:HoffmanRibak}
+\end{algorithm}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Constraint probability density}\label{ap:constraintDensity}
+The conditional density 
+\begin{align}
+p(f|\Gamma) =\frac{p(f, \Gamma)}{p(\Gamma)}
+\end{align}
+with $\Gamma = \{\bm{C} = \bm{c}\}$ is a Gaussian density as both $p(f,\Gamma)$ and $p(\Gamma)$ are normally distributed. It thus suffices to evaluate the mean and covariance matrix. For completeness, we write the mean of the function and the constraints as $\bar{f}(\bm{q})=\langle f(\bm{q}) \rangle$ and $\bar{\bm{C}}=\langle \bm{C}\rangle$, and the covariance as
+\begin{align}
+\xi(\bm{q}_1,\bm{q}_2)& = \text{cov}(f(\bm{q}_1),f(\bm{q}_2))= \langle (f(\bm{q}_1) - \bar{f}(\bm{q}_1))(f(\bm{q}_2) - \bar{f}(\bm{q}_2))\rangle\,,\\
+\xi_i(\bm{q}) &= \text{cov}(f(\bm{q}),C_i) = \langle (f(\bm{q})-\bar{f}(\bm{q}))(C_i - \bar{C}_i)\rangle\,,\\
+\xi_{ij} &= \text{cov}(C_i,C_j) = \langle (C_i - \bar{C}_i)(C_j-\bar{C}_j)\rangle\,.
+\end{align}
+For conciseness, we will use the Einstein summation convention over the repeated dummy indices.
+
+Define an auxiliary function $g(\bm{q}) = f(\bm{q}) + \bm{A}(\bm{q}) \cdot \bm{C}$ with $A_i(\bm{q}) = -\xi_j(\bm{q}) \xi_{ji}^{-1}$. The function $g$ is by construction independent of the variable $\bm{C}$, as they are jointly normally distributed and their covariance matrix vanishes, \textit{i.e.}, 
+\begin{align}
+\text{cov}(g(\bm{q}),\bm{C})
+&=\text{cov}(f(\bm{q}),\bm{C}) +  \text{cov}(\bm{C},\bm{C}) \bm{A}(\bm{q}) \\
+&=[\xi_k(\bm{q}) - \xi_i(\bm{q}) \xi_{ij}^{-1}\xi_{jk}]_{k=1}^N\\
+&=\bm{0}\,.
+\end{align}
+The expectation value of $g$ is $\langle g(\bm{q})\rangle = \bar{f}(\bm{q}) + \bm{A}(\bm{q}) \cdot \bar{\bm{C}}$, which we can use to evaluate the expectation value of the constrained field
+\begin{align}
+\langle f(\bm{q}) | \Gamma \rangle 
+&=\langle g(\bm{q}) - \bm{A}(\bm{q})\cdot \bm{C}|\Gamma\rangle\\
+&=\langle g(\bm{q})\rangle - \bm{A}(\bm{q}) \cdot \bm{c}\\
+&=\bar{f}(\bm{q}) + \bm{A}(\bm{q})\cdot (\bar{\bm{C}}-\bm{c})\\
+&= \bar{f}(\bm{q}) + \xi_i(\bm{q})\xi_{ij}^{-1}(c_j -\bar{C}_j)\,.
+\end{align}
+When $\bar{f} = 0$ and $\bar{\bm{C}}=\bm{0}$ the expectation value reduces to the identity $\langle f(\bm{q}) | \Gamma \rangle =\xi_i(\bm{q})\xi_{ij}^{-1}c_j$. The covariance of the constraint field follows along similar lines
+%\begin{align}
+%\text{var}(f(\bm{q})|\Gamma) 
+%&= \text{var}(g(\bm{q}) - \bm{A}(\bm{q})\cdot \bm{C}|\Gamma) \\
+%&= \text{var}(g(\bm{q})|\Gamma) + \text{var}(\bm{A}(\bm{q})\cdot \bm{C}|\Gamma) -2 \bm{A}(\bm{q})\cdot \text{cov}(g(\bm{q}), \bm{C}|\Gamma)\\
+%&= \text{var}(g(\bm{q})) \\
+%&=\text{var}(f(\bm{q}) + \bm{A}(\bm{q})\cdot \bm{C})\\
+%&=\text{var}(f(\bm{q})) + \bm{A}^T(\bm{q}) \text{var}(\bm{C}) \bm{A}(\bm{q}) + 2\bm{A}(\bm{q}) \cdot \text{cov}(f(\bm{q}),\bm{C}) \\
+%&=\text{var}(f(\bm{q})) + \xi_i(\bm{q})\xi_{ij}^{-1}\xi_{jk}\xi_{kl}^{-1}\xi_{l}(\bm{q}) - 2\xi_i(\bm{q})\xi_{ij}^{-1}\xi_{j}(\bm{q})\\
+%&=\xi(\bm{0}) - \xi_i(\bm{q}) \xi_{ij}^{-1} \xi_j(\bm{q})\,.
+%\end{align}
+\begin{align}
+\text{cov}(f(\bm{q}_1), f(\bm{q}_2)|\Gamma) 
+&= \text{cov}(g(\bm{q}_1) - \bm{A}(\bm{q}_1)\cdot \bm{C}, g(\bm{q}_2) - \bm{A}(\bm{q}_2)\cdot \bm{C}|\Gamma) \\
+&= \text{cov}(g(\bm{q}_1), g(\bm{q}_2)|\Gamma) + \text{cov}(\bm{A}(\bm{q}_1)\cdot \bm{C}, \bm{A}(\bm{q}_2)\cdot \bm{C}|\Gamma)\\
+&\ \ \  - \bm{A}(\bm{q}_1)\cdot \text{cov}(\bm{C}, g(\bm{q}_2)|\Gamma) -\text{cov}(g(\bm{q}_1) , \bm{C}|\Gamma)\cdot \bm{A}(\bm{q}_2)\\
+&= \text{cov}(g(\bm{q}_1), g(\bm{q}_2)) \\
+&=\text{cov}(f(\bm{q}_1) + \bm{A}(\bm{q}_1)\cdot \bm{C}, f(\bm{q}_2) + \bm{A}(\bm{q}_2)\cdot \bm{C})\\
+&=\text{cov}(f(\bm{q}_1), f(\bm{q}_2)) + \bm{A}(\bm{q}_1) \text{cov}(\bm{C},\bm{C}) \bm{A}^T(\bm{q}_2) \\
+&\ \ \ + \bm{A}(\bm{q}_1) \cdot \text{cov}(\bm{C},f(\bm{q}_2))+ \text{cov}(f(\bm{q}_1), \bm{C}) \cdot \bm{A}(\bm{q}_2) \\
+&=\text{cov}(f(\bm{q}_1), f(\bm{q}_2)) + \xi_i(\bm{q}_1)\xi_{ij}^{-1}\xi_{jk}\xi_{kl}^{-1}\xi_{l}(\bm{q}_2) - 2\xi_i(\bm{q}_1)\xi_{ij}^{-1}\xi_{j}(\bm{q}_2)\\
+&=\xi(\bm{q}_1,\bm{q}_2) - \xi_i(\bm{q}_1) \xi_{ij}^{-1} \xi_j(\bm{q}_2)\,.
+\end{align}
+We conclude that the residue $\delta f$ of $f$ with respect to the mean field $\langle f(\bm{q})|\Gamma\rangle =\bar{f}(\bm{q})+ \xi_i(\bm{q})\xi_{ij}^{-1}(c_j-\bar{C}_j)$ is a Gaussian random field with zero mean and variance $\sigma_0^2 - \xi_i(\bm{q}) \xi_{ij}^{-1} \xi_j(\bm{q})$. Note that the statistical properties of $\delta f$ are indeed independent of $\bm{c}$. 
+%The covariance of $f$ conditioned on $\Gamma$ is
+%\begin{align}
+%\text{cov}(f(\bm{q}_1),f(\bm{q}_2)|\Gamma) = \xi(\bm{q}_1,\bm{q}_2) - \xi_i(\bm{q}_1)\xi_{ij}^{-1}\xi_j(\bm{q}_2)\,.
+%\end{align}
+The probability density takes the form
+\begin{align}
+p(f|\Gamma) \propto  e^{-\frac{1}{2} \iint \delta{f}(\bm{q}_1) \tilde{K}(\bm{q}_1,\bm{q}_2) \delta f(\bm{q}_2)\mathrm{d}\bm{q}_1 \mathrm{d}\bm{q}_2 }\label{eq:constraint2}
+\end{align}
+with the residue $\delta f = f-\bar{f}(\bm{q})+ \xi_i(\bm{q})\xi_{ij}^{-1}(c_j-\bar{C}_j)$ and the kernel $\tilde{K}$ defined as the inverse of the modified two point correlation function, \textit{i.e.},
+\begin{align}
+\int \tilde{K}(\bm{q}_1,\bm{q}) \left[\xi(\bm{q},\bm{q}_2) - \xi_i(\bm{q})\xi_{ij}^{-1}\xi_j(\bm{q}_2)\right]\mathrm{d}\bm{q}= \delta_D^{(2)}(\bm{q}_1-\bm{q}_2)\,.
+\end{align}
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Non-linear eigenvalue relations}\label{ap:eigenvalueRel}
 To evaluate the statistical properties of the caustics we will use shorthand for the derivatives of the displacement potential $T_{ijk\dots} = \frac{\partial}{\partial q_i}\frac{\partial}{\partial q_j}\frac{\partial}{\partial q_k}\dots \Psi$. In this notation, the deformation tensor takes the form
@@ -1167,73 +1306,6 @@ The second order derivatives assume the form
 \bm{v}_1 \cdot \nabla (\bm{v}_2 \cdot \nabla \lambda_2) &= T_{1222} - \frac{3T_{112}T_{122}}{T_{11}-T_{22}}\,,\\
 \bm{v}_2 \cdot \nabla (\bm{v}_2 \cdot \nabla \lambda_2) &= T_{2222} - \frac{3T_{122}^2}{T_{11}-T_{22}}\,.
 \end{align}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Constraint density}\label{ap:constraintDensity}
-The conditional density 
-\begin{align}
-p(f|\Gamma) =\frac{p(f, \Gamma)}{p(\Gamma)}
-\end{align}
-with $\Gamma = \{\bm{C} = \bm{c}\}$ is a Gaussian density as both $p(f,\Gamma)$ and $p(\Gamma)$ are normally distributed. It thus suffices to evaluate the mean and covariance matrix. For completeness, we write the mean of the function and the constraints as $\bar{f}(\bm{q})=\langle f(\bm{q}) \rangle$ and $\bar{\bm{C}}=\langle \bm{C}\rangle$, and the covariance as
-\begin{align}
-\xi(\bm{q}_1,\bm{q}_2)& = \text{cov}(f(\bm{q}_1),f(\bm{q}_2))= \langle (f(\bm{q}_1) - \bar{f}(\bm{q}_1))(f(\bm{q}_2) - \bar{f}(\bm{q}_2))\rangle\,,\\
-\xi_i(\bm{q}) &= \text{cov}(f(\bm{q}),C_i) = \langle (f(\bm{q})-\bar{f}(\bm{q}))(C_i - \bar{C}_i)\rangle\,,\\
-\xi_{ij} &= \text{cov}(C_i,C_j) = \langle (C_i - \bar{C}_i)(C_j-\bar{C}_j)\rangle\,.
-\end{align}
-For conciseness, we will use the Einstein summation convention over the repeated dummy indices.
-
-Define an auxiliary function $g(\bm{q}) = f(\bm{q}) + \bm{A}(\bm{q}) \cdot \bm{C}$ with $A_i(\bm{q}) = -\xi_j(\bm{q}) \xi_{ji}^{-1}$. The function $g$ is by construction independent of the variable $\bm{C}$, as they are jointly normally distributed and their covariance matrix vanishes, \textit{i.e.}, 
-\begin{align}
-\text{cov}(g(\bm{q}),\bm{C})
-&=\text{cov}(f(\bm{q}),\bm{C}) +  \text{cov}(\bm{C},\bm{C}) \bm{A}(\bm{q}) \\
-&=[\xi_k(\bm{q}) - \xi_i(\bm{q}) \xi_{ij}^{-1}\xi_{jk}]_{k=1}^N\\
-&=\bm{0}\,.
-\end{align}
-The expectation value of $g$ is $\langle g(\bm{q})\rangle = \bar{f}(\bm{q}) + \bm{A}(\bm{q}) \cdot \bar{\bm{C}}$, which we can use to evaluate the expectation value of the constrained field
-\begin{align}
-\langle f(\bm{q}) | \Gamma \rangle 
-&=\langle g(\bm{q}) - \bm{A}(\bm{q})\cdot \bm{C}|\Gamma\rangle\\
-&=\langle g(\bm{q})\rangle - \bm{A}(\bm{q}) \cdot \bm{c}\\
-&=\bar{f}(\bm{q}) + \bm{A}(\bm{q})\cdot (\bar{\bm{C}}-\bm{c})\\
-&= \bar{f}(\bm{q}) + \xi_i(\bm{q})\xi_{ij}^{-1}(c_j -\bar{C}_j)\,.
-\end{align}
-When $\bar{f} = 0$ and $\bar{\bm{C}}=\bm{0}$ the expectation value reduces to the identity $\langle f(\bm{q}) | \Gamma \rangle =\xi_i(\bm{q})\xi_{ij}^{-1}c_j$. The covariance of the constraint field follows along similar lines
-%\begin{align}
-%\text{var}(f(\bm{q})|\Gamma) 
-%&= \text{var}(g(\bm{q}) - \bm{A}(\bm{q})\cdot \bm{C}|\Gamma) \\
-%&= \text{var}(g(\bm{q})|\Gamma) + \text{var}(\bm{A}(\bm{q})\cdot \bm{C}|\Gamma) -2 \bm{A}(\bm{q})\cdot \text{cov}(g(\bm{q}), \bm{C}|\Gamma)\\
-%&= \text{var}(g(\bm{q})) \\
-%&=\text{var}(f(\bm{q}) + \bm{A}(\bm{q})\cdot \bm{C})\\
-%&=\text{var}(f(\bm{q})) + \bm{A}^T(\bm{q}) \text{var}(\bm{C}) \bm{A}(\bm{q}) + 2\bm{A}(\bm{q}) \cdot \text{cov}(f(\bm{q}),\bm{C}) \\
-%&=\text{var}(f(\bm{q})) + \xi_i(\bm{q})\xi_{ij}^{-1}\xi_{jk}\xi_{kl}^{-1}\xi_{l}(\bm{q}) - 2\xi_i(\bm{q})\xi_{ij}^{-1}\xi_{j}(\bm{q})\\
-%&=\xi(\bm{0}) - \xi_i(\bm{q}) \xi_{ij}^{-1} \xi_j(\bm{q})\,.
-%\end{align}
-\begin{align}
-\text{cov}(f(\bm{q}_1), f(\bm{q}_2)|\Gamma) 
-&= \text{cov}(g(\bm{q}_1) - \bm{A}(\bm{q}_1)\cdot \bm{C}, g(\bm{q}_2) - \bm{A}(\bm{q}_2)\cdot \bm{C}|\Gamma) \\
-&= \text{cov}(g(\bm{q}_1), g(\bm{q}_2)|\Gamma) + \text{cov}(\bm{A}(\bm{q}_1)\cdot \bm{C}, \bm{A}(\bm{q}_2)\cdot \bm{C}|\Gamma)\\
-&\ \ \  - \bm{A}(\bm{q}_1)\cdot \text{cov}(\bm{C}, g(\bm{q}_2)|\Gamma) -\text{cov}(g(\bm{q}_1) , \bm{C}|\Gamma)\cdot \bm{A}(\bm{q}_2)\\
-&= \text{cov}(g(\bm{q}_1), g(\bm{q}_2)) \\
-&=\text{cov}(f(\bm{q}_1) + \bm{A}(\bm{q}_1)\cdot \bm{C}, f(\bm{q}_2) + \bm{A}(\bm{q}_2)\cdot \bm{C})\\
-&=\text{cov}(f(\bm{q}_1), f(\bm{q}_2)) + \bm{A}(\bm{q}_1) \text{cov}(\bm{C},\bm{C}) \bm{A}^T(\bm{q}_2) \\
-&\ \ \ + \bm{A}(\bm{q}_1) \cdot \text{cov}(\bm{C},f(\bm{q}_2))+ \text{cov}(f(\bm{q}_1), \bm{C}) \cdot \bm{A}(\bm{q}_2) \\
-&=\text{cov}(f(\bm{q}_1), f(\bm{q}_2)) + \xi_i(\bm{q}_1)\xi_{ij}^{-1}\xi_{jk}\xi_{kl}^{-1}\xi_{l}(\bm{q}_2) - 2\xi_i(\bm{q}_1)\xi_{ij}^{-1}\xi_{j}(\bm{q}_2)\\
-&=\xi(\bm{q}_1,\bm{q}_2) - \xi_i(\bm{q}_1) \xi_{ij}^{-1} \xi_j(\bm{q}_2)\,.
-\end{align}
-We conclude that the residue $\delta f$ of $f$ with respect to the mean field $\langle f(\bm{q})|\Gamma\rangle =\bar{f}(\bm{q})+ \xi_i(\bm{q})\xi_{ij}^{-1}(c_j-\bar{C}_j)$ is a Gaussian random field with zero mean and variance $\sigma_0^2 - \xi_i(\bm{q}) \xi_{ij}^{-1} \xi_j(\bm{q})$. Note that the statistical properties of $\delta f$ are indeed independent of $\bm{c}$. 
-%The covariance of $f$ conditioned on $\Gamma$ is
-%\begin{align}
-%\text{cov}(f(\bm{q}_1),f(\bm{q}_2)|\Gamma) = \xi(\bm{q}_1,\bm{q}_2) - \xi_i(\bm{q}_1)\xi_{ij}^{-1}\xi_j(\bm{q}_2)\,.
-%\end{align}
-The probability density takes the form
-\begin{align}
-p(f|\Gamma) \propto  e^{-\frac{1}{2} \iint \delta{f}(\bm{q}_1) \tilde{K}(\bm{q}_1,\bm{q}_2) \delta f(\bm{q}_2)\mathrm{d}\bm{q}_1 \mathrm{d}\bm{q}_2 }\label{eq:constraint2}
-\end{align}
-with the residue $\delta f = f-\bar{f}(\bm{q})+ \xi_i(\bm{q})\xi_{ij}^{-1}(c_j-\bar{C}_j)$ and the kernel $\tilde{K}$ defined as the inverse of the modified two point correlation function, \textit{i.e.},
-\begin{align}
-\int \tilde{K}(\bm{q}_1,\bm{q}) \left[\xi(\bm{q},\bm{q}_2) - \xi_i(\bm{q})\xi_{ij}^{-1}\xi_j(\bm{q}_2)\right]\mathrm{d}\bm{q}= \delta_D^{(2)}(\bm{q}_1-\bm{q}_2)\,.
-\end{align}
-
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
