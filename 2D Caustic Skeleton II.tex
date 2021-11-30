@@ -527,7 +527,8 @@ p(f|\Gamma) \propto  e^{-\frac{1}{2} \left[\iint f(\bm{q}_1) K(\|\bm{q}_1 - \bm{
 \end{align}
 in the space of functions satisfying the constraints $\Gamma$. In appendix \ref{ap:constraintDensity}, we derive the mean field
 \begin{align}
-\langle f(\bm{q})|\Gamma\rangle = \sum_{i,j=1}^M\xi_i (\bm{q})\xi_{ij}^{-1}c_j\,,
+\bar{f}_{\bm{c}}&=\langle f(\bm{q})|\Gamma\rangle \\
+&= \sum_{i,j=1}^M\xi_i (\bm{q})\xi_{ij}^{-1}(c_j-\bar{C}_j)\,,
 \end{align}
 and the covariance
 \begin{align}
@@ -551,7 +552,7 @@ The Hoffman-Ribak method cleverly uses the property that the statistics of the r
 
 To judge the relevance of a particular set of constraints, it is useful to evaluate the $\chi^2$ of the set of values $c_i$,
 \begin{align}
-\chi^2 = \sum_{i,j=1}^M (c_i-\bar{c}_i)\, \xi_{ij}^{-1}(c_j-\bar{c}_j)\,,
+\chi^2 = \sum_{i,j=1}^M (c_i-\bar{C}_i)\, \xi_{ij}^{-1}(c_j-\bar{C}_j)\,,
 \end{align}
 which follows the chi-squared distribution with $M$ degrees of freedom. This is the Mahalanobis distance. The probability that one obtains a $\chi^2$ higher than this value in an unconstrained Gaussian random field, with the same power spectrum, is given by $\Gamma\left(\frac{M}{2}, \frac{\chi^2}{2}\right)/\Gamma\left(\frac{M}{2}\right)$, with the gamma function $\Gamma(x)$ and the upper incomoplete gamma function $\Gamma(s,x)$.
 
@@ -611,8 +612,8 @@ following from the realization
 \bar{f}_{\mathcal{C}}(\bm{q}) 
 &=\left\langle f(\bm{q})|\Gamma\right \rangle \nonumber\\
 &= \int_{\bm{c} \in \mathcal{M}_{\mathcal{C}}} \bar{f}_{\bm{c}}(\bm{q})\, p(\bm{c}|\bm{c}\in \mathcal{M}_{\mathcal{C}}) \mathrm{d}\bm{c}\nonumber\\
-&= \sum_{i,j=1}^n\xi_i(\bm{q}) \xi_{ij}^{-1}\int_{\bm{c} \in \mathcal{M}_{\mathcal{C}}}  c_j\, p(\bm{c}|\bm{c}\in \mathcal{M}_{\mathcal{C}}) \mathrm{d}\bm{c}\nonumber\\
-&= \sum_{i,j=1}^n \xi_i(\bm{q}) \xi_{ij}^{-1} \bar{c}_j\nonumber\\
+&= \sum_{i,j=1}^n\xi_i(\bm{q}) \xi_{ij}^{-1}\int_{\bm{c} \in \mathcal{M}_{\mathcal{C}}}  (c_j-\bar{C}_j)\, p(\bm{c}|\bm{c}\in \mathcal{M}_{\mathcal{C}}) \mathrm{d}\bm{c}\nonumber\\
+&= \sum_{i,j=1}^n \xi_i(\bm{q}) \xi_{ij}^{-1} (\bar{c}_j-\bar{C}_j)\nonumber\\
 &= \bar{f}_{\bar{\bm{c}}}(\bm{q})\,.
 \end{align}
 
@@ -926,6 +927,30 @@ This condition should be contrasted with the condition presented in [REFS] based
 \end{align} 
 In fact, this condition describes the behaviour of the eigenvector field in the vicinity of the umbilic point and does not differentiates between the elliptic and hyperbolic caustics. Note that for the elliptic caustic we always have $\delta <0$.
 
+
+\begin{figure}
+\centering
+\begin{subfigure}[b]{0.32\textwidth}
+\includegraphics[width=\textwidth]{Elliptic_mean_Phi}
+\end{subfigure}~
+\begin{subfigure}[b]{0.32\textwidth}
+\includegraphics[width=\textwidth]{Elliptic_mean_L}
+\end{subfigure}~
+\begin{subfigure}[b]{0.32\textwidth}
+\includegraphics[width=\textwidth]{Elliptic_mean_Z}
+\end{subfigure}\\
+\begin{subfigure}[b]{0.32\textwidth}
+\includegraphics[width=\textwidth]{Hyperbolic_mean_Phi}
+\end{subfigure}~
+\begin{subfigure}[b]{0.32\textwidth}
+\includegraphics[width=\textwidth]{Hyperbolic_mean_L}
+\end{subfigure}~
+\begin{subfigure}[b]{0.32\textwidth}
+\includegraphics[width=\textwidth]{Hyperbolic_mean_Z}
+\end{subfigure}
+\caption{The mean umbilic caustic. \textit{Upper:} the  elliptic caustic. \textit{Lower:} the hyperbolic caustic. \textit{Left:} the gravitational potential. \textit{Centre:} the first eigenvalue and eigenvector fields. \textit{Right:} The Zel'dovich approximation}\label{fig:meanHyperbolic}
+\end{figure}
+
 More generally, expand the displacement field $\bm{s}_t$ to quadratic order in $q_1$ and $q_2$ around a umbilic point at the origin $(q_1,q_2)=(0,0)$. The determinant of the gradient $\nabla \bm{x}_t$ has a critical point at the origin, as it is the product of two eigenvalue fields that vanish at the origin. The determinant takes the general form
 \begin{align}
 \det \nabla \bm{x}_t&=\det(I + \nabla \bm{s}_t)\\
@@ -960,23 +985,7 @@ The orientation and configuration of the hyperbolic umbilic caustic is determine
 
 In figure \ref{fig:meanHyperbolic}, we plot the mean field of the elliptic and the swallowtail caustic. Observe that the umbilic caustics join three cusp curves and are naturally associated to the clusters of the cosmic web.
 
-\begin{framed}
-{\color{red} I need to compute the mean field of the elliptic caustic}
-\end{framed}
 
-\begin{figure}
-\centering
-\begin{subfigure}[b]{0.32\textwidth}
-\includegraphics[width=\textwidth]{Hyperbolic_mean_Phi}
-\end{subfigure}~
-\begin{subfigure}[b]{0.32\textwidth}
-\includegraphics[width=\textwidth]{Hyperbolic_mean_L}
-\end{subfigure}~
-\begin{subfigure}[b]{0.32\textwidth}
-\includegraphics[width=\textwidth]{Hyperbolic_mean_Z}
-\end{subfigure}
-\caption{The mean hyperbolic caustic. \text{Left:} the gravitational potential. \textit{Centre:} the first eigenvalue and eigenvector fields. \textit{Right:} The Zel'dovich approximation}\label{fig:meanHyperbolic}
-\end{figure}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
