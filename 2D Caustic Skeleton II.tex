@@ -78,6 +78,9 @@ In this paper, we extend constrained Gaussian random field theory to non-linear 
 
 
 
+\begin{framed}
+The mathematics of Gaussian random fields is surprisingly close to Euclidean path integrals in statistical field theory. We believe that it will prove useful to apply well-established concepts from statistical field theory to the exploration of the fundaments of the cosmic web.
+\end{framed}
 
 
 
@@ -90,16 +93,16 @@ In this paper, we extend constrained Gaussian random field theory to non-linear 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Caustic skeleton theory}
- 
+While a Lagrangian fluid evolves, it can develops singular features known as caustics. These caustic are fully classified by Lagrangian catastrophe theory and play an important role in the development of the cosmic web. In this section, we give an elementary description of Lagrangian fluid dynamics and summarize the highlights of caustic skeleton theory in two dimensions.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Lagrangian fluid dynamics}
-Lagrangian fluid dynamics is well-known to be an effective tool to model the cosmic web, as exemplified by the famous Zel'dovich approximation, second-order Lagrangian perturbation theory ($2$LPT), and $N$-body simulations. The Lagrangian fluid consists of a collection of mass elements, evolving according to the Lagrangian map $\bm{x}_t:\mathcal{L}\to \mathcal{E}$,
+Lagrangian fluid dynamics is well-known to be an effective tool to model the cosmic web, as demonstrated by the famous Zel'dovich approximation, second-order Lagrangian perturbation theory ($2$LPT), and $N$-body simulations. The Lagrangian fluid consists of a collection of mass elements, evolving according to the Lagrangian map $\bm{x}_t:\mathcal{L}\to \mathcal{E}$,
 \begin{align}
 \bm{x}_t(\bm{q}) \equiv \bm{q} + \bm{s}_t(\bm{q})\,,
 \end{align}
-with the displacement field $\bm{s}_t$, describing the motion of the mass elements from the initial position $\bm{q}$ in Lagrangian space $\mathcal{L}$ to the final position $\bm{x}_t(\bm{q})$ at time $t$ in Eulerian space $\mathcal{E}$. A mass element can flow, stretch, and rotate, while conserving its mass. A two-dimensional fluid forms a two-dimensional sheet $M_t=\{(\bm{q},\bm{x}_t(\bm{q})) | \bm{q}\in \mathcal{L}\}$ in four-dimensional \textit{phase-space} $\mathcal{L}\times \mathcal{E}$, consisting of the inital and the final position of the mass element. Note that there exists a direct relation between this phase-space and the more conventional phase-space consisting of the position and momentum of the particle used in Hamiltonian mechanics. The cosmic web emerges when mapping the dark matter sheet $M_t$ onto the final position $\varphi:\mathcal{L}\times \mathcal{E} \to \mathcal{E}$, defined by $(\bm{q},\bm{x}) \mapsto\bm{x}$ (see figure \ref{fig:Phase-Space} for an illustration).
+with the displacement field $\bm{s}_t$, describing the evolution of the mass elements from the initial position $\bm{q}$ in Lagrangian space $\mathcal{L}$ to the final position $\bm{x}_t(\bm{q})$ at time $t$ in Eulerian space $\mathcal{E}$. A mass element can flow, stretch, and rotate, while conserving its mass. A two-dimensional fluid forms a two-dimensional sheet $M_t=\{(\bm{q},\bm{x}_t(\bm{q})) | \bm{q}\in \mathcal{L}\}$ in four-dimensional \textit{phase-space} $\mathcal{L}\times \mathcal{E}$, consisting of the inital and the final position of the mass element. Note that there exists a direct correspondence between this definition of phase-space and the more conventional phase-space consisting of the position and momentum of a particle in Hamiltonian mechanics. The cosmic web emerges when projecting the dark matter sheet $M_t$ onto the final position $\varphi:\mathcal{L}\times \mathcal{E} \to \mathcal{E}$, defined by $(\bm{q},\bm{x}) \mapsto\bm{x}$ (see figure \ref{fig:Phase-Space} for an illustration).
 
 \begin{figure}
 \centering
@@ -136,7 +139,7 @@ with the displacement field $\bm{s}_t$, describing the motion of the mass elemen
 \caption{Projection of phase-space to Eulerian space. The left panel illustrates the initial dark matter sheet in phase space. The arrow represents the projection to Eulerian space $\varphi$. The mapping is one-to-one. The right panel illustrates the dark matter sheet after it has evolved and formed a triple-stream region (in blue). Each point in the triple-stream region corresponds to three points on the dark matter sheet. The triple-stream region is bounded by a fold caustic at which matter shell crosses.}\label{fig:Phase-Space}
 \end{figure}
 
-Initially, the displacement field vanishes, $\bm{s}_0(\bm{q})=\bm{0}$, and the phase-space manifold is diagonal $M_0=\{(\bm{q},\bm{q})|\bm{q} \in \mathcal{L}\}$. The mapping $\varphi$ is one-to-one, corresponding to a single-stream region (see the left panel of figure\ \ref{fig:Phase-Space}). When the fluid evolves, the phase-space manifold can develop complex configurations at which the mapping $\varphi$ becomes many-to-one, \textit{i.e.}, a final position can be reached from multiple initial positions (see the right panel of figure \ref{fig:Phase-Space}). The connected region in Eulerian space with $n$ possible initial positions is known as a $n$-stream region. In these multi-stream regions, gravitational collapse becomes mildly non-linear and viralized structures form. Note that the multi-stream regions uniquely partition the universe based on the dynamics of gravitational collapse. As we will show in the next section, different multi-stream regions can be associated to the membranes, filaments, and clusters of the cosmic web. The single-stream regions correspond to the voids, where the evolution of the cosmic web remains largely linear.
+Initially, the displacement field vanishes, $\bm{s}_0(\bm{q})=\bm{0}$, and the phase-space manifold is diagonal $M_0=\{(\bm{q},\bm{q})\,|\,\bm{q} \in \mathcal{L}\}$. The mapping $\varphi$ is one-to-one, corresponding to a single-stream region (see the left panel of figure\ \ref{fig:Phase-Space}). When the fluid evolves, the phase-space manifold can develop complex configurations at which the mapping $\varphi$ becomes many-to-one, \textit{i.e.}, a final position can be reached from multiple initial positions (see the right panel of figure \ref{fig:Phase-Space}). A connected region, in Eulerian space, with $n$ possible initial positions is known as an $n$-stream region. In these multi-stream regions, gravitational collapse becomes non-linear and viralized structures form. The multi-stream regions partition the universe into regions with distinct formation histories, based on the dynamics of gravitational collapse. As we will show in the next section, different multi-stream regions can be associated to the membranes, filaments, and clusters of the cosmic web. The single-stream regions correspond to the voids, where the evolution of the cosmic web remains largely linear.
 
 The density of a Lagrangian fluid evolves while the mass elements are squeezed and stretched, \textit{i.e.},
 \begin{align}
@@ -154,11 +157,16 @@ Each stream contributes to the density, as the sum runs over the points that rea
 \begin{align}
 A_t(\bm{x}') = \{\bm{q}|\bm{x}_t(\bm{q})=\bm{x}'\}\,.
 \end{align}
-The boundaries of the multi-stream regions mark discontinuous of the density field \eqref{eq:density}. In fact, in these regions the mass elements flip orientation in a process known as \textit{shell-crossing}, for which the determinant $\det \nabla \bm{x}_t$ vanishes and the density spikes to infinity. This phenomenon is an example of a \textit{fold caustic}, bounding the regions where virialized structures emerge. We always order the eigenvalue fields such that $\mu_{t,1}$ corresponds to the first shell-crossing. In the next section we show that the -- often ignored -- corresponding eigenvector fields $\bm{v}_{t,i}$ play an important role in the higher order caustics structure formation. 
+The boundaries of the multi-stream regions mark discontinuous of the density field \eqref{eq:density}. In fact, at the boundary, the orientation of the mass elements flip in a process known as \textit{shell-crossing}. The determinant $\det \nabla \bm{x}_t$ vanishes and the density spikes to infinity. This phenomenon is an example of a \textit{fold caustic}, bounding the regions where virialized structures emerge. In this paper, we always order the eigenvalue fields such that $\mu_{t,1}$ is the field which causes the first shell-crossing event. As we shall see in the next section, the -- often ignored -- eigenvector fields plays an important role in the higher order caustics.
 
-In the current theory of late time cosmology, the cosmic web formed due to the gravitational collapse of tiny Gaussian fluctuations $\delta_0$ (see section \ref{sec:GRF} for a detailed discussion on Gaussian random field theory). At early times, the dynamics of the mass elements was governed by the corresponding initial gravitational potential $\phi_0$ through the displacement field $\bm{s}_t$ which turns out to be propertional to the gradient of the initial gravitational potential (see section \ref{sec:Zeldovich} for a detailed discussion). See the upper panels of figure \ref{fig:Initial_Conditions} for an illustration of a reasonable initial density and the corresponding gravitational potential field. 
+In late time cosmology, the cosmic web forms due to the gravitational collapse of tiny Gaussian fluctuations $\delta_0$. At early times, the corresponding Gaussian gravitational potential $\phi_0$ governs the dynamics of the mass elements, $\bm{s}_t \propto \nabla \phi_0$. See the upper panels of figure \ref{fig:Initial_Conditions} for an illustration of the initial density and the corresponding gravitational potential fields. Eulerian fluid dynamics describes the early evolution of the density field in terms of these Gaussian fields. In contrast, Lagrangian fluid dynamics emphasises the role of the deformation tensor $\nabla \bm{s}_t$ and the corresponding non-Gaussian eigenvalue and eigenvector fields (see the density formula \eqref{eq:density}). It follows from the eigenequation \eqref{eq:EigenvalueAndEigenvector} that the eigenvalue fields are the quadratic (or cubic) roots of a polynomial whose coefficients depend on the first order derivatives of the displacement field in 2D (or 3D). The non-linearity of the eigenvalue fields captures part of the non-linear dynamics of gravitational collapse. At early times the deformation tensor $\nabla \bm{s}_t$ is proportional to the Hessian of the gravitational potential, $\nabla \bm{s}_t \propto \mathcal{H}\phi_0$. The eigenvalue and eigenvector fields are nonlinear functions of the second order derivatives of the initial gravitational potential. See the lower panels of figure \ref{fig:Initial_Conditions} for an illustration of the non-Gaussian nature of the eigenvalue fields corresponding to the gravitational potential in the upper left panel. 
 
-Eulerian fluid dynamics describes the evolution of the large scale structure in terms of these Gaussian density and gravitational potential fields. In contract, Lagrangian fluid dynamics emphasises the role of the deformation tensor $\nabla \bm{s}_t$ and the corresponding eigenvalue and eigenvector fields (which is apparent from the density formula \eqref{eq:density}). The defining equation \eqref{eq:EigenvalueAndEigenvector} implies a non-linear relation between the partial derivatives of the displacement field and eigenvalue and eigenvector fields (quadratic in 2D and cubic in 3D). At early times the deformation tensor $\nabla \bm{s}_t$ is proportional to the Hessian of the gravitational potential, $\nabla \bm{s}_t \propto \mathcal{H}\phi_0$, and the eigenvalue and eigenvector fields are expressed as nonlinear functions of the second order derivatives of the initial gravitational potential. It follows that early time Lagrangian fluid dynamics is governed by a non-Gaussian random field, capturing part of the non-linearity of gravitational collapse. See the lower panels of figure \ref{fig:Initial_Conditions} for an illustration of the non-Gaussian eigenvalue  fields, where the red regions experience the strongest gravitational collapse and blue regions represent an outflow of matter. Observe that the eigenvalue fields, roughly speaking, peak in the regions of high initial density. In particular, compare the peaks of the initial density field $\delta_0$ and the second eigenvalue field $\mu_{t,2}$. However, the density perturbation and the eigenvalue fields differ away from the high density regions. The eigenvalue fields emphasise line like features connecting the high density regions. As described below, these line-like features of the first eigenvalue field are progenitors of the filaments of the cosmic web.
+The red regions experience an inflow of matter, leading to the first caustics. The blue regions represent an initial outflow of matter. Roughly speaking, the eigenvalue fields peak in the regions of high initial density. In particular, compare the peaks of the initial density field $\delta_0$ and the second eigenvalue field $\mu_{t,2}$. However, the density perturbation and the eigenvalue fields differ away from these high density regions. The eigenvalue fields emphasise line like features connecting the high density regions. As described below, these line-like features of the first eigenvalue field are the progenitors of the filaments of the cosmic web. It follows from the Poisson equation (see section \ref{sec:Zeldovich}), that the sum of the initial eigenvalue fields is proportional to the initial density perturbation, 
+\begin{align}
+\delta_0 \propto \nabla^2 \phi_0 = \text{Tr}[\mathcal{H}\phi_0] \propto \mu_{t,1} + \mu_{t,2}\,,
+\end{align}
+with the Hessian $\mathcal{H}$, demonstrating a non-trivial correlation between the initial eigenvalue fields. The eigenvalue fields splits the Gaussian initial density perturbations into parts which influence the linear regime of gravitational collapse in distinct ways. As we will show, the orientation and geometry of the shell-crossing regions is further described by the eigenvector fields (see the lines in the lower panels of figure \ref{fig:Initial_Conditions}). At initial times, the eigenvector fields are normal, $\bm{v}_{t,1}\cdot \bm{v}_{t,2}=0$, since the deformation tensor is symmetric. Observe that the eigenvector fields exhibit an interesting correlation with the eigenvalue fields. Roughly speaking, the eigenvector fields are normal to the ridges of the corresponding eigenvalue fields. This observation will play an important role in the discussion of the caustic skeleton below. 
+
 
 
 \begin{figure}
@@ -179,14 +187,9 @@ Eulerian fluid dynamics describes the evolution of the large scale structure in 
 \end{figure}
 
 
-It follows from the Poisson equation (see section \ref{sec:Zeldovich}), that the sum of the initial eigenvalue fields is proportional to the initial density perturbation, 
-\begin{align}
-\delta_0 \propto \nabla^2 \phi_0 = \text{Tr}[\mathcal{H}\phi_0] \propto \mu_{t,1} + \mu_{t,2}\,,
-\end{align}
-with the Hessian $\mathcal{H}$, demonstrating a non-trivial correlation between the initial eigenvalue fields. The eigenvalue fields splits the Gaussian initial density perturbations into parts which influence the linear regime of gravitational collapse in distinct ways. As we will show below, the orientation and geometry of the shell-crossing regions is further described by the eigenvector fields (see the lines in the lower panels of figure \ref{fig:Initial_Conditions}). At initial times, the eigenvector fields are normal, $\bm{v}_{t,1}\cdot \bm{v}_{t,2}=0$, as the deformation tensor $\nabla \bm{s}_t \propto \mathcal{H} \phi_0$ is symmetric. We observe that the eigenvector fields show an interesting correlation with the eigenvalue fields. Roughly speaking, the eigenvector fields are normal to the ridges of the corresponding eigenvalue fields. This observation will play an important role in the discussion of the caustic skeleton below. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Caustics Lagrangian fluids}
+\subsection{Caustics in Lagrangian fluids}
 The study of the cosmic web in terms of multi-stream regions and Lagrangian catastrophe theory has a rich history, predating the developments of $N$-body simulations (REFS). Amazingly, by analysing the geometry of the caustics emerging in Lagrangian fluid dynamics, Y.\ Zel'dovich, V.\ Arnol'd and collaborators successfully predicted the qualitative features of the cosmic web. However, these studies where mainly restricted to two-dimensional models, as several technical problems inhibited the full treatment of three-dimensional cosmic web. In a recent publication (REF), we solved these problems by formulating the \textit{shell-crossing condition} describing how a submanifold in $\mathcal{L}$ can develop a non-differentiable feature under the mapping $\bm{x}_t$. Given a submanifold $L \subset \mathcal{L}$, the mapping $\bm{x}_t(L)$ develops a non-differentiable point at time $t$ in $\bm{q}_c$ when there exists a non-zero vector tangent vector $\bm{T}$ in the tangent space of $L$ at $\bm{q}_c$ for which 
 \begin{align}
 (1+\mu_{t,i}(\bm{q}_c))\bm{v}_{t,i}^*(\bm{q}_c) \cdot \bm{T}=0
@@ -194,13 +197,13 @@ The study of the cosmic web in terms of multi-stream regions and Lagrangian cata
 \end{align}
 for all $i$, with $\bm{v}_{i,t}^*$ the dual eigenvector field defined by the relation $\bm{v}_{t,i}\cdot \bm{v}_{t,j}^* = \delta_{ij}$.
 
-The shell-crossing condition leads to a set of \textit{caustic conditions} describing the properties of the displacement field in the vicinity of a caustic. Remarkably, the caustic conditions demonstrate the key role of the eigenvalue $\mu_{t,i}$ and eigenvector fields $\bm{v}_{t,i}$ of the deformation tensor $\nabla \bm{s}_t$ over the density field in the development of viralized structures. The eigenvalue and eigenvector fields are non-linearly related to the gravitational potential and density perturbation and demonstrate how Gaussian initial conditions give rise to a web-like structure (see figure \ref{fig:Initial_Conditions}). As we show below, the geometry of the often ignored eigenvector fields is crucial to the development of the higher-order caustics tracing the filaments and clusters of the cosmic web.
+The shell-crossing condition leads to a set of \textit{caustic conditions} describing the properties of the displacement field in the vicinity of a caustic. Remarkably, the caustic conditions demonstrate the key role of the eigenvalue $\mu_{t,i}$ and eigenvector fields $\bm{v}_{t,i}$ of the deformation tensor $\nabla \bm{s}_t$ over the density field in the development of viralized structures. The eigenvalue and eigenvector fields are non-linearly related to the gravitational potential and demonstrate how Gaussian initial conditions give rise to a web-like structure (see figure \ref{fig:Initial_Conditions}). As we show below, the geometry of the often ignored eigenvector fields is crucial to the development of the higher-order caustics, tracing the filaments and clusters of the cosmic web.
 
 Lagrangian catastrophe theory classifies the shell-crossing regions into a finite set of caustics that stably occur in nature. These caustics have a direct connection to the walls, filaments and clusters of the cosmic web. The region for which the density spikes, \textit{i.e.}, 
 \begin{align}
 1+\mu_{t,i}(\bm{q}_c)=0
 \end{align}
-for $i=1$ or $2$, forms the fold curve $A_2$ consisting of the points that shell-cross at time $t$. Note that the fold curve is independent of the eigenvector fields and trivially satisfies the shell-crossing condition \eqref{eq:shellCrossingCondition}. The fold curve bounds the different multi-stream regions (see the red curves in figure \ref{fig:caustics_Examples_Big}). In figure \ref{fig:caustics_Examples_Big} we illustrate the caustic skeleton for the Zel'dovich approximation (see section \ref{sec:Zeldovich}). However, the discussion applies to Lagrangian fluids in general.
+for $i=1$ or $2$, forms the fold curve $A_2$ consisting of the points that shell-cross at time $t$. Note that the fold curve is independent of the eigenvector fields and trivially satisfies the shell-crossing condition \eqref{eq:shellCrossingCondition}. The fold curve bounds the different multi-stream regions (see the red curves in figure \ref{fig:caustics_Examples_Big}). The analysis presented in figure \ref{fig:caustics_Examples_Big} is based on the caustic skeleton of the Zel'dovich approximation described below. However, caustic conditions apply to general Lagrangian fluids.
 
 The fold curve can develop a non-differentiable point in the cusp caustic $A_3$, when the fold curve in Lagrangian space is parallel to the corresponding eigenvector field, \textit{i.e.}, 
 \begin{align}
@@ -228,7 +231,7 @@ Finally, caustic skeleton theory includes a set of Morse points, at which the mu
 \begin{align}
 \nabla \mu_{t,i}(\bm{q}_c)=\bm{0}\,.
 \end{align}
-The maxima and minima of the eigenvalue field $\mu_i$ mark the locations and times at which a multi-stream region emerges or disappears. A critical point that undergoes shell-crossing always lies on a cusp curves, as a point for which $\nabla \mu_{t,i}=\bm{0}$ automatically satisfies equation \eqref{eq:cuspCondition}. The maxima and minima are kown as a  $A_3^+$ point. The saddle points of the eigenvalue field $\mu_{t,i}$ mark the location and time at which two multi-stream regions merge to form a larger structure. At these $A_3^-$ points, two cusp curves corresponding to two filaments join. The Morse points determining the connectivity of the cosmic web. 
+The maxima and minima of the eigenvalue field $\mu_i$ mark the locations and times at which a multi-stream region emerges or disappears. A critical point that undergoes shell-crossing always lies on a cusp curves, as a critical point, automatically satisfies equation \eqref{eq:cuspCondition}. The maxima and minima are kown as $A_3^+$ points. The saddle point of the eigenvalue field $\mu_{t,i}$ mark the location and time at which two multi-stream regions merge to form a larger structure. At the $A_3^-$ point, two cusp curves corresponding to two filaments join. The Morse points determine the connectivity of the cosmic web. 
 
 In tabel \ref{table:caustics}, we summarize the different elements of the caustic skeleton. For a complete description of caustic skeleton theory, we refer to the paper (REFS).\\
 
@@ -395,15 +398,12 @@ The role of the different elements of the caustic skeleton can be clearly observ
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Constrained random field theory}\label{sec:GRF}
-One of the most startling realizations in modern cosmology is that the intricate cosmic web, observed in several cosmological redshift surveys, originated from extremely simple initial conditions. At the moment of recombination, when the baryons and electrons form neutral elements and decouple from the photons, the energy density in our universe $\rho(\bm{q})$, was extremely homogeneous. These fluctuations -- commonly expressed in terms of the perturbations
+One of the most startling realizations in modern cosmology is that the intricate cosmic web, observed in several cosmological redshift surveys, originated from extremely simple initial conditions. At the moment of recombination, when the baryons and electrons form neutral elements and decouple from the photons, the energy density in our universe $\rho(\bm{q})$, was extremely homogeneous. These fluctuations
 \begin{align}
 \delta(\bm{q}) = \frac{\rho(\bm{q})}{\bar{\rho}} -1\,,
 \end{align}
-with the mean density $\bar{\rho} = \langle \rho \rangle$ -- left an imprint as temperature fluctuations in the Cosmic Microwave Background field (CMB) which, over the last decades, have been measured with increasing accuracy. After recombination, the pressure dropped and these small density fluctuations started to collapse under the force of gravity. This led to the rich geometric patterns in the cosmic web and virialized objects we observe today. The statistical properties of these initial perturbations $\delta$, is very close to Gaussian. We here define Gaussian random fields and discuss the implementation of both linear and non-linear constraints.
+with the mean density $\bar{\rho} = \langle \rho \rangle$ left an imprint as temperature fluctuations in the Cosmic Microwave Background field (CMB) which, over the last decades, have been measured with increasing accuracy. After recombination, the pressure dropped and these density fluctuations started to collapse under the force of gravity. This led to the rich geometric patterns in the cosmic web and virialized objects we observe today. The statistical properties of these initial perturbations $\delta$, is very close to Gaussian. We here define Gaussian random fields and discuss the implementation of both linear and non-linear constraints.
 
-\begin{framed}
-The mathematics of Gaussian random fields is surprisingly close to Euclidean path integrals in statistical field theory. We believe that it will prove useful to apply well-established concepts from statistical field theory to the exploration of the fundaments of the cosmic web.
-\end{framed}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Gaussian random fields}
@@ -423,7 +423,7 @@ with $\bm{1}_\mathcal{S}$ the identity function\footnote{Defined by $\bm{1}_\mat
 \begin{align}
 \left\langle Q[f] \right\rangle = \mathcal{N}\int Q[f]\, e^{-S[f]}\,\mathcal{D}f\,,
 \end{align}
-analogous to Euclidean path integrals in statistical field theory. It can be shown that the expectation value of the random field is given by the mean field
+analogous to the Euclidean path integrals in statistical field theory. It can be shown that the expectation value of the random field is given by the mean field
 \begin{align}
 \langle f(\bm{q})\rangle &= \bar{f}(\bm{q})\,.
 \end{align}
@@ -473,7 +473,6 @@ with the deviation from the mean $\Delta \bm{Y} = \bm{Y} - \langle \bm{Y}\rangle
 \begin{align}
 M = \text{cov}(\bm{Y},\bm{Y}) = \langle \Delta \bm{Y}^T \Delta \bm{Y}\rangle\,.
 \end{align}
-
 The distribution of the discrete Fourier modes $\bm{Y}(\hat{f}(\bm{k}_1),\hat{f}(\bm{k}_1),\dots)$ takes the form 
 \begin{align}
 p(\hat{f}(\bm{k}_1), \hat{f}(\bm{k}_2), \dots) = \prod_{i} \frac{1}{\sqrt{2\pi P(\| \bm{k}_i\|)}} e^{-\frac{|\hat{f}(\bm{k}_i)|^2}{2P(\|\bm{k}_i\|)}},
@@ -526,9 +525,7 @@ with the vector $\bm{C}=(C_1[f;\bm{q}_1], \dots, C_M[f;\bm{q}_M])$ and the covar
 \begin{align}
 p(f|\Gamma) \propto  e^{-\frac{1}{2} \left[\iint f(\bm{q}_1) K(\|\bm{q}_1 - \bm{q}_2\|) f(\bm{q}_2)\mathrm{d}\bm{q}_1 \mathrm{d}\bm{q}_2 -\Delta \bm{C}^TQ^{-1}\Delta \bm{C}\right]},\label{eq:constraint1}
 \end{align}
-in the space of functions satisfying the constraints $\Gamma$.
-
-In appendix \ref{ap:constraintDensity}, we derive the mean field
+in the space of functions satisfying the constraints $\Gamma$. In appendix \ref{ap:constraintDensity}, we derive the mean field
 \begin{align}
 \langle f(\bm{q})|\Gamma\rangle = \sum_{i,j=1}^M\xi_i (\bm{q})\xi_{ij}^{-1}c_j\,,
 \end{align}
@@ -536,7 +533,7 @@ and the covariance
 \begin{align}
 \text{cov}(f(\bm{q}_1),f(\bm{q}_2)|\Gamma)  = \xi(\bm{q}_1,\bm{q}_2) - \sum_{i,j=1}^M\xi_i(\bm{q}_1)\xi_{ij}^{-1}\xi_j(\bm{q}_2)\,,
 \end{align}
-with the covariance of the random field and the constraints $\xi_{i}(\bm{q}) = \text{cov}( f(\bm{q}), C_i)$ and the constraints $\xi_{ij} = \text{cov}( C_i ,C_j)$. Note that the covariance is independent of the values $\bm{c}$ the constraints $\bm{C}$ assume. This is a special property of Gaussian distributions. Consequently, the probability density takes the form
+with the covariance of the random field and the constraints $\xi_{i}(\bm{q}) = \text{cov}( f(\bm{q}), C_i)$ and the constraints $\xi_{ij} = \text{cov}( C_i ,C_j)$. Note that the covariance is independent of the values $\bm{c}$ the constraints $\bm{C}$ assume. This is a special property of Gaussian distributions and the linearity of the constraint. Consequently, the probability density takes the form
 \begin{align}
 p( f|\Gamma) \propto  e^{-\frac{1}{2} \iint \delta{f}(\bm{q}_1) \tilde{K}(\bm{q}_1,\bm{q}_2) \delta f(\bm{q}_2)\mathrm{d}\bm{q}_1 \mathrm{d}\bm{q}_2 }\,,\label{eq:constraint2}
 \end{align}
@@ -552,12 +549,11 @@ which vanishes on the constraints. Away from the constraints, the variance of th
 
 The Hoffman-Ribak method cleverly uses the property that the statistics of the residue $\delta f$ are independent of $c_i$, to generate realizations of the constraint Gaussian random field. Firstly, generate a realization $g$ of the unconstraint Gaussian random field with the required power spectrum. Secondly, evaluate the constraints for this realization $C_i[g;\bm{q}'_i]=d_i$ and the corresponding mean field $\bar{g}$. The statistical properties of the residue with respect to this mean field $\delta g = g-\bar{g}$ are independent of the value the constraints assume and thus identical to the properties of the residue $\delta f$. We can thus identify the residue of the field $g$ with the residue of the constrained field $f$. By adding the residue of the unconstraint field to the mean field with the required constraints, we obtain the realization of the constrained Gaussian random field. For more details see appendix \ref{ap:GRF}.
 
-
 To judge the relevance of a particular set of constraints, it is useful to evaluate the $\chi^2$ of the set of values $c_i$,
 \begin{align}
-\chi^2 = \sum_{i,j=1}^M c_i\, \xi_{ij}^{-1}c_j.
+\chi^2 = \sum_{i,j=1}^M (c_i-\bar{c}_i)\, \xi_{ij}^{-1}(c_j-\bar{c}_j)\,,
 \end{align}
-The probability that this constraint yields a $\chi^2$ higher than the this number is given by $\Gamma_Q(M/2, \chi^2/2)$ with the incomoplete gamma function $\Gamma_Q$.
+which follows the chi-squared distribution with $M$ degrees of freedom. This is the Mahalanobis distance. The probability that one obtains a $\chi^2$ higher than this value in an unconstrained Gaussian random field, with the same power spectrum, is given by $\Gamma\left(\frac{M}{2}, \frac{\chi^2}{2}\right)/\Gamma\left(\frac{M}{2}\right)$, with the gamma function $\Gamma(x)$ and the upper incomoplete gamma function $\Gamma(s,x)$.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Non-linear constraints: formalism}
@@ -568,13 +564,13 @@ Consider the set of linear functionals $C_i[f,\bm{q}_i]$ with $i=1,\dots,M$ and 
 \mathcal{M}_{\mathcal{C}} = 
 \{\bm{c}\, |\, \mathcal{C}_i(\bm{c}) = 0 \text{ for all } i=1,\dots,N\}.
 \end{align}
-See figure \ref{fig:constraintManifold} for a sketch of this constraint manifold. On this manifold $\mathcal{M}_\mathcal{C}$, the constraint probability density is proportional to the original Gaussian distribution
+See figure \ref{fig:constraintManifold} for a sketch of this constraint manifold. On the manifold $\mathcal{M}_\mathcal{C}$, the constraint probability density is proportional to the original Gaussian distribution
 \begin{framed}
 \begin{align}
 p(\bm{c}\,|\,\bm{c}\in \mathcal{M}_{\mathcal{C}})  = \frac{p(\bm{c})}{\int_{\mathcal{M}_\mathcal{C}} p(\bm{c})\, \mathrm{d}\bm{c}}\,.
 \end{align}
 \end{framed}
-Note that the curvature of $\mathcal{M}_\mathcal{C}$ generally makes the induced density $p(\bm{c}\,|\,\bm{c}\in \mathcal{M}_{\mathcal{C}})$ non-Gaussian. We extend constraint Gaussian random field theory to include non-linear constraints by studying the finite dimensional probability density $p(\bm{c}\,|\,\bm{c}\in \mathcal{M}_{\mathcal{C}})$.
+Note that the curvature of $\mathcal{M}_\mathcal{C}$ generally makes the induced density $p(\bm{c}\,|\,\bm{c}\in \mathcal{M}_{\mathcal{C}})$ non-Gaussian. We extend constraint Gaussian random field theory to include non-linear constraints by studying the finite dimensional probability density $p(\bm{c}\,|\,\bm{c}\in \mathcal{M}_{\mathcal{C}})$:
 
 
 
@@ -597,13 +593,13 @@ Note that the curvature of $\mathcal{M}_\mathcal{C}$ generally makes the induced
 
 \begin{itemize}
 \item
-The problem of generating realizations of the more general constraints fields is reduced to sampling realizations of the distribution $p(\bm{c}|\bm{c}\in \mathcal{M}_\mathcal{C})$, using the Hoffman-Ribak method.
+The problem of generating realizations of the more general constraints fields is reduced to sampling realizations of the distribution $p(\bm{c}|\bm{c}\in \mathcal{M}_\mathcal{C})$. Given a sample $\bm{c}$, we use the Hoffman-Ribak method to generate the realization.
 
 \item
-The mean field of takes the surprisingly beautiful form 
+The mean field of the constrained field assumes the surprisingly suggestive form 
 \begin{framed}
 \begin{align}
-\bar{f}_{\mathcal{C}}(\bm{q}) =\bar{f}_{\bar{\bm{c}}}(\bm{q})\,
+\bar{f}_{\mathcal{C}}(\bm{q}) =\bar{f}_{\bar{\bm{c}}}(\bm{q})\,,
 \end{align}
 \end{framed}
 with the mean constraint
@@ -621,7 +617,7 @@ following from the realization
 \end{align}
 
 \item
-The variance of the corresponding residue, $\delta f = f - \bar{f}_{\mathcal{C}}$, coincides with the variance of residue of the corresponding constraint problem with linear constraints
+The residue $\delta f = f - \bar{f}_{\mathcal{C}}$ is generically no longer a Gaussian random field. The variance of the residue yields
 \begin{framed}
 \begin{align}
 \left \langle \delta f (\bm{q})^2\,|\,\Gamma\right\rangle =
@@ -653,7 +649,7 @@ and the non-linear constraint
 \begin{align}
 \mathcal{C}(\bm{C})=\partial_x f^2 +  \partial_y f^2 - 1=0\,.
 \end{align}
-The constraint manifold $\mathcal{M}_\mathcal{C}=\{(\partial_xf,\partial_yf)\, |\, \partial_xf^2+\partial_yf^2=1\}$ is the unit circle in the space of first order derivatives.
+The constraint manifold $\mathcal{M}_\mathcal{C}=\{(\partial_xf,\partial_yf)\, |\, \partial_xf^2+\partial_yf^2=1\}$ is the unit circle in the space of first order derivatives (see figure \ref{fig:constraintManifold}).
 
 For a statistically isotropic Gaussian random field, the constrained probability density is uniform $p(\bm{c}\, |\, \bm{c}\in\mathcal{M}_\mathcal{C}) = 1/(2\pi)$. After sampling from the constraint manifold, we construct a corresponding realization using linear constrained Gaussian random field theory. Both the mean and the covariance of the constraint value with respect to the constraint manifold vanish.
 
@@ -669,10 +665,10 @@ When the Gaussian random field is not statistically isotropic, the constraint de
 \draw[->, thick] (-4,0)--(4,0) node[right]{$\partial_x f$};
 \draw[->, thick] (0,-4)--(0,4) node[above]{$\partial_y f$};
 \draw[color=red, very thick](0,0) circle (3);
-\node[above] at (2,3) {$\partial_xf^2+\partial_yf^2=1$};
+\node[above] at (2.75,3) {$\mathcal{M}_\mathcal{C}=\{\partial_xf^2+\partial_yf^2=1\}$};
 \end{tikzpicture}
 \end{subfigure}
-\caption{The constraint manifold $\mathcal{M}_\mathcal{C}=\{\partial_xf^2+\partial_yf^2=1\}$ in the space of first order derivatives $(\partial_x f,\partial_yf)$.}
+\caption{The constraint manifold $\mathcal{M}_\mathcal{C}=\{\partial_xf^2+\partial_yf^2=1\}$ in the space of first order derivatives $(\partial_x f,\partial_yf)$.}\label{fig:constraintManifold}
 \end{figure}
 
 
@@ -698,9 +694,9 @@ with the ordering $\lambda_1\geq \lambda_2$. We normalize the eigenvector field 
 \end{align}
 showing their non-linear dependence on the deformation potential. In the study below, we assume a power-law power spectrum for the gravitational potential
 \begin{align}
-P(k)=k^{-1}
+P(k)=k^{n_s} e^{-\sigma^2 \|\bm{k}\|^2}
 \end{align}
-with a Gaussian smoothing $W(\bm{k})=e^{-\sigma^2 \|\bm{k}\|^2}$ at a scale $\sigma = 5 \text{ Mpc}$.
+with the spectral index $n_s=-1$ and the Gaussian smoothing at the length scale $\sigma = 5 \text{ Mpc}$.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Cusp filament}
@@ -717,7 +713,7 @@ which makes an angle
 \begin{align}
 \alpha = \text{sign}(\bm{v}_2\cdot \bm{n}) \arccos\left(\frac{|\bm{v}_1\cdot \bm{n}|}{\|\bm{n}\|}\right)
 \end{align}
-with respect the corresponding eigenvector $\bm{v}_1$. As both the cusp curve and the eigenvector field consist of lines, the angle $\alpha$ assumes a value between $-\pi/2$ and $\pi/2$. 
+with respect the corresponding eigenvector $\bm{v}_1$. As both the cusp curve and the eigenvector field consist of lines, the angle $\alpha$ assumes a value in the interval $[-\pi/2,\pi/2]$. 
 
 In figure \ref{fig:meanCusp}, we plot the mean field of the cusp filament with the condition that centre of the box has a cusp caustic oriented along the vertical direction. The gravitational potential is close to a dipole. The blue central structure yields an inflow of matter, whereas two red structures around the blue structure yield two outflow regions. The critical curve in the eigenvalue field consists of an elongated oval which forms the traditional Zel'dovich pancake in the Zel'dovich approximation. The cusp curve bisects the oval in Lagranian space and the pancake Eulerian space. In the $N$-body simulation, the mass elements virialize around the cups curve.
 
@@ -995,7 +991,12 @@ We subsequently determine the sign of the determinant $\det\left( \mathcal{H}\le
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Composite constraint realizations}
-In practice, we wish to constrained realizations with several constraints corresponding to caustics with specific orientations. First let's consider the ways in which we can vary the orientation of a caustic. In the previous section, we studied how we can construct a realization with a cusp filament running vertically through the origin of the simulation. Note that the cusp curve and its orientation is fully determined by the seccond, third, and fourth order derivatives of the gravitational potential in the caustic. Now, given a realiation of a unconstrained Gaussian random field, we generate a constrained realization with a vertically oriented cusp curve. For this realization, we evaluate the second, third, and fourth order derivatives in the caustic. Using appendix \ref{ap:rotations}, we can obtain a rotated set of constrained conditions corresponding to a cusp curve whose tangent vector makes an angle $\theta$ with the vertical axis in the origin. By generating a corresponding constrained realization, we can rotate the cusp curve to any orientation. In figure \ref{fig:rotation}, we rotate the cusp filament while reusing the unconstraint Gaussian random field.
+In practice, we wish to constrained realizations with several constraints corresponding to caustics with specific orientations. 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Orienting constraint conditions}
+First let's consider the ways in which we can vary the orientation of a caustic. In the previous section, we studied how we can construct a realization with a cusp filament running vertically through the origin of the simulation. Note that the cusp curve and its orientation is fully determined by the seccond, third, and fourth order derivatives of the gravitational potential in the caustic. Now, given a realiation of a unconstrained Gaussian random field, we generate a constrained realization with a vertically oriented cusp curve. For this realization, we evaluate the second, third, and fourth order derivatives in the caustic. Using appendix \ref{ap:rotations}, we can obtain a rotated set of constrained conditions corresponding to a cusp curve whose tangent vector makes an angle $\theta$ with the vertical axis in the origin. By generating a corresponding constrained realization, we can rotate the cusp curve to any orientation. In figure \ref{fig:rotation}, we rotate the cusp filament while reusing the unconstraint Gaussian random field.
 
 \begin{figure}
 \centering
@@ -1029,6 +1030,9 @@ In practice, we wish to constrained realizations with several constraints corres
 \caption{Four critical point constraints on the first eigenvalue field. \textit{Left:} the first eigenvalue and eigenvector fields in Lagrangian space. \textit{Right:} the Zel'dovich approximation in Eulerian space.}\label{fig:composite}
 \end{figure}
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Multiple constraints}
 Non-linear constrained theory also extends to a set of non-linear constraints. For example, consider a set of critical points of the first eigenvalue field. At such a critical point, 
 \begin{align}
 \nabla \lambda_1(\bm{q}_c) = 0\,,
