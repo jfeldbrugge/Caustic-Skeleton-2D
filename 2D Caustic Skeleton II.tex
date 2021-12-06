@@ -31,7 +31,7 @@
 \affiliation[b]{Physics department, Carnegie Mellon University, Pittsburgh, United States}
 \affiliation[c]{Kapteyn Astronomical Institute, University of Groningen, Groningen, The Netherlands}
 
-\emailAdd{jfeldbrugge@perimeterinstitute.ca}
+\emailAdd{Job.Feldbrugge@ed.ac.uk}
 
 \newcommand{\aap}{Astron. Astrophys.}
 \newcommand{\mnras}{Mon. Not. R. Astron. Soc.}
@@ -159,20 +159,6 @@ A_t(\bm{x}') = \{\bm{q}|\bm{x}_t(\bm{q})=\bm{x}'\}\,.
 \end{align}
 The boundaries of the multi-stream regions mark discontinuous of the density field \eqref{eq:density}. In fact, at the boundary, the orientation of the mass elements flip in a process known as \textit{shell-crossing}. The determinant $\det \nabla \bm{x}_t$ vanishes and the density spikes to infinity. This phenomenon is an example of a \textit{fold caustic}, bounding the regions where virialized structures emerge. In this paper, we always order the eigenvalue fields such that $\mu_{t,1}$ is the field which causes the first shell-crossing event. As we shall see in the next section, the -- often ignored -- eigenvector fields plays an important role in the higher order caustics.
 
-In late time cosmology, the cosmic web forms due to the gravitational collapse of tiny Gaussian fluctuations $\delta_0$. At early times, the corresponding Gaussian gravitational potential $\phi_0$ governs the dynamics of the mass elements, $\bm{s}_t \propto \nabla \phi_0$. See the upper panels of figure \ref{fig:Initial_Conditions} for an illustration of the initial density and the corresponding gravitational potential fields. Eulerian fluid dynamics describes the early evolution of the density field in terms of these Gaussian fields. In contrast, Lagrangian fluid dynamics emphasises the role of the deformation tensor $\nabla \bm{s}_t$ and the corresponding non-Gaussian eigenvalue and eigenvector fields (see the density formula \eqref{eq:density}). It follows from the eigenequation \eqref{eq:EigenvalueAndEigenvector} that the eigenvalue fields are the quadratic (or cubic) roots of a polynomial whose coefficients depend on the first order derivatives of the displacement field in 2D (or 3D). The non-linearity of the eigenvalue fields captures part of the non-linear dynamics of gravitational collapse. At early times the deformation tensor $\nabla \bm{s}_t$ is proportional to the Hessian of the gravitational potential, $\nabla \bm{s}_t \propto \mathcal{H}\phi_0$. The eigenvalue and eigenvector fields are nonlinear functions of the second order derivatives of the initial gravitational potential. See the lower panels of figure \ref{fig:Initial_Conditions} for an illustration of the non-Gaussian nature of the eigenvalue fields corresponding to the gravitational potential in the upper left panel. 
-
-The red regions experience an inflow of matter, leading to the first caustics. The blue regions represent an initial outflow of matter. Roughly speaking, the eigenvalue fields peak in the regions of high initial density. In particular, compare the peaks of the initial density field $\delta_0$ and the second eigenvalue field $\mu_{t,2}$. However, the density perturbation and the eigenvalue fields differ away from these high density regions. The eigenvalue fields emphasise line like features connecting the high density regions. As described below, these line-like features of the first eigenvalue field are the progenitors of the filaments of the cosmic web. It follows from the Poisson equation (see section \ref{sec:Zeldovich}), that the sum of the initial eigenvalue fields is proportional to the initial density perturbation, 
-\begin{align}
-\delta_0 \propto \nabla^2 \phi_0 = \text{Tr}[\mathcal{H}\phi_0] \propto \mu_{t,1} + \mu_{t,2}\,,
-\end{align}
-with the Hessian $\mathcal{H}$, demonstrating a non-trivial correlation between the initial eigenvalue fields. The eigenvalue fields splits the Gaussian initial density perturbations into parts which influence the linear regime of gravitational collapse in distinct ways. Moreover, the two initial eigenvalue fields are strongly correlated with the joint probability distribution 
-\begin{align}
-p(\mu_1,\mu_2) = \frac{2\sqrt{2}}{\sqrt{\pi} \sigma_2^3} e^{-\frac{3(\mu_1+\mu_2)^2-8\mu_1 \mu_2}{2 \sigma_2^2}}|\mu_1-\mu_2|\,,
-\end{align}
-the two-dimensional Doroshkevich formula (with $\sigma_2$ the generalized moment defined in section \ref{sec:GRF}). See figure \ref{fig:eigen_stats} for an illustration of the eigenvalue and density field statistics. As we will show, the orientation and geometry of the shell-crossing regions is further described by the eigenvector fields (see the lines in the lower panels of figure \ref{fig:Initial_Conditions}). At initial times, the eigenvector fields are normal, $\bm{v}_{t,1}\cdot \bm{v}_{t,2}=0$, since the deformation tensor is symmetric. Observe that the eigenvector fields exhibit an interesting correlation with the eigenvalue fields. Roughly speaking, the eigenvector fields are normal to the ridges of the corresponding eigenvalue fields. This observation will play an important role in the discussion of the caustic skeleton below. 
-
-
-
 \begin{figure}
 \centering
 \begin{subfigure}[b]{0.49\textwidth}
@@ -190,6 +176,7 @@ the two-dimensional Doroshkevich formula (with $\sigma_2$ the generalized moment
 \caption{A Gaussian random field and the corresponding eigenvalue and eigenvector fields. \textit{Upper left:} the gravitaitonal potential $\Psi$. \textit{Upper right:} the corresponding density perturbation field $\delta$. \textit{Lower left:} the first eigenvalue and eigenvector fields $\mu_1,\bm{v}_1$. \textit{Lower right:} the second eigenvalue and eigenvector fields $\mu_2,\bm{v}_2$.}\label{fig:Initial_Conditions}
 \end{figure}
 
+In late time cosmology, the cosmic web forms due to the gravitational collapse of tiny Gaussian fluctuations $\delta_0$. At early times, the corresponding Gaussian gravitational potential $\phi_0$ governs the dynamics of the mass elements, $\bm{s}_t \propto \nabla \phi_0$. See the upper panels of figure \ref{fig:Initial_Conditions} for an illustration of the initial density and the corresponding gravitational potential fields. Eulerian fluid dynamics describes the early evolution of the density field in terms of these Gaussian fields. In contrast, Lagrangian fluid dynamics emphasises the role of the deformation tensor $\nabla \bm{s}_t$ and the corresponding non-Gaussian eigenvalue and eigenvector fields (see the density formula \eqref{eq:density}). It follows from the eigenequation \eqref{eq:EigenvalueAndEigenvector} that the eigenvalue fields are the quadratic (or cubic) roots of a polynomial whose coefficients depend on the first order derivatives of the displacement field in 2D (or 3D). The non-linearity of the eigenvalue fields captures part of the non-linear dynamics of gravitational collapse. At early times the deformation tensor $\nabla \bm{s}_t$ is proportional to the Hessian of the gravitational potential, $\nabla \bm{s}_t \propto \mathcal{H}\phi_0$. The eigenvalue and eigenvector fields are nonlinear functions of the second order derivatives of the initial gravitational potential. See the lower panels of figure \ref{fig:Initial_Conditions} for an illustration of the non-Gaussian nature of the eigenvalue fields corresponding to the gravitational potential in the upper left panel. 
 
 \begin{figure}
 \centering
@@ -201,6 +188,21 @@ the two-dimensional Doroshkevich formula (with $\sigma_2$ the generalized moment
 \end{subfigure}
 \caption{The distirubtion of the eigenvalue fields. \textit{Left:} the PDF of the initial density perturbation $\delta$ (black) and the eigenvalue fields $\mu_{i,t}$ (red and blue). \textit{Right:} the joint distribution of the eigenvalue fields.}\label{fig:eigen_stats}
 \end{figure}
+
+The red regions experience an inflow of matter, leading to the first caustics. The blue regions represent an initial outflow of matter. Roughly speaking, the eigenvalue fields peak in the regions of high initial density. In particular, compare the peaks of the initial density field $\delta_0$ and the second eigenvalue field $\mu_{t,2}$. However, the density perturbation and the eigenvalue fields differ away from these high density regions. The eigenvalue fields emphasise line like features connecting the high density regions. As described below, these line-like features of the first eigenvalue field are the progenitors of the filaments of the cosmic web. 
+
+It follows from the Poisson equation (see section \ref{sec:Zeldovich}), that the sum of the initial eigenvalue fields is proportional to the initial density perturbation, 
+\begin{align}
+\delta_0 \propto \nabla^2 \phi_0 = \text{Tr}[\mathcal{H}\phi_0] \propto \mu_{t,1} + \mu_{t,2}\,,
+\end{align}
+with the Hessian $\mathcal{H}$, demonstrating a non-trivial correlation between the initial eigenvalue fields. The eigenvalue fields splits the Gaussian initial density perturbations into parts which influence the linear regime of gravitational collapse in distinct ways. Moreover, the two initial eigenvalue fields are strongly correlated with the joint probability distribution given by the two-dimensional Doroshkevich formula
+\begin{align}
+p(\mu_1,\mu_2) = \frac{2\sqrt{2}}{\sqrt{\pi} \sigma_2^3} e^{-\frac{3(\mu_1+\mu_2)^2-8\mu_1 \mu_2}{2 \sigma_2^2}}|\mu_1-\mu_2|\,,
+\end{align}
+with $\sigma_2$ the generalized moment defined in section \ref{sec:GRF}. See figure \ref{fig:eigen_stats} for an illustration of the eigenvalue and density field statistics. 
+
+As we will show, the orientation and geometry of the shell-crossing regions is further described by the eigenvector fields (see the lines in the lower panels of figure \ref{fig:Initial_Conditions}). At initial times, the eigenvector fields are normal, $\bm{v}_{t,1}\cdot \bm{v}_{t,2}=0$, since the deformation tensor is symmetric. Observe that the eigenvector fields exhibit an interesting correlation with the eigenvalue fields. Roughly speaking, the eigenvector fields are normal to the ridges of the corresponding eigenvalue fields. This observation will play an important role in the discussion of the caustic skeleton below. 
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Caustics in Lagrangian fluids}
@@ -401,7 +403,7 @@ Initially, the growing mode $b_+$ vanishes and the universe consists of a single
 \end{figure}
 
 
-The role of the different elements of the caustic skeleton can be clearly observed from the zoom of figure \ref{fig:caustics_Examples_Big} centered on the caustic in Lagrangian space (see figure \ref{fig:caustics_Examples_Small}). Observe that the cusp curve bisects the multi-stream region, marking the location where the mass elements turn around to form a line-like structure. The swallowtail, elliptic and hyperbolic caustics form where different cusp curves meet up to form a knot. The swallowtail caustic marks the place where the cusp curve corresponding to a single eigenvalue field becomes non-differentiable. The elliptic and hyperbolic caustics mark the location where the multi-stream regions of different eigenvalue fields merge. Since the formation history of these different point caustics differs, it is natural to expect the properties of the different clusters to vary in nature. Note that the cluster caustics are rarely isolated. They will generally cluster and form an intricate multi-stream structure. This way, a cluster can connect more than three filaments.
+The role of the different elements of the caustic skeleton can be clearly observed from the zoom of figure \ref{fig:caustics_Examples_Big} centered on the caustic in Lagrangian space (see figure \ref{fig:caustics_Examples_Small}). The fold line is defined as the curve where the mass elements in the Zel'dovich approximation undergo shell-crossing. These shell-crossing regions clearly bound the multi-stream regions in the Zel'dovich approximation. This correspondence is less accurate in the $N$-body simulation, as the moment of shell-crossing may vary due to the non-linear nature of gravitational collapse. The cusp curve bisects the multi-stream region. The cusp curve marks the locations where the mass elements turn around to form a line-like structure. Note that this is valid in both the Zel'dovich approximation and the $N$-body simulation. The cusp curve in Lagrangian space accurately predict the mass elements around which matter virialized. The swallowtail, the elliptic and the hyperbolic caustics form where different cusp curves meet up to form a knot. The swallowtail caustic marks the place where the cusp curve corresponding to a single eigenvalue field becomes non-differentiable. The elliptic and hyperbolic caustics mark the location where the multi-stream regions of different eigenvalue fields merge. In figure \ref{fig:caustics_Examples_Small}, we observe that Zel'dovich approximation gives a good prediction of the geometry of the multi-stream regions in the $N$-body simulation at early times. Since the formation history of these different point caustics differs, it is natural to expect the properties of the different clusters to vary in nature. Note that the cluster caustics are rarely isolated. Caustics generally cluster and together form more intricate multi-stream structure. This way, a cluster can connect more than three filaments, even though the swallowtail, and umbilic caustics individually connect three filament regions.
 
 
 
@@ -533,7 +535,7 @@ where the constraints follow the Gaussian marginal distribution
 \begin{align}
 p(\Gamma) = \frac{\exp\left[-\frac{1}{2} \Delta\bm{C}^T Q^{-1} \Delta\bm{C} \right]}{[(2\pi)^M \det Q]^{1/2}}\,,
 \end{align}
-with the vector $\bm{C}=(C_1[f;\bm{q}_1], \dots, C_M[f;\bm{q}_M])$ and the covariance matrix $Q = \text{cov}(\bm{C}, \bm{C})$. We can write the constraint distribution in as the Gaussian probability density
+with the vector $\bm{C}=(C_1[f;\bm{q}_1], \dots, C_M[f;\bm{q}_M])$ and the covariance matrix $Q = \text{cov}(\bm{C}, \bm{C})$. We can write the constraint distribution as the Gaussian probability density
 \begin{align}
 p(f|\Gamma) \propto  e^{-\frac{1}{2} \left[\iint f(\bm{q}_1) K(\|\bm{q}_1 - \bm{q}_2\|) f(\bm{q}_2)\mathrm{d}\bm{q}_1 \mathrm{d}\bm{q}_2 -\Delta \bm{C}^TQ^{-1}\Delta \bm{C}\right]},\label{eq:constraint1}
 \end{align}
