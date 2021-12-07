@@ -456,7 +456,11 @@ In cosmology, the cosmological principle often leads to the study of statistical
 
 The statistical properties of homogeneous and isotropic random fields are most transparently expressed in terms of the Fourier transformation of the random field
 \begin{align}
-\hat{f}(\bm{k}) = \int f(\bm{x})e^{i\bm{k}\cdot \bm{x}}\mathrm{d}\bm{x}\,.
+\hat{f}(\bm{k}) = \int f(\bm{q})e^{i\bm{k}\cdot \bm{q}}\mathrm{d}\bm{q}\,,
+\end{align}
+and the inverse transform
+\begin{align}
+f(\bm{q}) = \int \hat{f}(\bm{k})e^{-i \bm{k} \cdot \bm{q}}\frac{\mathrm{d}\bm{k}}{(2\pi)^2}\,.
 \end{align}
 Note that the Fourier modes of real-valued Gaussian random fields satisfy the reality condition $\hat{f}(\bm{k}) = \hat{f}^*(-\bm{k})$. Using the double convolution theorem, we express the action \eqref{eq:action} as
 \begin{align}
@@ -464,11 +468,11 @@ S[f] = \frac{1}{2} \int |\hat{f}(\bm{k})|^2 \hat{K}(\bm{k}) \frac{\mathrm{d}\bm{
 \end{align}
 In Fourier space, equation \eqref{eq:defK} takes the form
 \begin{align}
-\int \hat{K}(\bm{k}) P(\bm{k}) e^{i\bm{k}(\bm{x}_1-\bm{x}_2)} \frac{\mathrm{d}\bm{k}}{(2\pi)^2} = \delta_D^{(2)}(\bm{x}_1 - \bm{x}_2)\,,
+\int \hat{K}(\bm{k})\, P(\bm{k})\, e^{i\bm{k}(\bm{q}_1-\bm{q}_2)} \frac{\mathrm{d}\bm{k}}{(2\pi)^2} = \delta_D^{(2)}(\bm{q}_1 - \bm{q}_2)\,,
 \end{align}
 with the power spectrum defined as the Fourier transform of the two-point correclation function,
 \begin{align}
-P(\bm{k}) = \int \xi(\bm{x}) e^{i\bm{k}\bm{x}}\mathrm{d}\bm{x}\,,
+P(\bm{k}) = \int \xi(\bm{q}) \, e^{i\bm{k}\cdot \bm{q}}\mathrm{d}\bm{q}\,,
 \end{align}
 implying the relation $\hat{K}(\bm{k}) = 1/P(\|\bm{k}\|)$. The resulting probability density of the Fourier modes is diagonal
 \begin{align}
@@ -493,17 +497,27 @@ p(\hat{f}(\bm{k}_1), \hat{f}(\bm{k}_2), \dots) = \prod_{i} \frac{1}{\sqrt{2\pi P
 \end{align}
 yielding an efficient method to generate realizations (see appendix \ref{ap:GRF}).
 
-
-\begin{framed}
-{\color{red} I am not yet sure where to place this section. }\\
-
-The statistical properties of these random fields are often conveniently expressed in terms of the moments
+The statistical properties of random fields are often conveniently expressed in terms of the moments
 \begin{align}
 \sigma_i^2 &= \frac{1}{(2\pi)^2} \int \|\bm{k}\|^{2i}P(\|\bm{k}\|)\mathrm{d}\bm{k}\nonumber\\
 &= \frac{1}{2\pi} \int_0^\infty k^{2i+1}P(k)\mathrm{d}k\,,
 \end{align}
-with the magnitude $k = \|\bm{k}\|$.
-\end{framed}
+with the magnitude $k = \|\bm{k}\|$. The powerspectrum determines the covariance matrix $M$ through these moments. Whereas is the variance of the random field is given by the moment $\sigma_0^2$, \textit{i.e.},
+\begin{align}
+\langle f(\bm{q})^2 \rangle &= \iint e^{i (\bm{p} - \bm{k})\cdot \bm{q}} \langle \hat{f}(\bm{k})\hat{f}^*(\bm{p})\rangle \frac{\mathrm{d}\bm{k}\mathrm{d}\bm{p}}{(2\pi)^4}\\
+&=\frac{1}{(2\pi)^2}\int P(\|\bm{k}\|)\mathrm{d}\bm{k}=\sigma_0^2\,,
+\end{align}
+the expectation value of the square of the norm of the gradient takes the form
+\begin{align}
+\langle \|\nabla f(\bm{q})\|^2\rangle &= \langle \partial_1f(\bm{q})^2 + \partial_2 f(\bm{q})^2 \rangle \\
+&= \iint [(ik_1)(-ip_1)+(ik_2)(-ip_2)] e^{i (\bm{p} - \bm{k})\cdot \bm{q}} \langle \hat{f}(\bm{k})\hat{f}^*(\bm{p})\rangle \frac{\mathrm{d}\bm{k}\mathrm{d}\bm{p}}{(2\pi)^4}\\
+&=\frac{1}{(2\pi)^2}\int \|\bm{k}\|^2 P(\|\bm{k}\|)\mathrm{d}\bm{k}=\sigma_1^2\,,
+\end{align}
+with $\bm{k}=(k_1,k_2)$ and $\bm{p}=(p_1,p_2)$. By statistical isotropy, we obtain the variance of the first order partial derivative
+\begin{align}
+\langle \partial_1 f(\bm{q})^2\rangle =\langle \partial_2 f(\bm{q})^2\rangle =\frac{\sigma_1^2}{2}\,.
+\end{align}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Linear constraints: Gaussian fields}
