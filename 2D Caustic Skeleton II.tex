@@ -281,8 +281,6 @@ Morse point & $A_3^-$ & merger point & saddle point of the eigenvalue field $\la
 \end{table}
 
 
-
-
 \begin{figure}
 \centering
 \begin{subfigure}[b]{0.3\textwidth}
@@ -1026,7 +1024,7 @@ T_{12}&=0\,.
 We subsequently determine the sign of the determinant $\det\left( \mathcal{H}\left[\det (I- b_+ \bm{\psi})\right]\right)$ to identify whether it is an elliptic or an hyperbolic caustic. Given the identification, we compute its orientation. By rotating the second order and third order derivatives (using appendix \ref{ap:rotations}), we generate linear constraint conditions corresponding to elliptic and hyperbolic caustics with a specified orientation. Given the appropriate sampling of the constraint manifold $\mathcal{M}_\mathcal{C}$, we can evaluate the mean field, the variance of the residue and representative realiations.
 
 
-\newpage
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Composite constraint realizations}
 To study the interplay between the voids, walls, filaments and clusters in the cosmic web and study the connectivity, it is important to extend constraint theory of the caustic skeleton to include mulitple constraints with specified orientations. In this section, we show how to implement the generation realizations with non-linear composite constraints.
@@ -1057,22 +1055,22 @@ See figure \ref{fig:rotation} for an illustration of the cusp caustic with three
 
 \begin{figure}
 \centering
-\begin{subfigure}[b]{0.31\textwidth}
+\begin{subfigure}[b]{0.32\textwidth}
 \includegraphics[width=\textwidth]{Rotation_L_1}
 \end{subfigure}~
-\begin{subfigure}[b]{0.31\textwidth}
+\begin{subfigure}[b]{0.32\textwidth}
 \includegraphics[width=\textwidth]{Rotation_L_2}
 \end{subfigure}~
-\begin{subfigure}[b]{0.31\textwidth}
+\begin{subfigure}[b]{0.32\textwidth}
 \includegraphics[width=\textwidth]{Rotation_L_3}
 \end{subfigure}\\
-\begin{subfigure}[b]{0.31\textwidth}
+\begin{subfigure}[b]{0.32\textwidth}
 \includegraphics[width=\textwidth]{Rotation_Z_1}
 \end{subfigure}~
-\begin{subfigure}[b]{0.31\textwidth}
+\begin{subfigure}[b]{0.32\textwidth}
 \includegraphics[width=\textwidth]{Rotation_Z_2}
 \end{subfigure}~
-\begin{subfigure}[b]{0.31\textwidth}
+\begin{subfigure}[b]{0.32\textwidth}
 \includegraphics[width=\textwidth]{Rotation_Z_3}
 \end{subfigure}
 \caption{Rotation of the cusp caustic. \textit{Upper:} the eigenvalue and eigenvector fields in Lagrangian space. \textit{Lower:} the Zel'dovich approximation in Eulerian space. \textit{Left:} with the vertical orientation. \textit{Center:} with a diagonal orientation. \textit{Right:} with the horizontal orientation.}\label{fig:rotation}
@@ -1083,17 +1081,19 @@ See figure \ref{fig:rotation} for an illustration of the cusp caustic with three
 \subsection{Multiple constraints}
 In section \ref{sec:orientation}, we showed a method to orient a single non-linear constraint. In this section, we extend the treatment to multiple caustic constraints at different locations with specified orientations. 
 
-Given the locations $\bm{q}_i$ and orientations $\theta_i$ of the $M$ caustics constraints with $i=1,\dots,M$, one might naively repeat the analysis presented in section \ref{sec:orientation} $M$ times and construct the a realization using the Hoffman Ribak algorithm on the sampled partial derivatives. While this is a good approximation when the pairwise separation of the points $\bm{q}_i$ is larger that the typical correlation length of the random field, it fails when partial derivatives at a single point $\bm{q}_i$ become significantly correlated to the partial derivatives of a neighbouring point $\bm{q}_j$. Ideally, we would sample the partial derivatives of the deformation potential at the constraint points $\bm{q}_i$ simultaneously. However, such a procedure cannot be straightforwardly implemented when sampling constraints in the eigenframe and orienting the constraints with the procedure described above.
+Given the locations $\bm{q}_i$ and orientations $\theta_i$ of the $M$ caustics constraints with $i=1,\dots,M$, one might naively repeat the analysis presented in section \ref{sec:orientation} for each constraint point and construct the a realization using the Hoffman Ribak algorithm on the sampled partial derivatives. While this is a good approximation when the pairwise separation of the points $\bm{q}_i$ is larger that the typical correlation length of the random field, it fails when partial derivatives at a single point $\bm{q}_i$ become significantly correlated to the partial derivatives of a neighbouring point $\bm{q}_j$. Ideally, we would sample the partial derivatives of the deformation potential at the constraint points $\bm{q}_i$ simultaneously. However, such a procedure cannot be straightforwardly implemented when sampling constraints in the eigenframe and orienting the constraints with the procedure described above.
 
 To correct for these correlations we propose a rejection sampling method. For each caustic constraint corresponding to the point $\bm{q}_i$, we determine the $n$-th order derivatives required to specify the caustic and its orientation. Construct the conditional (unnormalized) joint probability density $p_i$ for the partial derivatives of the constraint $\bm{q}_i$ with respect to the corresponding constrained manifold $\mathcal{M}_{\mathcal{C},i}$, and the Gaussian joint probability density $p$ including all the partial derivatives at the constraint points. Next, determine the maximum $max$ of the ratio of the joint distribution of all constraint and the individual constraints $p/\prod p_i$. Finally, generate a sample of the partial derivatives satisfying the oriented caustics constraints as described above. Accept this sample with probability $p/(max\, \prod p_i)$. Alternatively, we construct the big constraint manifold $\mathcal{M}_\mathcal{C}$ by taking the union over the small constrained manifold $\mathcal{M}_{\mathcal{C},i}$, and directly sample from the conditional probability density $p(\cdot |\mathcal{M}_\mathcal{C})$ using the rejection sampling method.
 
 \begin{figure}
 \centering
-\begin{subfigure}[b]{0.46\textwidth}
+\begin{subfigure}[b]{0.49\textwidth}
 \includegraphics[width=\textwidth]{Composite_L}
+\caption{$\lambda_1$, $\bm{v}_1$}
 \end{subfigure}~
-\begin{subfigure}[b]{0.46\textwidth}
+\begin{subfigure}[b]{0.49\textwidth}
 \includegraphics[width=\textwidth]{Composite_Z}
+\caption{Zel'dovich approximation}
 \end{subfigure}
 \caption{Four critical point constraints on the first eigenvalue field. \textit{Left:} the first eigenvalue and eigenvector fields in Lagrangian space. \textit{Right:} the Zel'dovich approximation in Eulerian space.}\label{fig:composite}
 \end{figure}
@@ -1120,42 +1120,45 @@ In figure \ref{fig:composite}, the lower, the upper, and the right critical poin
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{The caustic skeleton in Eulerian space}
-In figure \ref{fig:Eulerian}, we see how the different elements of the caustic skelelton come together to model the cosmic web. Observe that the different singularities do not occur in isolation. They are correlated and form more intricate emergent structures. This explains why a knot might connect more than three filaments. Moreover note that while the density estimate of the Zel'dovich approximation might for late times be outside its range of applicability, the corresponding caustic skeleton is predictive long after this time.
-
+To develop a visual appreciation of the roles of the different caustics in the large scale structure and the accuracy of the caustic skeleton of the Zel'dovich approximation, we construct a realization of an unconstrained Gaussian random field for the gravitational potential $\phi_0$ and evolve it with the Zel'dovich approximation and a dark matter $N$-body simulation (see figure \ref{fig:Eulerian}). Observe the geometry of the first eigenvalue and eigenvector field $\lambda_1$ and $\bm{v}_1$ and the corresponding caustic skeleton (see the upper left panel). At late times, the cusp curves form an interconnected network tracing multi-stream regions bounded by the fold curves. The blue regions bounded by the fold curves are the progentors of the voids. At large scales, the eigenvalue field closely resembles the initial density perturbation $\delta_0 \propto \nabla^2\phi_0$ (see the upper right panel). At large scales, the caustic skeleton follows geometry of the superlevel sets of the density perturbation. At small scales, we observe qualitative differences. The Zel'dovich approximation corresponding to this setup is far outside the range of applicability, as the Zel'dovich approximation linearly extrapolates the motion for the mass elements and ignored the further gravitational interactions (see the lower left panel). However, even though the Zel'dovich approximation is no-longer an accurate model for density field, it accurately predicts which mass elements undergo shell-crossing and forming caustics at late times (see the lower right panel). The fold curves provide an reasonable approximation of the boundaries of the multi-stream regions. The cusp curves neatly bisect the multi-stream regions and form knots in the clusters of the cosmic web. Note that a cluster rarely consists of a single cluster caustics. The caustics are correlated and together form a more intricate emergent knot. The filaments evolve more linearly and can be associated to an unique cusp curve.
 \begin{figure}
 \centering
-\begin{subfigure}[b]{0.48\textwidth}
-\includegraphics[width=\textwidth]{Eulerian_dens}
-\end{subfigure}~
-\begin{subfigure}[b]{0.48\textwidth}
+\begin{subfigure}[b]{0.49\textwidth}
 \includegraphics[width=\textwidth]{Eulerian_L}
-\end{subfigure}\\
-\begin{subfigure}[b]{0.48\textwidth}
-\includegraphics[width=\textwidth]{Eulerian_Z}
+\caption{$\lambda_1,\bm{v}_1$}
 \end{subfigure}~
-\begin{subfigure}[b]{0.48\textwidth}
+\begin{subfigure}[b]{0.49\textwidth}
+\includegraphics[width=\textwidth]{Eulerian_dens}
+\caption{$\delta$}
+\end{subfigure}\\
+\begin{subfigure}[b]{0.49\textwidth}
+\includegraphics[width=\textwidth]{Eulerian_Z}
+\caption{Zel'dovich approximation}
+\end{subfigure}~
+\begin{subfigure}[b]{0.49\textwidth}
 \includegraphics[width=\textwidth]{Eulerian_Nb}
+\caption{$N$-body simulation}
 \end{subfigure}
-\caption{The caustic skeleton. \textit{Upper left:} the initial density perturbations with the caustic skeleton. \textit{Upper right:}  the initial eigenvalue field $\lambda_1$ with the caustic skeleton. \textit{Lower left:} the Zel'dovich approximation with the caustic skeleton. \textit{Lower right:} the $N$-body simulation with the caustic skeleton.}\label{fig:Eulerian}
+\caption{The caustic skeleton. \textit{Upper left:} the initial eigenvalue field $\lambda_1$ with the caustic skeleton. \textit{Upper right:} the initial density perturbations with the caustic skeleton. \textit{Lower left:} the Zel'dovich approximation with the caustic skeleton at scale factor $a=1$. \textit{Lower right:} the $N$-body simulation with the caustic skeleton at scale factor $a=1$.}\label{fig:Eulerian}
 \end{figure}
 
-In figure \ref{fig:Eulerian_Evolution}, we plot the evolution of the caustic skeleton in an $N$-body simulation.
+The multi-stream regions of the cosmic web forms gradually and its evolution is neatly captured by the caustic skeleton (see figure \ref{fig:Eulerian_Evolution}). At early times, the dark-matter sheet consisted of a single single-stream region. As time evolved, we observe the formation of several Zel'dovich pancakes corresponding to the maxima of the eigenvalue field $\lambda_1$ (see the upper left panel). As time proceeds, these multi-stream regions grow and connect at the saddle points of the eigenvalue fields (see the upper right and lower panels). Note that in the evolution of the cosmic web the filaments move while the large voids expand and the smaller voids contract. In this process different filaments can merge to form a more massive structure.
 
 \begin{figure}
 \centering
-\begin{subfigure}[b]{0.48\textwidth}
+\begin{subfigure}[b]{0.49\textwidth}
 \includegraphics[width=\textwidth]{Evolution_020}
 \caption{$a=0.2$}
 \end{subfigure}~
-\begin{subfigure}[b]{0.48\textwidth}
+\begin{subfigure}[b]{0.49\textwidth}
 \includegraphics[width=\textwidth]{Evolution_040}
 \caption{$a=0.4$}
 \end{subfigure}\\
-\begin{subfigure}[b]{0.48\textwidth}
+\begin{subfigure}[b]{0.49\textwidth}
 \includegraphics[width=\textwidth]{Evolution_060}
 \caption{$a=0.6$}
 \end{subfigure}~
-\begin{subfigure}[b]{0.48\textwidth}
+\begin{subfigure}[b]{0.49\textwidth}
 \includegraphics[width=\textwidth]{Evolution_080}
 \caption{$a=0.8$}
 \end{subfigure}
@@ -1164,8 +1167,6 @@ In figure \ref{fig:Eulerian_Evolution}, we plot the evolution of the caustic ske
 %\end{subfigure}
 \caption{The evolution of the caustic skeleton in an $N$-body simulation in an Einstein-de Sitter universe. The skeleton for scale factor $a=1$ can be seen in the lower right panel of figure \ref{fig:Eulerian}.}\label{fig:Eulerian_Evolution}
 \end{figure}
-
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Conclusion and Discussion}
@@ -1177,53 +1178,20 @@ In this paper, we have:
 \end{itemize}
 In an upcomming paper, we will:
 \begin{itemize}
+\item extend these studies to the three-dimensional cosmic web,
 \item study the constrained inintial conditions of the three-dimensional cosmic skeleton,
 \item study the mean fields as a function of the formation time,
-\item develop a fast routine to develop constrained fields with multiple constraints,
 \item evaluate the eigenvalue fields and the derivatives in the eigenframes,
 \item use the constrained initial conditions to study the mean density field around the different elements.
 \end{itemize}
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Acknowledgement}
+JF would like to thank Nynke Niezink for the enlightening discussions.
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-\newpage
 \appendix
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Gaussian random fields algorithms}\label{ap:GRF}
@@ -1513,6 +1481,5 @@ s^4     & 4cs^3             & 6 c^2 s^2               & 4 c^3 s           &  c^4
 \end{pmatrix}
 \begin{pmatrix} T_{1111} \\ T_{1112} \\ T_{1122}\\ T_{1222} \\ T_{2222} \end{pmatrix}.
 \end{align}
-
 
 \end{document}
