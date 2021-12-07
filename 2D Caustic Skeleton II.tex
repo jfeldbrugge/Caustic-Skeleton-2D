@@ -703,7 +703,7 @@ When the Gaussian random field is not statistically isotropic, the constraint de
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Constraint initial conditions of the caustic skeleton}
+\section{Constraint initial conditions of the caustic skeleton}\label{sec:caustic_skeleton_constraints}
 Given non-linear constrained Gaussian random field theory and the caustic conditions, we study the progenitors of the filaments and clusters in the Zel'dovich approximation. Given the displacement field 
 \begin{align}
 \bm{s}_t(\bm{q}) = -b_+(t) \nabla_{\bm{q}} \Psi(\bm{q}),
@@ -773,11 +773,11 @@ On average, the orientation of cusp curve is normal to the eigenvector field $\b
 \subsubsection{Sampling the constraint manifold}
 To analyze the constraint field of the cusp caustic, we work in the eigenframe of the deformation tensor for which $\bm{v}_1=(1,0)$ and $\bm{v}_2=(0,1)$. In this frame, the caustic conditions yield a set of linear conditions on the second and third order derivatives of the deformation potential
 \begin{align}
-T_{11}=1/b_+(t)\,, \quad T_{12}=0\,,\quad T_{22}\leq T_{11}\,,\quad T_{111}=0\,.
+T_{11}=1/b_+(t)\,, \quad T_{12}=0\,,\quad T_{22}\leq T_{11}\,,\quad T_{111}=0\,.\label{eq:cusp_cond_1}
 \end{align}
 The normal vector yields the non-linear form
 \begin{align}
-\bm{n}=\left(T_{1111} + \frac{3T_{112}^2}{T_{11}-T_{22}}, T_{1112} + \frac{3T_{112}T_{122}}{T_{11}-T_{22}}\right)\,.
+\bm{n}=\left(T_{1111} + \frac{3T_{112}^2}{T_{11}-T_{22}}, T_{1112} + \frac{3T_{112}T_{122}}{T_{11}-T_{22}}\right)\,.\label{eq:cusp_cond_2}
 \end{align}
 For a derivation of these identities see appendix \ref{ap:eigenvalueRel}.
 
@@ -1026,14 +1026,34 @@ T_{12}&=0\,.
 We subsequently determine the sign of the determinant $\det\left( \mathcal{H}\left[\det (I- b_+ \bm{\psi})\right]\right)$ to identify whether it is an elliptic or an hyperbolic caustic. Given the identification, we compute its orientation. By rotating the second order and third order derivatives (using appendix \ref{ap:rotations}), we generate linear constraint conditions corresponding to elliptic and hyperbolic caustics with a specified orientation. Given the appropriate sampling of the constraint manifold $\mathcal{M}_\mathcal{C}$, we can evaluate the mean field, the variance of the residue and representative realiations.
 
 
+\newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Composite constraint realizations}
-In practice, we wish to constrained realizations with several constraints corresponding to caustics with specific orientations. 
-
+To study the interplay between the voids, walls, filaments and clusters in the cosmic web and study the connectivity, it is important to extend constraint theory of the caustic skeleton to include mulitple constraints with specified orientations. In this section, we show how to implement the generation realizations with non-linear composite constraints.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Orienting constraint conditions}
-First let's consider the ways in which we can vary the orientation of a caustic. In the previous section, we studied how we can construct a realization with a cusp filament running vertically through the origin of the simulation. Note that the cusp curve and its orientation is fully determined by the seccond, third, and fourth order derivatives of the gravitational potential in the caustic. Now, given a realiation of a unconstrained Gaussian random field, we generate a constrained realization with a vertically oriented cusp curve. For this realization, we evaluate the second, third, and fourth order derivatives in the caustic. Using appendix \ref{ap:rotations}, we can obtain a rotated set of constrained conditions corresponding to a cusp curve whose tangent vector makes an angle $\theta$ with the vertical axis in the origin. By generating a corresponding constrained realization, we can rotate the cusp curve to any orientation. In figure \ref{fig:rotation}, we rotate the cusp filament while reusing the unconstraint Gaussian random field.
+\subsection{Orienting constraint conditions}\label{sec:orientation}
+In section \ref{sec:caustic_skeleton_constraints}, we demonstrated a method to construct realizations of Gaussian random fields satisfying a caustic constraint at a single point with a fixed orientation. For example, we constructed realizations which included a cusp filament running vertically through the origin of the initial conditions. From the formalism, it follows that the caustic constraint can be translated to any point in the box by shifting the underlying linear functionals $\bm{C}$ (the Fourier transform of the constraints receives a phase shift). Alternatively, we can generate a realization with a cusp at the origin and translate the origin to the required location using the symmetry of the torus on which the realization lives. Unfortunately, the later method does not work when considering multiple caustic constraints at different locations. Moreover, the second method yields difficulties for even a single caustic constraint when attempting to change the orientation with a rotation due to the symmetries of the boundary conditions of the box.
+
+Fortunately, there exists a efficient method to generate realizations with any preferred orientation at any location:
+\begin{enumerate}
+\item 
+Generate a realization satisfying the caustic conditions at a given point in the box with a fixed orientation as described in section \ref{sec:caustic_skeleton_constraints}. 
+\item 
+Analyse the orders of the derivatives in the caustic conditions. For example, from equations \eqref{eq:cusp_cond_1} and \eqref{eq:cusp_cond_2}, we note that the cusp caustic is fully determined by a number of second, third, and fourth order derivatives.
+\item
+Evaluate all derivatives of the realization to the relevant order. Generally, some derivatives were obtained while sampling the constraint manifold $\mathcal{M}_\mathcal{C}$. Others do not directly influence the caustic, and are sampled with the realization. For the cusp, we evaluate the partial derivatives 
+\begin{align}
+T_{11},T_{12},T_{22},T_{111},T_{112},T_{122},T_{222},T_{1111},T_{1112},T_{1122},T_{1222},T_{2222}\,.
+\end{align}
+Alternatively, we can extend the constraint manifold to include all these partial derivatives and sample them directly.
+\item 
+Under a rotation of the coordinate system by an angle $\theta$, the $n$-th order derivatives rotate into each other (see appendix \ref{ap:rotations}). Use these transformation rules to obtain a represenative sample of the reqiured partial derivatives for the caustic with the desired orentation.
+\item 
+Finally, use the Hoffman Ribak algorithm to obtain a realization satisfying the caustic condition with the desired orientation.
+\end{enumerate}
+
+See figure \ref{fig:rotation} for an illustration of the cusp caustic with three orientations. In the left panel, the cusp caustic passes vertically through the centre of the box. In the central and right panels, we evaluate the second, third, and fourth order derivatives and generate random fields for which the cusp curve passes diagonally and horizontally through the the center of the box. For these three realizations applied the Hoffman Ribak algorithm with a single unconstrained random field. As a consequence, we see that the structure of the initial conditions away from the centre $(100,100)$ remain unchanged. Using constrained Gaussian random field theory, we can locally tweak the random field to satisfy the required constraints.
 
 \begin{figure}
 \centering
@@ -1057,6 +1077,16 @@ First let's consider the ways in which we can vary the orientation of a caustic.
 \end{subfigure}
 \caption{Rotation of the cusp caustic. \textit{Upper:} the eigenvalue and eigenvector fields in Lagrangian space. \textit{Lower:} the Zel'dovich approximation in Eulerian space. \textit{Left:} with the vertical orientation. \textit{Center:} with a diagonal orientation. \textit{Right:} with the horizontal orientation.}\label{fig:rotation}
 \end{figure}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Multiple constraints}
+In section \ref{sec:orientation}, we showed a method to orient a single non-linear constraint. In this section, we extend the treatment to multiple caustic constraints at different locations with specified orientations. 
+
+Given the locations $\bm{q}_i$ and orientations $\theta_i$ of the $M$ caustics constraints with $i=1,\dots,M$, one might naively repeat the analysis presented in section \ref{sec:orientation} $M$ times and construct the a realization using the Hoffman Ribak algorithm on the sampled partial derivatives. While this is a good approximation when the pairwise separation of the points $\bm{q}_i$ is larger that the typical correlation length of the random field, it fails when partial derivatives at a single point $\bm{q}_i$ become significantly correlated to the partial derivatives of a neighbouring point $\bm{q}_j$. Ideally, we would sample the partial derivatives of the deformation potential at the constraint points $\bm{q}_i$ simultaneously. However, such a procedure cannot be straightforwardly implemented when sampling constraints in the eigenframe and orienting the constraints with the procedure described above.
+
+To correct for these correlations we propose a rejection sampling method. For each caustic constraint corresponding to the point $\bm{q}_i$, we determine the $n$-th order derivatives required to specify the caustic and its orientation. Construct the conditional (unnormalized) joint probability density $p_i$ for the partial derivatives of the constraint $\bm{q}_i$ with respect to the corresponding constrained manifold $\mathcal{M}_{\mathcal{C},i}$, and the Gaussian joint probability density $p$ including all the partial derivatives at the constraint points. Next, determine the maximum $max$ of the ratio of the joint distribution of all constraint and the individual constraints $p/\prod p_i$. Finally, generate a sample of the partial derivatives satisfying the oriented caustics constraints as described above. Accept this sample with probability $p/(max\, \prod p_i)$. Alternatively, we construct the big constraint manifold $\mathcal{M}_\mathcal{C}$ by taking the union over the small constrained manifold $\mathcal{M}_{\mathcal{C},i}$, and directly sample from the conditional probability density $p(\cdot |\mathcal{M}_\mathcal{C})$ using the rejection sampling method.
+
 \begin{figure}
 \centering
 \begin{subfigure}[b]{0.46\textwidth}
@@ -1068,18 +1098,16 @@ First let's consider the ways in which we can vary the orientation of a caustic.
 \caption{Four critical point constraints on the first eigenvalue field. \textit{Left:} the first eigenvalue and eigenvector fields in Lagrangian space. \textit{Right:} the Zel'dovich approximation in Eulerian space.}\label{fig:composite}
 \end{figure}
 
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Multiple constraints}
-Non-linear constrained theory also extends to a set of non-linear constraints. For example, consider a set of critical points of the first eigenvalue field. At such a critical point, 
+We illustrate this procedure in figure \ref{fig:composite}, which includes four Morse point constraints on the first eigenvalue field. A critical point $\bm{q}_c$ appearing at time $t$ satisfies the condition
 \begin{align}
-\nabla \lambda_1(\bm{q}_c) = 0\,,
+\nabla \lambda_1(\bm{q}_c) = 0\,,\\
+\lambda_1(\bm{q}_c)=1/b_+(t)\,.
 \end{align}
-with function value $\lambda_1(\bm{q}_c)=1/b_+$. In the eigenvector frame, this condition reduces to the linear constraints
+In the eigenvector frame, this condition reduces to the linear constraints
 \begin{align}
 1/b_+ = T_{11} \geq T_{22}\,, \quad  T_{12}=0\,,\quad T_{111}=T_{112}=0\,.
 \end{align}
-The critical point is either a maximum, minimum corresponding to the Morse point $A_3^+$ or a saddle point corresponding to the Morse point $A_3^-$. When the determinant of the Hessian $\mathcal{H}\lambda_1$ is positive/negative, it is a $A_3^+$/ $A_3^-$ point. Note that in the eigenframe field, the Hessian takes the form
+The critical point is either a maximum, minimum -- corresponding to the Morse point $A_3^+$ -- or a saddle point -- corresponding to the Morse point $A_3^-$ -- determined by the sign of the determinant of the Hessian $\mathcal{H}\lambda_1$. In the eigenframe the Hessian takes the form
 \begin{align}
 \mathcal{H}\lambda_1 = 
 \begin{pmatrix} 
@@ -1087,8 +1115,7 @@ T_{1111}+\frac{2T_{112}^2}{T_{11}-T_{22}} & T_{1112} + \frac{2 T_{112}T_{122}}{T
 T_{1112}+\frac{2 T_{112}T_{122}}{T_{11}-T_{22}} & T_{1122} + \frac{2 T_{122}^2}{T_{11}-T_{22}}
 \end{pmatrix}\,.
 \end{align}
-See figure \ref{fig:composite} for an illustration of a realization with four eigenvalue critical point constraints. The lower, upper, and right critical points are maxima. The left critical point is a saddle point.
-
+In figure \ref{fig:composite}, the lower, the upper, and the right critical points are $A_3^+$ points. The left critical point is a $A_3^-$ point. In the right panel we can clearly distinguish the different nature of the $A_3^+$ and $A_3^-$ points in the Zel'dovich approximation. The $A_3^+$ points correspond to the creation of a multi-stream reagion, while the $A_3^-$ points correspond to the merger of two multi-stream regions.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1156,6 +1183,46 @@ In an upcomming paper, we will:
 \item evaluate the eigenvalue fields and the derivatives in the eigenframes,
 \item use the constrained initial conditions to study the mean density field around the different elements.
 \end{itemize}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 \newpage
 \appendix
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
