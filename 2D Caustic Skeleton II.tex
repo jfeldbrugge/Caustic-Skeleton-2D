@@ -206,7 +206,7 @@ As we will show, the orientation and geometry of the shell-crossing regions is f
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Caustics in Lagrangian fluids}
-The study of the cosmic web in terms of multi-stream regions and Lagrangian catastrophe theory has a rich history, predating the developments of $N$-body simulations (REFS). Amazingly, by analysing the geometry of the caustics emerging in Lagrangian fluid dynamics, Y.\ Zel'dovich, V.\ Arnol'd and collaborators successfully predicted the qualitative features of the cosmic web. However, these studies where mainly restricted to two-dimensional models, as several technical problems inhibited the full treatment of three-dimensional cosmic web. In a recent publication (REF), we solved these problems by formulating the \textit{shell-crossing condition} describing how a submanifold in $\mathcal{L}$ can develop a non-differentiable feature under the mapping $\bm{x}_t$. Given a submanifold $L \subset \mathcal{L}$, the mapping $\bm{x}_t(L)$ develops a non-differentiable point at time $t$ in $\bm{q}_c$ when there exists a non-zero vector tangent vector $\bm{T}$ in the tangent space of $L$ at $\bm{q}_c$ for which 
+The study of the cosmic web in terms of multi-stream regions and Lagrangian catastrophe theory has a rich history, predating the developments of $N$-body simulations \cite{Arnold:1982a, Arnold:1982b, Shandarin:1983, Rozhanskii:1984, Shandarin:1989}. Amazingly, by analysing the geometry of the caustics emerging in Lagrangian fluid dynamics, Y.\ Zel'dovich, V.\ Arnol'd and collaborators successfully predicted the qualitative features of the cosmic web. However, these studies where mainly restricted to two-dimensional models, as several technical problems inhibited the full treatment of three-dimensional cosmic web. In a recent publication \cite{Feldbrugge:2018}, we solved these problems by formulating the \textit{shell-crossing condition} describing how a submanifold in $\mathcal{L}$ can develop a non-differentiable feature under the mapping $\bm{x}_t$. Given a submanifold $L \subset \mathcal{L}$, the mapping $\bm{x}_t(L)$ develops a non-differentiable point at time $t$ in $\bm{q}_c$ when there exists a non-zero vector tangent vector $\bm{T}$ in the tangent space of $L$ at $\bm{q}_c$ for which 
 \begin{align}
 (1+\mu_{t,i}(\bm{q}_c))\bm{v}_{t,i}^*(\bm{q}_c) \cdot \bm{T}=0
 \label{eq:shellCrossingCondition}
@@ -249,7 +249,7 @@ Finally, caustic skeleton theory includes a set of Morse points, at which the mu
 \end{align}
 The maxima and minima of the eigenvalue field $\mu_i$ mark the locations and times at which a multi-stream region emerges or disappears. A critical point that undergoes shell-crossing always lies on a cusp curves, as a point with a vanishing gradient automatically satisfies equation \eqref{eq:cuspCondition}. The maxima and minima are known as $A_3^+$ points. The saddle point of the eigenvalue field $\mu_{t,i}$ mark the location and time at which two multi-stream regions merge to form a larger structure. At the $A_3^-$ point, two cusp curves corresponding to two filaments join. The Morse points determine the connectivity of the cosmic web. 
 
-In tabel \ref{table:caustics}, we summarize the different elements of the caustic skeleton. For a complete description of caustic skeleton theory, we refer to the paper (REFS).\\
+In tabel \ref{table:caustics}, we summarize the different elements of the caustic skeleton. For a complete description of caustic skeleton theory, we refer to the papers \cite{Hidding:2014, Feldbrugge:2018}.\\
 
 
 Note that the study of the Morse points of the caustic skeleton has a direct connection to the DisPerSE classification scheme, which applies Morse-Smale theory to the density field. In this scheme, the critical points of the density field connect the maxima via integral lines, which are associated to the filaments of the cosmic web. However, the caustic skeleton differs from Morse-Smale theory in several respects. Firstly, in this paper, we focus on the deformation tensor instead of the density field. The eigenvalue fields tie into the dynamics of gravitational collapse. Secondly, the threshold of the the caustic skeleton is determined by the cosmic time (the growing mode for the Zel'dovich approximation). Finally, rather than connecting saddle points and maxima via integral lines satisfying a differential equation, the caustic skeleton connects the critical points using the simpler level sets \eqref{eq:cuspCondition}.
@@ -330,7 +330,7 @@ Morse point & $A_3^-$ & merger point & saddle point of the eigenvalue field $\la
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{The Zel'dovich approximation}\label{sec:Zeldovich}
-In this paper we define the caustic skeleton using the Zel'dovich approximation and study the resulting structures using a dark matter $N$-body simulation. The Zel'dovich approximation is the first order approximation in Lagrangian fluid dynamics, for which the displacement field factorizes into a spatial and a temporal part
+In this paper we define the caustic skeleton using the Zel'dovich approximation \cite{Zeldovich:1970} and study the resulting structures using a dark matter $N$-body simulation. The Zel'dovich approximation is the first order approximation in Lagrangian fluid dynamics, for which the displacement field factorizes into a spatial and a temporal part
 \begin{align}
 \bm{s}_t(\bm{q}) = - b_+(t) \nabla_{\bm{q}} \Psi(\bm{q})\,.
 \end{align}
@@ -427,7 +427,7 @@ with the normalization constant $\mathcal{N}$ and the `action' (in analogy with 
 \begin{align}
 S[f]\equiv \frac{1}{2} \iint (f(\bm{q}_1) - \bar{f}(\bm{q}_1)) K(\bm{q}_1,\bm{q}_2) (f(\bm{q}_2) -\bar{f}(\bm{q}_2))\mathrm{d}\bm{q}_1 \mathrm{d}\bm{q}_2,\label{eq:action}
 \end{align}
-defined in terms of the mean field $\bar{f}(\bm{q})$ and the kernel $K(\bm{q}_1,\bm{q}_2)$. The probability that the random field $f$ is included in a set of functions $\mathcal{S}$ is defined by the path integral
+defined in terms of the mean field $\bar{f}(\bm{q})$ and the kernel $K(\bm{q}_1,\bm{q}_2)$ \cite{adler:1981, bbks:1986}. The probability that the random field $f$ is included in a set of functions $\mathcal{S}$ is defined by the path integral
 \begin{align}
 P[f \in \mathcal{S}] = \mathcal{N} \int \bm{1}_\mathcal{S}(f) e^{-S[f]}\,\mathcal{D}f\,,
 \end{align}
@@ -519,7 +519,7 @@ with $\bm{k}=(k_1,k_2)$ and $\bm{p}=(p_1,p_2)$. By statistical isotropy, we obta
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Linear constraints: Gaussian fields}
-In this paper, we study how the different geometric features of the cosmic web emerge from different initial conditions. To systematically study these initial conditions we use constrained Gaussian random field theory. In this section, we develop the theory of linear constraints following the analysis of [van de Weygaert and Bertschinger 1996]. In the next section, we generalize this discussion to a large class of non-linear constraints. We restrict both discussions to statistically homogeneous and isotropic fields with vanishing mean.
+In this paper, we study how the different geometric features of the cosmic web emerge from different initial conditions. To systematically study these initial conditions we use constrained Gaussian random field theory. In this section, we develop the theory of linear constraints following the analysis of \cite{Weygaert:1996}. In the next section, we generalize this discussion to a large class of non-linear constraints. We restrict both discussions to statistically homogeneous and isotropic fields with vanishing mean.
 
 For a random field $f$, consider a set of linear constraints
 \begin{align}
@@ -568,7 +568,7 @@ with the residue $\delta f = f-\langle f(\bm{q})|\Gamma\rangle$ and the constrai
 \begin{align}
 \int \tilde{K}(\bm{q}_1,\bm{q}) \left[\xi(\bm{q},\bm{q}_2) - \sum_{i,j=1}^M\xi_i(\bm{q})\xi_{ij}^{-1}\xi_j(\bm{q}_2)\right]\mathrm{d}\bm{q}= \delta_D^{(2)}(\bm{q}_1-\bm{q}_2)\,.
 \end{align}
-Note that earlier papers [REFS] worked in the space of functions satisfying the constraints $\Gamma$, neglecting the correction $\sum_{i,j=1}^M\xi_i(\bm{q})\xi_{ij}^{-1}\xi_j(\bm{q}_2)$, and using the original kernel $K$ for the residue. In this study, we prefer to work in space of unrestricted functions, as the correction makes the inhomogeneity and anisotropy of the residue manifest. These properties are most clearly observed in the variance of the residue,
+Note that earlier papers \cite{Weygaert:1996} worked in the space of functions satisfying the constraints $\Gamma$, neglecting the correction $\sum_{i,j=1}^M\xi_i(\bm{q})\xi_{ij}^{-1}\xi_j(\bm{q}_2)$, and using the original kernel $K$ for the residue. In this study, we prefer to work in space of unrestricted functions, as the correction makes the inhomogeneity and anisotropy of the residue manifest. These properties are most clearly observed in the variance of the residue,
 \begin{align}
 \langle \delta f(\bm{q})^2|\Gamma \rangle = \sigma_0^2- \sum_{i,j=1}^M\xi_i(\bm{q})\xi_{ij}^{-1}\xi_j(\bm{q})\,,
 \end{align}
@@ -937,9 +937,9 @@ and its determinant
 \begin{align}
 &\det\left( \mathcal{H}\left[\det (I- b_+ \bm{\psi})\right]\right) \\
 &=
-- 4 (T_{111} T_{122}^3 + T_{112}^3 T_{222}) + 3 T_{112}^2 T_{122}^2 +  6 T_{111} T_{112} T_{122} T_{222} - T_{111}^2 T_{222}^2\,.
+- 4 (T_{111} T_{122}^3 + T_{112}^3 T_{222}) + 3 T_{112}^2 T_{122}^2 +  6 T_{111} T_{112} T_{122} T_{222} - T_{111}^2 T_{222}^2\,,
 \end{align}
-Note that the Hessian at the critical point only depends on the third order derivatives of the deformation potential. The fourth order derivatives cancel when $T_{11}=T_{22}=1/b_+$ and $T_{12}=0$. The umbilic point is an elliptic caustic $D_4^+$ when the critical point is a maximum, or a minimum, \textit{i.e.}, for which 
+see \cite{Rozhanskii:1984}. Note that the Hessian at the critical point only depends on the third order derivatives of the deformation potential. The fourth order derivatives cancel when $T_{11}=T_{22}=1/b_+$ and $T_{12}=0$. The umbilic point is an elliptic caustic $D_4^+$ when the critical point is a maximum, or a minimum, \textit{i.e.}, for which 
 \begin{align}
 \det (\mathcal{H}\left[\det (I- b_+ \bm{\psi})\right]) >0\,.
 \end{align}
@@ -947,7 +947,7 @@ The umbilic point is an hyperbolic caustic when the critical point is a saddle p
 \begin{align}
 \det (\mathcal{H}\left[\det (I- b_+ \bm{\psi})\right]) <0\,.
 \end{align}
-This condition should be contrasted with the condition presented in [REFS] based on the sign of 
+This condition should be contrasted with the condition presented in \cite{Delmarcelle:1995, Lavin:1997, Hidding:2016, Feldbrugge:2018} based on the sign of 
 \begin{align}
 \delta = \frac{1}{2}(-T_{112}^2 + T_{111} T_{122} - T_{122}^2 + T_{112} T_{222}).
 \end{align} 
@@ -1191,6 +1191,12 @@ In an upcomming paper, we will:
 JF would like to thank Nynke Niezink for the enlightening discussions.
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\bibliographystyle{JHEP}
+\bibliographystyle{plain}
+
+\bibliography{mybibliography}
 
 \appendix
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
