@@ -177,7 +177,7 @@ The boundaries of the multi-stream regions mark discontinuous of the density fie
 \caption{A Gaussian random field and the corresponding eigenvalue and eigenvector fields. \textit{Upper left:} the gravitaitonal potential $\Psi$. \textit{Upper right:} the corresponding density perturbation field $\delta$. \textit{Lower left:} the first eigenvalue and eigenvector fields $\mu_1,\bm{v}_1$. \textit{Lower right:} the second eigenvalue and eigenvector fields $\mu_2,\bm{v}_2$.}\label{fig:Initial_Conditions}
 \end{figure}
 
-In late time cosmology, the cosmic web forms due to the gravitational collapse of tiny Gaussian fluctuations $\delta_0$. At early times, the corresponding Gaussian gravitational potential $\phi_0$ governs the dynamics of the mass elements, $\bm{s}_t \propto \nabla \phi_0$. See the upper panels of figure \ref{fig:Initial_Conditions} for an illustration of the initial density and the corresponding gravitational potential fields\footnote{We model the gravitational potential with a power-law power spectrum $P(k) \propto k^{n_s}$ with an index $n_s=-1$ smoothed with a Gaussian filter on the length scale $\sigma=5$ Mpc.}. Eulerian fluid dynamics describes the early evolution of the density field in terms of these Gaussian fields. In contrast, Lagrangian fluid dynamics emphasises the role of the deformation tensor $\nabla \bm{s}_t$ and the corresponding non-Gaussian eigenvalue and eigenvector fields (see the density formula \eqref{eq:density}). It follows from the eigenequation \eqref{eq:EigenvalueAndEigenvector} that the eigenvalue fields are the quadratic (or cubic) roots of a polynomial whose coefficients depend on the first order derivatives of the displacement field in 2D (or 3D). The non-linearity of the eigenvalue fields captures part of the non-linear dynamics of gravitational collapse. At early times the deformation tensor $\nabla \bm{s}_t$ is proportional to the Hessian of the gravitational potential, $\nabla \bm{s}_t \propto \mathcal{H}\phi_0$. The eigenvalue and eigenvector fields are nonlinear functions of the second order derivatives of the initial gravitational potential. See the lower panels of figure \ref{fig:Initial_Conditions} for an illustration of the non-Gaussian nature of the eigenvalue fields corresponding to the gravitational potential in the upper left panel. 
+In late time cosmology, the cosmic web forms due to the gravitational collapse of tiny Gaussian fluctuations $\delta_0$. At early times, the corresponding Gaussian gravitational potential $\phi_0$ governs the dynamics of the mass elements, $\bm{s}_t \propto \nabla \phi_0$. See the upper panels of figure \ref{fig:Initial_Conditions} for an illustration of the initial density and the corresponding gravitational potential fields\footnote{We model the gravitational potential with a power-law power spectrum $P(k) \propto k^{n_s}$ with an index $n_s=-1$ smoothed with a Gaussian filter on the length scale $\sigma=5\text{ Mpc}$.}. Eulerian fluid dynamics describes the early evolution of the density field in terms of these Gaussian fields. In contrast, Lagrangian fluid dynamics emphasises the role of the deformation tensor $\nabla \bm{s}_t$ and the corresponding non-Gaussian eigenvalue and eigenvector fields (see the density formula \eqref{eq:density}). It follows from the eigenequation \eqref{eq:EigenvalueAndEigenvector} that the eigenvalue fields are the quadratic (or cubic) roots of a polynomial whose coefficients depend on the first order derivatives of the displacement field in 2D (or 3D). The non-linearity of the eigenvalue fields captures part of the non-linear dynamics of gravitational collapse. At early times the deformation tensor $\nabla \bm{s}_t$ is proportional to the Hessian of the gravitational potential, $\nabla \bm{s}_t \propto \mathcal{H}\phi_0$. The eigenvalue and eigenvector fields are nonlinear functions of the second order derivatives of the initial gravitational potential. See the lower panels of figure \ref{fig:Initial_Conditions} for an illustration of the non-Gaussian nature of the eigenvalue fields corresponding to the gravitational potential in the upper left panel. 
 
 \begin{figure}
 \centering
@@ -223,7 +223,7 @@ Lagrangian catastrophe theory classifies the shell-crossing regions into a finit
 \end{align}
 for $i=1$ or $2$, forms the fold curve $A_2$ consisting of the points that shell-cross at time $t$. Note that the fold curve is independent of the eigenvector fields and trivially satisfies the shell-crossing condition \eqref{eq:shellCrossingCondition}. The fold curve bounds the different multi-stream regions (see the red curves in figure \ref{fig:caustics_Examples_Big}). The analysis presented in figure \ref{fig:caustics_Examples_Big} is based on the caustic skeleton of the Zel'dovich approximation described below. However, the caustic conditions apply to general Lagrangian fluids. 
 
-The initial gravitational potential in the examples in this paper are -- unless otherwise indicated -- based on a Gaussian random field with a power-law power spectrum $P(k) \propto k^{n_s}$ with the index $n_s=-1$ smoothed with a Gaussian filter with the length scale $\sigma = 5$ Mpc. We assume a flat Einstein-de Sitter universe consisting of dark matter density $\Omega_m=1$ with a Hubble constant $H_0=71$ km/s/Mpc. We map the caustic skeleton in Lagrangian space to Eulerian space with the Lagrangian map $\bm{x}_t$, where $\bm{x}_t$ either corresponds to the Zel'dovich approximation or a small dark matter two-dimensional $N$-body simulation \cite{Hidding:2020}.
+The initial gravitational potential in the examples in this paper are -- unless otherwise indicated -- based on a Gaussian random field with a power-law power spectrum $P(k) \propto k^{n_s}$ with the index $n_s=-1$ smoothed with a Gaussian filter with the length scale $\sigma = 5\text{ Mpc}$. We assume a flat Einstein-de Sitter universe consisting of dark matter density $\Omega_m=1$ with a Hubble constant $H_0=71\text{ km/s/Mpc}$. We map the caustic skeleton in Lagrangian space to Eulerian space with the Lagrangian map $\bm{x}_t$, where $\bm{x}_t$ either corresponds to the Zel'dovich approximation or a small dark matter two-dimensional $N$-body simulation \cite{Hidding:2020}.
 
 The fold curve can develop a non-differentiable point in the cusp caustic $A_3$, when the fold curve in Lagrangian space is parallel to the corresponding eigenvector field, \textit{i.e.}, 
 \begin{align}
@@ -487,7 +487,7 @@ In this paper, we for simplicity always assume the initial gravitational potenti
 \begin{align}
 P_{eff}(k)\propto k^{ns}e^{-\sigma^2 k^2}\,.
 \end{align}
-Unless otherwise specified, we use a spectral index $n_s=-1$ and a smoothing length scale $\sigma = 5$ Mpc. 
+Unless otherwise specified, we use a spectral index $n_s=-1$ and a smoothing length scale $\sigma = 5\text{ Mpc}$. 
 
 
 
@@ -947,7 +947,7 @@ and its determinant
 \begin{align}
 &\det\left( \mathcal{H}\left[\det (I- b_+ \bm{\psi})\right]\right) \\
 &=
-- 4 (T_{111} T_{122}^3 + T_{112}^3 T_{222}) + 3 T_{112}^2 T_{122}^2 +  6 T_{111} T_{112} T_{122} T_{222} - T_{111}^2 T_{222}^2\,,
+ 6 T_{111} T_{112} T_{122} T_{222} + 3 T_{112}^2 T_{122}^2  - 4 (T_{111} T_{122}^3 + T_{112}^3 T_{222})  - T_{111}^2 T_{222}^2\,,
 \end{align}
 see \cite{Rozhanskii:1984}. Note that the Hessian at the critical point only depends on the third order derivatives of the deformation potential. The fourth order derivatives cancel when $T_{11}=T_{22}=1/b_+$ and $T_{12}=0$. The umbilic point is an elliptic caustic $D_4^+$ when the critical point is a maximum, or a minimum, \textit{i.e.}, for which 
 \begin{align}
@@ -959,7 +959,7 @@ The umbilic point is an hyperbolic caustic when the critical point is a saddle p
 \end{align}
 This condition should be contrasted with the condition presented in \cite{Delmarcelle:1995, Lavin:1997, Hidding:2016, Feldbrugge:2018} based on the sign of 
 \begin{align}
-\delta = \frac{1}{2}(-T_{112}^2 + T_{111} T_{122} - T_{122}^2 + T_{112} T_{222}).
+\delta = \frac{1}{2}(T_{111} T_{122} + T_{112} T_{222} - T_{112}^2  - T_{122}^2 ).
 \end{align} 
 In fact, this condition describes the behaviour of the eigenvector field in the vicinity of the umbilic point and does not differentiates between the elliptic and hyperbolic caustics. Note that for the elliptic caustic we always have $\delta <0$.
 
@@ -1130,7 +1130,7 @@ See appendix \ref{ap:eigenvalueRel} for a derivation of this result. In figure \
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{The caustic skeleton in Eulerian space}
-To develop a visual appreciation of the roles of the different caustics in the large scale structure and the accuracy of the caustic skeleton of the Zel'dovich approximation, we construct a realization of an unconstrained Gaussian random field with the spectral index $n_s=-1$ and the smoothing scale $\sigma=2.5$ Mpc for the gravitational potential $\phi_0$ and evolve it with the Zel'dovich approximation and a small two-dimensional dark matter $N$-body simulation \cite{Hidding:2020} (see figure \ref{fig:Eulerian}). 
+To develop a visual appreciation of the roles of the different caustics in the large scale structure and the accuracy of the caustic skeleton of the Zel'dovich approximation, we construct a realization of an unconstrained Gaussian random field with the spectral index $n_s=-1$ and the smoothing scale $\sigma=2.5 \text{ Mpc}$ for the gravitational potential $\phi_0$ and evolve it with the Zel'dovich approximation and a small two-dimensional dark matter $N$-body simulation \cite{Hidding:2020} (see figure \ref{fig:Eulerian}) in a flat Einstein-de Sitter universe with the dark matter density $\Omega_m=1$ and Hubble constant $H_0=71\text{ Mpc/s/km}$. 
 
 The caustic skeleton captures the geometry of the first eigenvalue and eigenvector field $\lambda_1$ and $\bm{v}_1$ (see the upper left panel). At late times, the cusp curves form an interconnected network tracing multi-stream regions bounded by the fold curves. The blue regions bounded by the fold curves are the progentors of the voids. At large scales, the eigenvalue field closely resembles the initial density perturbation $\delta_0 \propto \nabla^2\phi_0$ (see the upper right panel). Moreover, at these scales, the caustic skeleton follows the geometry of the superlevel sets of the density perturbation. However, on small scales, we observe qualitative differences. 
 
@@ -1361,67 +1361,55 @@ with the residue $\delta f = f-\bar{f}(\bm{q})+ \xi_i(\bm{q})\xi_{ij}^{-1}(c_j-\
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Non-linear eigenvalue relations}\label{ap:eigenvalueRel}
-To evaluate the statistical properties of the caustics we will use shorthand for the derivatives of the displacement potential $T_{ijk\dots} = \frac{\partial}{\partial q_i}\frac{\partial}{\partial q_j}\frac{\partial}{\partial q_k}\dots \Psi$. In this notation, the deformation tensor takes the form
+The eigenvalue and eigenvector fields are non-linear functions of the deformation tensor
 \begin{align}
-\bm{\psi} = \begin{pmatrix} T_{11} & T_{12} \\ T_{12} & T_{22}\end{pmatrix}.
+\bm{\psi} = \begin{pmatrix} T_{11} & T_{12} \\ T_{12} & T_{22}\end{pmatrix},
 \end{align}
-
-Under a rotation $\omega$, 
+with the partial derivatives of the displacement potential $T_{ijk\dots} = \frac{\partial}{\partial q_i}\frac{\partial}{\partial q_j}\frac{\partial}{\partial q_k}\dots \Psi$. In two dimensions, the eigenvalue and eigenvector fields are the quadratic roots of the eigenequation $\bm{\psi}\bm{v}_i=\lambda_i \bm{v}_i$, with the explicit identities for the eigenvalue fields
 \begin{align}
-(q_1,q_2) \mapsto  (q_1\cos \omega - q_2 \sin \omega, q_1 \sin \omega + q_2 \cos \omega)\,,
+\lambda_1(T_{11},T_{22},T_{12}) &= \frac{1}{2}\left(T_{11}+T_{22} + \sqrt{4 T_{12}^2 +(T_{11}-T_{22})^2}\right)\,,\\
+\lambda_2(T_{11},T_{22},T_{12}) &= \frac{1}{2}\left(T_{11}+T_{22} - \sqrt{4 T_{12}^2 +(T_{11}-T_{22})^2}\right)\,.
 \end{align}
-the deformation tensor transform as the doubly periodic functions
-\begin{align}
-T_{11} &\mapsto T_{11} \cos ^2 \omega  + T_{22} \sin^2 \omega  + T_{12}\sin 2\omega\,,\\
-T_{12} &\mapsto \frac{1}{2}(T_{22}-T_{11})\sin 2 \omega + T_{12} \cos 2\omega\,,\\
-T_{22} &\mapsto T_{11} \sin ^2 \omega  + T_{22} \cos^2 \omega  - T_{12} \sin 2\omega\,.
-\end{align}
-Note that there are two angles $\omega \in [0,\pi)$ for which the deformation tensor is in its eigenframe, \textit{i.e.}, $T_{12}=0$, one for which $T_{11}>T_{22}$ and one for which $T_{11}<T_{22}$, separated by an angle $\pi/2$. In this paper we will always use the eigenframe for which $T_{12}=0$ and $T_{11} \geq T_{22}$. In this frame, the eigenvalues and eigenvectors take the simple form 
+To study Gaussian random fields satisfying non-linear constraints in terms of the eigenvalue and eigenvector fields, it is convenient to develop several identities in the eigenframe, for which $T_{11} \geq T_{22}$ and $T_{12}=0$. Note that in this frame the eigenvalue and eigenvector fields locally take the form
 \begin{align}
 \lambda_{1} &= T_{11}\,,\quad \bm{v}_1=(1,0)\,,\\
 \lambda_{2} &= T_{22}\,,\quad \bm{v}_2=(0,1)\,.
 \end{align}
-If we would impose the reverse condition $T_{11} \leq T_{22}$ the relations would flip.
 
-Using the eigenvalue decomposition,
+The eigenvalue decomposition $\bm{\psi} = R^T \Lambda R,$ with the the diagonal matrix
 \begin{align}
-\bm{\psi} = R^T \Lambda R\,,
+\Lambda = \begin{pmatrix}\lambda_1 & 0 \\ 0 &\lambda_2 \end{pmatrix}
 \end{align}
-with the diagonal matrix $\Lambda = \text{diag}(\lambda_1,\lambda_2)$ where $\lambda_1 \geq \lambda_2$ and the rotation matrix
+satisfying the ordering $\lambda_1 \geq \lambda_2$, and the rotation matrix
 \begin{align}
 R = \begin{pmatrix} \cos \theta & - \sin \theta \\ \sin \theta & \cos \theta \end{pmatrix} \in SO(2),
 \end{align}
-we can express the components $T_{11},T_{22},T_{12}$ in terms of the eigenvalue coordinates $\lambda_1,\lambda_2,\theta$,
+yield three identies for the components of the deformation tensor $T_{11},T_{22},T_{12}$ 
 \begin{align}
-T_{11} &= \lambda_1 \cos^2 \omega + \lambda_2 \sin^2 \theta\,,\\
-T_{22} &= \lambda_1 \sin^2\omega + \lambda_2 \cos^2 \theta\,,\\
+T_{11} &= \lambda_1 \cos^2 \theta + \lambda_2 \sin^2 \theta\,,\\
+T_{22} &= \lambda_1 \sin^2\theta + \lambda_2 \cos^2 \theta\,,\\
 T_{12} &= (\lambda_2 - \lambda_1)\cos \theta \sin \theta\,.
 \end{align}
-Inverting this set of equation give the eigenvalues
+Solving for the angle $\theta$, we obtain a representation for the normalized eigenvector fields
 \begin{align}
-\lambda_1(T_{11},T_{22},T_{12}) &= \frac{1}{2}\left(T_{11}+T_{22} + \sqrt{4 T_{12}^2 +(T_{11}-T_{22})^2}\right)\,,\\
-\lambda_2(T_{11},T_{22},T_{12}) &= \frac{1}{2}\left(T_{11}+T_{22} - \sqrt{4 T_{12}^2 +(T_{11}-T_{22})^2}\right)\,,
+\bm{v}_1 &=\pm (\cos(\theta), -\sin(\theta))\,,\\
+\bm{v}_2 &=\pm (\sin(\theta),\ \ \ \cos(\theta))\,,
 \end{align}
-and the normalized eigenvector fields
-\begin{align}
-\bm{v}_1 &= (\cos(\theta), -\sin(\theta))\,,\\
-\bm{v}_2 &= (\sin(\theta),\ \ \ \cos(\theta))\,,
-\end{align}
-with
+where the sine and cosine are expressed in terms of the partial derivatives of the displacement potential
 \begin{align}
 \cos(\theta) &= \frac{\sqrt{T_{11} - T_{22} + \sqrt{4 T_{12}^2 +(T_{11}-T_{22})^2}}}{\sqrt{2} \sqrt[4]{4T_{12}^2 + (T_{11}-T_{22})^2}}\,,\\
 \sin(\theta) &= \frac{\sqrt{2}T_{12}}{\sqrt[4]{4T_{12}^2+(T_{11}-T_{22})^2}\sqrt{T_{11}-T_{22} + \sqrt{4T_{12}^2 + (T_{11}-T_{22})^2}}}\,.
 \end{align}
-Given the eigenvalue and eigenvector fields in terms of the second order derivatives of the displacement potential, we can evaluate the directional derivatives of the eigenvalue fields in the eigenframe $T_{12}=0, T_{11} \geq T_{22}$.
+These relations enable us to evaluate several useful non-linear identities. We evaluate the derivatives of the eigenvalue field in a general frame and subsequently take the limit $T_{12} \to 0$ with the condition $T_{11}\geq T_{22}$. 
 
-The first and second order derivatives of the eigenvalue fields in the eigenvector frame take the form
+The first order derivatives of the eigenvalue fields in the eigenframe take are linear 
 \begin{align}
 \frac{\partial}{\partial q_1} \lambda_1&= T_{111}\,,\quad
 \frac{\partial}{\partial q_2} \lambda_1= T_{112}\,,\\
 \frac{\partial}{\partial q_1} \lambda_2&= T_{122}\,,\quad
-\frac{\partial}{\partial q_2} \lambda_2= T_{222}\,,
+\frac{\partial}{\partial q_2} \lambda_2= T_{222}\,.
 \end{align}
-and 
+The second order derivatives receive a non-linear correction
 \begin{align}
 \frac{\partial^2}{\partial q_1^2} \lambda_1&= T_{1111} + \frac{2 T_{112}^2}{T_{11}-T_{22}}\,,\\
 \frac{\partial^2}{\partial q_1 \partial q_2} \lambda_1&= T_{1112} + \frac{2 T_{112}T_{122}}{T_{11}-T_{22}}\,,\\
@@ -1431,22 +1419,22 @@ and
 \frac{\partial^2}{\partial q_2^2} \lambda_2&= T_{2222} - \frac{2T_{122}^2}{T_{11}-T_{22}}\,.
 \end{align}
 
-These expressions differ from the directional derivatives in the eigenframe. The first order derivatives coincides with the gradient of the eigenvalue field
+The first order derivative in the direction of the eigenvalue field naturally coincide with the first order derivatives described above
 \begin{align}
-\bm{v}_1 \cdot \nabla \lambda_1 &= T_{111}\,,\quad
-\bm{v}_2 \cdot \nabla \lambda_1 = T_{112}\,,\\
-\bm{v}_1 \cdot \nabla \lambda_2 &= T_{122}\,,\quad
-\bm{v}_2 \cdot \nabla \lambda_2 = T_{222}\,.
+\bm{v}_1 \cdot \nabla \lambda_1 &= \pm T_{111}\,,\quad
+\bm{v}_2 \cdot \nabla \lambda_1 = \pm T_{112}\,,\\
+\bm{v}_1 \cdot \nabla \lambda_2 &= \pm T_{122}\,,\quad
+\bm{v}_2 \cdot \nabla \lambda_2 = \pm T_{222}\,.
 \end{align}
-The second order derivatives assume the form
+Note that these combinations transform as scalars under rotations. The second order derivatives receive an additional non-linear term due to the variation of the eigenvector fields
 \begin{align}
 \bm{v}_1 \cdot \nabla (\bm{v}_1 \cdot \nabla \lambda_1) &= T_{1111} + \frac{3T_{112}^2}{T_{11}-T_{22}}\,,\\
-\bm{v}_2 \cdot \nabla (\bm{v}_1 \cdot \nabla \lambda_1) &= T_{1112} + \frac{3T_{112}T_{122}}{T_{11}-T_{22}}\,,\\
-\bm{v}_1 \cdot \nabla (\bm{v}_2 \cdot \nabla \lambda_1) &= T_{1112} - \frac{T_{112}(T_{111}-2T_{122})}{T_{11}-T_{22}}\,,\\
+\bm{v}_2 \cdot \nabla (\bm{v}_1 \cdot \nabla \lambda_1) &= \pm \left(T_{1112} + \frac{3T_{112}T_{122}}{T_{11}-T_{22}}\right)\,,\\
+\bm{v}_1 \cdot \nabla (\bm{v}_2 \cdot \nabla \lambda_1) &= \pm \left(T_{1112} - \frac{T_{112}(T_{111}-2T_{122})}{T_{11}-T_{22}}\right)\,,\\
 \bm{v}_2 \cdot \nabla (\bm{v}_2 \cdot \nabla \lambda_1) &= T_{1122} - \frac{T_{122}(T_{111}-2T_{122})}{T_{11}-T_{22}}\,,\\
 \bm{v}_1 \cdot \nabla (\bm{v}_1 \cdot \nabla \lambda_2) &= T_{1122} + \frac{T_{112}(T_{222}-2T_{112})}{T_{11}-T_{22}}\,,\\
-\bm{v}_2 \cdot \nabla (\bm{v}_1 \cdot \nabla \lambda_2) &= T_{1222} + \frac{T_{122}(T_{222}-2T_{112})}{T_{11}-T_{22}}\,,\\
-\bm{v}_1 \cdot \nabla (\bm{v}_2 \cdot \nabla \lambda_2) &= T_{1222} - \frac{3T_{112}T_{122}}{T_{11}-T_{22}}\,,\\
+\bm{v}_2 \cdot \nabla (\bm{v}_1 \cdot \nabla \lambda_2) &= \pm\left(T_{1222} + \frac{T_{122}(T_{222}-2T_{112})}{T_{11}-T_{22}}\right)\,,\\
+\bm{v}_1 \cdot \nabla (\bm{v}_2 \cdot \nabla \lambda_2) &= \pm\left(T_{1222} - \frac{3T_{112}T_{122}}{T_{11}-T_{22}}\right)\,,\\
 \bm{v}_2 \cdot \nabla (\bm{v}_2 \cdot \nabla \lambda_2) &= T_{2222} - \frac{3T_{122}^2}{T_{11}-T_{22}}\,.
 \end{align}
 
