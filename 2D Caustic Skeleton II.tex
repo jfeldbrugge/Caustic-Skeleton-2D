@@ -1303,7 +1303,7 @@ with $\Gamma = \{\bm{C} = \bm{c}\}$ is a Gaussian density as both $p(f,\Gamma)$ 
 \xi_i(\bm{q}) &= \text{cov}(f(\bm{q}),C_i) = \langle (f(\bm{q})-\bar{f}(\bm{q}))(C_i - \bar{C}_i)\rangle\,,\\
 \xi_{ij} &= \text{cov}(C_i,C_j) = \langle (C_i - \bar{C}_i)(C_j-\bar{C}_j)\rangle\,.
 \end{align}
-For conciseness, we will use the Einstein summation convention over the repeated dummy indices.
+For conciseness, we use the Einstein summation convention over the repeated dummy indices.
 
 Define an auxiliary function $g(\bm{q}) = f(\bm{q}) + \bm{A}(\bm{q}) \cdot \bm{C}$ with $A_i(\bm{q}) = -\xi_j(\bm{q}) \xi_{ji}^{-1}$. The function $g$ is by construction independent of the variable $\bm{C}$, as they are jointly normally distributed and their covariance matrix vanishes, \textit{i.e.}, 
 \begin{align}
@@ -1343,12 +1343,7 @@ When $\bar{f} = 0$ and $\bar{\bm{C}}=\bm{0}$ the expectation value reduces to th
 &=\text{cov}(f(\bm{q}_1), f(\bm{q}_2)) + \xi_i(\bm{q}_1)\xi_{ij}^{-1}\xi_{jk}\xi_{kl}^{-1}\xi_{l}(\bm{q}_2) - 2\xi_i(\bm{q}_1)\xi_{ij}^{-1}\xi_{j}(\bm{q}_2)\\
 &=\xi(\bm{q}_1,\bm{q}_2) - \xi_i(\bm{q}_1) \xi_{ij}^{-1} \xi_j(\bm{q}_2)\,.
 \end{align}
-We conclude that the residue $\delta f$ of $f$ with respect to the mean field $\langle f(\bm{q})|\Gamma\rangle =\bar{f}(\bm{q})+ \xi_i(\bm{q})\xi_{ij}^{-1}(c_j-\bar{C}_j)$ is a Gaussian random field with zero mean and variance $\sigma_0^2 - \xi_i(\bm{q}) \xi_{ij}^{-1} \xi_j(\bm{q})$. Note that the statistical properties of $\delta f$ are indeed independent of $\bm{c}$. 
-%The covariance of $f$ conditioned on $\Gamma$ is
-%\begin{align}
-%\text{cov}(f(\bm{q}_1),f(\bm{q}_2)|\Gamma) = \xi(\bm{q}_1,\bm{q}_2) - \xi_i(\bm{q}_1)\xi_{ij}^{-1}\xi_j(\bm{q}_2)\,.
-%\end{align}
-The probability density takes the form
+We conclude that the residue $\delta f$ of $f$ with respect to the mean field $\langle f(\bm{q})|\Gamma\rangle =\bar{f}(\bm{q})+ \xi_i(\bm{q})\xi_{ij}^{-1}(c_j-\bar{C}_j)$ is a Gaussian random field with zero mean $\langle \delta f|\Gamma\rangle=0$ and variance $\langle \delta f(\bm{q})^2|\Gamma\rangle = \sigma_0^2 - \xi_i(\bm{q}) \xi_{ij}^{-1} \xi_j(\bm{q})$. Note that the residue $\delta f$ for a Gaussian random field with linear constraints is indeed independent of $\bm{c}$. The covariance of the constraint field yields the constrained probability density
 \begin{align}
 p(f|\Gamma) \propto  e^{-\frac{1}{2} \iint \delta{f}(\bm{q}_1) \tilde{K}(\bm{q}_1,\bm{q}_2) \delta f(\bm{q}_2)\mathrm{d}\bm{q}_1 \mathrm{d}\bm{q}_2 }\label{eq:constraint2}
 \end{align}
@@ -1356,7 +1351,7 @@ with the residue $\delta f = f-\bar{f}(\bm{q})+ \xi_i(\bm{q})\xi_{ij}^{-1}(c_j-\
 \begin{align}
 \int \tilde{K}(\bm{q}_1,\bm{q}) \left[\xi(\bm{q},\bm{q}_2) - \xi_i(\bm{q})\xi_{ij}^{-1}\xi_j(\bm{q}_2)\right]\mathrm{d}\bm{q}= \delta_D^{(2)}(\bm{q}_1-\bm{q}_2)\,.
 \end{align}
-
+The correction $- \xi_i(\bm{q})\xi_{ij}^{-1}\xi_j(\bm{q}_2)$ implements the statistical anisotropy and inhomogeneity of the residue.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1426,12 +1421,15 @@ The first order derivative in the direction of the eigenvalue field naturally co
 \bm{v}_1 \cdot \nabla \lambda_2 &= \pm T_{122}\,,\quad
 \bm{v}_2 \cdot \nabla \lambda_2 = \pm T_{222}\,.
 \end{align}
-Note that these combinations transform as scalars under rotations. The second order derivatives receive an additional non-linear term due to the variation of the eigenvector fields
+Note that these combinations transform as scalars under rotations. The second order derivatives receive an additional non-linear term due to the variation of the eigenvector fields. The second order derivatives of the first eigenvalue field take the form
 \begin{align}
 \bm{v}_1 \cdot \nabla (\bm{v}_1 \cdot \nabla \lambda_1) &= T_{1111} + \frac{3T_{112}^2}{T_{11}-T_{22}}\,,\\
 \bm{v}_2 \cdot \nabla (\bm{v}_1 \cdot \nabla \lambda_1) &= \pm \left(T_{1112} + \frac{3T_{112}T_{122}}{T_{11}-T_{22}}\right)\,,\\
 \bm{v}_1 \cdot \nabla (\bm{v}_2 \cdot \nabla \lambda_1) &= \pm \left(T_{1112} - \frac{T_{112}(T_{111}-2T_{122})}{T_{11}-T_{22}}\right)\,,\\
-\bm{v}_2 \cdot \nabla (\bm{v}_2 \cdot \nabla \lambda_1) &= T_{1122} - \frac{T_{122}(T_{111}-2T_{122})}{T_{11}-T_{22}}\,,\\
+\bm{v}_2 \cdot \nabla (\bm{v}_2 \cdot \nabla \lambda_1) &= T_{1122} - \frac{T_{122}(T_{111}-2T_{122})}{T_{11}-T_{22}}\,.
+\end{align}
+Note that the directional derivatives in the directions $\bm{v}_1$ and $\bm{v}_2$ do not commute. The second order derivatives of the second eigenvalue field yield the analogous identities
+\begin{align}
 \bm{v}_1 \cdot \nabla (\bm{v}_1 \cdot \nabla \lambda_2) &= T_{1122} + \frac{T_{112}(T_{222}-2T_{112})}{T_{11}-T_{22}}\,,\\
 \bm{v}_2 \cdot \nabla (\bm{v}_1 \cdot \nabla \lambda_2) &= \pm\left(T_{1222} + \frac{T_{122}(T_{222}-2T_{112})}{T_{11}-T_{22}}\right)\,,\\
 \bm{v}_1 \cdot \nabla (\bm{v}_2 \cdot \nabla \lambda_2) &= \pm\left(T_{1222} - \frac{3T_{112}T_{122}}{T_{11}-T_{22}}\right)\,,\\
