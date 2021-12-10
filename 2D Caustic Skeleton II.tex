@@ -1506,18 +1506,26 @@ Assuming $T_{11} \geq T_{22}$, these equations have a unique solution. In the ei
 
 To study the directional derivatives in the direction of the eigenvectors, we use the chain rule 
 \begin{align}
-\bm{v}_i \cdot \nabla (\bm{v}_j \cdot \nabla \lambda_k)= (\bm{v}_i \cdot  \nabla )\bm{v}_j \cdot \nabla \lambda_k + \bm{v}_i \mathcal{H} \lambda_k \bm{v}_j \,,
+\bm{v}_i \cdot \nabla (\bm{v}_j \cdot \nabla \lambda_k)= (\bm{v}_i \cdot  \nabla )\bm{v}_j \cdot \nabla \lambda_k + \bm{v}_i (\mathcal{H} \lambda_k )\bm{v}_j \,,
 \end{align}
-with the Hessian $\mathcal{H}$. We already obtained the rightmost term in the eigenframe from the analysis above. What remains is evaluating the derivative $(\bm{v}_i \cdot \nabla) \bm{v}_j$. First note that the normalization $\|\bm{v}_i\|=1$ implies the identity $\bm{v}_i \cdot \partial_j \bm{v}_i=0$. The vector $\partial_i \bm{v}_j$ is normal to $\bm{v}_j$ fixing one of the coefficients of $(\bm{v}_i \cdot \nabla) \bm{v}_j$. For the remaining coefficients, we use the eigenequation $(\bm{\psi}-\lambda_i I)\bm{v}_i=\bm{0}$. After applying the operator $\partial_j$, we obtain the relation
+with the Hessian $\mathcal{H}$. We already obtained the rightmost term in the eigenframe from the analysis above. What remains is evaluating the derivative $(\bm{v}_i \cdot \nabla) \bm{v}_j$. First note that the normalization $\|\bm{v}_i\|=1$ implies the identity
+\begin{align}
+\bm{v}_i \cdot \partial_j \bm{v}_i=0\,.
+\end{align} 
+The vector $\partial_i \bm{v}_j$ is normal to $\bm{v}_j$ fixing one of the coefficients of $(\bm{v}_i \cdot \nabla) \bm{v}_j$. For the remaining coefficients, we use the eigenequation $(\bm{\psi}-\lambda_i I)\bm{v}_i=\bm{0}$. After applying the operator $\partial_j$, we obtain the relation
 \begin{align}
 (\partial_j \bm{\psi} - \partial_j \lambda_j I)\bm{v}_i + (\bm{\psi}-\lambda_i I)\partial_j \bm{v}_i=\bm{0}\,.
 \end{align}
 In the eigenframe, these equations are solved by
 \begin{align}
-\partial_1 \bm{v}_1 &= (0,T_{112}/(T_{11}-T_{22}))\,,\\
-\partial_2 \bm{v}_1 &= (0,T_{122}/(T_{11}-T_{22}))\,,\\
-\partial_1 \bm{v}_2 &= (-T_{112}/(T_{11}-T_{22}), 0)\,,\\
-\partial_2 \bm{v}_2 &= (-T_{122}/(T_{11}-T_{22}), 0)\,.
+\nabla \bm{v}_1 &= \begin{pmatrix}
+0, & T_{112}/(T_{11}-T_{22})\\
+0, & T_{122}/(T_{11}-T_{22})
+\end{pmatrix},\\
+\nabla \bm{v}_2 &= \begin{pmatrix}
+-T_{112}/(T_{11}-T_{22}), & 0\\
+-T_{122}/(T_{11}-T_{22}), & 0
+\end{pmatrix}.
 \end{align}
 When combining all the terms we reproduce the results presented in appendix \ref{ap:eigenvalueRel}.
 
@@ -1565,19 +1573,19 @@ The partial derivatives of the eigenvector fields in the eigenframe take the for
 
 \begin{align}
 \nabla  \bm{v}_1 &= \begin{pmatrix}
-0 & T_{112}/(T_{11}-T_{22}) & T_{113}/(T_{11}-T_{33})\\
-0 & T_{122}/(T_{11}-T_{22}) & T_{123}/(T_{11}-T_{33})\\
-0 & T_{123}/(T_{11}-T_{22}) & T_{133}/(T_{11}-T_{33})
+0, & T_{112}/(T_{11}-T_{22}), & T_{113}/(T_{11}-T_{33})\\
+0, & T_{122}/(T_{11}-T_{22}), & T_{123}/(T_{11}-T_{33})\\
+0, & T_{123}/(T_{11}-T_{22}), & T_{133}/(T_{11}-T_{33})
 \end{pmatrix}\,,\\
 \nabla \bm{v}_2 &= \begin{pmatrix}
--T_{112}/(T_{11}-T_{22})& 0& T_{123}/(T_{22}-T_{33})\\
--T_{122}/(T_{11}-T_{22})& 0& T_{223}/(T_{22}-T_{33})\\
--T_{123}/(T_{11}-T_{22})& 0& T_{233}/(T_{22}-T_{33})
+-T_{112}/(T_{11}-T_{22}),& 0,& T_{123}/(T_{22}-T_{33})\\
+-T_{122}/(T_{11}-T_{22}),& 0,& T_{223}/(T_{22}-T_{33})\\
+-T_{123}/(T_{11}-T_{22}),& 0,& T_{233}/(T_{22}-T_{33})
 \end{pmatrix}\,,\\
 \nabla \bm{v}_3 &= \begin{pmatrix}
--T_{113}/(T_{11}-T_{33}) & -T_{123}/(T_{22}-T_{33}) & 0\\
--T_{123}/(T_{11}-T_{33}) & -T_{223}/(T_{22}-T_{33}) & 0\\
--T_{133}/T_{11}-T_{33} & -T_{233}/(T_{22}-T_{33}) & 0
+-T_{113}/(T_{11}-T_{33}), & -T_{123}/(T_{22}-T_{33}), & 0\\
+-T_{123}/(T_{11}-T_{33}), & -T_{223}/(T_{22}-T_{33}), & 0\\
+-T_{133}/(T_{11}-T_{33}), & -T_{233}/(T_{22}-T_{33}), & 0
 \end{pmatrix}\,.
 \end{align}
 We can combine these to obtained the required identities for $\bm{v}_i \cdot \nabla (\bm{v}_j \cdot \nabla \lambda_k)$ in the eigenframe. Higher order derivatives follow analogously.
