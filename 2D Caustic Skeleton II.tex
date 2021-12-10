@@ -80,7 +80,7 @@ Useful references on the comsic web:
 \end{framed}
 
 \begin{framed}
-The mathematics of Gaussian random fields is surprisingly close to Euclidean path integrals in statistical field theory. We believe that it will prove useful to apply well-established concepts from statistical field theory to the exploration of the fundaments of the cosmic web.
+The mathematics of Gaussian random fields is surprisingly close to Euclidean path integrals in statistical field theory \cite{Feynman:1965}. We believe that it will prove useful to apply well-established concepts from statistical field theory to the exploration of the fundaments of the cosmic web.
 \end{framed}
 
 
@@ -426,7 +426,7 @@ A two-dimensional Gaussian random field $f:\mathbb{R}^2\to \mathbb{R}$ is a cont
 \begin{align}
 p(\delta) = \mathcal{N} e^{- S[f]}\,, \label{eq:functional_Distribution}
 \end{align}
-with the normalization constant $\mathcal{N}$ and the `action' (in analogy with the Euclidean path integral)
+with the normalization constant $\mathcal{N}$ and the `action' (in analogy with the Euclidean path integral \cite{Feynman:1965})
 \begin{align}
 S[f]\equiv \frac{1}{2} \iint (f(\bm{q}_1) - \bar{f}(\bm{q}_1)) K(\bm{q}_1,\bm{q}_2) (f(\bm{q}_2) -\bar{f}(\bm{q}_2))\mathrm{d}\bm{q}_1 \mathrm{d}\bm{q}_2,\label{eq:action}
 \end{align}
@@ -1424,15 +1424,15 @@ The first order derivative in the direction of the eigenvalue field naturally co
 Note that these combinations transform as scalars under rotations. The second order derivatives receive an additional non-linear term due to the variation of the eigenvector fields. The second order derivatives of the first eigenvalue field take the form
 \begin{align}
 \bm{v}_1 \cdot \nabla (\bm{v}_1 \cdot \nabla \lambda_1) &= T_{1111} + \frac{3T_{112}^2}{T_{11}-T_{22}}\,,\\
-\bm{v}_2 \cdot \nabla (\bm{v}_1 \cdot \nabla \lambda_1) &= \pm \left(T_{1112} + \frac{3T_{112}T_{122}}{T_{11}-T_{22}}\right)\,,\\
-\bm{v}_1 \cdot \nabla (\bm{v}_2 \cdot \nabla \lambda_1) &= \pm \left(T_{1112} - \frac{T_{112}(T_{111}-2T_{122})}{T_{11}-T_{22}}\right)\,,\\
+\bm{v}_2 \cdot \nabla (\bm{v}_1 \cdot \nabla \lambda_1) &= \pm \left[T_{1112} + \frac{3T_{112}T_{122}}{T_{11}-T_{22}}\right]\,,\\
+\bm{v}_1 \cdot \nabla (\bm{v}_2 \cdot \nabla \lambda_1) &= \pm \left[T_{1112} - \frac{T_{112}(T_{111}-2T_{122})}{T_{11}-T_{22}}\right]\,,\\
 \bm{v}_2 \cdot \nabla (\bm{v}_2 \cdot \nabla \lambda_1) &= T_{1122} - \frac{T_{122}(T_{111}-2T_{122})}{T_{11}-T_{22}}\,.
 \end{align}
 Note that the directional derivatives in the directions $\bm{v}_1$ and $\bm{v}_2$ do not commute. The second order derivatives of the second eigenvalue field yield the analogous identities
 \begin{align}
 \bm{v}_1 \cdot \nabla (\bm{v}_1 \cdot \nabla \lambda_2) &= T_{1122} + \frac{T_{112}(T_{222}-2T_{112})}{T_{11}-T_{22}}\,,\\
-\bm{v}_2 \cdot \nabla (\bm{v}_1 \cdot \nabla \lambda_2) &= \pm\left(T_{1222} + \frac{T_{122}(T_{222}-2T_{112})}{T_{11}-T_{22}}\right)\,,\\
-\bm{v}_1 \cdot \nabla (\bm{v}_2 \cdot \nabla \lambda_2) &= \pm\left(T_{1222} - \frac{3T_{112}T_{122}}{T_{11}-T_{22}}\right)\,,\\
+\bm{v}_2 \cdot \nabla (\bm{v}_1 \cdot \nabla \lambda_2) &= \pm\left[T_{1222} + \frac{T_{122}(T_{222}-2T_{112})}{T_{11}-T_{22}}\right]\,,\\
+\bm{v}_1 \cdot \nabla (\bm{v}_2 \cdot \nabla \lambda_2) &= \pm\left[T_{1222} - \frac{3T_{112}T_{122}}{T_{11}-T_{22}}\right]\,,\\
 \bm{v}_2 \cdot \nabla (\bm{v}_2 \cdot \nabla \lambda_2) &= T_{2222} - \frac{3T_{122}^2}{T_{11}-T_{22}}\,.
 \end{align}
 
@@ -1489,5 +1489,98 @@ s^4     & 4cs^3             & 6 c^2 s^2               & 4 c^3 s           &  c^4
 \end{pmatrix}
 \begin{pmatrix} T_{1111} \\ T_{1112} \\ T_{1122}\\ T_{1222} \\ T_{2222} \end{pmatrix}.
 \end{align}
+
+
+
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Notes}
+The derivation of the non-linear eigenvalue relations does not straigforwardly generalize to the three dimensional case. However, using algabra we can do it anyway. We first rederive the identities obtained in appendix \ref{ap:eigenvalueRel}. We subsequently generalize these relations to 3D.
+
+In two dimensions, we have the identities
+\begin{align}
+\text{Tr}\ \bm{\psi} &= T_{11} + T_{22} = \lambda_1 + \lambda_2\\
+\text{det}\ \bm{\psi} &=  T_{11}  T_{22} - T_{12}^2 = \lambda_1 \lambda_2
+\end{align}
+Assuming $T_{11} \geq T_{22}$, these equations have a unique solution. In the eigenframe $T_{12}=0$, we obtain $\lambda_1 = T_{11}$ and $\lambda_2=T_{22}$, and we will assume $\bm{v}_1=(1,0)$ and $\bm{v}_2=(0,1)$. Next, apply the differential operators $\partial_i$ and $\partial_{i}\partial_j$ for $i,j=1,2$, leading to a set of four identities. Rotate to the eigenframe by substituting $\lambda_1 = T_{11}$, $\lambda_2=T_{22}$, and $T_{12}=0$. If we now solve for $\partial_i\lambda_j$ and $\partial_i \partial_j \lambda_k$, we obtain the first set of non-linear eigen identities.
+
+To study the directional derivatives in the direction of the eigenvectors, we use the chain rule 
+\begin{align}
+\bm{v}_i \cdot \nabla (\bm{v}_j \cdot \nabla \lambda_k)= (\bm{v}_i \cdot  \nabla )\bm{v}_j \cdot \nabla \lambda_k + \bm{v}_i \mathcal{H} \lambda_k \bm{v}_j \,,
+\end{align}
+with the Hessian $\mathcal{H}$. We already obtained the rightmost term in the eigenframe from the analysis above. What remains is evaluating the derivative $(\bm{v}_i \cdot \nabla) \bm{v}_j$. First note that the normalization $\|\bm{v}_i\|=1$ implies the identity $\bm{v}_i \cdot \partial_j \bm{v}_i=0$. The vector $\partial_i \bm{v}_j$ is normal to $\bm{v}_j$ fixing one of the coefficients of $(\bm{v}_i \cdot \nabla) \bm{v}_j$. For the remaining coefficients, we use the eigenequation $(\bm{\psi}-\lambda_i I)\bm{v}_i=\bm{0}$. After applying the operator $\partial_j$, we obtain the relation
+\begin{align}
+(\partial_j \bm{\psi} - \partial_j \lambda_j I)\bm{v}_i + (\bm{\psi}-\lambda_i I)\partial_j \bm{v}_i=\bm{0}\,.
+\end{align}
+In the eigenframe, these equations are solved by
+\begin{align}
+\partial_1 \bm{v}_1 &= (0,T_{112}/(T_{11}-T_{22}))\,,\\
+\partial_2 \bm{v}_1 &= (0,T_{122}/(T_{11}-T_{22}))\,,\\
+\partial_1 \bm{v}_2 &= (-T_{112}/(T_{11}-T_{22}), 0)\,,\\
+\partial_2 \bm{v}_2 &= (-T_{122}/(T_{11}-T_{22}), 0)\,.
+\end{align}
+When combining all the terms we reproduce the results presented in appendix \ref{ap:eigenvalueRel}.
+
+
+This calculation straigtforwardly extends to symmetric $3\times 3$ matrices. We start with the identities
+\begin{align}
+\text{Tr}\ \bm{\psi} &= \lambda_1 + \lambda_2 + \lambda_3\,,\\
+\frac{1}{2}((\text{Tr}\ \bm{\psi})^2 - \text{Tr}\ \bm{\psi}^2) &= \lambda_1 \lambda_2 + \lambda_1 \lambda_3 + \lambda_2 \lambda_3\,,\\
+\text{det}\ \bm{\psi} &= \lambda_1 \lambda_2 \lambda_3\,.
+\end{align}
+In the eigenframe, we have $\lambda_1=T_{11}, \lambda_2=T_{22},\lambda_3=T_{33}$ and $T_{12}=T_{13}=T_{23}=0$ assuming $T_{11} \geq T_{22} \geq T_{33}$ and $\bm{v}_1=(1,0,0)$, $\bm{v}_2=(0,1,0)$, and $\bm{v}_3=(0,0,1)$. Applying the operators $\partial_i$ and $\partial_i \partial_j$ for $i,j=1,2,3$ and solving for the partial derivatives of the eigenvalue fields, we obtain in the eigenframe
+\begin{align}
+\nabla \lambda_1 &=(T_{111},T_{112},T_{113})\,,\\
+\nabla \lambda_2 &=(T_{122},T_{222},T_{223})\,,\\
+\nabla \lambda_3 &=(T_{133},T_{233},T_{333})\,,
+\end{align}
+and for the first eigenvalue field
+\begin{align}
+\partial_1 \partial_1 \lambda_1 &= T_{1111} - \frac{2 \left(T_{11} T_{123}^2+T_{112}^2 T_{33}+T_{113}^2 T_{22}\right)}{(T_{11}-T_{22}) (T_{11}-T_{33})}\,,\\
+\partial_1 \partial_2 \lambda_1 &= T_{1112} - \frac{2 (T_{11} T_{123} T_{223}+T_{112} T_{122} T_{33}+T_{113} T_{123} T_{22})}{(T_{11}-T_{22}) (T_{11}-T_{33})}\,, \\
+\partial_1 \partial_3 \lambda_1 &= T_{1113} - \frac{2 (T_{11} T_{123} T_{233}+T_{112} T_{123} T_{33}+T_{113} T_{133} T_{22})}{(T_{11}-T_{22}) (T_{11}-T_{33})}\,, \\
+\partial_2 \partial_2 \lambda_1 &= T_{1122} - \frac{2 \left(T_{11} T_{223}^2+T_{122}^2 T_{33}+T_{123}^2 T_{22}\right)}{(T_{11}-T_{22}) (T_{11}-T_{33})}\,, \\
+\partial_2 \partial_3 \lambda_1 &= T_{1123} - \frac{2 (T_{11} T_{223} T_{233}+T_{122} T_{123} T_{33}+T_{123} T_{133} T_{22})}{(T_{11}-T_{22}) (T_{11}-T_{33})}\,, \\
+\partial_3 \partial_3 \lambda_1 &= T_{1133} - \frac{2 \left(T_{11} T_{233}^2+T_{123}^2 T_{33}+T_{133}^2 T_{22}\right)}{(T_{11}-T_{22}) (T_{11}-T_{33})}\,, 
+\end{align}
+and for the second eigenvalue field
+\begin{align}
+\partial_1 \partial_1 \lambda_2 &= T_{1122} + \frac{2 \left(T_{11} T_{123}^2+T_{112}^2 T_{33}+T_{113}^2 T_{22}\right)}{(T_{11}-T_{22}) (T_{22}-T_{33})}\,,\\
+\partial_1 \partial_2 \lambda_2 &= T_{1222} + \frac{2 (T_{11} T_{123} T_{223}+T_{112} T_{122} T_{33}+T_{113} T_{123} T_{22})}{(T_{11}-T_{22}) (T_{22}-T_{33})}\,,\\
+\partial_1 \partial_3 \lambda_2 &= T_{1223} + \frac{2 (T_{11} T_{123} T_{233}+T_{112} T_{123} T_{33}+T_{113} T_{133} T_{22})}{(T_{11}-T_{22}) (T_{22}-T_{33})}\,,\\
+\partial_2 \partial_2 \lambda_2 &= T_{2222} + \frac{2 \left(T_{11} T_{223}^2+T_{122}^2 T_{33}+T_{123}^2 T_{22}\right)}{(T_{11}-T_{22}) (T_{22}-T_{33})}\,,\\
+\partial_2 \partial_3 \lambda_2 &= T_{2223} + \frac{2 (T_{11} T_{223} T_{233}+T_{122} T_{123} T_{33}+T_{123} T_{133} T_{22})}{(T_{11}-T_{22}) (T_{22}-T_{33})}\,,\\
+\partial_3 \partial_3 \lambda_2 &= T_{2233} + \frac{2 \left(T_{11} T_{233}^2+T_{123}^2 T_{33}+T_{133}^2 T_{22}\right)}{(T_{11}-T_{22}) (T_{22}-T_{33})}\,, 
+\end{align}
+and for the thrid eigenvalue field
+\begin{align}
+\partial_1 \partial_1 \lambda_3 &= T_{1133} - \frac{2 \left(T_{11} T_{123}^2+T_{112}^2 T_{33}+T_{113}^2 T_{22}\right)}{(T_{11}-T_{33}) (T_{22}-T_{33})}\,,\\
+\partial_1 \partial_2 \lambda_3 &= T_{1233} - \frac{2 (T_{11} T_{123} T_{223}+T_{112} T_{122} T_{33}+T_{113} T_{123} T_{22})}{(T_{11}-T_{33}) (T_{22}-T_{33})}\,,\\
+\partial_1 \partial_3 \lambda_3 &= T_{1333} - \frac{2 (T_{11} T_{123} T_{233}+T_{112} T_{123} T_{33}+T_{113} T_{133} T_{22})}{(T_{11}-T_{33}) (T_{22}-T_{33})}\,,\\
+\partial_2 \partial_2 \lambda_3 &= T_{2233} - \frac{2 \left(T_{11} T_{223}^2+T_{122}^2 T_{33}+T_{123}^2 T_{22}\right)}{(T_{11}-T_{33}) (T_{22}-T_{33})}\,,\\
+\partial_2 \partial_3 \lambda_3 &= T_{2333} - \frac{2 (T_{11} T_{223} T_{233}+T_{122} T_{123} T_{33}+T_{123} T_{133} T_{22})}{(T_{11}-T_{33}) (T_{22}-T_{33})}\,,\\
+\partial_3 \partial_3 \lambda_3 &= T_{3333} - \frac{2 \left(T_{11} T_{233}^2+T_{123}^2 T_{33}+T_{133}^2 T_{22}\right)}{(T_{11}-T_{33}) (T_{22}-T_{33})}\,.
+\end{align}
+The partial derivatives of the eigenvector fields in the eigenframe take the form
+
+\begin{align}
+\nabla  \bm{v}_1 &= \begin{pmatrix}
+0 & T_{112}/(T_{11}-T_{22}) & T_{113}/(T_{11}-T_{33})\\
+0 & T_{122}/(T_{11}-T_{22}) & T_{123}/(T_{11}-T_{33})\\
+0 & T_{123}/(T_{11}-T_{22}) & T_{133}/(T_{11}-T_{33})
+\end{pmatrix}\,,\\
+\nabla \bm{v}_2 &= \begin{pmatrix}
+-T_{112}/(T_{11}-T_{22})& 0& T_{123}/(T_{22}-T_{33})\\
+-T_{122}/(T_{11}-T_{22})& 0& T_{223}/(T_{22}-T_{33})\\
+-T_{123}/(T_{11}-T_{22})& 0& T_{233}/(T_{22}-T_{33})
+\end{pmatrix}\,,\\
+\nabla \bm{v}_3 &= \begin{pmatrix}
+-T_{113}/(T_{11}-T_{33}) & -T_{123}/(T_{22}-T_{33}) & 0\\
+-T_{123}/(T_{11}-T_{33}) & -T_{223}/(T_{22}-T_{33}) & 0\\
+-T_{133}/T_{11}-T_{33} & -T_{233}/(T_{22}-T_{33}) & 0
+\end{pmatrix}\,.
+\end{align}
+We can combine these to obtained the required identities for $\bm{v}_i \cdot \nabla (\bm{v}_j \cdot \nabla \lambda_k)$ in the eigenframe. Higher order derivatives follow analogously.
+
 
 \end{document}
