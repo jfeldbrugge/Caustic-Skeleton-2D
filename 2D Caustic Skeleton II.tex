@@ -937,17 +937,17 @@ At the umbilic points, the determinant
 \end{align}
 assumes a critical point, whose nature is determined by the Hessian
 \begin{align}
-\mathcal{H}\left[\det (I- b_+ \bm{\psi})\right] =
-\begin{pmatrix} 
+\mathcal{H}\left[\det (I- b_+(t) \bm{\psi})\right] =
+b_+^2(t)\begin{pmatrix} 
 2(T_{111}T_{122} -T_{112}^2) & T_{111}T_{222}-T_{112}T_{122} \\
 T_{111}T_{222}-T_{112}T_{122} & 2(T_{112}T_{222}-T_{122}^2)
 \end{pmatrix}\,,
 \end{align}
 and its determinant
 \begin{align}
-&\det\left( \mathcal{H}\left[\det (I- b_+ \bm{\psi})\right]\right) \\
-&=
- 6 T_{111} T_{112} T_{122} T_{222} + 3 T_{112}^2 T_{122}^2  - 4 (T_{111} T_{122}^3 + T_{112}^3 T_{222})  - T_{111}^2 T_{222}^2\,,
+&\det\left( \mathcal{H}\left[\det (I- b_+(t) \bm{\psi})\right]\right) \\
+&=b_+^4(t)\left[
+ 6 T_{111} T_{112} T_{122} T_{222} + 3 T_{112}^2 T_{122}^2  - 4 (T_{111} T_{122}^3 + T_{112}^3 T_{222})  - T_{111}^2 T_{222}^2\right]\,,
 \end{align}
 see \cite{Rozhanskii:1984}. Note that the Hessian at the critical point only depends on the third order derivatives of the deformation potential. The fourth order derivatives cancel when $T_{11}=T_{22}=1/b_+$ and $T_{12}=0$. The umbilic point is an elliptic caustic $D_4^+$ when the critical point is a maximum, or a minimum, \textit{i.e.}, for which 
 \begin{align}
@@ -1590,5 +1590,17 @@ The partial derivatives of the eigenvector fields in the eigenframe take the for
 \end{align}
 We can combine these to obtained the required identities for $\bm{v}_i \cdot \nabla (\bm{v}_j \cdot \nabla \lambda_k)$ in the eigenframe. Higher order derivatives follow analogously.
 
-
+For the umbilic points, corresponding to the first two eigenvalue fields, we know that in the eigenframe for which $\bm{v}_1=(1,0,0)$, $\bm{v}_2=(0,1,0)$, $\bm{v}_3=(0,0,1)$, the deformation tensor is of the form
+\begin{align}
+\bm{\psi} = \begin{pmatrix} \alpha & 0 & 0 \\ 0 & \alpha & 0 \\ 0 & 0 & \beta\end{pmatrix},
+\end{align}
+with the eigenvalues $\alpha = 1/b_+$ and $\beta < \alpha$. To distinguish between the elliptic and hyperbolic umbilics, we evaluate the sign of the determinant 
+\begin{align}
+&\det (\mathcal{H}_{1,2}\left[\det (I- b_+ \bm{\psi})\right]) \\
+&= 
+b_p^4 (b_p \beta - 1)^2
+\left[
+ 6 T_{111} T_{112} T_{122} T_{222} + 3 T_{112}^2 T_{122}^2  - 4 (T_{111} T_{122}^3 + T_{112}^3 T_{222})  - T_{111}^2 T_{222}^2\right]
+\end{align}
+where $\mathcal{H}_{i,j}$ is the Hessian in the $\bm{v}_i$, $\bm{v}_j$ directions. When this determinant is positive/negative, we have a elliptic/hyperbolic umbilic caustic. When the determinant vanishes, we have an butterfly caustic. When the umbilic caustic is associated to the second and third eigenvalue fields, the condition follows mutandis mutatis.
 \end{document}
