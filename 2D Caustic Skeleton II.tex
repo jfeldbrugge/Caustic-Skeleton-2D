@@ -580,7 +580,7 @@ with the residue $\delta f = f-\langle f(\bm{q})|\Gamma\rangle$ and the constrai
 \end{align}
 Note that earlier papers \cite{Bertschinger:1987, Hoffman:1991, Sheth:1995, Weygaert:1996} worked in the space of functions satisfying the constraints $\Gamma$, neglecting the correction $\sum_{i,j=1}^M\xi_i(\bm{q})\xi_{ij}^{-1}\xi_j(\bm{q}_2)$, and using the original kernel $K$ for the residue. In this study, we prefer to work in space of unrestricted functions, as the correction makes the inhomogeneity and anisotropy of the residue manifest. These properties are most clearly observed in the variance of the residue,
 \begin{align}
-\langle \delta f(\bm{q})^2|\Gamma \rangle = \sigma_0^2- \sum_{i,j=1}^M\xi_i(\bm{q})\xi_{ij}^{-1}\xi_j(\bm{q})\,,
+\langle \delta f(\bm{q})^2|\Gamma \rangle = \sigma_0^2- \sum_{i,j=1}^M\xi_i(\bm{q})\xi_{ij}^{-1}\xi_j(\bm{q})\,,\label{eq:variance_Linear}
 \end{align}
 which vanishes on the constraints. Away from the constraints, the variance of the residue approaches the variance of the unconstrained  field $\text{var}(f)=\sigma_0^2$.
 
@@ -658,18 +658,24 @@ The residue $\delta f = f - \bar{f}_{\mathcal{C}}$ is generically no longer a Ga
 \begin{framed}
 \begin{align}
 \left \langle \delta f (\bm{q})^2\,|\,\Gamma\right\rangle =
-\sigma_0^2 - \sum_{i,j=1}^M\xi_i(\bm{q}) \xi_{ij}^{-1} \xi_j(\bm{q}) + \sum_{i,j,k,l=1}^M \xi_{i}(\bm{q})\xi_{ij}^{-1}\xi_{k}(\bm{q})\xi_{kl}^{-1}\text{cov}(c_j, c_l|\bm{c}\in\mathcal{M}_\mathcal{C})
-\,,
+\sigma_0^2 - \sum_{i,j=1}^M\xi_i(\bm{q}) \zeta_{ij}^{-1} \xi_j(\bm{q}) 
+\,,\label{eq:variance_Nonlinear}
+\end{align}
+with the coefficients
+\begin{align}
+\zeta_{ij}^{-1}= \xi_{ij}^{-1}-\sum_{k,l=1}^M\xi_{ik}^{-1}\text{cov}(c_k, c_l|\bm{c}\in\mathcal{M}_\mathcal{C})\xi_{lj}^{-1}\,.
 \end{align}
 \end{framed}
 where $\text{cov}(c_j, c_l|\bm{c}\in\mathcal{M}_\mathcal{C})$ captures the geometry of the constraint manifold $\mathcal{M}_\mathcal{C}$, following directly from
 \begin{align}
 \left \langle \delta f (\bm{q})^2\,|\,\Gamma\right\rangle 
-&= \int_{\mathcal{M}_\mathcal{C}} \langle (f(\bm{q})-\bar{f}_{\bar{\bm{c}}}(\bm{q}))^2|C_i[f,\bm{q}_i]=c_i\rangle p(\bm{c}|\bm{c}\in\mathcal{M}_{\mathcal{C}})\mathrm{d}\bm{c}\\
-&= \int_{\mathcal{M}_\mathcal{C}} \langle f^2(\bm{q})|C_i[f,\bm{q}_i]=c_i\rangle p(\bm{c}|\bm{c}\in\mathcal{M}_{\mathcal{C}})\mathrm{d}\bm{c} - \bar{f}_{\bar{\bm{c}}}^2(\bm{q})\\
-&= \int_{\mathcal{M}_\mathcal{C}} \langle (f(\bm{q})-\bar{f}_{\bm{c}}(\bm{q}))^2|C_i[f,\bm{q}_i]=c_i\rangle p(\bm{c}|\bm{c}\in\mathcal{M}_{\mathcal{C}})\mathrm{d}\bm{c} \\
-&\ \ +\int_{\mathcal{M}_\mathcal{C}} (\bar{f}_{\bm{c}}(\bm{q})- \bar{f}_{\bar{\bm{c}}}^2(\bm{q}))^2p(\bm{c}|\bm{c}\in\mathcal{M}_{\mathcal{C}})\mathrm{d}\bm{c} \\
-&=  \sigma_0^2 - \sum_{i,j=1}^M\xi_i(\bm{q}) \xi_{ij}^{-1} \xi_j(\bm{q}) + \sum_{i,j,k,l=1}^M \xi_{i}(\bm{q})\xi_{ij}^{-1}\xi_{k}(\bm{q})\xi_{kl}^{-1}\text{cov}(c_j, c_l|\bm{c}\in\mathcal{M}_\mathcal{C})\,.
+&= \int_{\mathcal{M}_\mathcal{C}} \langle (f(\bm{q})-\bar{f}_{\bar{\bm{c}}}(\bm{q}))^2|C_i[f,\bm{q}_i]=c_i\rangle p(\bm{c}|\bm{c}\in\mathcal{M}_{\mathcal{C}})\mathrm{d}\bm{c}\nonumber \\
+&= \int_{\mathcal{M}_\mathcal{C}} \langle f^2(\bm{q})|C_i[f,\bm{q}_i]=c_i\rangle p(\bm{c}|\bm{c}\in\mathcal{M}_{\mathcal{C}})\mathrm{d}\bm{c} - \bar{f}_{\bar{\bm{c}}}^2(\bm{q})\nonumber \\
+&= \int_{\mathcal{M}_\mathcal{C}} \langle (f(\bm{q})-\bar{f}_{\bm{c}}(\bm{q}))^2|C_i[f,\bm{q}_i]=c_i\rangle p(\bm{c}|\bm{c}\in\mathcal{M}_{\mathcal{C}})\mathrm{d}\bm{c} \nonumber \\
+&\ \ +\int_{\mathcal{M}_\mathcal{C}} (\bar{f}_{\bm{c}}(\bm{q})- \bar{f}_{\bar{\bm{c}}}^2(\bm{q}))^2p(\bm{c}|\bm{c}\in\mathcal{M}_{\mathcal{C}})\mathrm{d}\bm{c} \nonumber \\
+&=  \sigma_0^2 - \sum_{i,j=1}^M\xi_i(\bm{q}) \xi_{ij}^{-1} \xi_j(\bm{q}) + \sum_{i,j,k,l=1}^M \xi_{i}(\bm{q})\xi_{ij}^{-1}\xi_{k}(\bm{q})\xi_{kl}^{-1}\text{cov}(c_j, c_l|\bm{c}\in\mathcal{M}_\mathcal{C})\nonumber\\
+&=
+\sigma_0^2 - \sum_{i,j=1}^M\xi_i(\bm{q}) \zeta_{ij}^{-1} \xi_j(\bm{q})\,.
 \end{align}
 Note that the variance of the residue with respect to the non-linear constraint is no longer independent of the values the constraint assumes. When $\mathcal{M}_\mathcal{C}$ consists of a point, the variance reduces to the linear case.
 \end{itemize}
@@ -813,28 +819,6 @@ p(T_{11},T_{22},T_{1111}|T_{22}\leq T_{11}=1/b_+)p(T_{12}T_{1112}|T_{12}=0)p(T_{
 \end{align}
 We can generate realizations for which the cusp curve is vertical in the centre of the box, by sampling this distribution with the additional constraint that $\bm{n} \propto (1,0)$. However, for this paper, we will use the a slightly different method based on the sampling method described above. Given an realization, we first evaluate all second, third, and fourth order derivatives and evaluate the angle $\alpha$. Subsequently, rotate these derivatives by an angle $\alpha$ (following appendix \ref{ap:rotations}). The resulting derivatives form a representative sample of a cusp curve running vertical through the centre of the box. By generating a linear constraint realizations with these rotates derivatives, we obtain a realization of the Gaussian random field required cusp curve.
 
-%
-%\begin{figure}
-%\centering
-%\begin{subfigure}[b]{0.32\textwidth}
-%\includegraphics[width=\textwidth]{Cusp_mean}
-%\caption{$\text{mean}(\Psi)$}
-%\end{subfigure}~
-%\begin{subfigure}[b]{0.32\textwidth}
-%\includegraphics[width=\textwidth]{Cusp_variance}
-%\caption{$\text{variance}(\Psi)$}
-%\end{subfigure}~
-%\begin{subfigure}[b]{0.32\textwidth}
-%\includegraphics[width=\textwidth]{Cusp_E_Mean}
-%\caption{Zel'dovich}
-%\end{subfigure}
-%\caption{The mean and variance field of the cusp filament}\label{fig:meanCusp}
-%\end{figure}
-
-
-
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Swallowtail cluster}
 The swallowtail caustic forming at time $t$, corresponding to the largest eigenvalue field $\lambda_1$, satisfies the conditions
@@ -844,10 +828,6 @@ b_+(t) \lambda_1(\bm{q}_c) = 1\,,\\
  \quad\bm{v}_1(\bm{q}_c)\cdot \nabla( \bm{v}_1(\bm{q}_c) \cdot \nabla\lambda_1(\bm{q}_c)) = 0\,.
 \end{align}
 The cusp curve in the swallowtail caustic is parallel to the eigenvector field $\bm{v}_1$ since $\bm{v}_1 \cdot \bm{n}=0$ or equivalently $\alpha = \pm \pi/2$. The swallowtail caustic does not require us to fix its orientation. However, we do need to specify the direction, normal to the fold curve, in which the swallowtail structure forms. We will here use the condition $\bm{v}_2 \cdot \nabla \lambda_1(\bm{q}) <0$.
-
-
-
-
 
 In figure \ref{fig:meanSwallowtail}, we plot the mean field of the swallowtail cluster. The gravitational potential is again close to a dipole. However, note the development of an asymmetry with respect to the horizontal axis. The blue central structure yields an inflow of matter, whereas two red structures around the blue structure yield two outflow regions. The critical curve in the eigenvalue field consists of an elongated oval with two bifurcation in the upper half plane. The cusp curves form a trident inside the fold curve. In the Zel'dovich approximation, the caustic skeleton consists of a Zel'dovich pancake with two whiskers in the upper half plane. In the $N$-body simulation, the mass elements virialize around the cusp curves.
 
@@ -1034,6 +1014,39 @@ T_{12}&=0\,.
 We subsequently determine the sign of the determinant $\det\left( \mathcal{H}\left[\det (I- b_+ \bm{\psi})\right]\right)$ to identify whether it is an elliptic or an hyperbolic caustic. Given the identification, we compute its orientation. By rotating the second order and third order derivatives (using appendix \ref{ap:rotations}), we generate linear constraint conditions corresponding to elliptic and hyperbolic caustics with a specified orientation. Given the appropriate sampling of the constraint manifold $\mathcal{M}_\mathcal{C}$, we can evaluate the mean field, the variance of the residue and representative realiations.
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{The residue}
+By definition, the residue $\delta f$ vanishes at the point where we impose the caustic condition. However, the caustic condition not only fix the random field at a point, but influences the direct environment of the condition. This behaviour is formally described by the variance in the density perturbation near the constraint (equation \eqref{eq:variance_Linear} for linear and equation \eqref{eq:variance_Nonlinear} for non-linear constraints). We can observe this behaviour in the mean field and the variance of the density perturbation near the caustics (see figure \ref{fig:mean_var_dens}). Note that the statistical properties of the residue near the cusp and swallowtail caustic are not isotropic or homogeneous. However, the residue is isotropic near the umbilic caustics. For the power-law power spectrum with the Gaussian smoothing at the length scale $R_s=5\text{ Mpc}$ considered in this paper, the characteristic correlation length for the random field near the caustics is about $20\text{ Mpc}$.
+
+
+\begin{figure}
+\centering
+\begin{subfigure}[b]{0.24\textwidth}
+\includegraphics[width=\textwidth]{Cusp_mean_delta}
+\end{subfigure}~
+\begin{subfigure}[b]{0.24\textwidth}
+\includegraphics[width=\textwidth]{Swallowtail_mean_delta}
+\end{subfigure}~
+\begin{subfigure}[b]{0.24\textwidth}
+\includegraphics[width=\textwidth]{Elliptic_mean_delta}
+\end{subfigure}~
+\begin{subfigure}[b]{0.24\textwidth}
+\includegraphics[width=\textwidth]{Hyperbolic_mean_delta}
+\end{subfigure}\\
+\begin{subfigure}[b]{0.24\textwidth}
+\includegraphics[width=\textwidth]{Cusp_mean_delta_var}
+\end{subfigure}~
+\begin{subfigure}[b]{0.24\textwidth}
+\includegraphics[width=\textwidth]{Swallowtail_mean_delta_var}
+\end{subfigure}~
+\begin{subfigure}[b]{0.24\textwidth}
+\includegraphics[width=\textwidth]{Elliptic_mean_delta_var}
+\end{subfigure}~
+\begin{subfigure}[b]{0.24\textwidth}
+\includegraphics[width=\textwidth]{Hyperbolic_mean_delta_var}
+\end{subfigure}
+\caption{Mean and the variance of the density field around the caustics. \textit{Left to right:} the cusp, the swallowtail, the elliptic umbilic, and the hyperbolic umbilic caustic. \textit{Top:} the mean density field. \textit{Bottom:} the variance of the density field.}\label{fig:mean_var_dens}
+\end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Composite constraint realizations}
