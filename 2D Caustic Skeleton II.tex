@@ -632,17 +632,18 @@ Note that the curvature of $\mathcal{M}_\mathcal{C}$ generally makes the induced
 \item
 The problem of generating realizations of the more general constraints fields is reduced to sampling realizations of the distribution $p(\bm{c}|\bm{c}\in \mathcal{M}_\mathcal{C})$. Given a sample $\bm{c}$, we use the Hoffman-Ribak method to generate the realization.
 
+
+\begin{framed}
 \item
 The mean field of the constrained field assumes the surprisingly suggestive form 
-\begin{framed}
 \begin{align}
 \bar{f}_{\mathcal{C}}(\bm{q}) =\bar{f}_{\bar{\bm{c}}}(\bm{q})\,,
 \end{align}
-\end{framed}
 with the mean constraint
 \begin{align}
 \bar{\bm{c}} &\equiv \langle \bm{c} \,|\, \Gamma\rangle = \int_{\bm{c} \in \mathcal{M}_{\mathcal{C}}}  \bm{c}\, p(\bm{c}\,|\,\bm{c}\in \mathcal{M}_{\mathcal{C}}) \mathrm{d}\bm{c}\,,
 \end{align}
+\end{framed}
 following from the realization  
 \begin{align}
 \bar{f}_{\mathcal{C}}(\bm{q}) 
@@ -653,9 +654,10 @@ following from the realization
 &= \bar{f}_{\bar{\bm{c}}}(\bm{q})\,.
 \end{align}
 
+\begin{framed}
 \item
 The residue $\delta f = f - \bar{f}_{\mathcal{C}}$ is generically no longer a Gaussian random field. The variance of the residue yields
-\begin{framed}
+
 \begin{align}
 \left \langle \delta f (\bm{q})^2\,|\,\Gamma\right\rangle =
 \sigma_0^2 - \sum_{i,j=1}^M\xi_i(\bm{q}) \zeta_{ij}^{-1} \xi_j(\bm{q}) 
@@ -663,21 +665,27 @@ The residue $\delta f = f - \bar{f}_{\mathcal{C}}$ is generically no longer a Ga
 \end{align}
 with the coefficients
 \begin{align}
-\zeta_{ij}^{-1}= \xi_{ij}^{-1}-\sum_{k,l=1}^M\xi_{ik}^{-1}\text{cov}(c_k, c_l|\bm{c}\in\mathcal{M}_\mathcal{C})\xi_{lj}^{-1}\,.
+\zeta_{ij}^{-1}= \xi_{ij}^{-1}-\sum_{k,l=1}^M\xi_{ik}^{-1}\text{cov}(c_k, c_l\,|\,\bm{c}\in\mathcal{M}_\mathcal{C})\xi_{lj}^{-1}\,.
 \end{align}
 \end{framed}
-where $\text{cov}(c_j, c_l|\bm{c}\in\mathcal{M}_\mathcal{C})$ captures the geometry of the constraint manifold $\mathcal{M}_\mathcal{C}$, following directly from
+where $\text{cov}(c_j, c_l\,|\,\bm{c}\in\mathcal{M}_\mathcal{C})$ captures the geometry of the constraint manifold $\mathcal{M}_\mathcal{C}$, following directly from
 \begin{align}
 \left \langle \delta f (\bm{q})^2\,|\,\Gamma\right\rangle 
-&= \int_{\mathcal{M}_\mathcal{C}} \langle (f(\bm{q})-\bar{f}_{\bar{\bm{c}}}(\bm{q}))^2|C_i[f,\bm{q}_i]=c_i\rangle p(\bm{c}|\bm{c}\in\mathcal{M}_{\mathcal{C}})\mathrm{d}\bm{c}\nonumber \\
-&= \int_{\mathcal{M}_\mathcal{C}} \langle f^2(\bm{q})|C_i[f,\bm{q}_i]=c_i\rangle p(\bm{c}|\bm{c}\in\mathcal{M}_{\mathcal{C}})\mathrm{d}\bm{c} - \bar{f}_{\bar{\bm{c}}}^2(\bm{q})\nonumber \\
-&= \int_{\mathcal{M}_\mathcal{C}} \langle (f(\bm{q})-\bar{f}_{\bm{c}}(\bm{q}))^2|C_i[f,\bm{q}_i]=c_i\rangle p(\bm{c}|\bm{c}\in\mathcal{M}_{\mathcal{C}})\mathrm{d}\bm{c} \nonumber \\
-&\ \ +\int_{\mathcal{M}_\mathcal{C}} (\bar{f}_{\bm{c}}(\bm{q})- \bar{f}_{\bar{\bm{c}}}^2(\bm{q}))^2p(\bm{c}|\bm{c}\in\mathcal{M}_{\mathcal{C}})\mathrm{d}\bm{c} \nonumber \\
-&=  \sigma_0^2 - \sum_{i,j=1}^M\xi_i(\bm{q}) \xi_{ij}^{-1} \xi_j(\bm{q}) + \sum_{i,j,k,l=1}^M \xi_{i}(\bm{q})\xi_{ij}^{-1}\xi_{k}(\bm{q})\xi_{kl}^{-1}\text{cov}(c_j, c_l|\bm{c}\in\mathcal{M}_\mathcal{C})\nonumber\\
+&= \int_{\mathcal{M}_\mathcal{C}} \langle (f(\bm{q})-\bar{f}_{\bar{\bm{c}}}(\bm{q}))^2\,|\,C_i[f,\bm{q}_i]=c_i\rangle p(\bm{c}\,|\,\bm{c}\in\mathcal{M}_{\mathcal{C}})\mathrm{d}\bm{c}\nonumber \\
+&= \int_{\mathcal{M}_\mathcal{C}} \langle f^2(\bm{q})\,|\,C_i[f,\bm{q}_i]=c_i\rangle p(\bm{c}\,|\,\bm{c}\in\mathcal{M}_{\mathcal{C}})\mathrm{d}\bm{c} - \bar{f}_{\bar{\bm{c}}}^2(\bm{q})\nonumber \\
+&= \int_{\mathcal{M}_\mathcal{C}} \langle (f(\bm{q})-\bar{f}_{\bm{c}}(\bm{q}))^2\,|\,C_i[f,\bm{q}_i]=c_i\rangle p(\bm{c}\,|\,\bm{c}\in\mathcal{M}_{\mathcal{C}})\mathrm{d}\bm{c} \nonumber \\
+&\ \ +\int_{\mathcal{M}_\mathcal{C}} (\bar{f}_{\bm{c}}(\bm{q})- \bar{f}_{\bar{\bm{c}}}(\bm{q}))^2p(\bm{c}\,|\,\bm{c}\in\mathcal{M}_{\mathcal{C}})\mathrm{d}\bm{c} \nonumber \\
+&=  \sigma_0^2 - \sum_{i,j=1}^M\xi_i(\bm{q}) \xi_{ij}^{-1} \xi_j(\bm{q}) + \sum_{i,j,k,l=1}^M \xi_{i}(\bm{q})\xi_{ij}^{-1}\text{cov}(c_j, c_l\,|\,\bm{c}\in\mathcal{M}_\mathcal{C})\xi_{lk}^{-1}\xi_{k}(\bm{q})\nonumber\\
 &=
-\sigma_0^2 - \sum_{i,j=1}^M\xi_i(\bm{q}) \zeta_{ij}^{-1} \xi_j(\bm{q})\,.
+\sigma_0^2 - \sum_{i,j=1}^M\xi_i(\bm{q}) \zeta_{ij}^{-1} \xi_j(\bm{q})\,,
 \end{align}
-Note that the variance of the residue with respect to the non-linear constraint is no longer independent of the values the constraint assumes. When $\mathcal{M}_\mathcal{C}$ consists of a point, the variance reduces to the linear case.
+where
+\begin{align}
+\int_{\mathcal{M}_\mathcal{C}} (\bar{f}_{\bm{c}}(\bm{q})- \bar{f}_{\bar{\bm{c}}}(\bm{q}))^2p(\bm{c}\,|\,\bm{c}\in\mathcal{M}_{\mathcal{C}})\mathrm{d}\bm{c} 
+&= \text{var}\left(\sum_{i,j=1}^M\xi_i(\bm{q})\xi_{ij}^{-1}c_j\,|\,\bm{c}\in \mathcal{M}_\mathcal{C}\right)\\
+&=\sum_{i,j,k,l=1}^M \xi_i(\bm{q})\xi_{ij}^{-1}\text{cov}(c_j,c_k\,|\,\bm{c}\in\mathcal{M}_\mathcal{C})\xi_{kl}^{-1}\xi_l(\bm{q})\,.
+\end{align}
+Note that the variance of the residue with respect to the non-linear constraint is no longer independent of the values the constraint assumes. When $\mathcal{M}_\mathcal{C}$ consists of a point, the recover the linear formula.
 \end{itemize}
 
 
@@ -733,7 +741,7 @@ in terms of the partial derivatives of the displacement potential $T_{ij\dots k}
 with the ordering $\lambda_1\geq \lambda_2$. We normalize the eigenvector field to unity, \textit{i.e.}, $\|\bm{v}_{i}\|=1$. We can express the eigenvalue and eigenvector fields explicitly in terms of the second order derivatives of the deformation potential
 \begin{align}
 \lambda_{1,2} &= \frac{1}{2}\left[T_{11}+T_{22} \pm \sqrt{4 T_{12}^2+(T_{11}-T_{22})^2}\right]\,,\\
-\bm{v}_{1,2} &\propto \left(T_{11}-T_{22} \pm \sqrt{4 T_{12}^2+(T_{11}-T_{22})^2}, 2 T_{12}\right)\,,
+\bm{v}_{1,2} &\propto  \left(T_{11}-T_{22} \pm \sqrt{4 T_{12}^2+(T_{11}-T_{22})^2}, 2 T_{12}\right)\,,
 \end{align}
 showing their non-linear dependence on the deformation potential. In the study below, we assume a power-law power spectrum for the gravitational potential
 \begin{align}
@@ -1214,6 +1222,9 @@ In an upcomming paper, we will:
 \item use the constrained initial conditions to study the mean density field around the different elements.
 \end{itemize}
 
+\begin{framed}
+Discussion on reconstruction method. Particular for Lagrangian fluid dynamics.
+\end{framed}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{Acknowledgement}
@@ -1244,9 +1255,9 @@ We can efficiently generate realizations of an unconstrained Gaussian random fie
 \SetAlgoLined
 \begin{enumerate}[itemsep=1ex, leftmargin=0cm, rightmargin=1cm]
 \item Generate a realization of white noise $n_w(\bm{q})$, consisting of identically independently distributed normal numbers $\mathcal{N}(\mu=0,\sigma^2=1)$ on a regular rectangular lattice.
-\item Fast Fourier transform the white noise $\hat{n}_w(\bm{k}) = \text{FFT}[n_w(\bm{q})]$. The Fourier modes are independently normally distributed satisfying the reality condition $\hat{n}_w(\bm{k}) = \hat{n}_w^*(-\bm{k})$.
+\item Fast Fourier transform the white noise $\hat{n}_w(\bm{k}) = \text{FFT}[n_w(\bm{q})](\bm{k})$. The Fourier modes are independently normally distributed satisfying the reality condition $\hat{n}_w(\bm{k}) = \hat{n}_w^*(-\bm{k})$.
 \item Rescale the Fourier modes with the power spectrum $\hat{f}(\bm{k}) = \sqrt{P(\bm{k})}\hat{n}_w(\bm{k})$.
-\item Evaluate the inverse fast Fourier transform the rescaled modes to obtain the realization of the unconstrained Gaussian random field $f(\bm{q}) = \text{FFT}^{-1}[\hat{f}(\bm{k})]$.
+\item Evaluate the inverse fast Fourier transform the rescaled modes to obtain the realization of the unconstrained Gaussian random field $f(\bm{q}) = \text{FFT}^{-1}[\hat{f}(\bm{k})](\bm{q})$.
 \end{enumerate}
  \caption{Generating a realization of an unconstrained Gaussian random field on a rectangular lattice}
  \label{alg:GRF}
@@ -1266,7 +1277,7 @@ evaluated at the origin, with the Fourier transform of the constraint $\hat{C}_i
 \end{align}
 with the covariance between the random field and the constraint
 \begin{align}
-\xi_i(\bm{q}) = \text{FFT}^{-1}[\hat{C}_i(\bm{k}) P(\|\bm{k}\|)]\,,
+\xi_i(\bm{q}) = \text{FFT}^{-1}[\hat{C}_i(\bm{k}) P(\|\bm{k}\|)](\bm{q})\,,
 \end{align}
 and the covariance matrix of the constraints
 \begin{align}
