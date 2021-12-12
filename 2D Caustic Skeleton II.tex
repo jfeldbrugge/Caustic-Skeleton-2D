@@ -700,7 +700,7 @@ and the non-linear constraint
 \begin{align}
 \mathcal{C}(\bm{C})=\partial_x f^2 +  \partial_y f^2 - 1=0\,.
 \end{align}
-The constraint manifold $\mathcal{M}_\mathcal{C}=\{(\partial_xf,\partial_yf)\, |\, \partial_xf^2+\partial_yf^2=1\}$ is the unit circle in the space of first order derivatives (see figure \ref{fig:constraintManifold}).
+The constraint manifold $\mathcal{M}_\mathcal{C}=\{(\partial_xf,\partial_yf)\, |\, \partial_xf^2+\partial_yf^2=1\}$ is the unit circle in the space of first order derivatives (see figure \ref{fig:constraintManifold_example}).
 
 For a statistically isotropic Gaussian random field, the constrained probability density is uniform $p(\bm{c}\, |\, \bm{c}\in\mathcal{M}_\mathcal{C}) = 1/(2\pi)$. After sampling from the constraint manifold, we construct a corresponding realization using linear constrained Gaussian random field theory. Both the mean and the covariance of the constraint value with respect to the constraint manifold vanish.
 
@@ -719,7 +719,7 @@ When the Gaussian random field is not statistically isotropic, the constraint de
 \node[above] at (2.75,3) {$\mathcal{M}_\mathcal{C}=\{\partial_xf^2+\partial_yf^2=1\}$};
 \end{tikzpicture}
 \end{subfigure}
-\caption{The constraint manifold $\mathcal{M}_\mathcal{C}=\{\partial_xf^2+\partial_yf^2=1\}$ in the space of first order derivatives $(\partial_x f,\partial_yf)$.}\label{fig:constraintManifold}
+\caption{The constraint manifold $\mathcal{M}_\mathcal{C}=\{\partial_xf^2+\partial_yf^2=1\}$ in the space of first order derivatives $(\partial_x f,\partial_yf)$.}\label{fig:constraintManifold_example}
 \end{figure}
 
 
@@ -1228,7 +1228,7 @@ Discussion on reconstruction method. Particular for Lagrangian fluid dynamics.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{Acknowledgement}
-JF would like to thank Nynke Niezink for the enlightening discussions.
+JF would like to thank Nynke Niezink for the enlightening discussions. [Bernard, Johan, Sergei]
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1369,7 +1369,7 @@ When $\bar{f} = 0$ and $\bar{\bm{C}}=\bm{0}$ the expectation value reduces to th
 \end{align}
 We conclude that the residue $\delta f$ of $f$ with respect to the mean field $\langle f(\bm{q})|\Gamma\rangle =\bar{f}(\bm{q})+ \xi_i(\bm{q})\xi_{ij}^{-1}(c_j-\bar{C}_j)$ is a Gaussian random field with zero mean $\langle \delta f|\Gamma\rangle=0$ and variance $\langle \delta f(\bm{q})^2|\Gamma\rangle = \sigma_0^2 - \xi_i(\bm{q}) \xi_{ij}^{-1} \xi_j(\bm{q})$. Note that the residue $\delta f$ for a Gaussian random field with linear constraints is indeed independent of $\bm{c}$. The covariance of the constraint field yields the constrained probability density
 \begin{align}
-p(f|\Gamma) \propto  e^{-\frac{1}{2} \iint \delta{f}(\bm{q}_1) \tilde{K}(\bm{q}_1,\bm{q}_2) \delta f(\bm{q}_2)\mathrm{d}\bm{q}_1 \mathrm{d}\bm{q}_2 }\label{eq:constraint2}
+p(f|\Gamma) \propto  e^{-\frac{1}{2} \iint \delta{f}(\bm{q}_1) \tilde{K}(\bm{q}_1,\bm{q}_2) \delta f(\bm{q}_2)\mathrm{d}\bm{q}_1 \mathrm{d}\bm{q}_2 }
 \end{align}
 with the residue $\delta f = f-\bar{f}(\bm{q})+ \xi_i(\bm{q})\xi_{ij}^{-1}(c_j-\bar{C}_j)$ and the kernel $\tilde{K}$ defined as the inverse of the modified two point correlation function, \textit{i.e.},
 \begin{align}
