@@ -582,7 +582,15 @@ Note that earlier papers \cite{Bertschinger:1987, Hoffman:1991, Sheth:1995, Weyg
 \begin{align}
 \langle \delta f(\bm{q})^2|\Gamma \rangle = \sigma_0^2- \sum_{i,j=1}^M\xi_i(\bm{q})\xi_{ij}^{-1}\xi_j(\bm{q})\,,\label{eq:variance_Linear}
 \end{align}
-which vanishes on the constraints. Away from the constraints, the variance of the residue approaches the variance of the unconstrained  field $\text{var}(f)=\sigma_0^2$.
+which vanishes on the constraints. Away from the constraints, the variance of the residue approaches the variance of the unconstrained  field $\text{var}(f)=\sigma_0^2$. Note that this relation implies an analogous relation for the Laplacian of the random field $\nabla^2 f$, \textit{i.e.}, we find the mean
+\begin{align}
+\langle \nabla^2 f(\bm{q})\,|\,\Gamma\rangle = \nabla^2 f_{\bm{c}}(\bm{q})
+\end{align}
+and the variance
+\begin{align}
+\langle \delta (\nabla^2f(\bm{q}_1))^2\,|\,\Gamma \rangle = \sigma_2^2- \sum_{i,j=1}^M\nabla^2\xi_i(\bm{q})\xi_{ij}^{-1}\nabla^2\xi_j(\bm{q})\,.\label{eq:variance_Linear_Laplace}
+\end{align}
+
 
 The Hoffman-Ribak method cleverly uses the property that the statistics of the residue $\delta f$ are independent of $\bm{c}$, to generate realizations of the constraint Gaussian random field \cite{Hoffman:1991, Weygaert:1996}. Firstly, generate a realization $g$ of the unconstraint Gaussian random field with the required power spectrum. Secondly, evaluate the constraints for this realization $C_i[g;\bm{q}'_i]=d_i$ and the corresponding mean field $\bar{g}$. The statistical properties of the residue with respect to this mean field $\delta g = g-\bar{g}$ are independent of the value the constraints assume and thus identical to the properties of the residue $\delta f$. We can thus identify the residue $\delta g$ of the field $g$ with the residue $\delta f$ of the constrained field $f$. By adding the residue of the unconstraint field to the mean field with the required constraints, we obtain the realization of the constrained Gaussian random field. For more details see appendix \ref{ap:GRF}.
 
@@ -647,10 +655,10 @@ with the mean constraint
 following from the realization  
 \begin{align}
 \bar{f}_{\mathcal{C}}(\bm{q}) 
-&=\left\langle f(\bm{q})|\Gamma\right \rangle \nonumber\\
+&=\left\langle f(\bm{q})\,|\,\Gamma\right \rangle \nonumber\\
 &= \int_{\bm{c} \in \mathcal{M}_{\mathcal{C}}} \bar{f}_{\bm{c}}(\bm{q})\, p(\bm{c}|\bm{c}\in \mathcal{M}_{\mathcal{C}}) \mathrm{d}\bm{c}\nonumber\\
-&= \sum_{i,j=1}^n\xi_i(\bm{q}) \xi_{ij}^{-1}\int_{\bm{c} \in \mathcal{M}_{\mathcal{C}}}  (c_j-\bar{C}_j)\, p(\bm{c}|\bm{c}\in \mathcal{M}_{\mathcal{C}}) \mathrm{d}\bm{c}\nonumber\\
-&= \sum_{i,j=1}^n \xi_i(\bm{q}) \xi_{ij}^{-1} (\bar{c}_j-\bar{C}_j)\nonumber\\
+&= \sum_{i,j=1}^M\xi_i(\bm{q}) \xi_{ij}^{-1}\int_{\bm{c} \in \mathcal{M}_{\mathcal{C}}}  (c_j-\bar{C}_j)\, p(\bm{c}\,|\,\bm{c}\in \mathcal{M}_{\mathcal{C}}) \mathrm{d}\bm{c}\nonumber\\
+&= \sum_{i,j=1}^M \xi_i(\bm{q}) \xi_{ij}^{-1} (\bar{c}_j-\bar{C}_j)\nonumber\\
 &= \bar{f}_{\bar{\bm{c}}}(\bm{q})\,.
 \end{align}
 
@@ -665,7 +673,7 @@ The residue $\delta f = f - \bar{f}_{\mathcal{C}}$ is generically no longer a Ga
 \end{align}
 with the coefficients
 \begin{align}
-\zeta_{ij}^{-1}= \xi_{ij}^{-1}-\sum_{k,l=1}^M\xi_{ik}^{-1}\text{cov}(c_k, c_l\,|\,\bm{c}\in\mathcal{M}_\mathcal{C})\xi_{lj}^{-1}\,.
+\zeta_{ij}^{-1}= \xi_{ij}^{-1}-\sum_{k,l=1}^M\xi_{ik}^{-1}\text{cov}(c_k, c_l\,|\,\bm{c}\in\mathcal{M}_\mathcal{C})\xi_{lj}^{-1}\,,
 \end{align}
 \end{framed}
 where $\text{cov}(c_j, c_l\,|\,\bm{c}\in\mathcal{M}_\mathcal{C})$ captures the geometry of the constraint manifold $\mathcal{M}_\mathcal{C}$, following directly from
@@ -687,6 +695,16 @@ where
 \end{align}
 Note that the variance of the residue with respect to the non-linear constraint is no longer independent of the values the constraint assumes. When $\mathcal{M}_\mathcal{C}$ consists of a point, the recover the linear formula.
 \end{itemize}
+
+A similar relation applies to the Laplacian of the random field, which in our context represents the density perturbations. Following analogous derivation, we obtain the mean
+\begin{align}
+\langle \nabla^2 f(\bm{q})\,|\,\Gamma\rangle = \sum_{i,j=1}^M \nabla^2\xi_i(\bm{q})\xi_{ij}^{-1}(\bar{c}_j-\bar{C}_j)
+\end{align}
+and the variance
+\begin{align}
+\langle \delta (\nabla^2 f(\bm{q}))\,|\,\Gamma\rangle = \sigma_2^2 - \sum_{i,j=1}^M \nabla^2 \xi_i(\bm{q})\zeta_{ij}^{-1}\nabla^2\xi_j(\bm{q})\,,
+\end{align}
+with the same $\bar{\bm{c}}$ and $\zeta_{ij}$.
 
 
 
