@@ -145,7 +145,7 @@ Initially, the displacement field vanishes, $\bm{s}_0(\bm{q})=\bm{0}$, and the p
 The density of a Lagrangian fluid evolves while the mass elements are squeezed and stretched, \textit{i.e.},
 \begin{align}
 \rho_t(\bm{x})
-&= \sum_{\bm{q} \in A_t(\bm{x})} \frac{\bar{\rho}}{|\det \nabla \bm{x}_t(\bm{q})|}\\
+&= \sum_{\bm{q} \in A_t(\bm{x})} \frac{\bar{\rho}}{|\det \nabla \bm{x}_t(\bm{q})|}\nonumber\\
 &= \sum_{\bm{q} \in A_t(\bm{x})} \frac{\bar{\rho}}{|1+\mu_{t,1}(\bm{q})||1+\mu_{t,2}(\bm{q})|}\,,
 \label{eq:density}
 \end{align}
@@ -156,7 +156,7 @@ with the mean initial density $\bar{\rho}$, and the eigenvalue fields $\mu_{t,1}
 \end{align} 
 Each stream contributes to the density, as the sum runs over the points that reach $\bm{x}$ in time $t$, \textit{i.e.},
 \begin{align}
-A_t(\bm{x}') = \{\bm{q}|\bm{x}_t(\bm{q})=\bm{x}'\}\,.
+A_t(\bm{x}') = \{\bm{q}\,|\,\bm{x}_t(\bm{q})=\bm{x}'\}\,.
 \end{align}
 The boundaries of the multi-stream regions mark discontinuous of the density field \eqref{eq:density}. In fact, at the boundary, the orientation of the mass elements flip in a process known as \textit{shell-crossing}. The determinant $\det \nabla \bm{x}_t$ vanishes and the density spikes to infinity. This phenomenon is an example of a \textit{fold caustic}, bounding the regions where virialized structures emerge. In this paper, we always order the eigenvalue fields such that $\mu_{t,1}$ is the field which causes the first shell-crossing event. As we shall see in the next section, the -- often ignored -- eigenvector fields plays an important role in the higher order caustics.
 
@@ -298,56 +298,56 @@ Morse point & $A_3^-$ & merger point & saddle point of the eigenvalue field $\la
 \hline
 \end{tabular}
 }
-\caption{Elements of the caustic skeleton.}
+\caption{Elements of the two-dimensional caustic skeleton and their caustic conditions.}
 \label{table:caustics}
 \end{table}
 
 
 \begin{figure}
 \centering
-\begin{subfigure}[b]{0.3\textwidth}
+\begin{subfigure}[b]{0.29\textwidth}
 \includegraphics[width=\textwidth]{Cusp_L}
 \end{subfigure}~
-\begin{subfigure}[b]{0.3\textwidth}
+\begin{subfigure}[b]{0.29\textwidth}
 \includegraphics[width=\textwidth]{Cusp_Z}
 \end{subfigure}~
-\begin{subfigure}[b]{0.3\textwidth}
+\begin{subfigure}[b]{0.29\textwidth}
 \includegraphics[width=\textwidth]{Cusp_Nb}
 \end{subfigure}\\
 %%%%%%%%%%
 %%%%%%%%%%
-\begin{subfigure}[b]{0.3\textwidth}
+\begin{subfigure}[b]{0.29\textwidth}
 \includegraphics[width=\textwidth]{Swallowtail_L}
 \end{subfigure}~
-\begin{subfigure}[b]{0.3\textwidth}
+\begin{subfigure}[b]{0.29\textwidth}
 \includegraphics[width=\textwidth]{Swallowtail_Z}
 \end{subfigure}~
-\begin{subfigure}[b]{0.3\textwidth}
+\begin{subfigure}[b]{0.29\textwidth}
 \includegraphics[width=\textwidth]{Swallowtail_Nb}
 \end{subfigure}\\
 %%%%%%%%%%
 %%%%%%%%%%
-\begin{subfigure}[b]{0.3\textwidth}
+\begin{subfigure}[b]{0.29\textwidth}
 \includegraphics[width=\textwidth]{Elliptic_L}
 \end{subfigure}~
-\begin{subfigure}[b]{0.3\textwidth}
+\begin{subfigure}[b]{0.29\textwidth}
 \includegraphics[width=\textwidth]{Elliptic_Z}
 \end{subfigure}~
-\begin{subfigure}[b]{0.3\textwidth}
+\begin{subfigure}[b]{0.29\textwidth}
 \includegraphics[width=\textwidth]{Elliptic_Nb}
 \end{subfigure}\\
 %%%%%%%%%%
 %%%%%%%%%%
-\begin{subfigure}[b]{0.3\textwidth}
+\begin{subfigure}[b]{0.29\textwidth}
 \includegraphics[width=\textwidth]{Hyperbolic_L}
 \end{subfigure}~
-\begin{subfigure}[b]{0.3\textwidth}
+\begin{subfigure}[b]{0.29\textwidth}
 \includegraphics[width=\textwidth]{Hyperbolic_Z}
 \end{subfigure}~
-\begin{subfigure}[b]{0.3\textwidth}
+\begin{subfigure}[b]{0.29\textwidth}
 \includegraphics[width=\textwidth]{Hyperbolic_Nb}
 \end{subfigure}
-\caption{Elements of the caustic skeleton. \textit{From top to bottom:} the cusp, the swallowtail, the elliptic and the hyperbolic caustic. \textit{Left:} the caustic skeleton in Lagrangian space. \textit{Centre:} the Zel'dovich approximation. \textit{Right:} the corresponding $N$-body simulation \cite{Hidding:2020}.}\label{fig:caustics_Examples_Big}
+\caption{Elements of the caustic skeleton consisting of the fold curves (red) and cusp curve (blue) in Lagrangian and Eulerian space.. \textit{From top to bottom:} the cusp, the swallowtail, the elliptic and the hyperbolic caustic. \textit{Left:} the caustic skeleton in Lagrangian space. \textit{Centre:} the Zel'dovich approximation. \textit{Right:} the corresponding $N$-body simulation \cite{Hidding:2020}.}\label{fig:caustics_Examples_Big}
 \end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -419,7 +419,7 @@ Initially, the growing mode $b_+$ vanishes and the universe consists of a single
 \begin{subfigure}[b]{0.24\textwidth}
 \includegraphics[width=\textwidth]{Hyperbolic_Nb_Zoom}
 \end{subfigure}
-\caption{Zoom in with a $(20 \text{ Mpc})^2$ box centred around the caustic. From left to right, we see the cusp, the swallowtail, the elliptic umbilic, and the hyperbolic umbilic caustics. The upper and lower panels display the Zel'dovich approximation and the $N$-body simulation \cite{Hidding:2020}.}\label{fig:caustics_Examples_Small}
+\caption{Zoom in with a $(20 \text{ Mpc})^2$ box centred around the caustic, with the fold curve (red) and the cusp curve (blue). From left to right, we see the cusp, the swallowtail, the elliptic umbilic, and the hyperbolic umbilic caustics. The upper and lower panels display the Zel'dovich approximation and the $N$-body simulation \cite{Hidding:2020}.}\label{fig:caustics_Examples_Small}
 \end{figure}
 
 
@@ -462,7 +462,7 @@ analogous to the Euclidean path integrals in statistical field theory. It can be
 \end{align}
 Two-point correlation function
 \begin{align}
-\xi(\bm{q}_1, \bm{q}_2) &= \langle (f(\bm{q}_1) - \bar{f}(\bm{q}_1)) (f(\bm{q}_2) - \bar{f}(\bm{q}_2))\rangle\\
+\xi(\bm{q}_1, \bm{q}_2) &= \langle (f(\bm{q}_1) - \bar{f}(\bm{q}_1)) (f(\bm{q}_2) - \bar{f}(\bm{q}_2))\rangle\nonumber\\
 &= \int (f(\bm{q}_1) - \bar{f}(\bm{q}_1)) (f(\bm{q}_2) - \bar{f}(\bm{q}_2)) e^{-S[f]}\mathcal{D}f
 \end{align}
 is the inverse of the kernel $K$, \textit{i.e.,}
@@ -519,7 +519,7 @@ M = \text{cov}(\bm{Y},\bm{Y}) = \langle \Delta \bm{Y}^T \Delta \bm{Y}\rangle\,.
 \end{align}
 The distribution of the discrete Fourier modes $\bm{Y}(\hat{f}(\bm{k}_1),\hat{f}(\bm{k}_1),\dots)$ takes the form 
 \begin{align}
-p(\hat{f}(\bm{k}_1), \hat{f}(\bm{k}_2), \dots) = \prod_{i} \frac{1}{\sqrt{2\pi P(\| \bm{k}_i\|)}} e^{-\frac{|\hat{f}(\bm{k}_i)|^2}{2P(\|\bm{k}_i\|)}},
+p(\hat{f}(\bm{k}_1), \hat{f}(\bm{k}_2), \dots) = \prod_{i} \frac{1}{\sqrt{2\pi P(\| \bm{k}_i\|)}} \exp\left[-\frac{|\hat{f}(\bm{k}_i)|^2}{2P(\|\bm{k}_i\|)}\right],
 \end{align}
 yielding an efficient method to generate realizations (see appendix \ref{ap:GRF}).
 
@@ -530,13 +530,13 @@ The statistical properties of random fields are often conveniently expressed in 
 \end{align}
 with the magnitude $k = \|\bm{k}\|$. The power spectrum determines the covariance matrix $M$ through these moments. Whereas the variance of the random field is given by the moment $\sigma_0^2$, \textit{i.e.},
 \begin{align}
-\langle f(\bm{q})^2 \rangle &= \iint e^{i (\bm{p} - \bm{k})\cdot \bm{q}} \langle \hat{f}(\bm{k})\hat{f}^*(\bm{p})\rangle \frac{\mathrm{d}\bm{k}\mathrm{d}\bm{p}}{(2\pi)^4}\\
+\langle f(\bm{q})^2 \rangle &= \iint e^{i (\bm{p} - \bm{k})\cdot \bm{q}} \langle \hat{f}(\bm{k})\hat{f}^*(\bm{p})\rangle \frac{\mathrm{d}\bm{k}\mathrm{d}\bm{p}}{(2\pi)^4}\nonumber\\
 &=\frac{1}{(2\pi)^2}\int P(\|\bm{k}\|)\mathrm{d}\bm{k}=\sigma_0^2\,,
 \end{align}
 the expectation value of the square of the norm of the gradient takes the form
 \begin{align}
-\langle \|\nabla f(\bm{q})\|^2\rangle &= \langle \partial_1f(\bm{q})^2 + \partial_2 f(\bm{q})^2 \rangle \\
-&= \iint [(ik_1)(-ip_1)+(ik_2)(-ip_2)] e^{i (\bm{p} - \bm{k})\cdot \bm{q}} \langle \hat{f}(\bm{k})\hat{f}^*(\bm{p})\rangle \frac{\mathrm{d}\bm{k}\mathrm{d}\bm{p}}{(2\pi)^4}\\
+\langle \|\nabla f(\bm{q})\|^2\rangle &= \langle \partial_1f(\bm{q})^2 + \partial_2 f(\bm{q})^2 \rangle \nonumber \\
+&= \iint [(ik_1)(-ip_1)+(ik_2)(-ip_2)] e^{i (\bm{p} - \bm{k})\cdot \bm{q}} \langle \hat{f}(\bm{k})\hat{f}^*(\bm{p})\rangle \frac{\mathrm{d}\bm{k}\mathrm{d}\bm{p}}{(2\pi)^4}\nonumber \\
 &=\frac{1}{(2\pi)^2}\int \|\bm{k}\|^2 P(\|\bm{k}\|)\mathrm{d}\bm{k}=\sigma_1^2\,,
 \end{align}
 with $\bm{k}=(k_1,k_2)$ and $\bm{p}=(p_1,p_2)$. By statistical isotropy, we obtain the variance of the first order partial derivatives
@@ -577,11 +577,11 @@ p(\Gamma) = \frac{\exp\left[-\frac{1}{2} \Delta\bm{C}^T Q^{-1} \Delta\bm{C} \rig
 \end{align}
 with the vector $\bm{C}=(C_1[f;\bm{q}_1], \dots, C_M[f;\bm{q}_M])$ and the covariance matrix $Q = \text{cov}(\bm{C}, \bm{C})$. We can write the constraint distribution as the Gaussian probability density
 \begin{align}
-p(f|\Gamma) \propto  e^{-\frac{1}{2} \left[\iint f(\bm{q}_1) K(\|\bm{q}_1 - \bm{q}_2\|) f(\bm{q}_2)\mathrm{d}\bm{q}_1 \mathrm{d}\bm{q}_2 -\Delta \bm{C}^TQ^{-1}\Delta \bm{C}\right]},\label{eq:constraint1}
+p(f|\Gamma) \propto  \exp\left[-\frac{1}{2} \left[\iint f(\bm{q}_1) K(\|\bm{q}_1 - \bm{q}_2\|) f(\bm{q}_2)\mathrm{d}\bm{q}_1 \mathrm{d}\bm{q}_2 -\Delta \bm{C}^TQ^{-1}\Delta \bm{C}\right]\right],\label{eq:constraint1}
 \end{align}
 in the space of functions satisfying the constraints $\Gamma$. In appendix \ref{ap:constraintDensity}, we derive the mean field
 \begin{align}
-\bar{f}_{\bm{c}}(\bm{q})&=\langle f(\bm{q})|\Gamma\rangle \\
+\bar{f}_{\bm{c}}(\bm{q})&=\langle f(\bm{q})|\Gamma\rangle \nonumber \\
 &= \bar{f}(\bm{q}) + \sum_{i,j=1}^M\xi_i (\bm{q})\xi_{ij}^{-1}(c_j-\bar{C}_j)\,,
 \end{align}
 and the covariance
@@ -708,7 +708,7 @@ where $\text{cov}(c_j, c_l\,|\,\bm{c}\in\mathcal{M}_\mathcal{C})$ captures the g
 where
 \begin{align}
 \int_{\mathcal{M}_\mathcal{C}} (\bar{f}_{\bm{c}}(\bm{q})- \bar{f}_{\bar{\bm{c}}}(\bm{q}))^2p(\bm{c}\,|\,\bm{c}\in\mathcal{M}_{\mathcal{C}})\mathrm{d}\bm{c} 
-&= \text{var}\left(\sum_{i,j=1}^M\xi_i(\bm{q})\xi_{ij}^{-1}c_j\,|\,\bm{c}\in \mathcal{M}_\mathcal{C}\right)\\
+&= \text{var}\left(\sum_{i,j=1}^M\xi_i(\bm{q})\xi_{ij}^{-1}c_j\,|\,\bm{c}\in \mathcal{M}_\mathcal{C}\right)\nonumber\\
 &=\sum_{i,j,k,l=1}^M \xi_i(\bm{q})\xi_{ij}^{-1}\text{cov}(c_j,c_k\,|\,\bm{c}\in\mathcal{M}_\mathcal{C})\xi_{kl}^{-1}\xi_l(\bm{q})\,.
 \end{align}
 Note that the variance of the residue with respect to the non-linear constraint is no longer independent of the values the constraint assumes. When $\mathcal{M}_\mathcal{C}$ consists of a point, the recover the linear formula.
@@ -755,7 +755,7 @@ When the Gaussian random field is not statistically isotropic, the constraint de
 \node[above] at (2.75,3) {$\mathcal{M}_\mathcal{C}=\{\partial_xf^2+\partial_yf^2=1\}$};
 \end{tikzpicture}
 \end{subfigure}
-\caption{The constraint manifold $\mathcal{M}_\mathcal{C}=\{\partial_xf^2+\partial_yf^2=1\}$ in the space of first order derivatives $(\partial_x f,\partial_yf)$.}\label{fig:constraintManifold_example}
+\caption{The constraint manifold $\mathcal{M}_\mathcal{C}=\{\partial_xf^2+\partial_yf^2=1\}$ in the space of first order derivatives $(\partial_x f,\partial_yf)$ for the non-linear constraint $\|\nabla f\|=1$.}\label{fig:constraintManifold_example}
 \end{figure}
 
 
@@ -823,7 +823,7 @@ On average, the orientation of cusp curve is normal to the eigenvector field $\b
 \begin{figure}
 \centering
 \includegraphics[width=0.5\textwidth]{alpha}
-\caption{The distribution of the angle $\alpha$} 
+\caption{The distribution of the angle $\alpha$ between the cusp curve and the eigenvector field.} 
 \label{fig:alpha}
 \end{figure}
 
@@ -845,8 +845,8 @@ p(T_{11},T_{12},T_{22},T_{111}) = p(T_{11},T_{22})p(T_{12})p(T_{111})\,.
 \end{align}
 Generally, two derivatives of a Gaussian random field at a point are independent if and only if they together consist of an odd number of derivatives in either the $q_1$ or the $q_2$ direction. The conditional probability density takes the form
 \begin{align}
-p&(T_{11},T_{12},T_{22},T_{111}|,T_{22}\leq T_{11}=1/b_+,T_{12}=0,T_{111}=0) \\
-&= p(T_{22}| T_{22} \leq T_{11}=1/b_+)\\
+p&(T_{11},T_{12},T_{22},T_{111}|,T_{22}\leq T_{11}=1/b_+,T_{12}=0,T_{111}=0) \nonumber\\
+&= p(T_{22}| T_{22} \leq T_{11}=1/b_+)\nonumber\\
 &= \mathcal{N} e^{-\frac{3(T_{11} + T_{22})^2 - 8 T_{11} T_{22}}{2 \sigma_2^2}}\big|_{T_{11}=1/b_+}\,,
 \end{align}
 with the normalization constant $\mathcal{N}$. After sampling $T_{22}$ from this distribution, we can use linear constrained random field theory to obtain the corresponding realization. Note that this procedure is equivalent to generating realizations for the linear constraints $T_{11}=1/b_+,T_{12}=T_{111}=0$ and rejecting realizations for which $T_{22} > 1/b_+$. Give these realizations, it is straightforward to compute the angle $\alpha$ and sample the distribution (see figure \ref{fig:alpha}).
@@ -859,7 +859,7 @@ with the conditional distribution
 \begin{align}
 &p(T_{11},T_{12},T_{22},T_{111},T_{112},T_{122},T_{1111},T_{1112}|T_{22} \leq T_{11}=1/b_+, T_{111}=0)\\
 &=
-p(T_{11},T_{22},T_{1111}|T_{22}\leq T_{11}=1/b_+)p(T_{12}T_{1112}|T_{12}=0)p(T_{111},T_{122}|T_{111}=0)p(T_{112})\,.
+p(T_{11},T_{22},T_{1111}|T_{22}\leq T_{11}=1/b_+)p(T_{12}T_{1112}|T_{12}=0)p(T_{111},T_{122}|T_{111}=0)p(T_{112})\,.\nonumber
 \end{align}
 We can generate realizations for which the cusp curve is vertical in the centre of the box, by sampling this distribution with the additional constraint that $\bm{n} \propto (1,0)$. However, for this paper, we will use the a slightly different method based on the sampling method described above. Given an realization, we first evaluate all second, third, and fourth order derivatives and evaluate the angle $\alpha$. Subsequently, rotate these derivatives by an angle $\alpha$ (following appendix \ref{ap:rotations}). The resulting derivatives form a representative sample of a cusp curve running vertical through the centre of the box. By generating a linear constraint realizations with these rotates derivatives, we obtain a realization of the Gaussian random field required cusp curve.
 
@@ -904,13 +904,13 @@ T_{112} <0\,.
 \end{align}
 See appendix \ref{ap:eigenvalueRel} for a detailed derivation. 
 
-The swallowtail caustic is determined by the linear statistics $Y=(T_{11},T_{12},T_{22},T_{111},T_{112},T_{1111})$ with the probability density
+The swallowtail caustic is determined by the linear statistics $Y=(T_{11},$ $T_{12},$ $T_{22},$ $T_{111},$ $T_{112},$ $T_{1111})$ with the probability density
 \begin{align}
 p(T_{11},T_{12},T_{22},T_{111},T_{112},T_{1111})=p(T_{11},T_{22},T_{1111})p(T_{12})p(T_{111})p(T_{112})\,,
 \end{align}
 and the constraint distribution 
 \begin{align}
-&p\left(T_{22},T_{112},T_{1111}|T_{22}\leq T_{11}=1/b_+, T_{12}=0,T_{111}=0,T_{1111}+\frac{3T_{112}^2}{T_{11}-T_{22}}=0\right)\\
+&p\left(T_{22},T_{112},T_{1111}|T_{22}\leq T_{11}=1/b_+, T_{12}=0,T_{111}=0,T_{1111}+\frac{3T_{112}^2}{T_{11}-T_{22}}=0\right)\nonumber\\
 =&\, p\left(T_{22},T_{112}, T_{1111}|T_{22}\leq T_{11}=1/b_+, T_{1111}+\frac{3T_{112}^2}{T_{11}-T_{22}}=0\right)\,.
 \end{align}
 
@@ -969,7 +969,7 @@ T_{111}T_{222}-T_{112}T_{122} & 2(T_{112}T_{222}-T_{122}^2)
 \end{align}
 and its determinant
 \begin{align}
-&\det\left( \mathcal{H}\left[\det (I- b_+(t) \bm{\psi})\right]\right) \\
+&\det\left( \mathcal{H}\left[\det (I- b_+(t) \bm{\psi})\right]\right) \nonumber\\
 &=b_+^4(t)\left[
  6 T_{111} T_{112} T_{122} T_{222} + 3 T_{112}^2 T_{122}^2  - 4 (T_{111} T_{122}^3 + T_{112}^3 T_{222})  - T_{111}^2 T_{222}^2\right]\,,
 \end{align}
@@ -1013,7 +1013,7 @@ In fact, this condition describes the behaviour of the eigenvector field in the 
 
 More generally, expand the displacement field $\bm{s}_t$ to quadratic order in $q_1$ and $q_2$ around a umbilic point at the origin $(q_1,q_2)=(0,0)$. The determinant of the gradient $\nabla \bm{x}_t$ has a critical point at the origin, as it is the product of two eigenvalue fields that vanish at the origin. The determinant takes the general form
 \begin{align}
-\det \nabla \bm{x}_t&=\det(I + \nabla \bm{s}_t)\\
+\det \nabla \bm{x}_t&=\det(I + \nabla \bm{s}_t)\nonumber\\
 &= 
 A q_1^2 + B q_1 q_2 + C q_2^2 + O(q_1^3,q_1^2 q_2,q_1 q_2^2,q_2^3)\,.
 \end{align}
@@ -1140,7 +1140,7 @@ See figure \ref{fig:rotation} for an illustration of the cusp caustic with three
 \begin{subfigure}[b]{0.32\textwidth}
 \includegraphics[width=\textwidth]{Rotation_Z_3}
 \end{subfigure}
-\caption{Rotation of the cusp caustic. \textit{Upper:} the eigenvalue and eigenvector fields in Lagrangian space. \textit{Lower:} the Zel'dovich approximation in Eulerian space. \textit{Left:} with the vertical orientation. \textit{Center:} with a diagonal orientation. \textit{Right:} with the horizontal orientation.}\label{fig:rotation}
+\caption{The caustic skeleton consisting of the fold curves (red) and cusp curve (blue) in Lagrangian and Eulerian space with a rotation of the cusp caustic at the center of the box. \textit{Upper:} the eigenvalue and eigenvector fields in Lagrangian space. \textit{Lower:} the Zel'dovich approximation in Eulerian space. \textit{Left:} with the vertical orientation. \textit{Center:} with a diagonal orientation. \textit{Right:} with the horizontal orientation.}\label{fig:rotation}
 \end{figure}
 
 
@@ -1162,7 +1162,7 @@ To correct for these correlations we propose a rejection sampling method. For ea
 \includegraphics[width=\textwidth]{Composite_Z}
 \caption{Zel'dovich approximation}
 \end{subfigure}
-\caption{Four critical point constraints on the first eigenvalue field. \textit{Left:} the first eigenvalue and eigenvector fields in Lagrangian space. \textit{Right:} the Zel'dovich approximation in Eulerian space.}\label{fig:composite}
+\caption{The caustic skeleton consisting of the fold curves (red) and cusp curve (blue) in Lagrangian and Eulerian space, with four critical point constraints on the first eigenvalue field. \textit{Left:} the first eigenvalue and eigenvector fields in Lagrangian space. \textit{Right:} the Zel'dovich approximation in Eulerian space.}\label{fig:composite}
 \end{figure}
 
 We illustrate this procedure in figure \ref{fig:composite}, which includes four Morse point constraints on the first eigenvalue field. A critical point $\bm{q}_c$ appearing at time $t$ satisfies the condition
@@ -1210,7 +1210,7 @@ The Zel'dovich approximation clearly fails for late times. The approximation lin
 \includegraphics[width=\textwidth]{Eulerian_Nb}
 \caption{$N$-body simulation}
 \end{subfigure}
-\caption{The caustic skeleton. \textit{Upper left:} the initial eigenvalue field $\lambda_1$ with the caustic skeleton. \textit{Upper right:} the initial density perturbations with the caustic skeleton. \textit{Lower left:} the Zel'dovich approximation with the caustic skeleton at scale factor $a=1$. \textit{Lower right:} the $N$-body simulation with the caustic skeleton at scale factor $a=1$.}\label{fig:Eulerian}
+\caption{The caustic skeleton consisting of the fold curves (red) and cusp curve (blue) in Lagrangian and Eulerian space. \textit{Upper left:} the initial eigenvalue field $\lambda_1$ with the caustic skeleton. \textit{Upper right:} the initial density perturbations with the caustic skeleton. \textit{Lower left:} the Zel'dovich approximation with the caustic skeleton at scale factor $a=1$. \textit{Lower right:} the $N$-body simulation with the caustic skeleton at scale factor $a=1$.}\label{fig:Eulerian}
 \end{figure}
 
 \begin{figure}
@@ -1234,7 +1234,7 @@ The Zel'dovich approximation clearly fails for late times. The approximation lin
 %\begin{subfigure}[b]{0.48\textwidth}
 %\includegraphics[width=\textwidth]{Evolution_100}
 %\end{subfigure}
-\caption{The evolution of the caustic skeleton in an $N$-body simulation in an Einstein-de Sitter universe. The skeleton for scale factor $a=1$ can be seen in the lower right panel of figure \ref{fig:Eulerian}.}\label{fig:Eulerian_Evolution}
+\caption{The evolution of the caustic skeleton consisting of the fold curves (red) and cusp curve (blue) in an $N$-body simulation in an Einstein-de Sitter universe. The skeleton for scale factor $a=1$ can be seen in the lower right panel of figure \ref{fig:Eulerian}.}\label{fig:Eulerian_Evolution}
 \end{figure}
 
 The multi-stream regions of the cosmic web forms gradually. Its evolution is neatly captured by the dynamics of the caustic skeleton (see figure \ref{fig:Eulerian_Evolution}). At early times, the dark-matter sheet consisted of a single single-stream region. As the mass elements undergo gravitational collapse, we observe the formation of several Zel'dovich pancakes corresponding to the maxima of the eigenvalue field $\lambda_1$ (see the upper left panel). These multi-stream regions grow and connect at the saddle points of the eigenvalue fields to form the web-like structure we observe in redshift surveys (see the upper right and lower panels). Note that viralized filaments move coherently while the large voids expand and the smaller voids contract. In this process several filaments may  merge to form more massive structures.
@@ -1279,7 +1279,7 @@ JF would like to thank Nynke Niezink for the enlightening discussions. [Bernard,
 \section{Gaussian random fields algorithms}\label{ap:GRF}
 Gaussian random fields are most naturally expressed in Fourier space, as the Fourier modes of an unconstrained Gaussian random field are normally and independently distributed, 
 \begin{align}
-p(\hat{f}(\bm{k}_1), \hat{f}(\bm{k}_2), \dots) = \prod_{i} \frac{1}{\sqrt{2\pi P(\| \bm{k}_i\|)}} e^{-\frac{|\hat{f}(\bm{k}_i)|^2}{2P(\|\bm{k}_i\|)}},
+p(\hat{f}(\bm{k}_1), \hat{f}(\bm{k}_2), \dots) = \prod_{i} \frac{1}{\sqrt{2\pi P(\| \bm{k}_i\|)}} \exp\left[-\frac{|\hat{f}(\bm{k}_i)|^2}{2P(\|\bm{k}_i\|)}\right],
 \end{align}
 up to the reality condition, $\hat{f}(\bm{k})=\hat{f}^*(-\bm{k})$. In this paper, we use Fast Fourier Transform routines to efficiently generate realizations of both unconstrained and linearly constrained Gaussian random.
 
@@ -1368,16 +1368,16 @@ For conciseness, we use the Einstein summation convention over the repeated dumm
 Define an auxiliary function $g(\bm{q}) = f(\bm{q}) + \bm{A}(\bm{q}) \cdot \bm{C}$ with $A_i(\bm{q}) = -\xi_j(\bm{q}) \xi_{ji}^{-1}$. The function $g$ is by construction independent of the variable $\bm{C}$, as they are jointly normally distributed and their covariance matrix vanishes, \textit{i.e.}, 
 \begin{align}
 \text{cov}(g(\bm{q}),\bm{C})
-&=\text{cov}(f(\bm{q}),\bm{C}) +  \text{cov}(\bm{C},\bm{C}) \bm{A}(\bm{q}) \\
-&=[\xi_k(\bm{q}) - \xi_i(\bm{q}) \xi_{ij}^{-1}\xi_{jk}]_{k=1}^N\\
+&=\text{cov}(f(\bm{q}),\bm{C}) +  \text{cov}(\bm{C},\bm{C}) \bm{A}(\bm{q})\nonumber \\
+&=[\xi_k(\bm{q}) - \xi_i(\bm{q}) \xi_{ij}^{-1}\xi_{jk}]_{k=1}^N\nonumber\\
 &=\bm{0}\,.
 \end{align}
 The expectation value of $g$ is $\langle g(\bm{q})\rangle = \bar{f}(\bm{q}) + \bm{A}(\bm{q}) \cdot \bar{\bm{C}}$, which we can use to evaluate the expectation value of the constrained field
 \begin{align}
 \langle f(\bm{q}) | \Gamma \rangle 
-&=\langle g(\bm{q}) - \bm{A}(\bm{q})\cdot \bm{C}|\Gamma\rangle\\
-&=\langle g(\bm{q})\rangle - \bm{A}(\bm{q}) \cdot \bm{c}\\
-&=\bar{f}(\bm{q}) + \bm{A}(\bm{q})\cdot (\bar{\bm{C}}-\bm{c})\\
+&=\langle g(\bm{q}) - \bm{A}(\bm{q})\cdot \bm{C}|\Gamma\rangle\nonumber\\
+&=\langle g(\bm{q})\rangle - \bm{A}(\bm{q}) \cdot \bm{c}\nonumber\\
+&=\bar{f}(\bm{q}) + \bm{A}(\bm{q})\cdot (\bar{\bm{C}}-\bm{c})\nonumber\\
 &= \bar{f}(\bm{q}) + \xi_i(\bm{q})\xi_{ij}^{-1}(c_j -\bar{C}_j)\,.
 \end{align}
 When $\bar{f} = 0$ and $\bar{\bm{C}}=\bm{0}$ the expectation value reduces to the identity $\langle f(\bm{q}) | \Gamma \rangle =\xi_i(\bm{q})\xi_{ij}^{-1}c_j$. The covariance of the constraint field follows along similar lines
@@ -1393,19 +1393,19 @@ When $\bar{f} = 0$ and $\bar{\bm{C}}=\bm{0}$ the expectation value reduces to th
 %\end{align}
 \begin{align}
 \text{cov}(f(\bm{q}_1), f(\bm{q}_2)|\Gamma) 
-&= \text{cov}(g(\bm{q}_1) - \bm{A}(\bm{q}_1)\cdot \bm{C}, g(\bm{q}_2) - \bm{A}(\bm{q}_2)\cdot \bm{C}|\Gamma) \\
-&= \text{cov}(g(\bm{q}_1), g(\bm{q}_2)|\Gamma) + \text{cov}(\bm{A}(\bm{q}_1)\cdot \bm{C}, \bm{A}(\bm{q}_2)\cdot \bm{C}|\Gamma)\\
-&\ \ \  - \bm{A}(\bm{q}_1)\cdot \text{cov}(\bm{C}, g(\bm{q}_2)|\Gamma) -\text{cov}(g(\bm{q}_1) , \bm{C}|\Gamma)\cdot \bm{A}(\bm{q}_2)\\
-&= \text{cov}(g(\bm{q}_1), g(\bm{q}_2)) \\
-&=\text{cov}(f(\bm{q}_1) + \bm{A}(\bm{q}_1)\cdot \bm{C}, f(\bm{q}_2) + \bm{A}(\bm{q}_2)\cdot \bm{C})\\
-&=\text{cov}(f(\bm{q}_1), f(\bm{q}_2)) + \bm{A}(\bm{q}_1) \text{cov}(\bm{C},\bm{C}) \bm{A}^T(\bm{q}_2) \\
-&\ \ \ + \bm{A}(\bm{q}_1) \cdot \text{cov}(\bm{C},f(\bm{q}_2))+ \text{cov}(f(\bm{q}_1), \bm{C}) \cdot \bm{A}(\bm{q}_2) \\
-&=\text{cov}(f(\bm{q}_1), f(\bm{q}_2)) + \xi_i(\bm{q}_1)\xi_{ij}^{-1}\xi_{jk}\xi_{kl}^{-1}\xi_{l}(\bm{q}_2) - 2\xi_i(\bm{q}_1)\xi_{ij}^{-1}\xi_{j}(\bm{q}_2)\\
+&= \text{cov}(g(\bm{q}_1) - \bm{A}(\bm{q}_1)\cdot \bm{C}, g(\bm{q}_2) - \bm{A}(\bm{q}_2)\cdot \bm{C}|\Gamma) \nonumber\\
+&= \text{cov}(g(\bm{q}_1), g(\bm{q}_2)|\Gamma) + \text{cov}(\bm{A}(\bm{q}_1)\cdot \bm{C}, \bm{A}(\bm{q}_2)\cdot \bm{C}|\Gamma)\nonumber\\
+&\ \ \  - \bm{A}(\bm{q}_1)\cdot \text{cov}(\bm{C}, g(\bm{q}_2)|\Gamma) -\text{cov}(g(\bm{q}_1) , \bm{C}|\Gamma)\cdot \bm{A}(\bm{q}_2)\nonumber\\
+&= \text{cov}(g(\bm{q}_1), g(\bm{q}_2)) \nonumber\\
+&=\text{cov}(f(\bm{q}_1) + \bm{A}(\bm{q}_1)\cdot \bm{C}, f(\bm{q}_2) + \bm{A}(\bm{q}_2)\cdot \bm{C})\nonumber\\
+&=\text{cov}(f(\bm{q}_1), f(\bm{q}_2)) + \bm{A}(\bm{q}_1) \text{cov}(\bm{C},\bm{C}) \bm{A}^T(\bm{q}_2) \nonumber\\
+&\ \ \ + \bm{A}(\bm{q}_1) \cdot \text{cov}(\bm{C},f(\bm{q}_2))+ \text{cov}(f(\bm{q}_1), \bm{C}) \cdot \bm{A}(\bm{q}_2) \nonumber\\
+&=\text{cov}(f(\bm{q}_1), f(\bm{q}_2)) + \xi_i(\bm{q}_1)\xi_{ij}^{-1}\xi_{jk}\xi_{kl}^{-1}\xi_{l}(\bm{q}_2) - 2\xi_i(\bm{q}_1)\xi_{ij}^{-1}\xi_{j}(\bm{q}_2)\nonumber\\
 &=\xi(\bm{q}_1,\bm{q}_2) - \xi_i(\bm{q}_1) \xi_{ij}^{-1} \xi_j(\bm{q}_2)\,.
 \end{align}
 We conclude that the residue $\delta f$ of $f$ with respect to the mean field $\langle f(\bm{q})|\Gamma\rangle =\bar{f}(\bm{q})+ \xi_i(\bm{q})\xi_{ij}^{-1}(c_j-\bar{C}_j)$ is a Gaussian random field with zero mean $\langle \delta f|\Gamma\rangle=0$ and variance $\langle \delta f(\bm{q})^2|\Gamma\rangle = \sigma_0^2 - \xi_i(\bm{q}) \xi_{ij}^{-1} \xi_j(\bm{q})$. Note that the residue $\delta f$ for a Gaussian random field with linear constraints is indeed independent of $\bm{c}$. The covariance of the constraint field yields the constrained probability density
 \begin{align}
-p(f|\Gamma) \propto  e^{-\frac{1}{2} \iint \delta{f}(\bm{q}_1) \tilde{K}(\bm{q}_1,\bm{q}_2) \delta f(\bm{q}_2)\mathrm{d}\bm{q}_1 \mathrm{d}\bm{q}_2 }
+p(f|\Gamma) \propto  \exp\left[-\frac{1}{2} \iint \delta{f}(\bm{q}_1) \tilde{K}(\bm{q}_1,\bm{q}_2) \delta f(\bm{q}_2)\mathrm{d}\bm{q}_1 \mathrm{d}\bm{q}_2 \right]
 \end{align}
 with the residue $\delta f = f-\bar{f}(\bm{q})+ \xi_i(\bm{q})\xi_{ij}^{-1}(c_j-\bar{C}_j)$ and the kernel $\tilde{K}$ defined as the inverse of the modified two-point correlation function, \textit{i.e.},
 \begin{align}
