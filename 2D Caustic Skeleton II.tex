@@ -22,7 +22,7 @@
 \usepackage{algorithmic}
 \usepackage[ruled]{algorithm2e}
 
-\title{2D Caustic Skeleton II: Constraint Realization of the Cosmic Web}
+\title{Caustic skeleton of the cosmic web: non-linear constraint realizations of structural components; the 2D case}
 
 \author[a,b]{Job Feldbrugge}
 \author[c]{Rien van de Weygaert}
@@ -708,8 +708,8 @@ where $\text{cov}(c_j, c_l\,|\,\bm{c}\in\mathcal{M}_\mathcal{C})$ captures the g
 where
 \begin{align}
 \int_{\mathcal{M}_\mathcal{C}} (\bar{f}_{\bm{c}}(\bm{q})- \bar{f}_{\bar{\bm{c}}}(\bm{q}))^2p(\bm{c}\,|\,\bm{c}\in\mathcal{M}_{\mathcal{C}})\mathrm{d}\bm{c} 
-&= \text{var}\left(\sum_{i,j=1}^M\xi_i(\bm{q})\xi_{ij}^{-1}c_j\,|\,\bm{c}\in \mathcal{M}_\mathcal{C}\right)\nonumber\\
-&=\sum_{i,j,k,l=1}^M \xi_i(\bm{q})\xi_{ij}^{-1}\text{cov}(c_j,c_k\,|\,\bm{c}\in\mathcal{M}_\mathcal{C})\xi_{kl}^{-1}\xi_l(\bm{q})\,.
+&= \text{var}\left(\sum_{i,j=1}^M\xi_i(\bm{q})\xi_{ij}^{-1}c_j\,|\,\bm{c}\in \mathcal{M}_\mathcal{C}\right)\\
+&=\sum_{i,j,k,l=1}^M \xi_i(\bm{q})\xi_{ij}^{-1}\text{cov}(c_j,c_k\,|\,\bm{c}\in\mathcal{M}_\mathcal{C})\xi_{kl}^{-1}\xi_l(\bm{q})\,.\nonumber
 \end{align}
 Note that the variance of the residue with respect to the non-linear constraint is no longer independent of the values the constraint assumes. When $\mathcal{M}_\mathcal{C}$ consists of a point, the recover the linear formula.
 \end{itemize}
