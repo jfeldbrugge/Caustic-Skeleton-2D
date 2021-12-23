@@ -15,3 +15,6 @@ Analytics.pdf
 *.nb
 Constraint Calculations/nbody2d
 Constraint Calculations/nbody2d
+*.tex~
+*.tex#
+#.*
