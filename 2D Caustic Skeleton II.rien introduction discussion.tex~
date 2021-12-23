@@ -82,29 +82,11 @@ to infer constraints on the underlying physics and cosmological parameters.
 The emerging complex multiscale structure of the cosmic web is the product of the interplay of a range of nonlinear processes.
 N-body simulations, numerically simulating cosmological structure formation, are very useful to obtain a good impression of the
 emerging structure. However, even while several up-to-date projects provide suites consisting of a large number of simulations
-that offer a good representation of many aspects of the structure formation process \citep{Abacussumiit, Quijote), they are usually
+that offer a good representation of many aspects of the structure formation process \citep{Abacussummit,Quijote), they are usually
   too expensive and do not possess the flexibility to infer the required information on all relevant cosmological and
-  structure formation aspects. As purely numerical
-simulations are very expensive, it is likely that a combination of analytical and numerical methods will lead to the best results.
+  structure formation aspects. As purely numerical simulations are very expensive, it is likely that a combination of analytical and
+  numerical methods will lead to the best results.
 
-
-Large upcoming cosmological redshift surveys will map the \textit{cosmic web} in even greater detail,
-revealing a lot of information about the geometry and topology of its intricate spatial structure. In turn, this has the potential of
-inferring strong constraints on a large range of cosmological parameters.
-
- 
-
-
-
-Given the detail of the next generation of cosmological surveys, it is increasingly important to develop an analytic framework that models the
-mildly non-linear evolution of the different features of the cosmic web -- the voids, the walls, the filaments and the clusters.
-
-A related issue of considerable importance and interest is the relation between the properties of galaxies and halos and their location
-in the framework of the cosmic web. The influence of the weblike environment in which galaxies form and evolve 
-
-
--- and their
-influence on the embedded dark matter halos and galaxies.
 
 
 

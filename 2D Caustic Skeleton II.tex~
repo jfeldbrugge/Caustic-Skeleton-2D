@@ -50,7 +50,11 @@
 \newtheorem{corollary}{Corollary}
 
 \abstract{
-\noindent Last compiled on: {\color{red} \currenttime\ at \today}}
+\noindent 
+The comic web is the largest structural of our universe, consisting of a complex interplay between voids, walls, filaments and clusters, forming under to the gravitational collapse of Gaussian fluctuations. These simple Gaussian initial conditions are directly related to the intricate current cosmic web by the caustic structure of the dynamically evolving mass distribution. The caustic skeleton traces the evolution of these caustics structures forming the dynamical skeleton of the cosmic web. In this paper, we extent constrained Gaussian random field theory to non-linear constraints, to evaluate the properties of the Gaussian initial conditions in the vicinity of the different elements of the two-dimensional caustic skeleton. The combination of non-linear constrained theory and caustic skeleton theory, forms a new framework for the study of the formation histories of the different walls, filaments and clusters of the large-scale structure and their geometric and topological properties, putting flesh on the bones of the cosmic skeleton.
+
+
+Last compiled on: {\color{red} \currenttime\ at \today}}
 
 \graphicspath{
 {./figures/}}
@@ -64,10 +68,19 @@
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Introduction}
+The cosmic web is the largest complex structural pattern known in nature and is the fundamental spatial organization of matter, gas and galaxies on scales of a few up to a hundred Megaparsec \citep{Shandarin:1989,Bond:1996,Weygaert:2008}. Galaxies, intergalactic
+gas and dark matter exist in a wispy weblike arrrangement of dense compact clusters, elongated filaments, and sheetlike membranes
+surrounding near-empty void regions. Cosmological observations are producing ever more detailed maps of the spatial galaxy distribution, while a range of observational data are accessing the neutral and ionized gas distribution in the \textit{cosmic web}, and even that of the dark matter distribution \citep{references}. Around 50\% of dark matter and 50\% of galaxies, is residing in filaments \citep[see eg.][]{Cautun:2014,Ganeshaiah:2019}. The complex connectivity and intrinsic multiscale character reflect the primordial conditions out of which the wealthy structure and variety of objects in the Universe have emerged through gravitational evolution.
 
-The large-scale structure of our Universe -- consisting of large voids, thin membranes, thick filaments, and massive clusters -- are now routinely observed through the distribution of galaxies, neutral gas, and dark matter. Upcoming cosmological redshift surveys will map the \textit{cosmic web} in even greater detail, revealing a lot of information about its geometry and topology, the properties of the embedded galaxies, and fundamental physics. Remarkably, the cosmic web is not only observable through the distribution of galaxies, but, in fact, directly influences their formation processes. Cosmic streams flow along the filamentary structure of the cosmic web influencing the angular momentum and spin alignment of the embedded galaxies. Given the detail of the next generation of cosmological surveys, it is increasingly important to develop an analytic framework that models the mildly non-linear evolution of the different features of the cosmic web -- the voids, the walls, the filaments and the clusters -- and their influence on the embedded dark matter halos and galaxies.
+In the coming years a large array of major observational redshift surveys in particular, those of Euclid, DESI, the Vera Rubin observatory and SKA -- will map the weblike organization of galaxies over unprecedented large cosmic volumes. Given this wealth of data, it is of crucial importancce to prepare for the systematic scientific exploration of the cosmic web. As the structure, dynamics and connectivity of the cosmic web depend sensitively on the underlying cosmology, these new methods will exploit the geometry and topology of the cosmic web to infer constraints on the underlying physics and cosmological parameters. 
 
-interesting abstract
+The emerging complex multiscale structure of the cosmic web is the product of the interplay of a range of nonlinear processes.
+N-body simulations, numerically simulating cosmological structure formation, are very useful to obtain a good impression of the
+emerging structure. However, even while several up-to-date projects provide suites consisting of a large number of simulations that offer a good representation of many aspects of the structure formation process \citep{ABACUSSUMMIT:2021, Quijote:2020}, they are usually too expensive and do not possess the flexibility to infer the required information on all relevant cosmological and structure formation aspects. As purely numerical simulations are very expensive, it is likely that numerical methods in combination based on a foundation of analytical descriptions of the structure formation process lead to a considerably more versatile formalism for inferring the requested information on the underlying physical and cosmological processes. Perhaps even more important is that proper relevant analytical descriptions lead to a substantial 
+
+
+
+
 
 Building on work by Arnol'd, Zel'dovich and collaborators, we recently solved a long-standing problem in Lagrangian catastrophe theory, enabling us to build such a framework. We track the evolution of the dark matter sheet in six-dimensional \textit{phase-space} and mark the locations where the fluid forms caustics, highlighting the place and time where gravitational collapse turns non-linear and walls, filaments, and clusters emerge. Moreover, these caustic mark the locations where these structures merge to form the interconnected structure which we observe today. When combining caustic theory with an analytic model of large-scale structure formation, such as the Zel'dovich approximation, these caustics define the \textit{caustic skeleton}, marking the locations and configurations in the initial conditions that are the progenitors of the intricate geometric cosmic pattern. This approach turns out to be remarkably successful at predicting the cosmic geometry and topology of the cosmic web from the much simpler Gaussian initial conditions.
 
@@ -308,49 +321,49 @@ Morse point & $A_3^-$ & merger point & saddle point of the eigenvalue field $\la
 
 \begin{figure}
 \centering
-\begin{subfigure}[b]{0.31\textwidth}
+\begin{subfigure}[b]{0.28\textwidth}
 \includegraphics[width=\textwidth]{Cusp_L}
-\end{subfigure} 
-\begin{subfigure}[b]{0.31\textwidth}
+\end{subfigure}~
+\begin{subfigure}[b]{0.28\textwidth}
 \includegraphics[width=\textwidth]{Cusp_Z}
-\end{subfigure}
-\begin{subfigure}[b]{0.31\textwidth}
+\end{subfigure}~
+\begin{subfigure}[b]{0.28\textwidth}
 \includegraphics[width=\textwidth]{Cusp_Nb}
-\end{subfigure}\\ \vspace{-0.5\baselineskip}
+\end{subfigure}\\ \vspace{0.2\baselineskip}
 %%%%%%%%%%
 %%%%%%%%%%
-\begin{subfigure}[b]{0.31\textwidth}
+\begin{subfigure}[b]{0.28\textwidth}
 \includegraphics[width=\textwidth]{Swallowtail_L}
-\end{subfigure}
-\begin{subfigure}[b]{0.31\textwidth}
+\end{subfigure}~
+\begin{subfigure}[b]{0.28\textwidth}
 \includegraphics[width=\textwidth]{Swallowtail_Z}
-\end{subfigure}
-\begin{subfigure}[b]{0.31\textwidth}
+\end{subfigure}~
+\begin{subfigure}[b]{0.28\textwidth}
 \includegraphics[width=\textwidth]{Swallowtail_Nb}
-\end{subfigure}\\ \vspace{-0.5\baselineskip}
+\end{subfigure}\\ \vspace{0.2\baselineskip}
 %%%%%%%%%%
 %%%%%%%%%%
-\begin{subfigure}[b]{0.31\textwidth}
+\begin{subfigure}[b]{0.28\textwidth}
 \includegraphics[width=\textwidth]{Elliptic_L}
-\end{subfigure}
-\begin{subfigure}[b]{0.31\textwidth}
+\end{subfigure}~
+\begin{subfigure}[b]{0.28\textwidth}
 \includegraphics[width=\textwidth]{Elliptic_Z}
-\end{subfigure}
-\begin{subfigure}[b]{0.31\textwidth}
+\end{subfigure}~
+\begin{subfigure}[b]{0.28\textwidth}
 \includegraphics[width=\textwidth]{Elliptic_Nb}
-\end{subfigure}\\ \vspace{-0.5\baselineskip}
+\end{subfigure}\\ \vspace{0.2\baselineskip}
 %%%%%%%%%%
 %%%%%%%%%%
-\begin{subfigure}[b]{0.31\textwidth}
+\begin{subfigure}[b]{0.28\textwidth}
 \includegraphics[width=\textwidth]{Hyperbolic_L}
-\end{subfigure}
-\begin{subfigure}[b]{0.31\textwidth}
+\end{subfigure}~
+\begin{subfigure}[b]{0.28\textwidth}
 \includegraphics[width=\textwidth]{Hyperbolic_Z}
-\end{subfigure}
-\begin{subfigure}[b]{0.31\textwidth}
+\end{subfigure}~
+\begin{subfigure}[b]{0.28\textwidth}
 \includegraphics[width=\textwidth]{Hyperbolic_Nb}
 \end{subfigure}
-\caption{Elements of the caustic skeleton consisting of the fold curves (red) and cusp curve (blue) in Lagrangian and Eulerian space.. \textit{From top to bottom:} the cusp, the swallowtail, the elliptic and the hyperbolic caustic. \textit{Left:} the caustic skeleton in Lagrangian space. \textit{Centre:} the Zel'dovich approximation. \textit{Right:} the corresponding $N$-body simulation \cite{Hidding:2020}.}\label{fig:caustics_Examples_Big}
+\caption{Elements of the caustic skeleton consisting of the fold curves (red) and cusp curve (blue) in Lagrangian and Eulerian space in a $[50\text{ Mpc}, 150 \text{ Mpc}]^2$ box. \textit{From top to bottom:} the cusp, the swallowtail, the elliptic and the hyperbolic caustic. \textit{Left:} the caustic skeleton in Lagrangian space. \textit{Centre:} the Zel'dovich approximation. \textit{Right:} the corresponding $N$-body simulation \cite{Hidding:2020}.}\label{fig:caustics_Examples_Big}
 \end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
