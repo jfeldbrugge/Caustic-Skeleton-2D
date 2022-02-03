@@ -102,9 +102,34 @@ Useful references on the comsic web:
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Caustic skeleton theory}\label{sec:Caustic_Skeleton_Theory}
-While a Lagrangian fluid evolves, it can develops singular features known as caustics. These caustic are fully classified by Lagrangian catastrophe theory and play an important role in the development of the cosmic web. In this section, we give an elementary description of Lagrangian fluid dynamics and summarize the highlights of caustic skeleton theory in two dimensions.
+\section{Cosmic web and caustic skeleton theory}\label{sec:Caustic_Skeleton_Theory}
+Over the last decades the cosmic web has become increasingly important to our understanding of our universe. Redshift surveys map larger and larger volumes of the observable universe, detecting the intricate interconnected network of voids, walls, filaments and clusters in detail. $N$-body simulations follow the evolution of fast numbers of particles, modelling not only the formation of structure on the largest scales but also the effect of the cosmic web on the embedded galaxies. Moreover, as most of the statistical information has been extracted from the anisotropies of the cosmic microwave background radiation field, the cosmic web is likely to become the next central cosmological probe for fundamental physics, constraining for example the neutrino mass and putting constraints on new particles such as axions. However, the complexity of the individual structures of the cosmic web, the lack of structural symmetries, the connectivity of the various components, the intrinsic multiscale nature, and the wide range of densities make it difficult to infer meaningful information. Caustic skeleton theory attempts to quantify the geometry and topology of the cosmic web, by tracing the singular features in the formation history of its features. 
 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Cosmic web versus tidal fields}
+In Eulerian fluid dynamics, the evolution of a dark matter fluid is described in terms of the density perturbation 
+\begin{align}
+\delta(\bm{x},t)= \frac{\rho(\bm{x},t)-\rho_u(t)}{\rho_u(t)}\,,
+\end{align}
+and the comoving velocity $\bm{v}$ is governed by the conservation of mass
+\begin{align}
+\frac{\partial \delta}{\partial t} + \frac{1}{a}\nabla \cdot (1+\delta) \bm{v}=0\,,
+\end{align}
+with the scale factor $a$, the Euler equation, 
+\begin{align}
+\frac{\partial \bm{v}}{\partial t} + \frac{1}{a}(\bm{v}\cdot \nabla )\bm{v} + \frac{\dot{a}}{a}\bm{v}=-\frac{1}{a}\nabla \phi\,,
+\end{align}
+with the gravitational potential $\phi$, and the Poisson equation relating the gravitational potential to the density perturbations
+\begin{align}
+\nabla^2 \phi = 4\pi G a^2 \rho_u \delta\,.
+\end{align}
+At early times, while the density perturbation is small, \textit{i.e.}, $\delta \ll 1$, the fluid equation are well approximated using a perturbation series. However, in the walls, filaments, and clusters of the cosmic web the density perturbation quickly exceeds unity, entering the non-linear regime of Eulerian fluid dynamics.
+
+
+
+While a Lagrangian fluid evolves, it can develops singular features known as caustics. These caustic are fully classified by Lagrangian catastrophe theory and play an important role in the development of the cosmic web. In this section, we give an elementary description of Lagrangian fluid dynamics and summarize the highlights of caustic skeleton theory in two dimensions.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Lagrangian fluid dynamics}
