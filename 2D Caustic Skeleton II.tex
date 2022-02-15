@@ -109,6 +109,11 @@ Over the last decades the cosmic web has become increasingly important to our un
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Cosmic web versus tidal fields}
+While a Lagrangian fluid evolves, it can develops singular features known as caustics. These caustic are fully classified by Lagrangian catastrophe theory and play an important role in the development of the cosmic web. In this section, we give an elementary description of Lagrangian fluid dynamics and summarize the highlights of caustic skeleton theory in two dimensions.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Lagrangian fluid dynamics}
+\begin{framed}
 In Eulerian fluid dynamics, the evolution of a dark matter fluid is described in terms of the density perturbation 
 \begin{align}
 \delta(\bm{x},t)= \frac{\rho(\bm{x},t)-\rho_u(t)}{\rho_u(t)}\,,
@@ -126,18 +131,13 @@ with the gravitational potential $\phi$, and the Poisson equation relating the g
 \nabla^2 \phi = 4\pi G a^2 \rho_u \delta\,.
 \end{align}
 At early times, while the density perturbation is small, \textit{i.e.}, $\delta \ll 1$, the fluid equation are well approximated using a perturbation series. However, in the walls, filaments, and clusters of the cosmic web the density perturbation quickly exceeds unity, entering the non-linear regime of Eulerian fluid dynamics.
+\end{framed}
 
-
-
-While a Lagrangian fluid evolves, it can develops singular features known as caustics. These caustic are fully classified by Lagrangian catastrophe theory and play an important role in the development of the cosmic web. In this section, we give an elementary description of Lagrangian fluid dynamics and summarize the highlights of caustic skeleton theory in two dimensions.
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Lagrangian fluid dynamics}
 Lagrangian fluid dynamics is well-known to be an effective tool to model the cosmic web, as demonstrated by the famous Zel'dovich approximation \cite{Zeldovich:1970}, second-order Lagrangian perturbation theory ($2$LPT) \cite{Buchert:1992, Buchert:1993a, Buchert:1993b, Buchert:1994a, Buchert:1994b, Bouchet:1995}, and $N$-body simulations \cite{Springel:2005, illustris:2014, eagle:2015, ABACUSSUMMIT:2021, Quijote:2020}. The Lagrangian fluid consists of a collection of mass elements, evolving according to the Lagrangian map $\bm{x}_t:\mathcal{L}\to \mathcal{E}$,
 \begin{align}
 \bm{x}_t(\bm{q}) \equiv \bm{q} + \bm{s}_t(\bm{q})\,,
 \end{align}
-with the displacement field $\bm{s}_t$, describing the evolution of the mass elements from the initial position $\bm{q}$ in Lagrangian space $\mathcal{L}$ to the final position $\bm{x}_t(\bm{q})$ at time $t$ in Eulerian space $\mathcal{E}$. A mass element can flow, stretch, and rotate, while conserving its mass. A two-dimensional fluid forms a two-dimensional sheet $M_t=\{(\bm{q},\bm{x}_t(\bm{q})) | \bm{q}\in \mathcal{L}\}$ in four-dimensional \textit{phase-space} $\mathcal{L}\times \mathcal{E}$, consisting of the inital and the final position of the mass element. Note that there exists a direct correspondence between this definition of phase-space and the more conventional phase-space consisting of the position and momentum of a particle in Hamiltonian mechanics. The cosmic web emerges when projecting the dark matter sheet $M_t$ onto the final position $\varphi:\mathcal{L}\times \mathcal{E} \to \mathcal{E}$, defined by $(\bm{q},\bm{x}) \mapsto\bm{x}$ (see figure \ref{fig:Phase-Space} for an illustration).
+with the displacement field $\bm{s}_t$, describing the evolution of the mass elements from the initial position $\bm{q}$ in Lagrangian space $\mathcal{L}$ to the final position $\bm{x}_t(\bm{q})$ at time $t$ in Eulerian space $\mathcal{E}$. A mass element can flow, stretch, and rotate, while conserving its mass. A two-dimensional fluid forms a two-dimensional sheet $M_t=\{(\bm{q},\bm{x}_t(\bm{q})) \, |\, \bm{q}\in \mathcal{L}\}$ in four-dimensional \textit{phase-space} $\mathcal{L}\times \mathcal{E}$, consisting of the inital and the final position of the mass element. Note that there exists a direct correspondence between this definition of phase-space and the more conventional phase-space consisting of the position and momentum of a particle in Hamiltonian mechanics. The cosmic web emerges when projecting the dark matter sheet $M_t$ onto the final position $\varphi:\mathcal{L}\times \mathcal{E} \to \mathcal{E}$, defined by $(\bm{q},\bm{x}) \mapsto\bm{x}$ (see figure \ref{fig:Phase-Space} for an illustration).
 
 \begin{figure}
 \centering
