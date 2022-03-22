@@ -168,9 +168,54 @@ The Zel'dovich approximation clearly fails for late times. The approximation lin
 
 The multi-stream regions of the cosmic web forms gradually. Its evolution is neatly captured by the dynamics of the caustic skeleton (see figure \ref{fig:Eulerian_Evolution}). At early times, the dark-matter sheet consisted of a single single-stream region. As the mass elements undergo gravitational collapse, we observe the formation of several Zel'dovich pancakes corresponding to the maxima of the eigenvalue field $\lambda_1$ (see the upper left panel). These multi-stream regions grow and connect at the saddle points of the eigenvalue fields to form the web-like structure we observe in redshift surveys (see the upper right and lower panels). Note that viralized filaments move coherently while the large voids expand and the smaller voids contract. In this process several filaments may  merge to form more massive structures.
 
+\begin{framed}
+The initial gravitational potential in the examples in this paper are -- unless otherwise indicated -- based on a Gaussian random field with a power-law power spectrum $P(k) \propto k^{n_s}$ with the index $n_s=-1$ smoothed with a Gaussian filter with the length scale $R_s = 5\text{ Mpc}$. We assume a flat Einstein-de Sitter universe consisting of dark matter density $\Omega_m=1$ with a Hubble constant $H_0=71\text{ km/s/Mpc}$. We map the caustic skeleton in Lagrangian space to Eulerian space with the Lagrangian map $\bm{x}_t$, where $\bm{x}_t$ either corresponds to the Zel'dovich approximation or a small dark matter two-dimensional $N$-body simulation \cite{Hidding:2020}.
+\end{framed}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Cosmic web versus tidal fields}
 While a Lagrangian fluid evolves, it can develops singular features known as caustics. These caustic are fully classified by Lagrangian catastrophe theory and play an important role in the development of the cosmic web. In this section, we give an elementary description of Lagrangian fluid dynamics and summarize the highlights of caustic skeleton theory in two dimensions.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -184,38 +229,37 @@ $ $
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{The caustic skeleton in Lagangian space}\label{sec:Caustic_Skeleton_Theory}
-Over the last decades the cosmic web has become increasingly important to our understanding of our universe. Redshift surveys map larger and larger volumes of the observable universe, detecting the intricate interconnected network of voids, walls, filaments and clusters in detail. $N$-body simulations follow the evolution of fast numbers of particles, modelling not only the formation of structure on the largest scales but also the effect of the cosmic web on the embedded galaxies. Moreover, as most of the statistical information has been extracted from the anisotropies of the cosmic microwave background radiation field, the cosmic web is likely to become the next central cosmological probe for fundamental physics, constraining for example the neutrino mass and putting constraints on new particles such as axions. However, the complexity of the individual structures of the cosmic web, the lack of structural symmetries, the connectivity of the various components, the intrinsic multiscale nature, and the wide range of densities make it difficult to infer meaningful information. Caustic skeleton theory attempts to quantify the geometry and topology of the cosmic web, by tracing the singular features in the formation history of its features. 
+In the previous section, we describe the gravitationally collapse of Gaussian fluctuation leading to the formation of an intricate cosmic network, known as the cosmic web. This web -- consists of voids, walls, filaments and clusters -- is intimately tied to the development of multi-stream regions, which in turn are most naturally described in terms of caustics. These caustics capture the formation histories of the multi-stream regions and trace the spine of the cosmic web. Moreover, we pointed out a strong correspondence between the geometry of the eigenvalue fields of the initial deformation tensor (governed by the gravitational potential) and the geometry of the web at late times. In the present section, we develop the mathematical formalism underlying these observations. In particular, we briefly summarize the work presented in our previous paper on the caustic skeleton of the cosmic web \cite{Feldbrugge:2018}.
 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Lagrangian fluid dynamics}
-\begin{framed}
-In Eulerian fluid dynamics, the evolution of a dark matter fluid is described in terms of the density perturbation 
-\begin{align}
-\delta(\bm{x},t)= \frac{\rho(\bm{x},t)-\rho_u(t)}{\rho_u(t)}\,,
-\end{align}
-and the comoving velocity $\bm{v}$ is governed by the conservation of mass
-\begin{align}
-\frac{\partial \delta}{\partial t} + \frac{1}{a}\nabla \cdot (1+\delta) \bm{v}=0\,,
-\end{align}
-with the scale factor $a$, the Euler equation, 
-\begin{align}
-\frac{\partial \bm{v}}{\partial t} + \frac{1}{a}(\bm{v}\cdot \nabla )\bm{v} + \frac{\dot{a}}{a}\bm{v}=-\frac{1}{a}\nabla \phi\,,
-\end{align}
-with the gravitational potential $\phi$, and the Poisson equation relating the gravitational potential to the density perturbations
-\begin{align}
-\nabla^2 \phi = 4\pi G a^2 \rho_u \delta\,.
-\end{align}
-At early times, while the density perturbation is small, \textit{i.e.}, $\delta \ll 1$, the fluid equation are well approximated using a perturbation series. However, in the walls, filaments, and clusters of the cosmic web the density perturbation quickly exceeds unity, entering the non-linear regime of Eulerian fluid dynamics.
-\end{framed}
+There exist multiple ways to model the gravitational collapse of density fluctuations in an expanding universe. The most well-known formalism is the Eulerian approach, in which one studied the evolution of the density, the velocity, and the gravitational potential fields of the dark matter fluid, governed by the conservation of mass, the Euler, and the Poisson equations. The formalism is relatively concise, and leads to a reasonably accurate description of the mean flow in a large fraction of space. However, the formalism has certain limitations as it generally assigns a unique value for the density, velocity, and gravitational potential to each point in space and fails to properly describe the fluid in the multistream regions, where the mass streams have their distinct densities and velocities.
 
-Lagrangian fluid dynamics is well-known to be an effective tool to model the cosmic web, as demonstrated by the famous Zel'dovich approximation \cite{Zeldovich:1970}, second-order Lagrangian perturbation theory ($2$LPT) \cite{Buchert:1992, Buchert:1993a, Buchert:1993b, Buchert:1994a, Buchert:1994b, Bouchet:1995}, and $N$-body simulations \cite{Springel:2005, illustris:2014, eagle:2015, ABACUSSUMMIT:2021, Quijote:2020}. The Lagrangian fluid consists of a collection of mass elements, evolving according to the Lagrangian map $\bm{x}_t:\mathcal{L}\to \mathcal{E}$,
+The multi-stream regions are more naturally described in the Lagrangian approach, which models the fluid in terms of a collection of mass elements uniformly filling space at the initial time. The evolution of the mass elements is captured by the Lagrangian map $\bm{x}_t:\mathcal{L}\to \mathcal{E}$,
 \begin{align}
-\bm{x}_t(\bm{q}) \equiv \bm{q} + \bm{s}_t(\bm{q})\,,
+\bm{x}_t(\bm{q}) = \bm{q} + \bm{s}_t(\bm{q})\,,
 \end{align}
-with the displacement field $\bm{s}_t$, describing the evolution of the mass elements from the initial position $\bm{q}$ in Lagrangian space $\mathcal{L}$ to the final position $\bm{x}_t(\bm{q})$ at time $t$ in Eulerian space $\mathcal{E}$. A mass element can flow, stretch, and rotate, while conserving its mass. A two-dimensional fluid forms a two-dimensional sheet $M_t=\{(\bm{q},\bm{x}_t(\bm{q})) \, |\, \bm{q}\in \mathcal{L}\}$ in four-dimensional \textit{phase-space} $\mathcal{L}\times \mathcal{E}$, consisting of the inital and the final position of the mass element. Note that there exists a direct correspondence between this definition of phase-space and the more conventional phase-space consisting of the position and momentum of a particle in Hamiltonian mechanics. The cosmic web emerges when projecting the dark matter sheet $M_t$ onto the final position $\varphi:\mathcal{L}\times \mathcal{E} \to \mathcal{E}$, defined by $(\bm{q},\bm{x}) \mapsto\bm{x}$ (see figure \ref{fig:Phase-Space} for an illustration).
+describing the position of a mass element starting from the position $\bm{q}$ in Lagrangian space $\mathcal{L}$ to the final position $\bm{x}_t(\bm{q})$ at time $t$ in Eulerian space $\mathcal{E}$, with the displacement field $\bm{s}_t(\bm{q})= \bm{x}_t(\bm{q}) - \bm{q}$. Each mass element can flow, stretch, and rotate, while conserving its mass. The density of a Lagrangian fluid is derived from the Lagrangian map through the conservation of mass, \textit{i.e.},
+\begin{align}
+\rho_t(\bm{x})
+&= \sum_{\bm{q} \in A_t(\bm{x})} \frac{\bar{\rho}}{|\det \nabla \bm{x}_t(\bm{q})|}\nonumber\\
+&= \sum_{\bm{q} \in A_t(\bm{x})} \frac{\bar{\rho}}{|1+\mu_{t,1}(\bm{q})||1+\mu_{t,2}(\bm{q})|}\,,
+\label{eq:density}
+\end{align}
+with the mean initial density $\bar{\rho}$, and the eigenvalue fields $\mu_{t,1}$ and $\mu_{t,2}$ of the deformation tensor $\nabla \bm{s}_t$, defined by the eigenequation
+\begin{align}
+\nabla \bm{s}_t(\bm{q}) \bm{v}_{t,i}(\bm{q}) = \mu_{t,i}(\bm{q}) \bm{v}_{t,i}(\bm{q})\,,
+\label{eq:EigenvalueAndEigenvector}
+\end{align} 
+with the corresponding eigenvector fields $\bm{v}_{t,1}$, and $\bm{v}_{t,2}$. Each stream contributes to the density, as the sum runs over the points that reach $\bm{x}$ in time $t$, \textit{i.e.},
+\begin{align}
+A_t(\bm{x}') = \{\bm{q}\,|\,\bm{x}_t(\bm{q})=\bm{x}'\}\,.
+\end{align} 
+Lagrangian fluid dynamics is well-known to be an effective tool to model the cosmic web, as demonstrated by the famous Zel'dovich approximation \cite{Zeldovich:1970}, second-order Lagrangian perturbation theory ($2$LPT) \cite{Buchert:1992, Buchert:1993a, Buchert:1993b, Buchert:1994a, Buchert:1994b, Bouchet:1995}, and $N$-body simulations \cite{Springel:2005, illustris:2014, eagle:2015, ABACUSSUMMIT:2021, Quijote:2020}. 
 
+A two-dimensional Lagrangian fluid forms a two-dimensional sheet $M_t=\{(\bm{q},\bm{x}_t(\bm{q})) \, |\, \bm{q}\in \mathcal{L}\}$ in four-dimensional \textit{phase-space} $\mathcal{L}\times \mathcal{E}$, consisting of the inital and the final positions of the mass elements. Note that there exists a direct correspondence between this definition of phase-space and the more conventional phase-space consisting of the position and momentum of a particle in Hamiltonian mechanics. The cosmic web emerges in the projection of the phase-space sheet $M_t$ onto the final position $\varphi:\mathcal{L}\times \mathcal{E} \to \mathcal{E}$, defined by the map $(\bm{q},\bm{x}) \mapsto\bm{x}$ (see figure \ref{fig:Phase-Space} for an illustration).
 \begin{figure}
 \centering
 \begin{subfigure}[b]{0.49\textwidth}
@@ -250,76 +294,28 @@ with the displacement field $\bm{s}_t$, describing the evolution of the mass ele
 \end{subfigure}
 \caption{Projection of phase-space to Eulerian space. The left panel illustrates the initial dark matter sheet in phase-space. The arrow represents the projection to Eulerian space $\varphi$. \textit{Left:} the initial dark matter sheet for which the mapping $\varphi$ is one-to-one. \textit{Right:} an evolved dark matter sheet consisting of a single- and a triple-stream region (in blue). Each point in the triple-stream region corresponds to three points on the dark matter sheet. The triple-stream region is bounded by a fold caustic at which the mass elements shell-cross.}\label{fig:Phase-Space}
 \end{figure}
-
-Initially, the displacement field vanishes, $\bm{s}_0(\bm{q})=\bm{0}$, and the phase-space manifold is diagonal $M_0=\{(\bm{q},\bm{q})\,|\,\bm{q} \in \mathcal{L}\}$. The mapping $\varphi$ is one-to-one, corresponding to a single-stream region (see the left panel of figure\ \ref{fig:Phase-Space}). When the fluid evolves, the phase-space manifold can develop complex configurations at which the mapping $\varphi$ becomes many-to-one, \textit{i.e.}, a final position can be reached from multiple initial positions (see the right panel of figure \ref{fig:Phase-Space}). A connected region, in Eulerian space, with $n$ possible initial positions is known as an $n$-stream region. In these multi-stream regions, gravitational collapse becomes non-linear and viralized structures form. The multi-stream regions partition the universe into regions with distinct formation histories, based on the dynamics of gravitational collapse.  As we will show in the next section, different multi-stream regions can be associated to the membranes, filaments, and clusters of the cosmic web. The single-stream regions correspond to the voids, where the evolution of the cosmic web remains largely linear. See \cite{Hahn:2007, Abel:2012, Shandarin:2012,  Feldbrugge:2014b, Ramachandra:2015, Ramachandra:2017, Shandarin:2019, Shandarin:2021} for recent investigations on the phase-space structure of the cosmic web and the identification of multi-stream regions in $N$-body simulations.
-
-The density of a Lagrangian fluid evolves while the mass elements are squeezed and stretched, \textit{i.e.},
-\begin{align}
-\rho_t(\bm{x})
-&= \sum_{\bm{q} \in A_t(\bm{x})} \frac{\bar{\rho}}{|\det \nabla \bm{x}_t(\bm{q})|}\nonumber\\
-&= \sum_{\bm{q} \in A_t(\bm{x})} \frac{\bar{\rho}}{|1+\mu_{t,1}(\bm{q})||1+\mu_{t,2}(\bm{q})|}\,,
-\label{eq:density}
-\end{align}
-with the mean initial density $\bar{\rho}$, and the eigenvalue fields $\mu_{t,1}$ and $\mu_{t,2}$ of the deformation tensor $\nabla \bm{s}_t$, defined by the eigenequation
-\begin{align}
-\nabla \bm{s}_t(\bm{q}) \bm{v}_{t,i}(\bm{q}) = \mu_{t,i}(\bm{q}) \bm{v}_{t,i}(\bm{q})\,.
-\label{eq:EigenvalueAndEigenvector}
-\end{align} 
-Each stream contributes to the density, as the sum runs over the points that reach $\bm{x}$ in time $t$, \textit{i.e.},
-\begin{align}
-A_t(\bm{x}') = \{\bm{q}\,|\,\bm{x}_t(\bm{q})=\bm{x}'\}\,.
-\end{align}
-The boundaries of the multi-stream regions mark discontinuous of the density field \eqref{eq:density}. In fact, at the boundary, the orientation of the mass elements flip in a process known as \textit{shell-crossing}. The determinant $\det \nabla \bm{x}_t$ vanishes and the density spikes to infinity. This phenomenon is an example of a \textit{fold caustic}, bounding the regions where virialized structures emerge. In this paper, we always order the eigenvalue fields such that $\mu_{t,1}$ is the field which causes the first shell-crossing event. As we shall see in the next section, the -- often ignored -- eigenvector fields plays an important role in the higher order caustics.
-
-In late time cosmology, the cosmic web forms due to the gravitational collapse of tiny Gaussian fluctuations $\delta_0$. At early times, the corresponding Gaussian gravitational potential $\phi_0$ governs the dynamics of the mass elements, $\bm{s}_t \propto \nabla \phi_0$. See the upper panels of figure \ref{fig:Initial_Conditions} for an illustration of the initial density and the corresponding gravitational potential fields\footnote{We model the gravitational potential with a power-law power spectrum $P(k) \propto k^{n_s}$ with an index $n_s=-1$ smoothed with a Gaussian filter on the length scale $R_s=5\text{ Mpc}$.}. Eulerian fluid dynamics describes the early evolution of the density field in terms of these Gaussian fields. In contrast, Lagrangian fluid dynamics emphasises the role of the deformation tensor $\nabla \bm{s}_t$ and the corresponding non-Gaussian eigenvalue and eigenvector fields (see the density formula \eqref{eq:density}). It follows from the eigenequation \eqref{eq:EigenvalueAndEigenvector} that the eigenvalue fields are the quadratic (or cubic) roots of a polynomial whose coefficients depend on the first order derivatives of the displacement field in 2D (or 3D). The non-linearity of the eigenvalue fields captures part of the non-linear dynamics of gravitational collapse. At early times the deformation tensor $\nabla \bm{s}_t$ is proportional to the Hessian of the gravitational potential, $\nabla \bm{s}_t \propto \mathcal{H}\phi_0$. The eigenvalue and eigenvector fields are nonlinear functions of the second order derivatives of the initial gravitational potential. See the lower panels of figure \ref{fig:Initial_Conditions} for an illustration of the non-Gaussian nature of the eigenvalue fields corresponding to the gravitational potential in the upper left panel. 
-
-\begin{figure}
-\centering
-\begin{subfigure}[b]{0.45\textwidth}
-\includegraphics[width=\textwidth]{eigen_dens}
-\end{subfigure}~
-\begin{subfigure}[b]{0.45\textwidth}
-\includegraphics[width=\textwidth]{joint_eigen}
-\end{subfigure}
-\caption{The distirubtion of the eigenvalue fields. \textit{Left:} the PDF of the initial density perturbation $\delta$ (black) and the initial eigenvalue fields $\mu_{i,t}$ (red and blue). \textit{Right:} the joint distribution of the eigenvalue fields.}\label{fig:eigen_stats}
-\end{figure}
-
-The red regions experience an inflow of matter, leading to the first caustics. The blue regions represent an initial outflow of matter. Roughly speaking, the eigenvalue fields peak in the regions of high initial density. In particular, compare the peaks of the initial density field $\delta_0$ and the second eigenvalue field $\mu_{t,2}$. However, the density perturbation and the eigenvalue fields differ away from these high density regions. The eigenvalue fields emphasise line-like features connecting the high density regions. As described below, these line-like features of the first eigenvalue field are the progenitors of the filaments of the cosmic web. 
-
-It follows from the Poisson equation (see section \ref{sec:Zeldovich}), that the sum of the initial eigenvalue fields is proportional to the initial density perturbation, 
-\begin{align}
-\delta_0 \propto \nabla^2 \phi_0 = \text{Tr}[\mathcal{H}\phi_0] \propto \mu_{t,1} + \mu_{t,2}\,,
-\end{align}
-with the Hessian $\mathcal{H}$, demonstrating a non-trivial correlation between the initial eigenvalue fields. The eigenvalue fields splits the Gaussian initial density perturbations into parts which influence the linear regime of gravitational collapse in distinct ways. Moreover, the two initial eigenvalue fields are strongly correlated with the joint probability distribution given by the two-dimensional Doroshkevich formula \cite{Doroshkevich:1970, Feldbrugge:2014}
-\begin{align}
-p(\mu_1,\mu_2) = \frac{2\sqrt{2}}{\sqrt{\pi} \sigma_2^3} e^{-\frac{3(\mu_1+\mu_2)^2-8\mu_1 \mu_2}{2 \sigma_2^2}}|\mu_1-\mu_2|\,,
-\end{align}
-with $\sigma_2$ the generalized moment defined in section \ref{sec:GRF}. See figure \ref{fig:eigen_stats} for an illustration of the eigenvalue and density field statistics. 
-
-As we will show, the orientation and geometry of the shell-crossing regions is further described by the eigenvector fields (see the lines in the lower panels of figure \ref{fig:Initial_Conditions}). At initial times, the eigenvector fields are normal, $\bm{v}_{t,1}\cdot \bm{v}_{t,2}=0$, since the deformation tensor is symmetric. Observe that the eigenvector fields exhibit an interesting correlation with the eigenvalue fields. Roughly speaking, the eigenvector fields are normal to the ridges of the corresponding eigenvalue fields. This observation will play an important role in the discussion of the caustic skeleton below. 
-
+Initially, the displacement field vanishes, $\bm{s}_0(\bm{q})=\bm{0}$, and the phase-space manifold is diagonal $M_0=\{(\bm{q},\bm{q})\,|\,\bm{q} \in \mathcal{L}\}$. The mapping $\varphi$ is one-to-one, corresponding to a single-stream region (see the left panel of figure\ \ref{fig:Phase-Space}). When the fluid evolves, the phase-space manifold can develop complex configurations at which the mapping $\varphi$ becomes many-to-one, \textit{i.e.}, a final position can be reached from multiple initial positions. A connected region, in Eulerian space, with $n$ possible initial positions is known as an $n$-stream region (see the triple-stream region in the right panel of figure \ref{fig:Phase-Space}). In these multi-stream regions, gravitational collapse becomes non-linear and viralized structures start to form. The multi-stream regions partition the universe into regions with distinct formation histories, based on the dynamics of gravitational collapse. The fold caustic bound the multi-stream regions. At a fold, the orientation of the mass elements flip in a process known as \textit{shell-crossing}. In this process, the deformation tensor is singular, $\det \nabla \bm{x}_t = 0$, and the density \eqref{eq:density} spikes to infinity. As we will show in the next section, higher-order caustics in multi-stream regions can be associated to the membranes, filaments, and clusters of the cosmic web. The single-stream regions correspond colloquially to the voids, where the evolution of the cosmic web is well described by Eulerian fluid dynamics. See \cite{Hahn:2007, Abel:2012, Shandarin:2012,  Feldbrugge:2014b, Ramachandra:2015, Ramachandra:2017, Shandarin:2019, Shandarin:2021} for recent investigations on the phase-space structure of the cosmic web and the identification of multi-stream regions in $N$-body simulations.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Caustics in Lagrangian fluids}
-The study of the cosmic web in terms of multi-stream regions and Lagrangian catastrophe theory has a rich history, predating the developments of $N$-body simulations \cite{Arnold:1982a, Arnold:1982b, Shandarin:1983, Rozhanskii:1984, Shandarin:1989}. Amazingly, by analysing the geometry of the caustics emerging in Lagrangian fluid dynamics, Y.\ Zel'dovich, V.\ Arnol'd and collaborators successfully predicted the qualitative features of the cosmic web. The large-scale structure is described in terms of a network of caustics, analogous to the light patterns emerging on the sea bed or the bottom of a swimming pool \cite{Berry:1977, Berry:1980, Feldbrugge:2019}. However, these studies where mainly restricted to two-dimensional models, as several technical problems inhibited the full treatment of three-dimensional cosmic web. In a recent publication \cite{Feldbrugge:2018}, we solved these problems by formulating the \textit{shell-crossing condition} describing how a submanifold in $\mathcal{L}$ can develop a non-differentiable feature under the mapping $\bm{x}_t$. Given a submanifold $L \subset \mathcal{L}$, the mapping $\bm{x}_t(L)$ develops a non-differentiable point at time $t$ in $\bm{q}_c$ when there exists a non-zero vector tangent vector $\bm{T}$ in the tangent space of $L$ at $\bm{q}_c$ for which 
+The study of the cosmic web in terms of multi-stream regions and Lagrangian catastrophe theory has a rich history, predating the developments of $N$-body simulations \cite{Arnold:1982a, Arnold:1982b, Shandarin:1983, Rozhanskii:1984, Shandarin:1989}. Amazingly, by analysing the geometry of the caustics emerging in Lagrangian fluid dynamics, Y.\ Zel'dovich, V.\ Arnol'd and collaborators successfully predicted the qualitative features of the cosmic web. The large-scale structure is described in terms of a network of caustics, analogous to the light patterns emerging on the sea bed or the bottom of a swimming pool \cite{Berry:1977, Berry:1980, Feldbrugge:2019}. 
+
+However, these studies where mainly restricted to two-dimensional models, as several technical problems inhibited the full treatment of three-dimensional cosmic web. In a recent publication \cite{Feldbrugge:2018}, we solved these problems by formulating the \textit{shell-crossing condition} describing how a submanifold in $\mathcal{L}$ can develop a non-differentiable feature under the mapping $\bm{x}_t$. Given a submanifold $L \subset \mathcal{L}$, the mapping $\bm{x}_t(L)$ develops a non-differentiable point at time $t$ in $\bm{q}_c$ when there exists a non-zero vector tangent vector $\bm{T}$ in the tangent space of $L$ at $\bm{q}_c$ for which 
 \begin{align}
 (1+\mu_{t,i}(\bm{q}_c))\bm{v}_{t,i}^*(\bm{q}_c) \cdot \bm{T}=0
 \label{eq:shellCrossingCondition}
 \end{align}
-for all $i$, with $\bm{v}_{i,t}^*$ the dual eigenvector field defined by the relation $\bm{v}_{t,i}\cdot \bm{v}_{t,j}^* = \delta_{ij}$.
+for all $i=1,2$, with $\bm{v}_{i,t}^*$ the dual eigenvector field defined by the relation $\bm{v}_{t,i}\cdot \bm{v}_{t,j}^* = \delta_{ij}$. The shell-crossing condition indicates the key role of the eigenvalue $\mu_{t,i}$ and eigenvector fields $\bm{v}_{t,i}$ of the deformation tensor $\nabla \bm{s}_t$ over the density field in the development of multi-stream regions. Note that even at early times, the eigenvalue fields are non-Gaussian and show the web-like structure of the late-time multi-stream regions and mass distribution (see figure \ref{fig:Initial_Conditions}). Furthermore note that not only the eigenvalue fields but also the, often ignored, eigenvector fields (see for example \cite{Forero:2009}) plays a central role the shell-crossing condition and the definition of the higher-order caustics, tracing the filaments and clusters of the cosmic web.
 
-The shell-crossing condition leads to a set of \textit{caustic conditions} describing the properties of the displacement field in the vicinity of a caustic. Remarkably, the caustic conditions demonstrate the key role of the eigenvalue $\mu_{t,i}$ and eigenvector fields $\bm{v}_{t,i}$ of the deformation tensor $\nabla \bm{s}_t$ over the density field in the development of viralized structures. The eigenvalue and eigenvector fields are non-linearly related to the gravitational potential and demonstrate how Gaussian initial conditions give rise to a web-like structure (see figure \ref{fig:Initial_Conditions}). As we show below, the geometry of the often 
-ignored eigenvector fields (see for example \cite{Forero:2009}) is crucial to the development of the higher-order caustics, tracing the filaments and clusters of the cosmic web.
-
-Lagrangian catastrophe theory classifies the shell-crossing regions into a finite set of caustics that stably occur in nature \cite{Arnold:1972, Arnold:1976, Poston:1978, Gilmore:1981, Kravtsov:1983, Arnold:1984, Arnold:2012a, Arnold:2012b}. These caustics have a direct connection to the walls, filaments and clusters of the cosmic web. The region for which the density spikes, \textit{i.e.}, 
+The shell-crossing condition leads to a set of \textit{caustic conditions} describing the properties of the displacement field in the vicinity of the caustic that stably occur in nature (for a derivation of Lagrangian catastrophe theory see \cite{Arnold:1972, Arnold:1976, Poston:1978, Gilmore:1981, Kravtsov:1983, Arnold:1984, Arnold:2012a, Arnold:2012b}). When applying the shell-crossing condition to Lagrangian space, $L=\mathcal{L}$, we obtain the condition for the fold caustic $A_2$,
 \begin{align}
 1+\mu_{t,i}(\bm{q}_c)=0
 \end{align}
-for $i=1$ or $2$, forms the fold curve $A_2$ consisting of the points that shell-cross at time $t$. Note that the fold curve is independent of the eigenvector fields and trivially satisfies the shell-crossing condition \eqref{eq:shellCrossingCondition}. The fold curve bounds the different multi-stream regions (see the red curves in figure \ref{fig:caustics_Examples_Big}). The analysis presented in figure \ref{fig:caustics_Examples_Big} is based on the caustic skeleton of the Zel'dovich approximation described below. However, the caustic conditions apply to general Lagrangian fluids. 
+for $i=1$ or $2$, marking the shell-crossing region at which the density spikes. The fold curve is independent of the eigenvector fields. The fold curve bounds the different multi-stream regions (see the red curves in figure \ref{fig:caustics_Examples_Big}).
 
-The initial gravitational potential in the examples in this paper are -- unless otherwise indicated -- based on a Gaussian random field with a power-law power spectrum $P(k) \propto k^{n_s}$ with the index $n_s=-1$ smoothed with a Gaussian filter with the length scale $R_s = 5\text{ Mpc}$. We assume a flat Einstein-de Sitter universe consisting of dark matter density $\Omega_m=1$ with a Hubble constant $H_0=71\text{ km/s/Mpc}$. We map the caustic skeleton in Lagrangian space to Eulerian space with the Lagrangian map $\bm{x}_t$, where $\bm{x}_t$ either corresponds to the Zel'dovich approximation or a small dark matter two-dimensional $N$-body simulation \cite{Hidding:2020}.
 
-The fold curve can develop a non-differentiable point in the cusp caustic $A_3$, when the fold curve in Lagrangian space is parallel to the corresponding eigenvector field, \textit{i.e.}, 
+
+The fold curve develops non-differentiable points in the cusp caustic $A_3$, when the fold curve in Lagrangian space is parallel to the corresponding eigenvector field, \textit{i.e.}, 
 \begin{align}
 1+\mu_{t,i}(\bm{q}_c)=0\,,\\
 \bm{v}_{t,i}(\bm{q}_c) \cdot \nabla \mu_{t,i}(\bm{q}_c)=0\,,\label{eq:cuspCondition}
@@ -345,30 +341,10 @@ Finally, caustic skeleton theory includes a set of Morse points, at which the mu
 \begin{align}
 \nabla \mu_{t,i}(\bm{q}_c)=\bm{0}\,.
 \end{align}
-The maxima and minima of the eigenvalue field $\mu_i$ mark the locations and times at which a multi-stream region emerges or disappears. A critical point that undergoes shell-crossing always lies on a cusp curves, as a point with a vanishing gradient automatically satisfies equation \eqref{eq:cuspCondition}. The maxima and minima are known as $A_3^+$ points. The saddle point of the eigenvalue field $\mu_{t,i}$ mark the location and time at which two multi-stream regions merge to form a larger structure. At the $A_3^-$ point, two cusp curves corresponding to two filaments join. The Morse points determine the connectivity of the cosmic web. See figure \ref{fig:critical} for a comparison of the critical point densities of the density perturbation and the two eigenvalue fields at early times.
+The maxima and minima of the eigenvalue field $\mu_i$ mark the locations and times at which a multi-stream region emerges or disappears. A critical point that undergoes shell-crossing always lies on a cusp curves, as a point with a vanishing gradient automatically satisfies equation \eqref{eq:cuspCondition}. The maxima and minima are known as $A_3^+$ points. The saddle point of the eigenvalue field $\mu_{t,i}$ mark the location and time at which two multi-stream regions merge to form a larger structure. At the $A_3^-$ point, two cusp curves corresponding to two filaments join. The Morse points determine the connectivity of the cosmic web. 
 
+In tabel \ref{table:caustics}, we summarize the different elements of the caustic skeleton. For a complete contemporary description of caustic skeleton theory, we refer to \cite{Hidding:2014, Feldbrugge:2018}.
 
-\begin{figure}
-\centering
-\begin{subfigure}[b]{0.32\textwidth}
-\includegraphics[width=\textwidth]{Critical_lambda_2}
-\caption{The eigenvalue field $\mu_1$}
-\end{subfigure}~
-\begin{subfigure}[b]{0.32\textwidth}
-\includegraphics[width=\textwidth]{Critical_dens}
-\caption{The density perturbation $\delta$}
-\end{subfigure}~
-\begin{subfigure}[b]{0.32\textwidth}
-\includegraphics[width=\textwidth]{Critical_lambda_1}
-\caption{The eigenvalue field $\mu_2$}
-\end{subfigure}
-\caption{The critical point densities of the density pertubation and the eigenvalue fields. The total critical point density (blue), the density of maxima (green), saddle points (red), and minima (orange).}\label{fig:critical}
-\end{figure}
-
-In tabel \ref{table:caustics}, we summarize the different elements of the caustic skeleton. For a complete contemporary description of caustic skeleton theory, we refer to \cite{Hidding:2014, Feldbrugge:2018}.\\
-
-
-Note that the study of the Morse points of the caustic skeleton has a direct connection to the DisPerSE and the Felix classification schemes \cite{Pogosyan:2009, Sousbie:2011a, Sousbie:2011b, Shivashankar:2016}, which applies Morse-Smale theory to the density field. In this scheme, the critical points of the density field connect the maxima via integral lines, which are associated to the filaments of the cosmic web. However, the caustic skeleton differs from Morse-Smale theory in several respects. Firstly, in this paper, we focus on the deformation tensor instead of the density field. The eigenvalue fields tie into the dynamics of gravitational collapse. Secondly, the threshold of the the caustic skeleton is determined by the cosmic time (the growing mode for the Zel'dovich approximation). Finally, rather than connecting saddle points and maxima via integral lines satisfying a differential equation, the caustic skeleton connects the critical points using the simpler level sets \eqref{eq:cuspCondition}.
 
 
 \begin{table}
@@ -484,6 +460,36 @@ with the relation $\lambda_1 =-\mu_2/b_+,\lambda_2 =-\mu_1/b_+$, assuming the or
 Initially, the growing mode $b_+$ vanishes and the universe consists of a single-stream region. As the fluid collapses under self gravity, the growing mode $b_+$ increases. The fold caustics form at the level sets of the eigenvalue field $\{\bm{q}\,|\,\lambda_i(\bm{q})=1/b_+(t)\}$. From this picture we observe the direct connection between the critical points of the eigenvalue fields and the connectivity of the cosmic web.
 
 
+
+\begin{figure}
+\centering
+\begin{subfigure}[b]{0.32\textwidth}
+\includegraphics[width=\textwidth]{Critical_lambda_2}
+\caption{The eigenvalue field $\mu_1$}
+\end{subfigure}~
+\begin{subfigure}[b]{0.32\textwidth}
+\includegraphics[width=\textwidth]{Critical_dens}
+\caption{The density perturbation $\delta$}
+\end{subfigure}~
+\begin{subfigure}[b]{0.32\textwidth}
+\includegraphics[width=\textwidth]{Critical_lambda_1}
+\caption{The eigenvalue field $\mu_2$}
+\end{subfigure}
+\caption{The critical point densities of the density pertubation and the eigenvalue fields. The total critical point density (blue), the density of maxima (green), saddle points (red), and minima (orange).}\label{fig:critical}
+\end{figure}
+
+\begin{framed}
+See figure \ref{fig:critical} for a comparison of the critical point densities of the density perturbation and the two eigenvalue fields at early times.
+
+
+
+
+
+
+Note that the study of the Morse points of the caustic skeleton has a direct connection to the DisPerSE and the Felix classification schemes \cite{Pogosyan:2009, Sousbie:2011a, Sousbie:2011b, Shivashankar:2016}, which applies Morse-Smale theory to the density field. In this scheme, the critical points of the density field connect the maxima via integral lines, which are associated to the filaments of the cosmic web. However, the caustic skeleton differs from Morse-Smale theory in several respects. Firstly, in this paper, we focus on the deformation tensor instead of the density field. The eigenvalue fields tie into the dynamics of gravitational collapse. Secondly, the threshold of the the caustic skeleton is determined by the cosmic time (the growing mode for the Zel'dovich approximation). Finally, rather than connecting saddle points and maxima via integral lines satisfying a differential equation, the caustic skeleton connects the critical points using the simpler level sets \eqref{eq:cuspCondition}.
+\end{framed}
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Caustics in the cosmic web}
 
@@ -520,17 +526,45 @@ Initially, the growing mode $b_+$ vanishes and the universe consists of a single
 The role of the different elements of the caustic skeleton can be clearly observed from the zoom of figure \ref{fig:caustics_Examples_Big} centered on the caustic in Lagrangian space (see figure \ref{fig:caustics_Examples_Small}). The fold line is defined as the curve where the mass elements in the Zel'dovich approximation undergo shell-crossing. These shell-crossing regions clearly bound the multi-stream regions in the Zel'dovich approximation. This correspondence is less accurate in the $N$-body simulation, as the moment of shell-crossing may vary due to the non-linear nature of gravitational collapse. The cusp curve bisects the multi-stream region. The cusp curve marks the locations where the mass elements turn around to form a line-like structure. Note that this is valid in both the Zel'dovich approximation and the $N$-body simulation. The cusp curve in Lagrangian space accurately predict the mass elements around which matter virializes. The swallowtail, the elliptic and the hyperbolic caustics form where different cusp curves meet up to form a knot. The swallowtail caustic marks the place where the cusp curve corresponding to a single eigenvalue field becomes non-differentiable. The elliptic and hyperbolic caustics mark the location where the multi-stream regions of different eigenvalue fields merge. In figure \ref{fig:caustics_Examples_Small}, we observe that Zel'dovich approximation gives a good prediction of the geometry of the multi-stream regions in the $N$-body simulation at early times. Since the formation history of these different point caustics differs, it is natural to expect the properties of the different clusters to vary in nature. Note that the cluster caustics are rarely isolated. Caustics generally cluster and together form more intricate multi-stream structure. This way, a cluster can connect more than three filaments, even though the swallowtail, and umbilic caustics individually connect three filament regions.
 
 
+\begin{framed}
+In late time cosmology, the cosmic web forms due to the gravitational collapse of tiny Gaussian fluctuations $\delta_0$. At early times, the corresponding Gaussian gravitational potential $\phi_0$ governs the dynamics of the mass elements, $\bm{s}_t \propto \nabla \phi_0$. See the upper panels of figure \ref{fig:Initial_Conditions} for an illustration of the initial density and the corresponding gravitational potential fields\footnote{We model the gravitational potential with a power-law power spectrum $P(k) \propto k^{n_s}$ with an index $n_s=-1$ smoothed with a Gaussian filter on the length scale $R_s=5\text{ Mpc}$.}. Eulerian fluid dynamics describes the early evolution of the density field in terms of these Gaussian fields. In contrast, Lagrangian fluid dynamics emphasises the role of the deformation tensor $\nabla \bm{s}_t$ and the corresponding non-Gaussian eigenvalue and eigenvector fields (see the density formula \eqref{eq:density}). It follows from the eigenequation \eqref{eq:EigenvalueAndEigenvector} that the eigenvalue fields are the quadratic (or cubic) roots of a polynomial whose coefficients depend on the first order derivatives of the displacement field in 2D (or 3D). The non-linearity of the eigenvalue fields captures part of the non-linear dynamics of gravitational collapse. At early times the deformation tensor $\nabla \bm{s}_t$ is proportional to the Hessian of the gravitational potential, $\nabla \bm{s}_t \propto \mathcal{H}\phi_0$. The eigenvalue and eigenvector fields are nonlinear functions of the second order derivatives of the initial gravitational potential. See the lower panels of figure \ref{fig:Initial_Conditions} for an illustration of the non-Gaussian nature of the eigenvalue fields corresponding to the gravitational potential in the upper left panel. 
+
+The red regions experience an inflow of matter, leading to the first caustics. The blue regions represent an initial outflow of matter. Roughly speaking, the eigenvalue fields peak in the regions of high initial density. In particular, compare the peaks of the initial density field $\delta_0$ and the second eigenvalue field $\mu_{t,2}$. However, the density perturbation and the eigenvalue fields differ away from these high density regions. The eigenvalue fields emphasise line-like features connecting the high density regions. As described below, these line-like features of the first eigenvalue field are the progenitors of the filaments of the cosmic web. 
+
+It follows from the Poisson equation (see section \ref{sec:Zeldovich}), that the sum of the initial eigenvalue fields is proportional to the initial density perturbation, 
+\begin{align}
+\delta_0 \propto \nabla^2 \phi_0 = \text{Tr}[\mathcal{H}\phi_0] \propto \mu_{t,1} + \mu_{t,2}\,,
+\end{align}
+with the Hessian $\mathcal{H}$, demonstrating a non-trivial correlation between the initial eigenvalue fields. The eigenvalue fields splits the Gaussian initial density perturbations into parts which influence the linear regime of gravitational collapse in distinct ways. Moreover, the two initial eigenvalue fields are strongly correlated with the joint probability distribution given by the two-dimensional Doroshkevich formula \cite{Doroshkevich:1970, Feldbrugge:2014}
+\begin{align}
+p(\mu_1,\mu_2) = \frac{2\sqrt{2}}{\sqrt{\pi} \sigma_2^3} e^{-\frac{3(\mu_1+\mu_2)^2-8\mu_1 \mu_2}{2 \sigma_2^2}}|\mu_1-\mu_2|\,,
+\end{align}
+with $\sigma_2$ the generalized moment defined in section \ref{sec:GRF}. See figure \ref{fig:eigen_stats} for an illustration of the eigenvalue and density field statistics. 
+
+As we will show, the orientation and geometry of the shell-crossing regions is further described by the eigenvector fields (see the lines in the lower panels of figure \ref{fig:Initial_Conditions}). At initial times, the eigenvector fields are normal, $\bm{v}_{t,1}\cdot \bm{v}_{t,2}=0$, since the deformation tensor is symmetric. Observe that the eigenvector fields exhibit an interesting correlation with the eigenvalue fields. Roughly speaking, the eigenvector fields are normal to the ridges of the corresponding eigenvalue fields. This observation will play an important role in the discussion of the caustic skeleton below. 
+\end{framed}
+
+\begin{figure}
+\centering
+\begin{subfigure}[b]{0.45\textwidth}
+\includegraphics[width=\textwidth]{eigen_dens}
+\end{subfigure}~
+\begin{subfigure}[b]{0.45\textwidth}
+\includegraphics[width=\textwidth]{joint_eigen}
+\end{subfigure}
+\caption{The distirubtion of the eigenvalue fields. \textit{Left:} the PDF of the initial density perturbation $\delta$ (black) and the initial eigenvalue fields $\mu_{i,t}$ (red and blue). \textit{Right:} the joint distribution of the eigenvalue fields.}\label{fig:eigen_stats}
+\end{figure}
 
 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Constrained random field theory}\label{sec:GRF}
-One of the most startling realizations in modern cosmology is that the intricate cosmic web, observed in several cosmological redshift surveys, originated from extremely simple initial conditions. At the moment of recombination, when the baryons and electrons form neutral elements and decouple from the photons, the energy density in our universe $\rho(\bm{q})$, was extremely homogeneous. These fluctuations
+One of the most startling realizations in modern cosmology is that the intricate cosmic web, observed in several cosmological redshift surveys, originated from extremely simple initial conditions. At the moment of recombination, when the baryons and electrons form neutral elements and decouple from the photons, the energy density in our universe $\rho(\bm{q})$, was extremely homogeneous with only tiny density fluctuations. These fluctuations are most naturally described in terms of the dimensionless density contrast
 \begin{align}
 \delta(\bm{q}) = \frac{\rho(\bm{q})}{\bar{\rho}} -1\,,
 \end{align}
-with the mean density $\bar{\rho} = \langle \rho \rangle$ left an imprint as temperature fluctuations in the Cosmic Microwave Background field (CMB) which, over the last decades, have been measured with increasing accuracy \cite{WMAP:2003, Planck:2016}. After recombination, the pressure dropped and these density fluctuations started to collapse under the force of gravity. This led to the rich geometric patterns in the cosmic web and virialized objects we observe today. The statistical properties of these initial perturbations $\delta$, is very close to Gaussian \cite {Creminelli:2006, Planck:2020}. We here define Gaussian random fields and discuss the implementation of both linear and non-linear constraints. We closely follow the notation presented in \cite{Weygaert:1996}.
+with the mean density $\bar{\rho} = \langle \rho \rangle$. The imprints of these fluctuations have over the last decades been measured with increasing accuracy in the temperature maps of the Cosmic Microwave Background field (CMB) \cite{WMAP:2003, Planck:2016}. Several contemporary paradigms for the big bang, such as inflation theory, envisage that these fluctuations have an quantum origin and should be interpreted as a realization of a Gaussian random field with only small non-Gaussian deviations. This is in accordance with the most recent statistical analyses of the CMB \cite {Creminelli:2006, Planck:2020} and forms the underpinning of the study of the cosmic web. In this section, we will give a concise definition of Gaussian random field theory. We discuss the implementation of linear constraint Gaussian random field theory, following the notation presented in \cite{Weygaert:1996}, and extend these conditions to non-linear constraints. This will allow us to efficiently implement the caustic conditions and study the properties of the emerging structures.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Gaussian random fields}
