@@ -512,7 +512,7 @@ One of the most startling realizations in modern cosmology is that the intricate
 \subsection{Gaussian random fields}
 A two-dimensional Gaussian random field $f:\mathbb{R}^2\to \mathbb{R}$ is a generalization of a multi-dimensional normal distribution to the continuum, defined by the probability density
 \begin{align}
-p(\delta) = \mathcal{N} e^{- S[f]}\,, \label{eq:functional_Distribution}
+p(f) = \mathcal{N} e^{- S[f]}\,, \label{eq:functional_Distribution}
 \end{align}
 with the normalization constant $\mathcal{N}$ and the `action' (in analogy with the Euclidean path integral \cite{Feynman:1965})
 \begin{align}
@@ -526,7 +526,7 @@ with $\bm{1}_\mathcal{S}$ the identity function\footnote{Defined by $\bm{1}_\mat
 \begin{align}
 \left\langle Q[f] \right\rangle = \mathcal{N}\int Q[f]\, e^{-S[f]}\,\mathcal{D}f\,,
 \end{align}
-analogous to the Euclidean path integrals in statistical field theory. It can be shown that the expectation value of the random field is given by the mean field
+analogous to the Euclidean path integrals in statistical field theory. It can be shown that the expectation value of the Gaussian random field is given by the mean field
 \begin{align}
 \langle f(\bm{q})\rangle &= \bar{f}(\bm{q})\,.
 \end{align}
@@ -541,7 +541,7 @@ is the inverse of the kernel $K$, \textit{i.e.,}
 \end{align}
 with the two-dimensional Dirac delta function $\delta_D^{(2)}$. The Gaussian random field is thus fully determined by the mean field $\bar{f}$ and the two-point correlation function $\xi$. 
 
-In cosmology, the cosmological principle often leads to the study of statistically homogeneous and isotropic random fields for which the mean field is constant $\bar{f}(\bm{q})=\bar{f}$ and the two-point correlation function only depends on the magnitude of the difference of the inserted points, \textit{i.e.}, $\xi(\bm{q}_1,\bm{q}_2)=\xi(\|\bm{q}_1-\bm{q}_2\|)$, and consequently $K(\bm{q}_1,\bm{q}_2)=K(\|\bm{q}_1-\bm{q}_2\|)$. We will in particular consider random fields with vanishing means $\bar{f}=0$. 
+In cosmology, the cosmological principle often leads to the study of statistically homogeneous and isotropic random fields for which the mean field is constant $\bar{f}(\bm{q})=\bar{f}$ and the two-point correlation function only depends on the magnitude of the difference of the inserted points, \textit{i.e.}, $\xi(\bm{q}_1,\bm{q}_2)=\xi(\|\bm{q}_1-\bm{q}_2\|)$, and consequently $K(\bm{q}_1,\bm{q}_2)=K(\|\bm{q}_1-\bm{q}_2\|)$. We will in particular consider random fields with vanishing mean $\bar{f}=0$. 
 
 The statistical properties of homogeneous and isotropic random fields are most transparently expressed in terms of the Fourier transformation of the random field
 \begin{align}
@@ -571,12 +571,14 @@ implying the covariance
 \begin{align}
 \langle \hat{f}(\bm{k}_1)\hat{f}(\bm{k}_2) \rangle = (2\pi)^2 \delta_D^{(2)}(\bm{k}_1-\bm{k}_2) P(\|\bm{k}_1\|)\,.
 \end{align}
-In this paper, we for simplicity always assume the initial gravitational potential to be a realization of a homogeneous and isotropic Gaussian random field with a power-law power spectrum $P(k) \propto k^{n_s}$ smoothed with a Gaussian filter $W(k)=e^{-R_s^2 k^2/2}$ with the spectral index $n_s$ and the smoothing scale $R_s$. The effective power spectrum takes the form 
-\begin{align}
-P_{eff}(k)\propto k^{ns}e^{-R_s^2 k^2}\,.
-\end{align}
-Unless otherwise specified, we use a spectral index $n_s=-1$ and a smoothing length scale $R_s = 5\text{ Mpc}$. 
 
+%\begin{framed}
+%In this paper, we for simplicity always assume the initial gravitational potential to be a realization of a homogeneous and isotropic Gaussian random field with a power-law power spectrum $P(k) \propto k^{n_s}$ smoothed with a Gaussian filter $W(k)=e^{-R_s^2 k^2/2}$ with the spectral index $n_s$ and the smoothing scale $R_s$. The effective power spectrum takes the form 
+%\begin{align}
+%P_{eff}(k)\propto k^{ns}e^{-R_s^2 k^2}\,.
+%\end{align}
+%Unless otherwise specified, we use a spectral index $n_s=-1$ and a smoothing length scale $R_s = 5\text{ Mpc}$. 
+%\end{framed}
 
 
 In practice, we often consider realizations of Gaussian random fields on a lattice, or more generally a finite set of linear statistics $\bm{Y}=(Y_1,Y_2,\dots,Y_M)$. In this setting, the functional distribution \eqref{eq:functional_Distribution} reduces to the multi-dimensional Gaussian distribution,
@@ -617,7 +619,7 @@ with $\bm{k}=(k_1,k_2)$ and $\bm{p}=(p_1,p_2)$. By statistical isotropy, we obta
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Linear constraints: Gaussian fields}
-In this paper, we study how the different geometric features of the cosmic web emerge from different initial conditions. To systematically study these initial conditions we use constrained Gaussian random field theory \cite{Bertschinger:1987, Hoffman:1991, Sheth:1995, Weygaert:1996}. In this section, we develop the theory of linear constraints following the analysis of \cite{Weygaert:1996}. In the next section, we generalize this discussion to a large class of non-linear constraints. We restrict both discussions to statistically homogeneous and isotropic fields with vanishing mean.
+In this paper, we study how the different geometric features of the cosmic web emerge from different initial conditions. To systematically study these initial conditions we use constrained Gaussian random field theory \cite{Bertschinger:1987, Hoffman:1991, Sheth:1995, Weygaert:1996}. In this section, we develop the theory of linear constraints following the analysis of \cite{Weygaert:1996}. In the next section, we generalize this discussion to a large class of non-linear constraints. %We restrict both discussions to statistically homogeneous and isotropic fields with vanishing mean.
 
 For a random field $f$, consider a set of linear constraints
 \begin{align}
