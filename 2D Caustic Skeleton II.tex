@@ -268,7 +268,7 @@ for all $i=1,2$, with $\bm{v}_{i,t}^*$ the dual eigenvector field defined by the
 
 The shell-crossing condition leads to a set of \textit{caustic conditions} describing the properties of the displacement field in the vicinity of the caustic that stably occur in nature (for a derivation of Lagrangian catastrophe theory see \cite{Arnold:1972, Arnold:1976, Poston:1978, Gilmore:1981, Kravtsov:1983, Arnold:1984, Arnold:2012a, Arnold:2012b}). When applying the shell-crossing condition to Lagrangian space, $L=\mathcal{L}$, we obtain the condition for the fold caustic $A_2$,
 \begin{align}
-1+\mu_{t,i}(\bm{q}_c)=0
+1+\mu_{t,i}(\bm{q}_c)=0\,,
 \end{align}
 for $i=1$ or $2$, marking the shell-crossing region at which the density spikes. The fold curve is independent of the eigenvector fields. The fold curve bounds the different multi-stream regions (see the red curves in figure \ref{fig:caustics_Examples_Big}).
 
@@ -277,7 +277,7 @@ for $i=1$ or $2$, marking the shell-crossing region at which the density spikes.
 The fold curve develops non-differentiable points in the cusp caustic $A_3$, when the fold curve in Lagrangian space is parallel to the corresponding eigenvector field, \textit{i.e.}, 
 \begin{align}
 1+\mu_{t,i}(\bm{q}_c)=0\,,\\
-\bm{v}_{t,i}(\bm{q}_c) \cdot \nabla \mu_{t,i}(\bm{q}_c)=0\,,\label{eq:cuspCondition}
+\bm{v}_{t,i}(\bm{q}_c) \cdot \nabla \mu_{t,i}(\bm{q}_c)=0\,.\label{eq:cuspCondition}
 \end{align}
 See the intersection of the red and blue curves in figure \ref{fig:caustics_Examples_Big}, where the tangent vector of the red line is parallel to the eigenvector field. The term $\bm{v}_{t,i} \cdot \nabla \mu_{t,i}$ arises in the shell-crossing condition \eqref{eq:shellCrossingCondition} with $L=A_2$, from the observation that the tangent vector of the fold curve $\bm{T}$ is normal to the gradient of the eigenvalue field $\nabla \mu_{t,i}$. Over time, the cusp point defines the cusp curve which is associated to the filaments of the cosmic web. See the blue curve in the first row of figure \ref{fig:caustics_Examples_Big} for an example of a fold curve and its relation to the filaments of the cosmic web. 
 
@@ -414,8 +414,7 @@ See figure \ref{fig:caustics_Examples_Small} for a zoom in of the various causti
 
 
 
-
-Note that the study of the Morse points of the caustic skeleton has a direct connection to the DisPerSE and the Felix classification schemes \cite{Pogosyan:2009, Sousbie:2011a, Sousbie:2011b, Shivashankar:2016}, which apply Morse-Smale theory to the density field. In this scheme, the critical points of the density field connect the maxima via integral lines, which are associated to the filaments of the cosmic web. However, the caustic skeleton differs from Morse-Smale theory in several respects. Firstly, in this paper, we focus on the deformation tensor instead of the density field. The eigenvalue fields are non-Gaussian tie into the dynamics of gravitational collapse. See figure \ref{fig:critical} for a comparison of the critical point densities of the initial density perturbation and the eigenvalue fields in the Zel'dovich approximation (see section \ref{sec:Zeldovich} for details). Secondly, the threshold of the the caustic skeleton is determined by the cosmic time (the growing mode for the Zel'dovich approximation). Finally, rather than connecting saddle points and maxima via integral lines satisfying a differential equation, the caustic skeleton connects the critical points using the simpler level sets \eqref{eq:cuspCondition} corresponding to the cusp caustic.
+The study of the Morse points of the caustic skeleton has a direct connection to the DisPerSE and the Felix classification schemes \cite{Pogosyan:2009, Sousbie:2011a, Sousbie:2011b, Shivashankar:2016}, which apply Morse-Smale theory to the density field. In this scheme, the critical points of the density field connect the maxima via integral lines, which are associated to the filaments of the cosmic web. However, the caustic skeleton differs from Morse-Smale theory in several respects. Firstly, in this paper, we focus on the deformation tensor instead of the density field. The eigenvalue fields are non-Gaussian tie into the dynamics of gravitational collapse. See figure \ref{fig:critical} for a comparison of the critical point densities of the initial density perturbation and the eigenvalue fields in the Zel'dovich approximation (see section \ref{sec:Zeldovich} for details). Secondly, the threshold of the the caustic skeleton is determined by the cosmic time (the growing mode for the Zel'dovich approximation). Finally, rather than connecting saddle points and maxima via integral lines satisfying a differential equation, the caustic skeleton connects the critical points using the simpler level sets \eqref{eq:cuspCondition} corresponding to the cusp caustic.
 
 
 
@@ -544,9 +543,9 @@ is the inverse of the kernel $K$, \textit{i.e.,}
 \end{align}
 with the two-dimensional Dirac delta function $\delta_D^{(2)}$. The Gaussian random field is thus fully determined by the mean field $\bar{f}$ and the two-point correlation function $\xi$. 
 
-In cosmology, the cosmological principle often leads to the study of statistically homogeneous and isotropic random fields for which the mean field is constant $\bar{f}(\bm{q})=\bar{f}$ and the two-point correlation function only depends on the magnitude of the difference of the inserted points, \textit{i.e.}, $\xi(\bm{q}_1,\bm{q}_2)=\xi(\|\bm{q}_1-\bm{q}_2\|)$, and consequently $K(\bm{q}_1,\bm{q}_2)=K(\|\bm{q}_1-\bm{q}_2\|)$. We will in particular consider random fields with vanishing mean $\bar{f}=0$. However, the theory does not rely on these assumptions.
+In cosmology, the cosmological principle often leads to the study of statistically homogeneous and isotropic random fields for which the mean field is constant $\bar{f}(\bm{q})=\bar{f}=0$ and the two-point correlation function only depends on the magnitude of the difference of the inserted points, \textit{i.e.}, $\xi(\bm{q}_1,\bm{q}_2)=\xi(\|\bm{q}_1-\bm{q}_2\|)$, and consequently $K(\bm{q}_1,\bm{q}_2)=K(\|\bm{q}_1-\bm{q}_2\|)$. In the present paper, we work with statistically homogeneous and isotropic Gaussian random fields. However, the theory generalizes to generic Gaussian random fields.
 
-The statistical properties of homogeneous and isotropic random fields are most transparently expressed in terms of the Fourier transformation of the random field
+The statistical properties of homogeneous and isotropic random fields are most transparently expressed in terms of the Fourier transform of the random field
 \begin{align}
 \hat{f}(\bm{k}) = \int f(\bm{q})e^{i\bm{k}\cdot \bm{q}}\mathrm{d}\bm{q}\,,
 \end{align}
@@ -554,7 +553,7 @@ and the inverse transform
 \begin{align}
 f(\bm{q}) = \int \hat{f}(\bm{k})e^{-i \bm{k} \cdot \bm{q}}\frac{\mathrm{d}\bm{k}}{(2\pi)^2}\,.
 \end{align}
-Note that the Fourier modes of real-valued Gaussian random fields satisfy the reality condition $\hat{f}(\bm{k}) = \hat{f}^*(-\bm{k})$. Using the double convolution theorem, we express the action \eqref{eq:action} as
+The Fourier modes of real-valued Gaussian random fields satisfy the reality condition $\hat{f}(\bm{k}) = \hat{f}^*(-\bm{k})$. Using the double convolution theorem, we express the action \eqref{eq:action} as
 \begin{align}
 S[f] = \frac{1}{2} \int |\hat{f}(\bm{k})|^2 \hat{K}(\bm{k}) \frac{\mathrm{d}\bm{k}}{(2\pi)^2}\,.
 \end{align}
@@ -566,13 +565,13 @@ with the power spectrum defined as the Fourier transform of the two-point correc
 \begin{align}
 P(\bm{k}) = \int \xi(\bm{q}) \, e^{i\bm{k}\cdot \bm{q}}\mathrm{d}\bm{q}\,,
 \end{align}
-implying the relation $\hat{K}(\bm{k}) = 1/P(\|\bm{k}\|)$. The resulting probability density of the Fourier modes is diagonal
+implying the relation $\hat{K}(\bm{k}) = 1/P(\bm{k})$. For a statistically homogeneous and isotropic random field $P(\bm{k})=P(\|\bm{k}\|)$. The resulting probability density of the Fourier modes is diagonal
 \begin{align}
-p(\hat{f}) \propto \exp\left[ -\frac{1}{2} \int \frac{|\hat{f}(\bm{k})|^2}{P(\|\bm{k}\|)} \frac{\mathrm{d}\bm{k}}{(2\pi)^2}\right]\,,
+p(\hat{f}) \propto \exp\left[ -\frac{1}{2} \int \frac{|\hat{f}(\bm{k})|^2}{P(\bm{k})} \frac{\mathrm{d}\bm{k}}{(2\pi)^2}\right]\,,
 \end{align}
 implying the covariance
 \begin{align}
-\langle \hat{f}(\bm{k}_1)\hat{f}(\bm{k}_2) \rangle = (2\pi)^2 \delta_D^{(2)}(\bm{k}_1-\bm{k}_2) P(\|\bm{k}_1\|)\,.
+\langle \hat{f}(\bm{k}_1)\hat{f}(\bm{k}_2) \rangle = (2\pi)^2 \delta_D^{(2)}(\bm{k}_1-\bm{k}_2) P(\bm{k}_1)\,.
 \end{align}
 
 %\begin{framed}
@@ -594,25 +593,25 @@ M = \text{cov}(\bm{Y},\bm{Y}) = \langle \Delta \bm{Y}^T \Delta \bm{Y}\rangle\,.
 \end{align}
 The distribution of the discrete Fourier modes $\bm{Y}=(\hat{f}(\bm{k}_1),\hat{f}(\bm{k}_1),\dots)$ takes the form 
 \begin{align}
-p(\hat{f}(\bm{k}_1), \hat{f}(\bm{k}_2), \dots) = \prod_{i} \frac{1}{\sqrt{2\pi P(\| \bm{k}_i\|)}} \exp\left[-\frac{|\hat{f}(\bm{k}_i)|^2}{2P(\|\bm{k}_i\|)}\right],
+p(\hat{f}(\bm{k}_1), \hat{f}(\bm{k}_2), \dots) = \prod_{i} \frac{1}{\sqrt{2\pi P( \bm{k}_i)}} \exp\left[-\frac{|\hat{f}(\bm{k}_i)|^2}{2P(\bm{k}_i)}\right],
 \end{align}
 yielding an efficient method to generate realizations (see appendix \ref{ap:GRF}).
 
 The statistical properties of random fields are often conveniently expressed in terms of the moments
 \begin{align}
-\sigma_i^2 &= \frac{1}{(2\pi)^2} \int \|\bm{k}\|^{2i}P(\|\bm{k}\|)\mathrm{d}\bm{k}\nonumber\\
+\sigma_i^2 &= \frac{1}{(2\pi)^2} \int \|\bm{k}\|^{2i}P(\bm{k})\mathrm{d}\bm{k}\nonumber\\
 &= \frac{1}{2\pi} \int_0^\infty k^{2i+1}P(k)\mathrm{d}k\,,
 \end{align}
 with the magnitude $k = \|\bm{k}\|$. The power spectrum determines the covariance matrix $M$ through these moments. Whereas the variance of the random field is given by the moment $\sigma_0^2$, \textit{i.e.},
 \begin{align}
 \langle f(\bm{q})^2 \rangle &= \iint e^{i (\bm{p} - \bm{k})\cdot \bm{q}} \langle \hat{f}(\bm{k})\hat{f}^*(\bm{p})\rangle \frac{\mathrm{d}\bm{k}\mathrm{d}\bm{p}}{(2\pi)^4}\nonumber\\
-&=\frac{1}{(2\pi)^2}\int P(\|\bm{k}\|)\mathrm{d}\bm{k}=\sigma_0^2\,,
+&=\frac{1}{(2\pi)^2}\int P(\bm{k})\mathrm{d}\bm{k}=\sigma_0^2\,,
 \end{align}
 the expectation value of the square of the norm of the gradient takes the form
 \begin{align}
 \langle \|\nabla f(\bm{q})\|^2\rangle &= \langle \partial_1f(\bm{q})^2 + \partial_2 f(\bm{q})^2 \rangle \nonumber \\
 &= \iint [(ik_1)(-ip_1)+(ik_2)(-ip_2)] e^{i (\bm{p} - \bm{k})\cdot \bm{q}} \langle \hat{f}(\bm{k})\hat{f}^*(\bm{p})\rangle \frac{\mathrm{d}\bm{k}\mathrm{d}\bm{p}}{(2\pi)^4}\nonumber \\
-&=\frac{1}{(2\pi)^2}\int \|\bm{k}\|^2 P(\|\bm{k}\|)\mathrm{d}\bm{k}=\sigma_1^2\,,
+&=\frac{1}{(2\pi)^2}\int \|\bm{k}\|^2 P(\bm{k})\mathrm{d}\bm{k}=\sigma_1^2\,,
 \end{align}
 with $\bm{k}=(k_1,k_2)$ and $\bm{p}=(p_1,p_2)$. By statistical isotropy, we obtain the variance of the first order partial derivatives
 \begin{align}
@@ -970,7 +969,7 @@ In figure \ref{fig:meanSwallowtail}, we plot the mean field of the swallowtail c
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Sampling the constraint manifold}
-In the eigenframe, the caustic conditions for the cusp take the form
+In the eigenframe, the caustic conditions for the swallowtail take the form
 \begin{align}
 T_{11}=1/b_+(t)\,, \quad T_{12}=0\,,\quad T_{22}\leq T_{11}\,,\quad T_{111}=0\,, \quad T_{1111}+\frac{3T_{112}^2}{T_{11}-T_{22}} =0\,.
 \end{align}
@@ -1298,7 +1297,7 @@ We thank Sergei Shandarin for having raised our interest in caustics as a key to
 \section{Gaussian random fields algorithms}\label{ap:GRF}
 Gaussian random fields are most naturally expressed in Fourier space, as the Fourier modes of an unconstrained Gaussian random field are normally and independently distributed, 
 \begin{align}
-p(\hat{f}(\bm{k}_1), \hat{f}(\bm{k}_2), \dots) = \prod_{i} \frac{1}{\sqrt{2\pi P(\| \bm{k}_i\|)}} \exp\left[-\frac{|\hat{f}(\bm{k}_i)|^2}{2P(\|\bm{k}_i\|)}\right],
+p(\hat{f}(\bm{k}_1), \hat{f}(\bm{k}_2), \dots) = \prod_{i} \frac{1}{\sqrt{2\pi P(\bm{k}_i)}} \exp\left[-\frac{|\hat{f}(\bm{k}_i)|^2}{2P(\bm{k}_i)}\right],
 \end{align}
 up to the reality condition, $\hat{f}(\bm{k})=\hat{f}^*(-\bm{k})$. In this paper, we use Fast Fourier Transform routines to efficiently generate realizations of both unconstrained and linearly constrained Gaussian random.
 
@@ -1332,11 +1331,11 @@ evaluated at the origin, with the Fourier transform of the constraint $\hat{C}_i
 \end{align}
 with the covariance between the random field and the constraint
 \begin{align}
-\xi_i(\bm{q}) = \text{FFT}^{-1}[\hat{C}_i(\bm{k}) P(\|\bm{k}\|)](\bm{q})\,,
+\xi_i(\bm{q}) = \text{FFT}^{-1}[\hat{C}_i(\bm{k}) P(\bm{k})](\bm{q})\,,
 \end{align}
 and the covariance matrix of the constraints
 \begin{align}
-\xi_{ij}=\text{FFT}^{-1}[\hat{C}_i^*(\bm{k}) \hat{C}_i(\bm{k}) P(\|\bm{k}\|)](\bm{0})\,,
+\xi_{ij}=\text{FFT}^{-1}[\hat{C}_i^*(\bm{k}) \hat{C}_i(\bm{k}) P(\bm{k})](\bm{0})\,,
 \end{align}
 evaluated at the origin. In these equations, we assume that $\bar{f}=\bar{C}_i=0$. Note that the vector $\bm{\xi}(\bm{q})=[\sum_i \xi_i(\bm{q}) \xi_{ij}^{-1}]$ is a normal basis of the constraints. The mean field is the inner product of $\bm{x}$ with the constraint values, 
 \begin{align}
