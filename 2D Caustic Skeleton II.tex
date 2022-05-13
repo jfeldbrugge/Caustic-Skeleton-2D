@@ -194,7 +194,7 @@ In the previous section, we describe the gravitationally collapse of Gaussian fl
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Lagrangian fluid dynamics}
-There exist multiple ways to model the gravitational collapse of density fluctuations in an expanding universe. The most well-known formalism is the Eulerian approach, in which one studied the evolution of the density, the velocity, and the gravitational potential fields of the dark matter fluid, governed by the conservation of mass, the Euler, and the Poisson equations. The formalism is relatively concise, and leads to a reasonably accurate description of the mean flow in a large fraction of space. However, the formalism has certain limitations as it generally assigns a unique value for the density and velocity to each point in space, and fails to properly describe the fluid in the multistream regions, where each mass stream has its own distinct density and velocity.
+There exist multiple ways to model the gravitational collapse of density fluctuations in an expanding universe. The most well-known formalism is the Eulerian approach, in which one studies the evolution of the density, the velocity, and the gravitational potential fields of the dark matter fluid, governed by the conservation of mass, the Euler, and the Poisson equations. The formalism is relatively concise, and leads to a reasonably accurate description of the mean flow in a large fraction of space. However, the formalism has certain limitations as it generally assigns a unique value for the density and velocity to each point in space, and fails to properly describe the fluid in the multistream regions, where each mass stream has its own distinct density and velocity.
 
 The multi-stream regions are more naturally described in the Lagrangian approach, which models the fluid in terms of a collection of mass elements uniformly filling space at the initial time. The evolution of the mass elements is captured by the Lagrangian map $\bm{x}_t:\mathcal{L}\to \mathcal{E}$,
 \begin{align}
@@ -341,7 +341,7 @@ are known as the umbilic caustics $D_4^\pm$. The umbilic caustics consist of the
 \begin{subfigure}[b]{0.28\textwidth}
 \includegraphics[width=\textwidth]{Hyperbolic_Nb}
 \end{subfigure}
-\caption{Elements of the caustic skeleton consisting of the fold curves (red) and cusp curve (blue) in Lagrangian and Eulerian space in a $[50\text{ Mpc}, 150 \text{ Mpc}]^2$ box. \textit{From top to bottom:} the cusp, the swallowtail, the elliptic and the hyperbolic caustic. \textit{Left:} the caustic skeleton in Lagrangian space. \textit{Centre:} the Zel'dovich approximation. \textit{Right:} the corresponding $N$-body simulation \cite{Hidding:2020}.}\label{fig:caustics_Examples_Big}
+\caption{Elements of the caustic skeleton consisting of the fold curves (red) and cusp curve (blue) in Lagrangian and Eulerian space in a $(50 \text{ Mpc})^2$ box. \textit{From top to bottom:} the cusp, the swallowtail, the elliptic and the hyperbolic caustic. \textit{Left:} the caustic skeleton in Lagrangian space. \textit{Centre:} the Zel'dovich approximation. \textit{Right:} the corresponding $N$-body simulation \cite{Hidding:2020}.}\label{fig:caustics_Examples_Big}
 \end{figure}
 
 
@@ -585,13 +585,13 @@ implying the covariance
 
 In practice, we often consider realizations of Gaussian random fields on a lattice, or more generally a finite set of linear statistics $\bm{Y}=(Y_1,Y_2,\dots,Y_M)$. In this setting, the functional distribution \eqref{eq:functional_Distribution} reduces to the multi-dimensional Gaussian distribution,
 \begin{align}
-p(\bm{Y}) = \frac{\exp\left[-\frac{1}{2} \sum_{i,j}^n \Delta \bm{Y}^T M^{-1} \Delta \bm{Y}\right]}{[(2\pi)^n \det M]^{1/2}}\,,
+p(\bm{Y}) = \frac{\exp\left[-\frac{1}{2}  \Delta \bm{Y}^T M^{-1} \Delta \bm{Y}\right]}{[(2\pi)^n \det M]^{1/2}}\,,
 \end{align}
 with the deviation from the mean $\Delta \bm{Y} = \bm{Y} - \langle \bm{Y}\rangle$ and the covariance matrix
 \begin{align}
 M = \text{cov}(\bm{Y},\bm{Y}) = \langle \Delta \bm{Y}^T \Delta \bm{Y}\rangle\,.
 \end{align}
-The distribution of the discrete Fourier modes $\bm{Y}=(\hat{f}(\bm{k}_1),\hat{f}(\bm{k}_1),\dots)$ takes the form 
+The distribution of the discrete Fourier modes $\bm{Y}=(\hat{f}(\bm{k}_1),\hat{f}(\bm{k}_2),\dots)$ takes the form 
 \begin{align}
 p(\hat{f}(\bm{k}_1), \hat{f}(\bm{k}_2), \dots) = \prod_{i} \frac{1}{\sqrt{2\pi P( \bm{k}_i)}} \exp\left[-\frac{|\hat{f}(\bm{k}_i)|^2}{2P(\bm{k}_i)}\right],
 \end{align}
