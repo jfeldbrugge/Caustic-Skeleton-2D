@@ -21,6 +21,7 @@
 \usepackage[us,12hr]{datetime}
 \usepackage{algorithmic}
 \usepackage[ruled]{algorithm2e}
+\usepackage[british]{babel}
 
 \title{Caustic skeleton of the cosmic web: non-linear constraint realizations of structural components; the 2D case}
 
@@ -51,8 +52,7 @@
 
 \abstract{
 \noindent 
-The cosmic web consists of a complex configuration of voids, walls, filaments, and clusters, which formed under the gravitational collapse of Gaussian fluctuations. Understanding under what conditions these different structures emerge from simple initial conditions, and how different cosmological models influence their evolution, is central to the study of the large-scale structure. Here, we present a general formalism for setting up Gaussian random initial conditions satisfying non-linear constraints for specialized $N$-body simulations. These allow us to link the non-linear conditions on the eigenvalue and eigenvector fields of the deformation tensor, as specified by caustic skeleton theory, to the current day cosmic web. By extending constraint Gaussian random field theory, and the corresponding Hoffman-Ribak algorithm, to non-linear constraints, we can probe the statistical properties of the progenitors of the walls, filaments, and clusters of the cosmic web. Applied to cosmological $N$-body simulations, the proposed techniques pave the way towards a systematic investigation of the evolution of the progenitors of the present-day walls, filaments, and clusters, and the embedded galaxies, putting flesh on the bones of the caustic skeleton. The developed non-linear constraint
-random field theory is valid for generic cosmological conditions. For ease of visualization, the case study presented here probes the two-dimensional caustic skeleton.
+The cosmic web consists of a complex configuration of voids, walls, filaments, and clusters, which formed under the gravitational collapse of Gaussian fluctuations. Understanding under what conditions these different structures emerge from simple initial conditions, and how different cosmological models influence their evolution, is central to the study of the large-scale structure. Here, we present a general formalism for setting up Gaussian random initial conditions satisfying non-linear constraints for specialized $N$-body simulations. These allow us to link the non-linear conditions on the eigenvalue and eigenvector fields of the deformation tensor, as specified by caustic skeleton theory, to the current-day cosmic web. By extending constraint Gaussian random field theory, and the corresponding Hoffman-Ribak algorithm, to non-linear constraints, we can probe the statistical properties of the progenitors of the walls, filaments, and clusters of the cosmic web. Applied to cosmological $N$-body simulations, the proposed techniques pave the way towards a systematic investigation of the evolution of the progenitors of the present-day walls, filaments, and clusters, and the embedded galaxies, putting flesh on the bones of the caustic skeleton. The developed non-linear constraint random field theory is valid for generic cosmological conditions. For ease of visualization, the case study presented here probes the two-dimensional caustic skeleton.
 
 Last compiled on: {\color{red} \currenttime\ at \today}}
 
@@ -63,176 +63,69 @@ Last compiled on: {\color{red} \currenttime\ at \today}}
 %\pagecolor{yellow!30!orange}
 \maketitle
 
-\newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Introduction}
-In this study we extend and elaborate our analytical model for the formation of the cosmic web \citep{zeldovich1970,bond1996,weybond2008}, and its complex
-multiscale network of filaments and sheets, by the Caustic Skeleton model\citet{feldbrugge2019}. The formalism, expressions and details were introduced
-and extensively described in \citet{feldbrugge2019}. It entails an exact and computationally practical set of expressions for inferring the  full
-two- or three-dimensional skeleton of the cosmic web \footnote{The caustic conditions underlying the model that are derived in \citep{feldbrugge2019} are
-  applicable for any N-dimensional space} emerging from any cosmological primordial field of linear density and velocity perturbations. It extends the early
-studies by the Soviet mathematician Arnold and collaborators \citep{arnold1982}, that studied the caustic structure predicted by the Zeldovich formalism
-\citep{zeldovich1970}.
+In this study, we extend and elaborate our analytical model for the formation of the cosmic web \cite{Zeldovich:1970,Bond:1996,Weygaert:2008}, and its complex multiscale network of filaments and sheets, by the Caustic Skeleton model \cite{Feldbrugge:2018}. The formalism, expressions, and details were introduced and extensively described in \cite{Feldbrugge:2018}. It entails an exact and computationally practical set of expressions for inferring the full two- or three-dimensional skeleton of the cosmic web\footnote{The caustic conditions underlying the model that are derived in \cite{Feldbrugge:2018} are applicable for any N-dimensional space} emerging from any cosmological primordial field of linear density and velocity perturbations. It extends the early studies by the Soviet mathematician Arnold and collaborators \cite{Arnold:1982a,Arnold:1982b}, that studied the caustic structure predicted by the Zel'dovich formalism \cite{Zeldovich:1970}.
 
-While the Caustic Skeleton details the structural outline of the nodes, filamentary branches, and sheetlike membranes that constitute the skeleton of the
-cosmic web, in the present study we develop the formalism to detail the mass distribution in and around the caustic sksleton. To be able to
-predict the mass distribution in and around filaments and walls, including the density profiles along as well as perpendicular to the filamentary ridges
-and sheetlike membranes, we develop a fully nonlinear constraiend field formalism. It is an extension and elaboration of the linear constrained field formalims
-introduced by \cite{bertschinger1987}, and futher developed in \citet{hofrib1991} and \citet{weyedb1996}.
+While the Caustic Skeleton details the structural outline of the nodes, filamentary branches, and sheetlike membranes that constitute the skeleton of the cosmic web, in the present study we develop the formalism to detail the mass distribution in and around the caustic skeleton. To be able to predict the mass distribution in and around filaments and walls, including the density profiles along as well as perpendicular to the filamentary ridges and sheetlike membranes, we develop a fully nonlinear constrained field formalism. It is an extension and elaboration of the linear constrained field formalism introduced by \cite{Bertschinger:1987}, and further developed in \cite{Hoffman:1991} and \cite{Weygaert:1996}.
 
-We subsequently implement the (nonlinear) caustic conditions for the caustic conditions pertaining to the various structural features of the cosmic web.
-It allows us to explore in detail, and to great depth, the processes in and around the evolving features of the cosmic web and the hierarchical buildup of the
-connections between the various components of the cosmic web. While the present study is the first in a series detailing the evolution of
-the mass distribution in and around the cosmic web, for reasons of presentation and clarity the present study is limited to the
-two-dimensional situation. 
-
-\subsection{the Cosmic Web} 
-The cosmic web is the largest complex structural pattern known in nature and is the fundamental spatial organization of matter, gas and galaxies on scales of a few up to a hundred Megaparsec \citep{Shandarin:1989,Bond:1996,Weygaert:2008}. Galaxies, intergalactic
-gas and dark matter exist in a wispy weblike arrrangement of dense compact clusters, elongated filaments, and sheetlike membranes surrounding
-near-empty void regions. The prominent elongated filamentary features form the dense boundaries around the large tenuous walls, and define
-a network pervading the entire universe. The filaments connect up at massive, compact clusters located at the nodes of the network, and together
-with the walls they surround the vast, underdense and near-empty voids. Around 50\% of dark matter and 50\% of galaxies, is residing in filaments \citep[see eg.][]{Cautun:2014,Ganeshaiah:2019}. The complex connectivity and intrinsic multiscale character reflect the primordial conditions out of which the wealthy structure and variety of objects in the Universe have emerged through gravitational evolution.
-
-Cosmological observations are producing ever more detailed maps of the spatial galaxy distribution, while a range of observational data are accessing
-the neutral and ionized gas distribution in the \textit{cosmic web}, and even that of the dark matter distribution \citep{references}. 
-In the coming years a large array of major observational redshift surveys in particular, those of Euclid, DESI, the Vera Rubin observatory and SKA -- will map the weblike organization of galaxies over unprecedented large cosmic volumes. Given this wealth of data, it is of crucial importance to prepare for the systematic scientific exploration of the cosmic web and study its dependence on the cosmological setting in which it forms.  
-As the structure, dynamics and connectivity of the cosmic web depend sensitively on the underlying cosmology, these new methods will exploit
-the geometry and topology of the cosmic web to infer constraints on the underlying physics and cosmological parameters. 
-
-The evolution of the complex multiscale structure of the cosmic web is the product of the interplay of a range of nonlinear processes. $N$-body
-simulations, numerically simulating cosmological structure formation, are very useful to obtain a good impression of the resulting structure.
-However, even though several up-to-date projects provide a large number of simulations that offer a good representation of many aspects of
-the structure formation process \citep{ABACUSSUMMIT:2021, Quijote:2020}, they are usually demanding, expensive and do not have the flexibility
-to infer the required information on all relevant cosmological structure formation aspects. Full understanding of the outcome
-make it necessary to invoke complementary analytical models and descriptions for the interpretation of the results. This will provide substantially more
-profound and versatile insight into the physical process driving the formation and evolution of the cosmic web.
-
-Given the importance of basing the analysis of cosmic web observations on a good analytical model for its nonlinear evolution, the present study
-involves the further development of the Caustic Skeleton model of the cosmic web that we introduced in \citep{Feldbrugge:2018}. 
-
-\subsection{Phase-space evolution}
-The process of the formation and evolution of structure in the Universe is driven by the gravitational growth of tiny primordial 
-density and velocity perturbations. Inhomogeneities in the gravitational force field lead to the displacement of mass out of the
-lower density areas towards higher density regions. Complex structures arise at the locations where different mass streams meet up,
-along which gravitational collapse sets in. While reaching this stage the matter distribution starts to develop nonlinearities,
-and we see the emergence of complex structural patterns, the Cosmic Web.  In the current universe we see this happening at Megaparsec scales. 
-
-Of key importance for understanding the emergence of nonlinear structure in the Universe is insight into the structure of the
-mass flows accompanying the structure formation process. The first recognizable features to emerge in the cosmic matter distribution are
-the flattened wall-like and elongated filamentary features, along with the large underdense void regions that assume most of the cosmic
-volume between these features. Ultimately these merge into a pervasive weblike network. Their formation is the result of the accumulation
-of different mass streams at specific locations, with walls and filaments forming at locations where various mass streams meet up. 
-Insight into the process and the formation of the cosmic web is therefore attained by assessing the multistream nature of the mass flows. 
-To analyze the muitistream structure of the mass distribution, we turn to the Lagrangian description of  structure growth. It takes into
-account its full six-dimensional phase-space structure
-\citep[see][for key contributions on this.]{shandarin2010,shandarin2011,abel2011,falck2012}. 
-
-The first stages of cosmic structure formation are remarkably accurately described by the analytical framework of the
-Zeldovich approximation \citep{zeldovich1970}. Its first-order Lagrangian description has proven to work extremely well
-until nonlinear gravitational evolution induces contraction and collapse, and the appearance of multistream regions. This goes
-along with the emergence of the first nontrivial wall-like and elongated features in the cosmic matter distribution. It not
-only represents a remarkably accurate description of the evolving mass distribution up to the appearance
-of multi-stream regions, it also suggests the morphology of a cellular or weblike arrangement of matter in the universe and hence
-predicted the later detection of the weblike organization of galaxies and gas in the Universe
-\citep{einasto19777,lapparent1986,colless2003,huchra2010,vipers2012}. 
-
-\subsection{Multistreams \& Caustics}
-Further insight into the nonlinear evolution of the mass distribution after the emergence of multistream regions is obtained by
-concentrating on the features that form at the locations where the different gravitationally directed mass streams meet up. These
-form the structural spine around which matter subsequently assembles and virializes into recognizable physical objects. In terms of six-dimensional
-phase space, it corresponds to the local folding of the phase space sheet along which matter -- in particular the gravitationally dominant
-dark matter component -- has distributed itself. As seen from the six-dimensional phase-space perspective, the features in the cosmic web
-are the projections of a three-dimensional mass sheet in six-dimensional phase space on to the spatial (Eulerian) volume. There where
-different mass streams cross at a particular location, the sheet is folded and the projection of these folds are seen as a structural feature in
-the cosmic web.
-
-The Caustic Skeleton model tracks the evolution of the dark matter sheet in six-dimensional \textit{phase-space} and marks the locations where
-the fluid forms caustics, structural singularities in the evolving mass distribution. \citep{Feldbrugge:2018} derived the complete set of
-analytical expressions for where and which class of singularities would appear. These nonlinear {\it caustic conditions} are fully characterized
-by the eigenvalues and the eigenvector fields of the deformation tensor. Dynamically, this is related to the instrumental role of the
-tidal forces shaping the anisotropic features in the cosmic web \citep[see e.g.]{weybond2008}. Indeed, one may trace the major aspects of the
-spatial outline of the cosmic web in the primordial tidal field structure, specifically that of its eigenvalues (see figure~\ref{}). 
-
-Crucial for the spatial pattern outlined by the caustic features, and their subsequent hierarchical evolution, is that not only the spatial
-structure of the {\it eigenvalue} fields but also that of the {\it eigenvector} fields are of decisive importance \citep{Feldbrugge:2018}.
-Conventionally, the key role of the latter has almost been entirely ignored. It is the incorporation of the eigenvector
-fields that has enabled us to develop a fully analytical theory of the Cosmic Web. 
-
-The Caustic Skeleton model highlights the place and time where gravitational collapse turns non-linear, and where and when walls, filaments, and clusters
-emerge. Moreover, these caustic mark the locations where these structures merge to form the interconnected structure which we observe today. For the
-application of the \textit{Caustic Skeleton}, we need to augment it with a model for large-scale structure formation, specifically in the form of a
-(primordial) deformation field. The prime example of this is the Zeldovich approximation. The inferred caustic features define the
-\textit{caustic skeleton}. It marks the location and spatial outline of the caustic features in the initial (Lagrangian) field.
-The skeleton of the cosmic web in Eulerian space by means of the Lagrangian map $x_t$ to Eulerian space. Following the identification of the various 
-caustic varieties and caustic points in Lagrangian space, the application of the map $x_t$ will 
-produce the corresponding weblike structure in Eulerian space. 
-
-\bigskip
-From the work of Arnold \citep{}, Thom and Zeeman on catastrophe theory \citep[see e.g.][]{arnold1984,poston1978}, Arnold showed tha tthe possible
-singularities that may form in an evolving dynamical system can be ordered in an ADE classification. In a three-dimensional setting, these are the 
-$A$ varieties $A_2,A_3,A_4,$ and $A_5$, the $D$ umbilic varieties $D_4$ and $D_5$, and the corresponding $A_3^\pm, A_4^\pm,$ and $D_4^\pm$ points.
-In cosmological circumstances, the probability of the $E$ singularity occurring in the primordial field has measure zero. 
-
-By considering the morphological and dynamical nature of the various ADE singularities, one may directly see that each of the caustic classes
-can be identified with morphological/structural features in the cosmic web \citep{Feldbrugge:2018}. That is, in three dimensions, the $A_3$ caustics
-can be identified with the walls, the $A_4$ ones with the filaments and the $A_5$ with the nodes. A highly interesting finding is that also
-$D_4$ umbilic singularties are to be identified with filamentary structures, implying there to be two classes of filaments \citep{Feldbrugge:2018}.
-The locations of the caustic singulartieis trace out a Lagrangian skeleton of the emerging cosmic web and establishes their
-connectivity (see the discussion in \cite{Hidding:2014}). Important is also to realize that this analytical framework allows us to establish a complete
-analytical framework for studying their connectivity, defining the weaving of the cosmic web \citep{Zeldovich:1970,bondweb1996,weybond2008,aragon2010,cautun2014}.
-
-\subsection{Caustic Skeleton \& Nonlinear Constraints}
-Caustic skeleton theory models the cosmic web in terms of a skeleton consisting of several singular features (sheets, curves and points). However,
-redshift surveys and lensing surveys show the large scale structure in terms of the spatial distribution of galaxies and the underlying dark matter.
-
-The central issue and task of the present study is  bridge this gap by extending the Caustic Skeleton formalism with the possibility to model the
-mass distribution around the various caustic features of the cosmic web. It entails the development of a formalism that generates a realization of the
-implied mass distribution given the constraint of the presence and location of one (or even more) of the caustic singularities. The complication
-is that it involves constraints on the deformation tensor, in terms of the corresponding eigenvalues and eigenvectors. Even for the primordial
-perturbation field these are non-Gaussian, let alone for the more generic nonlinear stages which our Caustic Skeleton model seeks to model.
-
-The purpose of the present study is to develop a nonlinear constraint formalism that allows us to generate realizations of
-the initial density, velocity and potential field around various specified caustic singularities. It will allow us infer the analytic properties
-of the initial density perturbation and gravitational potential in the vicinity of the progenitors of the walls, filaments and clusters of
-the cosmic web. In a sense, it allows us to put flesh on the bones of the caustic skeleton by running a set of $N$-body simulations on
-these initial conditions. In turn, this will allow us to infer the formation histories and present-day properties of the various elements of
-the caustic skeleton. 
-
-In the present study we concentrate on the development and exposition of the formal - mathematical - method to generate the nonlinear constraint
-realizations. The formalism is an extension of the one defined for linear constraints on Gaussian initial conditions, as defined in the Gaussian
-random field theory of \cite{bertschinger1987} and \cite{hofrib1991}. In particular, it follows the application of this formalism to generate
-constrained realizations implied by conditions imposed on the initial density, velocity, gravity and/or tidal fields, as outlined by \cite{weyedb1996}
-\citep[also see][]{weyhaar1993}.
-
-The 
-
-
-
-
-
-For the illustration of the potential and performance of our nonlinear constraint formalism, here we limit ourselves to case studies of the
-two-dimensional caustic skeleton. The principal purpose of the case study illustrations is to elucidate the workings of the formalism,
-and the possible and potential applications. For this, 2-D case studies are usually more transparent. It paves the path towards a
-systematic study of the different features of the three-dimensional cosmic web, the subject of a range of upcoming contributions.
-
-\bigskip
-Within the context of the caustic skeleton model, and its extension with nonlinear constrained field theory, we may observed that
-the study of the cosmic web has a remarkable correspondence to statistical field theory for the study of phase transition in thermodynamics.
-Both theories describe the emergent behaviour of a large number of particles described by a Euclidean path integral \cite{Feynman:1965}. We are
-hopeful that the well-established path integral techniques will be also beneficial to the further systematic and analytic exploration of the
-intricate cosmic web.
-
-\subsection{Outline} 
-First, in section \ref{sec:Eulerian_space} we provide a visual justification of the caustic skeleton by illustrating the evolution of the skeleton using a dark matter only two-dimensional $N$-body simulation. In particular, we show that the skeleton based the Zel'dovich approximation is applicable to the current cosmic web, where the Zel'dovich approximation it self breaks down. The Caustic Skeleton formalism is rooted in Lagrangian fluid dynamics, for whichsection \ref{sec:Caustic_Skeleton_Theory} provides a concise summary. We subsequently extend constraint random field theory to include non-linear constraints in section \ref{sec:GRF}. Using this formalism, we implement the caustic conditions and evaluate the mean field of the different elements of the two-dimensional caustic skeleton in section \ref{sec:caustic_skeleton_constraints}. In section \ref{sec:composite_constraints}, we extend non-linear constraint Gaussian random field theory to multiple caustic conditions at different locations. This paves the way to a systematic study of the interplay between the walls, filaments, and clusters of the cosmic web. Finally, in section \ref{sec:conclusion} we summarize the results and discuss possible applications.
-
-
-\begin{framed}
-Useful references on the comsic web: 
-\cite{Peebles:1980, Bond:1996, Weygaert:2008, Aragon:2010a, Aragon:2010b, Jasche:2010, Kitaura:2013, Cautun:2014, Leclercq:2015, Leclercq:2017, Libeskind:2017} and observations
-\cite{Colless:2003, Tegmark:2004, Huchra:2012, Guzzo:2014}.
-\end{framed}
+We subsequently implement the (nonlinear) caustic conditions for the caustic conditions about the various structural features of the cosmic web. It allows us to explore in detail, and to great depth, the processes in and around the evolving features of the cosmic web and the hierarchical buildup of the connections between the various components of the cosmic web. While the present study is the first in a series detailing the evolution of the mass distribution in and around the cosmic web, for reasons of presentation and clarity the present study is limited to the two-dimensional situation. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{The cosmic web} 
+The cosmic web is the largest complex structural pattern known in nature and is the fundamental spatial organization of matter, gas, and galaxies on scales of a few up to a hundred Megaparsec \cite{Shandarin:1989,Bond:1996,Weygaert:2008}. Galaxies, intergalactic gas, and dark matter exist in a wispy weblike arrangement of dense compact clusters, elongated filaments, and sheetlike membranes surrounding
+near-empty void regions. The prominent elongated filamentary features form the dense boundaries around the large tenuous walls and define a network pervading the entire universe. The filaments connect up at massive, compact clusters located at the nodes of the network, and together with the walls, they surround the vast, underdense, and near-empty voids. Around 50\% of dark matter and 50\% of galaxies, is residing in filaments \cite[see e.g.][]{Cautun:2014,Ganeshaiah:2019}. The complex connectivity and intrinsic multiscale character reflect the primordial conditions out of which the wealthy structure and variety of objects in the Universe have emerged through gravitational evolution.
+
+Cosmological observations are producing ever more detailed maps of the spatial galaxy distribution, while a range of observational data is accessing the neutral and ionized gas distribution in the \textit{cosmic web}, and even that of the dark matter distribution \cite{Hossen:2022, Kovacs:2022}. In the coming years a large array of major observational redshift surveys, in particular, those of Euclid, DESI, the Vera Rubin observatory, and SKA -- will map the weblike organization of galaxies over unprecedented large cosmic volumes. Given this wealth of data, it is of crucial importance to prepare for the systematic scientific exploration of the cosmic web and study its dependence on the cosmological setting in which it forms.  As the structure, dynamics, and connectivity of the cosmic web depend sensitively on the underlying cosmology, these new methods will exploit the geometry and topology of the cosmic web to infer constraints on the underlying physics and cosmological parameters. 
+
+The evolution of the complex multiscale structure of the cosmic web is the product of the interplay of a range of nonlinear processes. $N$-body simulations, numerically simulating cosmological structure formation, are very useful to obtain a good impression of the resulting structure. However, even though several up-to-date projects provide a large number of simulations that offer a good representation of many aspects of the structure formation process \cite{ABACUSSUMMIT:2021, Quijote:2020}, they are usually demanding, expensive, and do not have the flexibility to infer the required information on all relevant cosmological structure formation aspects. A full understanding of the outcome makes it necessary to invoke complementary analytical models and descriptions for the interpretation of the results. This will provide substantially more profound and versatile insight into the physical process driving the formation and evolution of the cosmic web.
+
+Given the importance of basing the analysis of cosmic web observations on a good analytical model for its nonlinear evolution, the present study involves the further development of the Caustic Skeleton model of the cosmic web that we introduced in \cite{Feldbrugge:2018}. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Phase-space evolution}
+The process of the formation and evolution of structure in the Universe is driven by the gravitational growth of tiny primordial density and velocity perturbations. Inhomogeneities in the gravitational force field lead to the displacement of mass out of the lower-density areas towards higher-density regions. Complex structures arise at the locations where different mass streams meet up, along which gravitational collapse sets in. While reaching this stage the matter distribution starts to develop nonlinearities,
+and we see the emergence of complex structural patterns, the Cosmic Web.  In the current universe, we see this happening at Megaparsec scales. 
+
+Of key importance for understanding the emergence of nonlinear structure in the Universe is an insight into the structure of the mass flows accompanying the structure formation process. The first recognizable features to emerge in the cosmic matter distribution are the flattened wall-like and elongated filamentary features, along with the large underdense void regions that assume most of the cosmic volume between these features. Ultimately these merge into a pervasive weblike network. Their formation is the result of the accumulation of different mass streams at specific locations, with walls and filaments forming at locations where various mass streams meet up.  Insight into the process and the formation of the cosmic web is therefore attained by assessing the multistream nature of the mass flows. To analyze the multistream structure of the mass distribution, we turn to the Lagrangian description of structure growth. It takes into
+account its full six-dimensional phase-space structure \cite[see][for key contributions on this.]{Shandarin:2010,Shandarin:2011,Shandarin:2012,Abel:2012,Falck:2012}. 
+
+The first stages of cosmic structure formation are remarkably accurately described by the analytical framework of the Zel'dovich approximation \cite{Zeldovich:1970}. Its first-order Lagrangian description has proven to work extremely well until nonlinear gravitational evolution induces contraction and collapse, and the appearance of multistream regions. This goes along with the emergence of the first nontrivial wall-like and elongated features in the cosmic matter distribution. It not only represents a remarkably accurate description of the evolving mass distribution up to the appearance of multi-stream regions, but it also suggests the morphology of cellular or weblike arrangement of matter in the universe and hence predicted the later detection of the weblike organization of galaxies and gas in the Universe \cite{ einasto1977, lapparent1986,Colless:2003,Huchra:2012, Granett:2012}. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Multistreams \& caustics}
+Further insight into the nonlinear evolution of the mass distribution after the emergence of multistream regions is obtained by concentrating on the features that form at the locations where the different gravitationally directed mass streams meet up. These form the structural spine around which matter subsequently assembles and virializes into recognizable physical objects. In terms of six-dimensional phase space, it corresponds to the local folding of the phase space sheet along which matter -- in particular the gravitationally dominant dark matter component -- has distributed itself. As seen from the six-dimensional phase-space perspective, the features in the cosmic web are the projections of a three-dimensional mass sheet in six-dimensional phase space onto the spatial (Eulerian) volume. There where different mass streams cross at a particular location, the sheet is folded and the projection of these folds are seen as a structural feature in the cosmic web.
+
+The Caustic Skeleton model tracks the evolution of the dark matter sheet in six-dimen\-sional \textit{phase}-\textit{space} and marks the locations where the fluid forms caustics, and structural singularities in the evolving mass distribution. We derived the complete set of analytical expressions for where and which class of singularities would appear \cite{Feldbrugge:2018}. These nonlinear {\it caustic conditions} are fully characterized by the eigenvalues and the eigenvector fields of the deformation tensor. Dynamically, this is related to the instrumental role of the tidal forces shaping the anisotropic features in the cosmic web \cite[see e.g.][]{Weygaert:2008}. Indeed, one may trace the major aspects of the spatial outline of the cosmic web in the primordial tidal field structure, specifically that of its eigenvalues (see figure~\ref{fig:Initial_Conditions}).
+
+Crucial for the spatial pattern outlined by the caustic features, and their subsequent hierarchical evolution is that not only the spatial structure of the {\it eigenvalue} fields but also that of the {\it eigenvector} fields are of decisive importance \cite{Feldbrugge:2018}. Conventionally, the key role of the latter has almost been entirely ignored. It is the incorporation of the eigenvector fields that has enabled us to develop a fully analytical theory of the Cosmic Web. 
+
+The Caustic Skeleton model highlights the place and time where gravitational collapse turns non-linear, and where and when walls, filaments, and clusters emerge. Moreover, these caustic mark the locations where these structures merge to form the interconnected structure which we observe today. For the application of the \textit{Caustic Skeleton}, we need to augment it with a model for large-scale structure formation, specifically in the form of a (primordial) deformation field. The prime example of this is the Zel'dovich approximation. The inferred caustic features define the \textit{caustic skeleton}. It marks the location and spatial outline of the caustic features in the initial (Lagrangian) field. The skeleton of the cosmic web in Eulerian space using the Lagrangian map $\bm{x}_t$ to Eulerian space. Following the identification of the various caustic varieties and caustic points in Lagrangian space, the application of the map $\bm{x}_t$ will produce the corresponding weblike structure in Eulerian space. 
+
+\bigskip
+Surprisingly, these caustics are intimately related to the occurrence of degenerate critical points, which were in the last century classified by catastrophe theory. Thom famously classified the stable critical points of families of functions into a finite set \cite{Thom:1975}, popularized by Zeeman \cite{Zeeman:1972}. Arnold generalized catastrophe theory to caustic theory and connected them to the ADE classification of Coxeter groups \cite{Arnold:1972,Arnold:1976,Arnold:1984}. In the three-dimensional setting, these are the $A$ varieties $A_2,A_3,A_4,$ and $A_5$, the $D$ umbilic varieties $D_4$ and $D_5$. The $E$ variety only occurs stably in higher-dimensional settings.
+
+By considering the morphological and dynamical nature of the various ADE singularities, one may directly see that each of the caustic classes can be identified with morphological/structural features in the cosmic web \cite{Feldbrugge:2018}. That is, in three dimensions, the $A_3$ caustics can be identified with the walls, the $A_4$ ones with the filaments, and the $A_5$ with the nodes. A highly interesting finding is that also $D_4$ umbilic singularties are to be identified with filamentary structures, implying there to be two classes of filaments \cite{Feldbrugge:2018}. The locations of the caustic singularities trace out a Lagrangian skeleton of the emerging cosmic web and establish their connectivity (see the discussion in \cite{Hidding:2014}). Important is also to realize that this analytical framework allows us to establish a complete analytical framework for studying their connectivity, defining the weaving of the cosmic web \cite{Zeldovich:1970,Bond:1996,Weygaert:1996,Aragon:2010a,Aragon:2010b,Cautun:2014}.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Caustic skeleton \& nonlinear constraints}
+Caustic skeleton theory models the cosmic web in terms of a skeleton consisting of several singular features (sheets, curves, and points). However, redshift surveys and lensing surveys show the large-scale structure in terms of the spatial distribution of galaxies and the underlying dark matter.
+
+The central issue and task of the present study are to bridge this gap by extending the Caustic Skeleton formalism with the possibility to model the mass distribution around the various caustic features of the cosmic web. It entails the development of a formalism that generates a realization of the implied mass distribution given the constraint of the presence and location of one (or even more) of the caustic singularities. The complication is that it involves constraints on the deformation tensor, in terms of the corresponding eigenvalues and eigenvectors. Even for the primordial perturbation field, these are non-Gaussian, let alone for the more generic nonlinear stages that our Caustic Skeleton model seeks to model.
+
+The purpose of the present study is to develop a nonlinear constraint formalism that allows us to generate realizations of the initial density, velocity, and potential field around various specified caustic singularities. It will allow us to infer the analytic properties of the initial density perturbation and gravitational potential in the vicinity of the progenitors of the walls, filaments and clusters of the cosmic web. In a sense, it allows us to put flesh on the bones of the caustic skeleton by running a set of $N$-body simulations on these initial conditions. In turn, this will allow us to infer the formation histories and present-day properties of the various elements of
+the caustic skeleton. 
+
+In the present study, we concentrate on the development and exposition of the formal - mathematical - method to generate nonlinear constraint realizations. The formalism is an extension of the one defined for linear constraints on Gaussian initial conditions, as defined in the Gaussian random field theory of \cite{Bertschinger:1987} and \cite{Hoffman:1991}. In particular, it follows the application of this formalism to generate constrained realizations implied by conditions imposed on the initial density, velocity, gravity, and/or tidal fields, as outlined by \cite{Weygaert:1996} \cite[also see][]{Haarlem:1993}.
+
+For the illustration of the potential and performance of our nonlinear constraint formalism, here we limit ourselves to case studies of the two-dimensional caustic skeleton. The principal purpose of the case study illustrations is to elucidate the workings of formalism and its possible and potential applications. For this, $2$D case studies are usually more transparent. It paves the path toward a systematic study of the different features of the three-dimensional cosmic web, the subject of a range of upcoming contributions \cite{Feldbrugge:2022}.
+
+\bigskip
+Within the context of the caustic skeleton model, and its extension with nonlinear constrained field theory, we may observe that the study of the cosmic web has a remarkable correspondence to statistical field theory for the study of phase transition in thermodynamics. Both theories describe the emergent behavior of a large number of particles described by a Euclidean path integral \cite{Feynman:1965}. We are hopeful that the well-established path integral techniques will be also beneficial to the further systematic and analytic exploration of the intricate cosmic web.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Outline} 
+First, in section \ref{sec:Eulerian_space} we provide a visual justification of the caustic skeleton by illustrating the evolution of the skeleton using a dark matter-only two-dimensional $N$-body simulation. In particular, we show that the skeleton based the Zel'dovich approximation applies to the current cosmic web, where the Zel'dovich approximation itself breaks down. The Caustic Skeleton formalism is rooted in Lagrangian fluid dynamics, for which section \ref{sec:Caustic_Skeleton_Theory} provides a concise summary. We subsequently extend constraint random field theory to include non-linear constraints in section \ref{sec:GRF}. Using this formalism, we implement the caustic conditions and evaluate the mean field of the different elements of the two-dimensional caustic skeleton in section \ref{sec:caustic_skeleton_constraints}. In section \ref{sec:composite_constraints}, we extend non-linear constraint Gaussian random field theory to multiple caustic conditions at different locations. This paves the way for a systematic study of the interplay between the walls, filaments, and clusters of the cosmic web. Finally, in section \ref{sec:conclusion} we summarize the results and discuss possible applications.
 
 \begin{figure}
 \centering
@@ -252,7 +145,8 @@ Useful references on the comsic web:
 \label{fig:Initial_Conditions}
 \end{figure}
 
-\section{The Caustic Skeleton \& Cosmic Web illustrated}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{The caustic skeleton \& cosmic web illustrated}
 \label{sec:Eulerian_space}
 In this section, we describe the gravitational collapse of Gaussian fluctuations, the resulting emergence of an intricate cosmic network, known as the
 cosmic web, and the accurate and profound connection with the formation of caustic singularities in the mass distribution. 
@@ -275,7 +169,7 @@ and nonlinear features start to appear as mass concentrations decouple from the 
 At this quasi-linear phase, the migration streams involved in the buildup of structure start to cross, and we see the emergence of
 multistream regions at the locations of the emerging nonlinear features. 
 
-\subsection{Caustics in the Cosmological Matter Distribution}
+\subsection{Caustics in the cosmological matter distribution}
 \label{sec:primordial}
 The {\it reference} cosmic mass distribution that we discuss in this section concerns the dark matter distribution in a two-dimensional
 realization in a box of $200 \mbox{Mpc}$ length. The cosmological background is a flat Einstein-de Sitter universe with a dark matter
@@ -286,17 +180,17 @@ $R_s=2.5 \text{ Mpc}$. The primordial field is generated on a $512^2$ grid.
 
 The map of the Gaussian random potential field is shown in the top lefthand frame in figure~\ref{fig:Initial_Conditions},
 with the corresponding map of the density field $\delta$ in the top righthand frame of the same figure.
-We use the Zeldovich approximation' analytical expression for the deformation tensor to infer on the basis of the caustic
-conditions the nature of the caustic singularities that will arise in the evolving mass distribution \citep{feldbrugge2019}. The caustic conditions
+We use the Zel'dovich approximation' analytical expression for the deformation tensor to infer on the basis of the caustic
+conditions the nature of the caustic singularities that will arise in the evolving mass distribution \cite{feldbrugge2019}. The caustic conditions
 refer to the mass distribution in Lagrangian space, and they yield the Lagrangian location and outline of the various caustic
 singularities present in the generated mass distribution.  Table~\ref{causticweb} provides the guidance for the morphological identity of
 the various caustic classes, for the two-dimensional situation. The full identification for the two- and three-dimensional situations can be
-found in \citep{feldbrugge2019}.
+found in \cite{feldbrugge2019}.
 
 The primordial mass distribution is evolved to the current epoch (z=0). For the purpose of the present study, the evolution is
 followed in two ways. A two-dimensional dark matter $N$-body simulation \cite{Hidding:2020} is
 used to follow the full nonlinear evolution of the mass distribution. This resulting nonlinear structure is discussed in
-section~\ref{sec:nbody}. In the Zeldovich approximation, the Eulerian location and environment of these caustic features is obtained by
+section~\ref{sec:nbody}. In the Zel'dovich approximation, the Eulerian location and environment of these caustic features is obtained by
 using the corresponding expression for the displacement of a mass element. In the Nbody simulation, their location follows from the simulation
 displaccment of the corresponding mass elements (see figure~\ref{fig:Eulerian} and figure~\ref{fig:Eulerian_Evolution}).
 
@@ -328,20 +222,20 @@ Morse point & $A_3^-$ & merger point\\
 The direct comparison between the evolving N-body particle distribution allows us to assess the position and role of the various caustics
 within the cosmic mass distribution, and in particular that in the weblike network in which it has organized itself. Most noteworthy is the - as
 yet not yet appreciated -
-observation that filaments come in two classes \citep{feldbrugge2019}. The major share of the filamentary network is represented by
+observation that filaments come in two classes \cite{feldbrugge2019}. The major share of the filamentary network is represented by
 $A_4$ swallowtail caustics, representing the sectional interfaces between two wall-like membranes. These have not yet fully collapsed along
 two directions. Umbilic $D_4$ caustics are also filaments, corresponding to the more prominent and dense filamentary extensions of the cluster
 nodes in the cosmic web and representing filaments that have fully collapsed along two directions. 
 
-\subsection{Primordial Deformation Field and Cosmic Web}
+\subsection{Primordial deformation field and cosmic web}
 At the heart of the caustic conditions in \cite{feldbrugge2019} is the observation that the caustic singularities that
 are emerging in the matter distribution, and the structural weblike components surrounding them, are determined by
-the deformation and tidal field induced by the inhomogeneous mass distribution \citep{zeldovich1970,weyedb1996,weybond2008,
+the deformation and tidal field induced by the inhomogeneous mass distribution \cite{zeldovich1970,weyedb1996,weybond2008,
   hidding2014}.
 
 The key role of the eigenvalues of the deformation tensor in establishing the morphological nature of cosmic structure has been
 acknowledged since the seminal studies by \cite{zeldovich1970} and \cite{doroshkevich1970}. It formed the basis for the expectation
-that the cosmic mass distribution would be organized in a cellular pattern \citep[also see]{shandzeld1989,sunyshand2014}. The intrumental 
+that the cosmic mass distribution would be organized in a cellular pattern \cite[also see]{shandzeld1989,sunyshand2014}. The intrumental 
 role of the corresponding eigenvectors in establishing the overall structural pattern of the cosmic web, and its various components, was
 hardly acknowledged. The explicit demonstration by \cite{feldbrugge2019} revealed their importance in outlining the
 weblike structure.
@@ -378,7 +272,7 @@ eigenvalue and eigenvector maps are distinctly non-Gaussian fields, marking a hi
 \label{fig:Eulerian}
 \end{figure}
 
-\subsection{Multistream Regions and Caustic Skeleton}
+\subsection{Multistream regions and caustic skeleton}
 Induced by the matter streams set into motion by the primordial inhomogeneous force field, spatially steered and directed by the
 corresponding deformation tensor orientation, matter starts to aggregate at locations where multiple streams meet up. The outline of
 these locations can already be recognized bu the typically cellular patterns in the spatial primordial deformation eigenvalue distribution.  
@@ -387,7 +281,7 @@ we observe the formation and evolution of different characteristics components o
 phase-space sheet in and around the flow field singularities determines the identity of the structural component of the cosmic web
 that arises in the spatial matter distribution.
 
-The caustic conditions \citep{feldbrugge2019} allow us to infer exactly the location of the singularities in the matter distribution, the caustics.
+The caustic conditions \cite{feldbrugge2019} allow us to infer exactly the location of the singularities in the matter distribution, the caustics.
 These conditions pertain to the nature and location of singularities in Lagrangian space. It means that at any cosmic epoch, the caustic conditions
 identify the mass elements that are included in a caustic singularity, for any of the possible caustic classes. Locating these mass elements
 at any subsequent cosmic epoch, by projecting them to their Eulerian position, yields the spatial outline of the spine of the cosmic web at
@@ -454,7 +348,7 @@ evolution and collapse. It also translates into the distinct non-Gaussian stocha
 fields), in turn a reflection of the distinctly non-Gaussian weblike pattern that we already find back in the primordial eigenvalue fields (see
 figure~\ref{fig:Initial_Conditions}, bottom panels).
 
-\subsection{the Eulerian Caustic Skeleton}
+\subsection{The Eulerian caustic skeleton}
 \label{sec:nbody}
 To develop a visual appreciation of the roles of the different caustics in the observed large scale structure of the Universe, the most direct
 assessment is that based on the implied structure in Eulerian space. In the current study, the evolution is
@@ -463,13 +357,13 @@ mass elements accordingly, we obtain the Eulerian location and outline of the va
 A two-dimensional dark matter $N$-body simulation \cite{Hidding:2020} is used to follow the full nonlinear evolution of the mass distribution.
 In the Nbody simulation, their location follows from the simulation displaccment of the corresponding mass elements. The bottom panels of
 figure~\ref{fig:Eulerian} show the implied Eulerian structure of two descriptions for the nonlinear evolution of structure. The bottom lefthand panel
-shows the structure implied by the Zeldovich approximation, at the current cosmic epoch $z=0$, while the bottom righthand panel shows the structure
+shows the structure implied by the Zel'dovich approximation, at the current cosmic epoch $z=0$, while the bottom righthand panel shows the structure
 obtained through an N-body simulation. 
 
 Both the Zeldovich modelling as well as the Nbody simulation involve a $512^3$ particle simulation, in a box of size $200 \mbox{Mpc}$,
 and evolve the primordial mass distribution specified in section~\ref{sec:primordial}. 
 
-The bottom lefthand panel of figure~\ref{fig:Eulerian} illustrates immediately the failure of the Zeldovich approximation to represent the evolving
+The bottom lefthand panel of figure~\ref{fig:Eulerian} illustrates immediately the failure of the Zel'dovich approximation to represent the evolving
 cosmic mass distribution. The approximation linearly extrapolates the initial flow of the mass elements, and ignores any further change in the gravitational interactions. As a result, it leads to overshooting after shell-crossing. Nonetheless, even though the Zel'dovich approximation does not accurately predict the location of the multi-stream regions and density fields at advanced evolutionary stages, it does manage to accurately predict the locations and times at
 which mass elements undergo shell-crossing and form caustics in Lagrangian space at these late times.
 
@@ -479,7 +373,7 @@ in the clusters of the cosmic web. With respect to the latter, we should appreci
 related caustics are correlated, and combine to form at the knots an intertwined and intracate set of multistream curves. Filaments, on the other hand,
 experience a more organized development. As a result, they are usually associated with a single and unique cusp curve. 
 
-\subsection{the Evolving Caustic Skeleton}
+\subsection{The evolving caustic skeleton}
 The evolving structure of the cosmic web, and of its diverse structural components, can be followed systematically by following the
 corresponding development of the different caustic features through cosmic time. Figure!\ref{fig:Eulerian_Evolution} provides a timeline
 for the resulting development of the $A_2$ fold curves and the $A_3$ filamentary cusp curves of the cosmic web at 4 cosmic epochs
@@ -489,13 +383,13 @@ spine of the cosmic web.
 
 The multi-stream regions of the cosmic web, and the corresponding caustic features, form and evolve gradually. At early times, the {\it dark matter sheet}
 consists of a single single-stream region. As the mass elements undergo gravitational contraction and collapse, we observe the formation of several
-Zeldovich pancakes corresponding to the maxima of the eigenvalue field $\lambda_1$ (see also figure~\ref{fig:Eulerian}, upper left panel). These
+Zel'dovich pancakes corresponding to the maxima of the eigenvalue field $\lambda_1$ (see also figure~\ref{fig:Eulerian}, upper left panel). These
 multi-stream regions grow and connect at the saddle points of the eigenvalue fields to form the web-like structure we observe in redshift
 surveys (see the upper right and lower panels).
 
 From the evolutionary sequence in figure~\ref{fig:Eulerian_Evolution} we observed that fully contracted 
 filaments move coherently, while the large voids expand and the smaller voids contract. The latter is a key aspect of the hierarchical buildup of the
-void population \citep[see][]{shethwey2004}. Also the filamentary ridge of the cosmic web builds up in a hierarchical fashion, with several filaments
+void population \cite[see][]{shethwey2004}. Also the filamentary ridge of the cosmic web builds up in a hierarchical fashion, with several filaments
 merging while forming more massive filaments. By concentrating on the evolution of the (blue) cusp curves, we are able to follow this process in detail.
 Filaments merge at $A_4$ swallowtail junctions, revealing the details of the process in which the connectivity of the various cosmic web elements is
 established. Because of the explicit analytical expressions for this process in terms of the corresponding caustic condition for $A_4$ caustics, we are
@@ -1648,8 +1542,8 @@ We thank Sergei Shandarin for having raised our interest in caustics as a key to
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%\bibliographystyle{JHEP}
-\bibliographystyle{plain}
+\bibliographystyle{JHEP}
+% \bibliographystyle{plainnat}
 
 \bibliography{mybibliography}
 
@@ -1664,7 +1558,7 @@ up to the reality condition, $\hat{f}(\bm{k})=\hat{f}^*(-\bm{k})$. In this paper
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Unconstrained Gaussian random fields}
-We can efficiently generate realizations of an unconstrained Gaussian random fields on a rectangular lattice using Fast Fourier Transform routines. The Fourier modes of an isotropic and homogeneous Gaussian random field are independent distributed Gaussian variables with zero mean, $\mu=0$, and the standard deviation $\sigma = \sqrt{P(\|\bm{k}\|)}$. Using this observation we generate the realization by multiplying the Fourier transform of white noise with the square root of the power spectrum:\\
+We can efficiently generate realizations of unconstrained Gaussian random fields on a rectangular lattice using Fast Fourier Transform routines. The Fourier modes of an isotropic and homogeneous Gaussian random field are independent distributed Gaussian variables with zero mean, $\mu=0$, and the standard deviation $\sigma = \sqrt{P(\|\bm{k}\|)}$. Using this observation we generate the realization by multiplying the Fourier transform of white noise with the square root of the power spectrum:\\
 
 \begin{algorithm}[H]
 \SetAlgoLined
