@@ -1,0 +1,150 @@
+# @ARTICLE{Colberg:2005,
+#    author = {{Colberg}, J.~M. and {Krughoff}, K.~S. and {Connolly}, A.~J.
+# 	},
+#     title = "{Intercluster filaments in a {$\Lambda$}CDM Universe}",
+#   journal = {\mnras},
+#    eprint = {astro-ph/0406665},
+#  keywords = {methods: N-body simulations, cosmology: theory, dark matter, large-scale structure of Universe},
+#      year = 2005,
+#     month = may,
+#    volume = 359,
+#     pages = {272-282},
+#       doi = {10.1111/j.1365-2966.2005.08897.x},
+#    adsurl = {http://adsabs.harvard.edu/abs/2005MNRAS.359..272C},
+#   adsnote = {Provided by the SAO/NASA Astrophysics Data System}
+# }
+#
+# @book{milnor1963,
+#   title={Morse Theory},
+#   author={Milnor, J.W.},
+#   isbn={9780691080086},
+#   lccn={63013729},
+#   series={Annals of mathematics studies},
+#   url={https://books.google.it/books?id=A9QZZ3S\_QxwC},
+#   year={1963},
+#   publisher={Princeton University Press}
+# }
+#
+# @book{morse1934,
+#   title={The calculus of variations in the large},
+#   author={Morse, M.},
+#   series={Colloquium Publications Volume XVIII},
+#   year={1934},
+#   publisher={American Mathematical Society}
+# }
+
+# @ARTICLE{shandarinsuny:2009,
+#    author = {{Shandarin}, S.~F. and {Sunyaev}, R.~A.},
+#     title = "{The conjecture of the cosmic web. Commentary on: Zel'dovich Ya. B., 1970, A\&A, 5, 84}",
+#   journal = {A\&A},
+#      year = 2009,
+#     month = jun,
+#    volume = 500,
+#     pages = {19-20},
+#       doi = {10.1051/0004-6361/200912144},
+#    adsurl = {http://adsabs.harvard.edu/abs/2009A%26A...500...19S},
+#   adsnote = {Provided by the SAO/NASA Astrophysics Data System}
+# }
+#
+# @ARTICLE{falck2012,
+#    author = {{Falck}, B.~L. and {Neyrinck}, M.~C. and {Szalay}, A.~S.},
+#     title = "{ORIGAMI: Delineating Halos Using Phase-space Folds}",
+#   journal = {\apj},
+# archivePrefix = "arXiv",
+#    eprint = {1201.2353},
+#  keywords = {dark matter, galaxies: halos, large-scale structure of universe, methods: numerical},
+#      year = 2012,
+#     month = aug,
+#    volume = 754,
+#       eid = {126},
+#     pages = {126},
+#       doi = {10.1088/0004-637X/754/2/126},
+#    adsurl = {http://adsabs.harvard.edu/abs/2012ApJ...754..126F},
+#   adsnote = {Provided by the SAO/NASA Astrophysics Data System}
+# }
+#
+# @ARTICLE{neyrinck2012,
+#   author = {{Neyrinck}, M.~C.},
+#   title = {{Origami constraints on the initial-conditions arrangement of dark-matter
+# 	caustics and streams}},
+#   journal = {ArXiv e-prints},
+#   year = {2012},
+#   month = feb,
+#   adsnote = {Provided by the SAO/NASA Astrophysics Data System},
+#   adsurl = {http://adsabs.harvard.edu/abs/2012arXiv1202.3364N},
+#   archiveprefix = {arXiv},
+#   eprint = {1202.3364},
+#   primaryclass = {astro-ph.CO},
+#   timestamp = {2012.08.24}
+# }
+
+# @ARTICLE{scoccimarro2000,
+#    author = {{Scoccimarro}, R.},
+#     title = "{Gravitational Clustering from {$\chi$}$^{2}$ Initial Conditions}",
+#   journal = {\apj},
+#    eprint = {astro-ph/0002037},
+#  keywords = {Cosmology: Theory, Cosmology: Large-Scale Structure of Universe},
+#      year = 2000,
+#     month = oct,
+#    volume = 542,
+#     pages = {1-8},
+#       doi = {10.1086/309519},
+#    adsurl = {http://adsabs.harvard.edu/abs/2000ApJ...542....1S},
+#   adsnote = {Provided by the SAO/NASA Astrophysics Data System}
+# }
+# @ARTICLE{gurbatov1989,
+#    author = {{Gurbatov}, S.~N. and {Saichev}, A.~I. and {Shandarin}, S.~F.
+# 	},
+#     title = "{The large-scale structure of the universe in the frame of the model equation of non-linear diffusion}",
+#   journal = {\mnras},
+#  keywords = {Astronomical Models, Cosmology, Diffusion, Evolution (Development), Universe, Asymptotic Methods, Density Distribution, Gravitational Effects, Velocity Distribution},
+#      year = 1989,
+#     month = jan,
+#    volume = 236,
+#     pages = {385-402},
+#       doi = {10.1093/mnras/236.2.385},
+#    adsurl = {http://adsabs.harvard.edu/abs/1989MNRAS.236..385G},
+#   adsnote = {Provided by the SAO/NASA Astrophysics Data System}
+# }
+# @ARTICLE{gurbatov2012,
+#    author = {{Gurbatov}, S.~N. and {Saichev}, A.~I. and {Shandarin}, S.~F.
+# 	},
+#     title = "{Large-scale structure of the Universe. The Zeldovich approximation and the adhesion model}",
+#   journal = {Physics Uspekhi},
+#      year = 2012,
+#     month = mar,
+#    volume = 55,
+#     pages = {223-249},
+#       doi = {10.3367/UFNe.0182.201203a.0233},
+#    adsurl = {http://adsabs.harvard.edu/abs/2012PhyU...55..223G},
+#   adsnote = {Provided by the SAO/NASA Astrophysics Data System}
+# }
+# @ARTICLE{vergassola1994,
+#    author = {{Vergassola}, M. and {Dubrulle}, B. and {Frisch}, U. and {Noullez}, A.
+# 	},
+#     title = "{Burgers' equation, Devil's staircases and the mass distribution for large-scale structures}",
+#   journal = {\aap},
+#  keywords = {Burger Equation, Cosmology, Functions (Mathematics), Mass Distribution, Mathematical Models, Probability Theory, Universe, Adhesion, Brownian Movements, Dimensions, Fractals, Lagrange Coordinates, Legendre Functions, Power Spectra, Simulation},
+#      year = 1994,
+#     month = sep,
+#    volume = 289,
+#     pages = {325-356},
+#    adsurl = {http://adsabs.harvard.edu/abs/1994A%26A...289..325V},
+#   adsnote = {Provided by the SAO/NASA Astrophysics Data System}
+# }
+# @ARTICLE{colberg2005,
+#   author = {Colberg, J.~M. and Krughoff, K.~S. and Connolly, A.~J.},
+#   journal = {\mnras},
+#   year = {2005},
+#   volume = {359},
+#   pages = {272},
+#   timestamp = {2012.07.16}
+# }
+# @ARTICLE{icke1973,
+#   author = {Icke, V.},
+#   journal = {\aap},
+#   year = {1973},
+#   volume = {27},
+#   pages = {1},
+#   timestamp = {2012.07.16}
+# }
