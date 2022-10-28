@@ -284,7 +284,7 @@ The evolving structure of the cosmic web, and its diverse structural components,
 
 The multi-stream regions of the cosmic web, and the corresponding caustic features, form and evolve gradually. At early times, the {\it dark matter sheet} consists of a single single-stream region. As the mass elements undergo gravitational contraction and collapse, we observe the formation of several Zel'dovich pancakes corresponding to the maxima of the eigenvalue field $\lambda_1$ (see also figure~\ref{fig:Eulerian}, upper left panel). These multi-stream regions grow and connect at the saddle points of the eigenvalue fields to form the web-like structure we observe in redshift surveys (see the upper right and lower panels).
 
-From the evolutionary sequence in figure~\ref{fig:Eulerian_Evolution} we observed that fully contracted filaments move coherently, while the large voids expand and the smaller voids contract. The latter is a key aspect of the hierarchical buildup of the void population \cite[see][]{Sheth:2004}. Also, the filamentary ridge of the cosmic web builds up hierarchically, with several filaments merging while forming more massive filaments. By concentrating on the evolution of the (blue) cusp curves, we are able to follow this process in detail. Filaments merge at $A_4$ swallowtail junctions, revealing the details of the process in which the connectivity of the various cosmic web elements is established. Because of the explicit analytical expressions for this process in terms of the corresponding caustic condition for $A_4$ caustics, we are handed a full and explicit analytical description of the hierarchical establishment of the complex connectivity of the cosmic web.
+From the evolutionary sequence in figure~\ref{fig:Eulerian_Evolution} we observed that fully contracted filaments move coherently, while the large voids expand and the smaller voids contract. The latter is a key aspect of the hierarchical buildup of the void population \cite[see][]{Sheth:2004}. Also, the filamentary ridge of the cosmic web builds up hierarchically, with several filaments merging while forming more massive filaments. By concentrating on the evolution of the (blue) cusp curves, we can follow this process in detail. Filaments merge at $A_4$ swallowtail junctions, revealing the details of the process in which the connectivity of the various cosmic web elements is established. Because of the explicit analytical expressions for this process in terms of the corresponding caustic condition for $A_4$ caustics, we are handed a full and explicit analytical description of the hierarchical establishment of the complex connectivity of the cosmic web.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{The caustic skeleton in Lagangian space}\label{sec:Caustic_Skeleton_Theory}
@@ -583,7 +583,7 @@ p(\lambda_1,\lambda_2) = \frac{2\sqrt{2}}{\sqrt{\pi} \sigma_2^3} e^{-\frac{3(\la
 (see figure \ref{fig:eigen_stats}), with $\sigma_2$ the generalized moment defined in section \ref{sec:GRF}.
 
 
-The Zel'dovich approximation describes the evolution of mass elements in terms of balistic motion. The mass elements follow linear trajectories determined by the primordial gravitational potential. The approximation accurately describes single-stream regions at early times but fails at late times in multi-stream regions when gravitational backreaction of the mass elements becomes important (see the lower left panel of \ref{fig:Eulerian}). Even though the distribution of the mass elements is not accurately described at late times, we find that the approximation does reliably describe the formation of caustics in the non-linear evolution of the cosmic web. In this paper, we will always work with the caustic skeleton of the Zeld'dovich approximation in Lagrangian space. We subsequently move the skeleton to Eulerian space with either the Zel'dovich approximation or an $N$-body simulation. For this reason, the skeleton does not absolutely match the shell-crossing regions in the $N$-body simulations. However, it turns out to be a good first approximation (see for example figure \ref{fig:caustics_Examples_Small}).
+The Zel'dovich approximation describes the evolution of mass elements in terms of ballistic motion. The mass elements follow linear trajectories determined by the primordial gravitational potential. The approximation accurately describes single-stream regions at early times but fails at late times in multi-stream regions when gravitational backreaction of the mass elements becomes important (see the lower left panel of \ref{fig:Eulerian}). Even though the distribution of the mass elements is not accurately described at late times, we find that the approximation does reliably describe the formation of caustics in the non-linear evolution of the cosmic web. In this paper, we will always work with the caustic skeleton of the Zeld'dovich approximation in Lagrangian space. We subsequently move the skeleton to Eulerian space with either the Zel'dovich approximation or an $N$-body simulation. For this reason, the skeleton does not absolutely match the shell-crossing regions in the $N$-body simulations. However, it turns out to be a good first approximation (see for example figure \ref{fig:caustics_Examples_Small}).
 
 \begin{figure}
 \centering
@@ -665,13 +665,13 @@ implying the covariance
 \langle \hat{f}(\bm{k}_1)\hat{f}^*(\bm{k}_2) \rangle = (2\pi)^2 \delta_D^{(2)}(\bm{k}_1-\bm{k}_2) P(\bm{k}_1)\,.
 \end{align}
 
-\begin{framed}
-In this paper, we for simplicity always assume the initial gravitational potential to be a realization of a homogeneous and isotropic Gaussian random field with a power-law power spectrum $P(k) \propto k^{n_s}$ smoothed with a Gaussian filter $W(k)=e^{-R_s^2 k^2/2}$ with the spectral index $n_s$ and the smoothing scale $R_s$. The effective power spectrum takes the form 
-\begin{align}
-P_{eff}(k)\propto k^{ns}e^{-R_s^2 k^2}\,.
-\end{align}
-Unless otherwise specified, we use a spectral index $n_s=-1$ and a smoothing length scale $R_s = 5\text{ Mpc}$. 
-\end{framed}
+% \begin{framed}
+% In this paper, we for simplicity always assume the initial gravitational potential to be a realization of a homogeneous and isotropic Gaussian random field with a power-law power spectrum $P(k) \propto k^{n_s}$ smoothed with a Gaussian filter $W(k)=e^{-R_s^2 k^2/2}$ with the spectral index $n_s$ and the smoothing scale $R_s$. The effective power spectrum takes the form 
+% \begin{align}
+% P_{eff}(k)\propto k^{ns}e^{-R_s^2 k^2}\,.
+% \end{align}
+% Unless otherwise specified, we use a spectral index $n_s=-1$ and a smoothing length scale $R_s = 5\text{ Mpc}$. 
+% \end{framed}
 
 
 In practice, we often consider realizations of Gaussian random fields on a lattice, or more generally a finite set of linear statistics $\bm{Y}=(Y_1,Y_2,\dots,Y_M)$. In this setting, the functional distribution \eqref{eq:functional_Distribution} reduces to the multi-dimensional Gaussian distribution,
@@ -684,7 +684,7 @@ M = \text{cov}(\bm{Y},\bm{Y}) = \langle \Delta \bm{Y}^T \Delta \bm{Y}\rangle\,.
 \end{align}
 The distribution of the discrete Fourier modes $\bm{Y}=(\hat{f}(\bm{k}_1),\hat{f}(\bm{k}_2),\dots)$ takes the form 
 \begin{align}
-p(\hat{f}(\bm{k}_1), \hat{f}(\bm{k}_2), \dots) = \prod_{i} \frac{1}{\sqrt{2\pi P( \bm{k}_i)}} \exp\left[-\frac{|\hat{f}(\bm{k}_i)|^2}{2P(\bm{k}_i)}\right],
+p\left(\hat{f}(\bm{k}_1), \hat{f}(\bm{k}_2), \dots\right) = \prod_{i} \frac{1}{\sqrt{2\pi P( \bm{k}_i)}} \exp\left[-\frac{|\hat{f}(\bm{k}_i)|^2}{2P(\bm{k}_i)}\right],
 \end{align}
 yielding an efficient method to generate realizations (see appendix \ref{ap:GRF}).
 
@@ -732,11 +732,11 @@ C[f;\bm{q}'] &= \int g(\bm{q}' - \bm{q})f(\bm{q})\mathrm{d}\bm{q}\,,
 \end{align}
 with the convolution kernel $g$. 
 
-The constraint random field follows the distribution
+The constraint random field follows the infinite-dimensional distribution
 \begin{align}
 p(f|\Gamma) = \frac{p(f,\Gamma)}{p(\Gamma)}\,,
 \end{align}
-where the constraints follow the Gaussian marginal distribution
+where the constraints follow the finite-dimensional Gaussian marginal distribution
 \begin{align}
 p(\Gamma) = \frac{\exp\left[-\frac{1}{2} \Delta\bm{C}^T Q^{-1} \Delta\bm{C} \right]}{[(2\pi)^M \det Q]^{1/2}}\,,
 \end{align}
@@ -753,7 +753,7 @@ and the covariance
 \begin{align}
 \text{cov}(f(\bm{q}_1),f(\bm{q}_2)|\Gamma)  = \xi(\bm{q}_1,\bm{q}_2) - \sum_{i,j=1}^M\xi_i(\bm{q}_1)\xi_{ij}^{-1}\xi_j(\bm{q}_2)\,,
 \end{align}
-with the covariance of the random field and the constraints $\xi_{i}(\bm{q}) = \text{cov}( f(\bm{q}), C_i)$ and the covariance matrix of the constraints $\xi_{ij} = \text{cov}( C_i ,C_j)$. Note that the covariance is independent of the value $\bm{c}$ the constraint $\bm{C}$ assumes. This is a special property of Gaussian distributions and linear constraints. Consequently, the probability density takes the form
+with the covariance of the random field and the constraints $\xi_{i}(\bm{q}) = \text{cov}( f(\bm{q}), C_i)$ and the covariance matrix of the constraints $\xi_{ij} = \text{cov}( C_i ,C_j)$. Remarkably, the covariance $\text{cov}(f(\bm{q}_1),f(\bm{q}_2)|\Gamma)$ is independent of the value $\bm{c}$ the constraint $\bm{C}$ assumes. This is a special property of Gaussian distributions and linear constraints. Moreover, the residue with respect to the mean field is normally distributed (see appendix \ref{ap:constraintDensity}). Consequently, the probability density takes the form
 \begin{align}
 p( f|\Gamma) \propto  \exp\left[-\frac{1}{2} \iint \delta{f}(\bm{q}_1) \tilde{K}(\bm{q}_1,\bm{q}_2) \delta f(\bm{q}_2)\mathrm{d}\bm{q}_1 \mathrm{d}\bm{q}_2 \right]\,,\label{eq:constraint2}
 \end{align}
@@ -934,11 +934,11 @@ it is convenient to express the deformation tensor
 \begin{align}
 \bm{\psi}(\bm{q}) = \begin{pmatrix} T_{11}(\bm{q}) & T_{12}(\bm{q}) \\ T_{12}(\bm{q}) & T_{22}(\bm{q})\end{pmatrix}\,,
 \end{align}
-in terms of the partial derivatives of the displacement potential $T_{ij\dots k}=\frac{\partial}{\partial q_i}\frac{\partial}{\partial q_j}\dots \frac{\partial}{\partial q_k}\Psi$. The eigenvalue and eigenvector fields of $\bm{\psi}$ defined by
+in terms of the partial derivatives of the displacement potential $T_{ij\dots k}=\frac{\partial}{\partial q_i}\frac{\partial}{\partial q_j}\dots \frac{\partial}{\partial q_k}\Psi$. Define the eigenvalue and eigenvector fields of $\bm{\psi}$ with the eigenequation
 \begin{align}
 \bm{\psi}(\bm{q}) \bm{v}_i(\bm{q}) = \lambda_i(\bm{q}) \bm{v}_i(\bm{q}),
 \end{align}
-with the ordering $\lambda_1\geq \lambda_2$. We normalize the eigenvector field to unity, \textit{i.e.}, $\|\bm{v}_{i}\|=1$. We can express the eigenvalue and eigenvector fields explicitly in terms of the second-order derivatives of the deformation potential
+with the ordering $\lambda_1\geq \lambda_2$ and normalize the eigenvector field to unity, \textit{i.e.}, $\|\bm{v}_{i}\|=1$. We can express the eigenvalue and eigenvector fields explicitly in terms of the second-order derivatives of the deformation potential
 \begin{align}
 \lambda_{1,2} &= \frac{1}{2}\left[T_{11}+T_{22} \pm \sqrt{4 T_{12}^2+(T_{11}-T_{22})^2}\right]\,,\\
 \bm{v}_{1,2} &\propto  \left(T_{11}-T_{22} \pm \sqrt{4 T_{12}^2+(T_{11}-T_{22})^2}, 2 T_{12}\right)\,,
@@ -1370,7 +1370,7 @@ Discussion on reconstruction method. Particularly for Lagrangian fluid dynamics.
   Most noteworthy is the -- as yet not yet appreciated -- the observation that filaments come in two classes \cite{Feldbrugge:2018}. The major share of the filamentary network is represented by $A_4$ swallowtail caustics, representing the sectional interfaces between two wall-like membranes. These have not yet fully collapsed along two directions. Umbilic $D_4$ caustics are also filaments, corresponding to the more prominent and dense filamentary extensions of the cluster nodes in the cosmic web and representing filaments that have fully collapsed along two directions. 
    {\color{red} This is a point of the three-dimensional cosmic web while this section is largely two-dimensional. Since we already mentioned this at another point in the introduction, I propose we move it to the discussion.}
  \end{framed}
-
+ \cite{Cadiou:2021}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{Acknowledgement}
 We thank Sergei Shandarin for having raised our interest in caustics as a key to the dynamical understanding of the cosmic web. We thank Bernard Jones for the long-standing discussions on constraint random field theory and Johan Hidding for his comments on caustic skeleton theory and its relation to constraint theory. Finally, JF would like to thank Nynke Niezink for the enlightening discussions on probability theory and statistics. JF is supported in part by the Higgs Fellowship.
@@ -1605,7 +1605,7 @@ Note that the directional derivatives in the directions $\bm{v}_1$ and $\bm{v}_2
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Non-linear eigenvalue relations: an algebraic approach}\label{ap:eigenvalueRel_alt}
-Unfortunately, the derivation of the non-linear eigenvalue relations presented in appendix \ref{ap:eigenvalueRel} does not straightforwardly generalize to the three-dimensional case. It formally works but is not sufficiently efficient in practice. However, using an algebraic approach we can reproduce the results presented in section \ref{ap:eigenvalueRel} more efficiently. This method does straightforwardly generalize to the higher-dimensional setting. We present this derivation here for the two-dimensional case in anticipation of an upcoming paper on the three-dimensional caustic skeleton and constraint random fields \cite{Feldbrugge:2022}.
+Unfortunately, the derivation of the non-linear eigenvalue relations presented in appendix \ref{ap:eigenvalueRel} does in practice not straightforwardly generalize to the three-dimensional case. It formally works but is not sufficiently efficient in practice. However, using an algebraic approach we can reproduce the results presented in section \ref{ap:eigenvalueRel} more efficiently. This method does generalize to the higher-dimensional setting. We present this derivation here for the two-dimensional case in anticipation of an upcoming paper on the three-dimensional caustic skeleton and constraint random fields \cite{Feldbrugge:2022}.
 
 In two dimensions, the eigenvalue fields are related to the principle invariants of the deformation tensor
 \begin{align}
