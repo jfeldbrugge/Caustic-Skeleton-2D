@@ -1,13 +1,13 @@
 # Fdb version 3
-["bibtex 2D Caustic Skeleton II"] 1667299475 "2D Caustic Skeleton II.aux" "2D Caustic Skeleton II.bbl" "2D Caustic Skeleton II" 1667299476
+["bibtex 2D Caustic Skeleton II"] 1667481985 "2D Caustic Skeleton II.aux" "2D Caustic Skeleton II.bbl" "2D Caustic Skeleton II" 1667482027
   "./JHEP.bst" 1666888646 20428 4525092f01ae6c589c5ebcc5d39fe653 ""
-  "2D Caustic Skeleton II.aux" 1667233315 32296 6649fdb9451c8a076744575fa16b5266 "pdflatex"
-  "mybibliography.bib" 1667299475 77993 15c33d2477a3906858fbd914938c2e7b ""
+  "2D Caustic Skeleton II.aux" 1667482026 32296 6649fdb9451c8a076744575fa16b5266 "pdflatex"
+  "mybibliography.bib" 1667316964 81129 20f6c521438f9cdd384bb07e7b02b2cd ""
   (generated)
   "2D Caustic Skeleton II.bbl"
   "2D Caustic Skeleton II.blg"
-["pdflatex"] 1667233313 "/Users/jobfeldbrugge/Documents/Universiteit/Projects/Caustics in large scale structure/Artikel 3/Paper/2D Caustic Skeleton II.tex" "2D Caustic Skeleton II.pdf" "2D Caustic Skeleton II" 1667299476
-  "/Users/jobfeldbrugge/Documents/Universiteit/Projects/Caustics in large scale structure/Artikel 3/Paper/2D Caustic Skeleton II.tex" 1667233307 164879 753fa6c21ced50d349352e21b7d4e4d1 ""
+["pdflatex"] 1667482022 "/Users/jobfeldbrugge/Documents/Universiteit/Projects/Caustics in large scale structure/Artikel 3/Paper/2D Caustic Skeleton II.tex" "2D Caustic Skeleton II.pdf" "2D Caustic Skeleton II" 1667482027
+  "/Users/jobfeldbrugge/Documents/Universiteit/Projects/Caustics in large scale structure/Artikel 3/Paper/2D Caustic Skeleton II.tex" 1667482018 164785 f89da2911ccf77706e39a32382c44bcd ""
   "/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1136849721 2971 def0b6c1f0b107b3b936def894055589 ""
   "/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/local/texlive/2022/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -313,11 +313,11 @@
   "/usr/local/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1647878959 4410336 7d30a02e9fa9a16d7d1f8d037ba69641 ""
   "/usr/local/texlive/2022/texmf-var/web2c/pdftex/pdflatex.fmt" 1662736341 2826431 822698ae83e47da0c078d09e212fc3f2 ""
   "/usr/local/texlive/2022/texmf.cnf" 1647878952 577 209b46be99c9075fd74d4c0369380e8c ""
-  "2D Caustic Skeleton II.aux" 1667233315 32296 6649fdb9451c8a076744575fa16b5266 "pdflatex"
-  "2D Caustic Skeleton II.bbl" 1667299476 29918 1a20f99e63c2bb1a73ccef3f4ab6594d "bibtex 2D Caustic Skeleton II"
-  "2D Caustic Skeleton II.out" 1667233315 8645 fe2566688b67cc895de23fe74882b90b "pdflatex"
-  "2D Caustic Skeleton II.tex" 1667233307 164879 753fa6c21ced50d349352e21b7d4e4d1 ""
-  "2D Caustic Skeleton II.toc" 1667233315 3842 a73f99427116b71b9395de18873baf30 "pdflatex"
+  "2D Caustic Skeleton II.aux" 1667482026 32296 6649fdb9451c8a076744575fa16b5266 "pdflatex"
+  "2D Caustic Skeleton II.bbl" 1667481985 30011 30caefd6f63d44a4f638f91482bee447 "bibtex 2D Caustic Skeleton II"
+  "2D Caustic Skeleton II.out" 1667482026 8645 fe2566688b67cc895de23fe74882b90b "pdflatex"
+  "2D Caustic Skeleton II.tex" 1667482018 164785 f89da2911ccf77706e39a32382c44bcd ""
+  "2D Caustic Skeleton II.toc" 1667482026 3842 a73f99427116b71b9395de18873baf30 "pdflatex"
   "figures//Composite_L.png" 1640181960 303256 d56d4370ff2308684fc34816c9c0cfc5 ""
   "figures//Composite_Z.png" 1640181378 270304 07f7dc943b12269a0e2a31133cb87e9c ""
   "figures//Critical_dens.png" 1640177625 27113 5be2c33b00ed777a3b0c60965bfc9972 ""
