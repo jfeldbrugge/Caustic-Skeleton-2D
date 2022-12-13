@@ -1228,6 +1228,7 @@ INPUT /usr/local/texlive/2022/texmf-dist/fonts/tfm/jknappen/ec/ecrm1200.tfm
 INPUT ./2D Caustic Skeleton II.toc
 INPUT 2D Caustic Skeleton II.toc
 INPUT 2D Caustic Skeleton II.toc
+INPUT /usr/local/texlive/2022/texmf-dist/fonts/tfm/jknappen/ec/ecti1095.tfm
 OUTPUT 2D Caustic Skeleton II.toc
 INPUT /usr/local/texlive/2022/texmf-dist/fonts/tfm/jknappen/ec/ecrm0800.tfm
 INPUT /usr/local/texlive/2022/texmf-dist/fonts/tfm/jknappen/ec/ecrm0900.tfm
@@ -1247,7 +1248,6 @@ INPUT /usr/local/texlive/2022/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmmib
 INPUT /usr/local/texlive/2022/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy9.tfm
 INPUT /usr/local/texlive/2022/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy5.tfm
 INPUT /usr/local/texlive/2022/texmf-dist/fonts/tfm/jknappen/ec/ecrm0600.tfm
-INPUT /usr/local/texlive/2022/texmf-dist/fonts/tfm/jknappen/ec/ecti1095.tfm
 INPUT ./figures//Psi.png
 INPUT ./figures//Psi.png
 INPUT ./figures//Psi.png
@@ -1377,6 +1377,14 @@ INPUT ./figures//Hyperbolic_Nb_Zoom.png
 INPUT ./figures//Hyperbolic_Nb_Zoom.png
 INPUT ./figures//Hyperbolic_Nb_Zoom.png
 INPUT ./figures//Hyperbolic_Nb_Zoom.png
+INPUT ./figures//eigen_dens.png
+INPUT ./figures//eigen_dens.png
+INPUT ./figures//eigen_dens.png
+INPUT ./figures//eigen_dens.png
+INPUT ./figures//joint_eigen.png
+INPUT ./figures//joint_eigen.png
+INPUT ./figures//joint_eigen.png
+INPUT ./figures//joint_eigen.png
 INPUT ./figures//Critical_lambda_2.png
 INPUT ./figures//Critical_lambda_2.png
 INPUT ./figures//Critical_lambda_2.png
@@ -1389,14 +1397,6 @@ INPUT ./figures//Critical_lambda_1.png
 INPUT ./figures//Critical_lambda_1.png
 INPUT ./figures//Critical_lambda_1.png
 INPUT ./figures//Critical_lambda_1.png
-INPUT ./figures//eigen_dens.png
-INPUT ./figures//eigen_dens.png
-INPUT ./figures//eigen_dens.png
-INPUT ./figures//eigen_dens.png
-INPUT ./figures//joint_eigen.png
-INPUT ./figures//joint_eigen.png
-INPUT ./figures//joint_eigen.png
-INPUT ./figures//joint_eigen.png
 INPUT /usr/local/texlive/2022/texmf-dist/fonts/tfm/jknappen/ec/tcrm1095.tfm
 INPUT ./figures//Cusp_mean_Phi.png
 INPUT ./figures//Cusp_mean_Phi.png
