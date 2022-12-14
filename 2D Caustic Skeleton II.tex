@@ -117,17 +117,17 @@ The central issue and task of the present study are therefore to bridge this gap
 \bigskip
 In line with the above, the present study seeks to develop and present a non-linear constrained random field formalism that allows us to generate realizations of the initial density, velocity, and potential field around various specified caustic singularities. This will allow us to infer the analytic properties of the initial density perturbation and gravitational potential in the vicinity of the progenitors of the walls, filaments, and clusters of the cosmic web. In a sense, it allows us to put flesh on the bones of the caustic skeleton by running a set of $N$-body simulations on these initial conditions. In turn, this will allow us to infer the formation histories and present-day properties of the various elements of the caustic skeleton. 
 
-We concentrate on the development and exposition of the formal -- mathematical -- method to generate non-linear constrained realizations. The formalism is an extension of the one defined for linear constraints on Gaussian initial conditions, as defined in the Gaussian random field theory of \cite{Bertschinger:1987}, \cite{pressrybicki:1992} and \cite{Hoffman:1991}. In particular, it follows the application of this formalism to generate constrained realizations implied by conditions imposed on the initial density, velocity, gravity, and/or tidal fields, as outlined by \cite{Weygaert:1996} \cite[also see][]{Haarlem:1993}.
+We concentrate on the development and exposition of the formal -- mathematical -- method to generate non-linear constrained realizations. The formalism is an extension of the one defined for linear constraints on Gaussian initial conditions, as defined in the Gaussian random field theory of \cite{Bertschinger:1987}, \cite{Rybicki:1992} and \cite{Hoffman:1991}. In particular, it follows the application of this formalism to generate constrained realizations implied by conditions imposed on the initial density, velocity, gravity, and/or tidal fields, as outlined by \cite{Weygaert:1996} \cite[also see][]{Haarlem:1993}.
 
 \bigskip
 A range of avenues has been taken to extend the ability to impose linear constraints to that of the far more ubiquitous situation of constraints that pertain to the non-linear cosmic matter distribution, or that are a non-linear function of observable quantities. One option that has many applications in e.g. geophysics is that of (lognormal) Kriging, in which one exploits the information available at irregularly placed locations by taking into account the spatial correlations. 
 
-While there have been attempts to augment the linear Gaussian field formalism by invoking a (first order) model for the displacement of mass elements in order to follow these along their path backward in time\citep{}. Because of the restricted validity to regions that are not (yet) multistream, it cannot be applied for our purpose of modeling the mass distribution around the intrinsically multistream caustic structures. Given the fact that the majority of matter, halos and galaxies reside in filaments \citep{cautun2014,ganeshaiah2019}, more sophisticated higher-order schemes will be necessary. The Least Action Principle algorithm introduced by \cite{peebles1983} enables us to follow the orbits of galaxies back in time. More sophisticated higher-order Lagrangian formalisms have been proposed by \cite{mohayaee2006} and \cite{baojili2020}. \cite{mohayaee2006} used the Monge-Amp\`ere-Kantorovitch algorithm to follow the orbits of objects back in time, culminating in a compelling reconstruction of the local velocity field corresponding to the 2MRS survey. 
+While there have been attempts to augment the linear Gaussian field formalism by invoking a (first order) model for the displacement of mass elements in order to follow these along their path backward in time\citep{}. Because of the restricted validity to regions that are not (yet) multistream, it cannot be applied for our purpose of modeling the mass distribution around the intrinsically multistream caustic structures. Given the fact that the majority of matter, halos and galaxies reside in filaments \citep{Cautun:2014,Ganeshaiah:2019}, more sophisticated higher-order schemes will be necessary. The Least Action Principle algorithm introduced by \cite{peebles1983} enables us to follow the orbits of galaxies back in time. More sophisticated higher-order Lagrangian formalisms have been proposed by \cite{Mohayaee:2006} and \cite{baojili2020}. \cite{Mohayaee:2006} used the Monge-Amp\`ere-Kantorovitch algorithm to follow the orbits of objects back in time, culminating in a compelling reconstruction of the local velocity field corresponding to the 2MRS survey. 
 
 LAP 
 
 these have a limited validity to regimes where the imposed constraints concern mass elements that are not located in multistream regions. 
-these are still restricted to a regime in which mass elements have not yet passed through multistream regions. W it cannot be applied for our purpose of modelling the mass distribution around the intrinsically multistream caustic structures. 
+these are still restricted to a regime in which mass elements have not yet passed through multistream regions. W it cannot be applied for our purpose of modeling the mass distribution around the intrinsically multistream caustic structures. 
 a non-linear function of observable quantities or 
 
 
@@ -1082,7 +1082,7 @@ These expressions for the eigenvalues and eigenvectors immediately reveal their 
 Of key importance for the practical implementation of the non-linear constraint formalism for the various caustic constraints is appendix~\ref{ap:eigenvalueRel}. It contains the derivation of the expressions of the eigenvalues $\lambda_1$ and $\lambda_2$, the eigenvectors $\bm{v}_1$ and $\bm{v}_2$, the first order and second order gradients of the eigenvalue fields in terms of the partial derivatives $T_{ij \dots k}$ of the displacement potential $\Psi$. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Cusp \& filament constrained fields}
+\subsection{Cusp \& Filament constrained fields}
 The cusp caustic forms at a time $t$ corresponding to the inverse of the largest eigenvalue $\lambda_1$, and satisfies the following caustic conditions (see table~\ref{table:caustics}),
 \begin{align}
 b_+(t) \lambda_1(\bm{q}_c) &= 1\,, \\
@@ -1129,7 +1129,7 @@ The critical curve in the eigenvalue field consists of an elongated oval which f
 On average, the orientation of the cusp curve is normal to the eigenvector field $\bm{v}_1$. The distribution of the angle $\alpha$ in the mean field realizations is plotted in figure\ref{fig:alpha}~. The distribution is a steep -- near bell-shaped -- curve centered around $\alpha=0$, with an exponential fall-off towards the angles $\alpha =\pm \pi/2$.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{{\it Sampling the cusp residual field}}
+\subsubsection{{\it Cusp residual field}}
 To obtain full realizations of the caustic-constrained fields, we have to sample the residual fields $\delta f$ that comprise the spectrally induced field fluctuations augmented by the imposed caustic constraint. The combination of mean field and residual field yields a field realization representative for the applied caustic constraint.
 
 To obtain a representatively sampled residual field, we need to infer the non-linear probability distribution $p({\bm c})$ for the corresponding linear constraint set ${\bm c}$. This involves first
@@ -1180,16 +1180,27 @@ and evaluate the angle $\alpha$. Subsequently, these derivatives are rotated. Th
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Swallowtail \& cluster constrained fields}
-For the constrained realizations in and around the swallowtail cluster caustic we invoke the caustic conditions concerning the field of the largest eigenvalue $\lambda_1$, 
+For the constrained realizations in and around the swallowtail cluster caustic at Lagrangian location $\bm{q}_c$ we invoke the swallowtail caustic conditions, with respect to the field of the largest eigenvalue $\lambda_1$, and that of the corresponding eigenvector $\bm{v}_1$ field,
 \begin{align}
 b_+(t) \lambda_1(\bm{q}_c) = 1\,,\\
 \quad \bm{v}_1(\bm{q}_c) \cdot \nabla\lambda_1(\bm{q}_c) = 0\,,\\
  \quad\bm{v}_1(\bm{q}_c)\cdot \nabla( \bm{v}_1(\bm{q}_c) \cdot \nabla\lambda_1(\bm{q}_c)) = 0\,.
 \end{align}
-The cusp curve in the swallowtail caustic is parallel to the eigenvector field $\bm{v}_1$ since $\bm{v}_1 \cdot \bm{n}=0$ or equivalently $\alpha = \pm \pi/2$. The swallowtail caustic does not require us to fix its orientation. However, we do need to specify the direction, normal to the fold curve, in which the swallowtail structure forms. We will here use the condition $\bm{v}_2 \cdot \nabla \lambda_1(\bm{q}) <0$.
+The swallowtail caustic in the cusp curve is parallel to the eigenvector field $\bm{v}_1$, meaning that $\alpha = \pm \pi/2$, since
+\begin{equation}
+\bm{v}_1 \cdot \bm{n}= \bm{v}_1 \cdot \nabla(\bm{v}_1(\bm{q}_c) \cdot \nabla\lambda_1(\bm{q}_c))  =0\,.
+\end{equation}
+While the orientation of the swallowtail caustic does not need to be fixed, we do need to specify the direction. The swallowtail feature is normal to the fold curve, in which it forms. In the present study, we use the condition
+\begin{equation}
+  \bm{v}_2 \cdot \nabla \lambda_1(\bm{q}) <0\,.
+  \end{equation}
 
 \subsubsection{{\it Swallowtail mean field}}
-In figure \ref{fig:meanSwallowtail}, we plot the mean field of the swallowtail cluster. The gravitational potential is again close to a dipole. However, note the development of an asymmetry with respect to the horizontal axis. The blue central structure yields an inflow of matter, whereas two red structures around the blue structure yield two outflow regions. The critical curve in the eigenvalue field consists of an elongated oval with two bifurcations in the upper half-plane. The cusp curves form a trident inside the fold curve. In the Zel'dovich approximation, the caustic skeleton consists of a Zel'dovich pancake with two whiskers in the upper half-plane. 
+In figure \ref{fig:meanSwallowtail}, we plot the mean field of the swallowtail cluster. The lefthand panel of the figure shows the gravitational potential of the cusp, the central panel the corresponding (first) eigenvalue and eigenvector fields, while the righthand panel shows the corresponding evolved mass distribution according to the Zeldovich approximation.
+
+The gravitational field is more faceted than the quadrupolar pattern of the cusp caustic. Also here we find a central gravitational trough. It is more concentrated and has a weakly triangular shape with a somewhat pointed lower side and a more flattened upper edge. It marks the central region of matter inflow. The surrounding region reveals three potential hills, corresponding to low-density outflow regions. Two dominant protovoids are seen at the lefthand and righthand side, reminiscent of the quadrupolar pattern of the cusp caustic, while a weaker outflow region is seen at the upper side. The mean eigenvalue field (central panel) reveals more details of the implied pattern. The red fold curve is near oval with two bifurcating shoulders to the upper right and left. Within the fold curve, we find the blue trident shape cusp curves, which appear as the medial axis of the fold curve.
+
+The resulting matter distribution, evolved through the Zeldovich approximation, in and around the swallowtail reveals an interesting and highly significant aspect of the connections in the cosmic web. The core of the swallowtail evolves into a cluster node of the weblike network. Three filamentary features emanate out of the central region, one tail-like ridge pointing downwards and two whisker-like features on the upper side. It indicates how the caustic structure of the mass distribution leads to the natural pattern of cluster-filament connections in the cosmic web. 
 
 \begin{figure}
 \centering
@@ -1202,48 +1213,66 @@ In figure \ref{fig:meanSwallowtail}, we plot the mean field of the swallowtail c
 \begin{subfigure}[b]{0.32\textwidth}
 \includegraphics[width=\textwidth]{Swallowtail_mean_Z}
 \end{subfigure}
-\caption{The mean swallowtail caustic. \text{Left:} the gravitational potential. \textit{Centre:} the first eigenvalue and eigenvector fields. \textit{Right:} The Zel'dovich approximation}\label{fig:meanSwallowtail}
+\caption{The mean swallowtail caustic. \text{Left:} the gravitational potential. \textit{Centre:} the first eigenvalue and eigenvector fields. \textit{Right:} the mean field mass distribution around the swallowtail caustic, evolved by the Zel'dovich approximation}\label{fig:meanSwallowtail}
 \end{figure}
 
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{{\it Sampling the swallowtail residual field}}
-In the eigenframe, the caustic conditions for the swallowtail take the form
+\subsubsection{{\it Swallowtail residual field}}
+To allow a representative sampling of the residual field, via the probability distribution for the involved linear constraints, we proceed in a similar fashion as in the case of the cusp caustic. To this end, we consider the caustic conditions for the swallowtail in the eigenframe,
 \begin{align}
 T_{11}=1/b_+(t)\,, \quad T_{12}=0\,,\quad T_{22}\leq T_{11}\,,\quad T_{111}=0\,, \quad T_{1111}+\frac{3T_{112}^2}{T_{11}-T_{22}} =0\,.
 \end{align}
-The condition that specifies the direction in which the swallowtail develops, $\bm{v}_2 \cdot \nabla \lambda_1  <0$, yields the simple form 
+The condition that specifies the direction in which the swallowtail develops yields the simple form 
 \begin{align}
-T_{112} <0\,.
+\bm{v}_2 \cdot \nabla \lambda_1  <0: \qquad T_{112} <0\,.
 \end{align}
-See appendix \ref{ap:eigenvalueRel} for a detailed derivation. 
+For notational aspects and detailed derivations consult appendix~\ref{ap:eigenvalueRel}.
 
-The swallowtail caustic is determined by the linear statistics $Y=(T_{11},$ $T_{12},$ $T_{22},$ $T_{111},$ $T_{112},$ $T_{1111})$ with the probability density
+\bigskip
+\noindent The swallowtail caustic is determined by the linear statistics
+\begin{equation}
+  Y=(T_{11},T_{12},T_{22},T_{111},T_{112},T_{1111})
+\end{equation}
+with the probability density
 \begin{align}
 p(T_{11},T_{12},T_{22},T_{111},T_{112},T_{1111})=p(T_{11},T_{22},T_{1111})p(T_{12})p(T_{111})p(T_{112})\,,
 \end{align}
-and the constraint distribution 
+and constraint distribution 
 \begin{align}
 &p\left(T_{22},T_{112},T_{1111}|T_{22}\leq T_{11}=1/b_+, T_{12}=0,T_{111}=0,T_{1111}+\frac{3T_{112}^2}{T_{11}-T_{22}}=0\right)\nonumber\\
 =&\, p\left(T_{22},T_{112}, T_{1111}|T_{22}\leq T_{11}=1/b_+, T_{1111}+\frac{3T_{112}^2}{T_{11}-T_{22}}=0\right)\,.
 \end{align}
 
-For the cusp caustic, it sufficed to construct realizations with the linear constraints $T_{11}=1/b_+$, $T_{12}=0$, $T_{111}=0$ and reject realizations for which $T_{22} > T_{11}$. For the swallowtail caustic, we implement a more advanced rejection scheme to efficiently sample the constrained manifold.
 
-In the joint distribution of the statistic $(T_{11},T_{22},T_{112},T_{1111})$, the variable $T_{112}$ is independent of the statistics $T_{11}, T_{22}$ and $T_{1111}$. Moreover, note that the conditions $T_{1111}+\frac{3T_{112}^2}{T_{11}-T_{22}}=0$ and $T_{112}<0$ fully specify $T_{112}$ in terms of the variables $T_{11},T_{22}$ and $T_{1111}$. We use these properties to construct a rejection sampling scheme in which we sample the Gaussian distribution for $(T_{22},T_{1111})$ and accept a sample with a probability determined by the joint distribution for $(T_{22},T_{112},T_{1111})$.
+\bigskip
+\noindent For the cusp caustic, it sufficed to construct realizations with the linear constraints $T_{11}=1/b_+$, $T_{12}=0$, $T_{111}=0$ and reject realizations for which $T_{22} > T_{11}$. For the swallowtail caustic, we implement a more advanced rejection scheme to efficiently sample the constrained manifold.
 
-Consider the Gaussian joint distribution $p(T_{11},T_{22},T_{1111})$ with vanishing mean $\bm{\mu}=\bm{0}$ and the covariance matrix $\begin{pmatrix} a & \bm{b} \\ \bm{b}^T & \Sigma \end{pmatrix}$ consisting of the elements
+In the joint distribution of the statistic $(T_{11},T_{22},T_{112},T_{1111})$, the variable $T_{112}$ is independent of the statistics $T_{11}, T_{22}$ and $T_{1111}$. We also take along the fact that $T_{112}$ is fully specified in terms of the variables $T_{11},T_{22}$ and $T_{1111}$ as a result of the conditions
+\begin{align}
+  &T_{1111}+\frac{3T_{112}^2}{T_{11}-T_{22}}=0\,,\\
+  \ \\
+  &T_{112}<0\,.
+\end{align}
+We use these properties to construct a rejection sampling scheme in which we sample the Gaussian distribution for $(T_{22},T_{1111})$ and accept a sample with a probability determined by the joint distribution for $(T_{22},T_{112},T_{1111})$. To this end, consider the Gaussian joint
+distribution $p(T_{11},T_{22},T_{1111})$ with vanishing mean $\bm{\mu}=\bm{0}$ and covariance matrix
+\begin{align}
+  \begin{pmatrix} a & \bm{b} \\ \bm{b}^T & \Sigma \end{pmatrix},
+\end{align}
+with
 \begin{align}
 a=\frac{3 \sigma_2^2}{8}\,, \quad
 \bm{b}=\left(\frac{\sigma_2^2}{8}, -\frac{5 \sigma_3^2}{16}\right)\,,\quad
-\Sigma = \begin{pmatrix} \frac{3 \sigma_2^2}{8} & -\frac{\sigma_3^2}{16} \\ -\frac{\sigma_3^2}{16} & \frac{35 \sigma_4^2}{128}\end{pmatrix}, 
-\end{align}
-and the independent statistics $T_{112}$, which is normally distributed with zero mean $\langle T_{112}\rangle = 0$ and variance $\langle T_{112}^2\rangle = \sigma_3^2/16$. The conditional distribution $p(T_{22},T_{1111}|T_{11}=1/b_+)$ is a bivariate Gaussian distribution with non-zero mean $\bar{\bm{\mu}}=\frac{\bm{b}}{a b_+}$ and the covariance matrix $\bar{\Sigma}=\Sigma -\frac{1}{a} \bm{b}\bm{b}^T$. After sampling from this distribution, we first reject samples for which $T_{22}>1/b_+$ or $T_{1111}>0$ to obtain samples from the auxiliary probability density 
+\Sigma = \begin{pmatrix} \frac{3 \sigma_2^2}{8} & -\frac{\sigma_3^2}{16} \\ -\frac{\sigma_3^2}{16} & \frac{35 \sigma_4^2}{128}\end{pmatrix}.
+  \end{align}
+In addition, we have the independent statistic $T_{112}$, which is normally distributed with zero mean $\langle T_{112}\rangle = 0$ and variance $\langle T_{112}^2\rangle = \sigma_3^2/16$.
+
+\bigskip
+The conditional distribution $p(T_{22},T_{1111}|T_{11}=1/b_+)$ is a bivariate Gaussian distribution with non-zero mean $\bar{\bm{\mu}}=\frac{\bm{b}}{a b_+}$ and the covariance matrix $\bar{\Sigma}=\Sigma -\frac{1}{a} \bm{b}\bm{b}^T$. After sampling from this distribution, we first reject samples for which $T_{22}>1/b_+$ or $T_{1111}>0$ to obtain samples from the auxiliary probability density 
 \begin{align}
 p(T_{22},T_{1111}| T_{22} < T_{11}=1/b_+,T_{1111}\leq 0)\,.
 \end{align}
 
-The variables $T_{22},T_{1111}$ fully determine the variable $T_{112}$,
+\noindent The variables $T_{22},T_{1111}$ fully determine the variable $T_{112}$,
 \begin{align}
 T_{112}= -\sqrt{-\frac{T_{1111}(T_{11}-T_{22})}{3}}\,,
 \end{align}
@@ -1277,13 +1306,13 @@ with the Heaviside step function $\Theta$. Hence, we obtain samples of the targe
 \begin{subfigure}[b]{0.32\textwidth}
 \includegraphics[width=\textwidth]{Hyperbolic_mean_Z}
 \end{subfigure}
-\caption{The mean umbilic caustic. \textit{Upper:} the  elliptic caustic. \textit{Lower:} the hyperbolic caustic. \textit{Left:} the gravitational potential. \textit{Centre:} the first eigenvalue and eigenvector fields. \textit{Right:} The Zel'dovich approximation}\label{fig:meanHyperbolic}
+\caption{The mean umbilic caustic. \textit{Upper:} the  elliptic caustic. \textit{Lower:} the hyperbolic caustic. \textit{Left:} the gravitational potential. \textit{Centre:} the first eigenvalue and eigenvector fields. \textit{Right:} the mean field mass distribution around the elliptic and hyperbolic caustics, evolved by the Zel'dovich approximation}\label{fig:meanHyperbolic}
 \end{figure}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Umbilic \& cluster constrained fields}
-The umbilic caustic forming at time $t$ satisfies the conditions
+\subsection{Umbilic \& Cluster constrained fields}
+The umbilic caustic forming at time $t$ satisfies the simultaneous conditions for the first and second eigenvalues,  
 \begin{align}
 b_+(t) \lambda_1(\bm{q}_c) = b_+(t) \lambda_2(\bm{q}_c) = 1\,.
 \end{align}
@@ -1296,7 +1325,7 @@ At the umbilic points, the determinant
 \begin{align}
 \det(\nabla \bm{x}_t) = \det (I- b_+ \bm{\psi})
 \end{align}
-assumes a critical point, whose nature is determined by the Hessian
+assumes a critical point, whose nature is determined by the Hessian (see \cite{Rozhanskii:1984})
 \begin{align}
 \mathcal{H}\left[\det (I- b_+(t) \bm{\psi})\right] =
 b_+^2(t)\begin{pmatrix} 
@@ -1304,13 +1333,16 @@ b_+^2(t)\begin{pmatrix}
 T_{111}T_{222}-T_{112}T_{122} & 2(T_{112}T_{222}-T_{122}^2)
 \end{pmatrix}\,,
 \end{align}
-and its determinant
+and it's determinant
 \begin{align}
 &\det\left( \mathcal{H}\left[\det (I- b_+(t) \bm{\psi})\right]\right) \nonumber\\
 &=b_+^4(t)\left[
- 6 T_{111} T_{112} T_{122} T_{222} + 3 T_{112}^2 T_{122}^2  - 4 (T_{111} T_{122}^3 + T_{112}^3 T_{222})  - T_{111}^2 T_{222}^2\right]\,,
+ 6 T_{111} T_{112} T_{122} T_{222} + 3 T_{112}^2 T_{122}^2  - 4 (T_{111} T_{122}^3 + T_{112}^3 T_{222})  - T_{111}^2 T_{222}^2\right]\,.
 \end{align}
-see \cite{Rozhanskii:1984}. Note that the Hessian at the critical point only depends on the third-order derivatives of the deformation potential. The fourth order derivatives cancel when $T_{11}=T_{22}=1/b_+$ and $T_{12}=0$. The umbilic point is an elliptic caustic $D_4^+$ when the critical point is a maximum or a minimum, \textit{i.e.}, for which 
+From this, we note that the Hessian at the critical point only depends on the third-order derivatives of the deformation potential. The fourth order derivatives cancel when $T_{11}=T_{22}=1/b_+$ and $T_{12}=0$.
+
+\bigskip
+There are two different classes of umbilic points, the elliptic caustic $D_4^+$ and the hyperbolic caustic $D_4^-$. The umbilic point is an elliptic caustic $D_4^+$ when the critical point is a maximum or a minimum, \textit{i.e.}, for which 
 \begin{align}
 \det (\mathcal{H}\left[\det (I- b_+ \bm{\psi})\right]) >0\,.
 \end{align}
@@ -1318,13 +1350,14 @@ The umbilic point is a hyperbolic caustic when the critical point is a saddle po
 \begin{align}
 \det (\mathcal{H}\left[\det (I- b_+ \bm{\psi})\right]) <0\,.
 \end{align}
-This condition should be contrasted with the condition presented in \cite{Delmarcelle:1995, Lavin:1997, Hidding:2016, Feldbrugge:2018} based on the sign of 
+This condition should be contrasted to the condition presented in \cite{Delmarcelle:1995, Lavin:1997, Hidding:2016, Feldbrugge:2018} based on the sign of 
 \begin{align}
 \delta = \frac{1}{2}(T_{111} T_{122} + T_{112} T_{222} - T_{112}^2  - T_{122}^2 ).
 \end{align} 
-In fact, this condition describes the behavior of the eigenvector field in the vicinity of the umbilic point and does not differentiate between the elliptic and hyperbolic caustics. Note that for the elliptic caustic we always have $\delta <0$.
+In fact, this condition describes the behavior of the eigenvector field in the vicinity of the umbilic point and does not differentiate between the elliptic and hyperbolic caustics. In this context, we should note that for the elliptic caustic we always have $\delta <0$.
 
-More generally, expand the displacement field $\bm{s}_t$ to quadratic order in $q_1$ and $q_2$ around a umbilic point at the origin $(q_1,q_2)=(0,0)$. The determinant of the gradient $\nabla \bm{x}_t$ has a critical point at the origin, as it is the product of two eigenvalue fields that vanish at the origin. The determinant takes the general form
+\bigskip
+To describe the structure in and around the umbilics, we may follow a more general consideration of the corresponding displacement field. To this end, we expand the displacement field $\bm{s}_t$ to quadratic order in $q_1$ and $q_2$ around a umbilic point at the origin $(q_1,q_2)=(0,0)$. The determinant of the gradient $\nabla \bm{x}_t$ has a critical point at the origin, as it is the product of two eigenvalue fields that vanish at the origin. The determinant takes the general form
 \begin{align}
 \det \nabla \bm{x}_t&=\det(I + \nabla \bm{s}_t)\nonumber\\
 &= 
@@ -1350,25 +1383,12 @@ B^2-4AC = -\det \left(\mathcal{H} \left[\det \nabla \bm{x}_t \right]\right)\,.
 \end{align}
 When the displacement field is a gradient field, the constants $D$ and $E$ vanish and the condition reduces to the constant discussed above.
 
-The orientation of the elliptic umbilic caustic is determined by the behavior of the eigenvector fields of the deformation tensor in the vicinity of the caustic. The fold curve in the vicinity of the elliptic umbilic caustic is a small ellipse, which forms three cusp caustics when the eigenvector field is parallel to the eigenvector field, $\bm{v}_i \cdot \bm{m} = 0$ with $\bm{m}$ the vector normal to this circle.
+The orientation of the elliptic umbilic caustic is determined by the behavior of the eigenvector fields of the deformation tensor in the vicinity of the caustic. The fold curve in the vicinity of the elliptic umbilic caustic is a small ellipse. This forms three cusp caustics when the eigenvector field is parallel to the eigenvector field, ie. $\bm{v}_i \cdot \bm{m} = 0$ with $\bm{m}$ the vector normal to this circle.
 
 The orientation and configuration of the hyperbolic umbilic caustic is determined by the eigenvalues $\nu_i$ and eigenvectors $\bm{w}_i$ of the Hessian $\mathcal{H}\left[\det (I- b_+ \bm{\psi})\right]$. The cusp curve of the hyperbolic umbilic is directed towards the eigenvector corresponding to the positive eigenvalue. The angle $\beta = 2 \arctan(\sqrt{|\nu_1/\nu_2|})$ describes the angle between the two wedges of the fold curves. 
 
 \subsubsection{{\it Umbilic mean field}}
-In figure \ref{fig:meanHyperbolic}, we plot the mean field of the elliptic and the swallowtail caustic. Observe that the umbilic caustics join three cusp curves and are naturally associated with the clusters of the cosmic web.
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{{\it Sampling the umbilic residual field}}
-We implement the umbilic caustics by sampling random fields with the linear constraints
-\begin{align}
-T_{11}&=T_{22}=1/b_+\,,\\
-T_{12}&=0\,.
-\end{align}
-We subsequently determine the sign of the determinant $\det\left( \mathcal{H}\left[\det (I- b_+ \bm{\psi})\right]\right)$ to identify whether it is an elliptic or an hyperbolic caustic. Given the identification, we compute its orientation. By rotating the second-order and third-order derivatives (using appendix \ref{ap:rotations}), we generate linear constrained conditions corresponding to elliptic and hyperbolic caustics with a specified orientation. Given the appropriate sampling of the constraint manifold $\mathcal{M}_\mathcal{\tilde C}$, we can evaluate the mean field, the variance of the residual field, and representative realizations.
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{The residual field}
-By definition, the residual field $\delta f$ vanishes at the point where we impose the caustic condition. However, the caustic condition not only fixes the random field at a point but influences the direct environment of the condition. This behaviour is formally described by the variance in the density perturbation near the constraint (equation \eqref{eq:variance_Linear} for linear and equation \eqref{eq:variance_Nonlinear} for non-linear constraints). We can observe this behavior in the mean field and the variance of the density perturbation near the caustics (see figure \ref{fig:mean_var_dens}). Note that the statistical properties of the residual field near the cusp and swallowtail caustic are not isotropic or homogeneous. However, the residual field is isotropic near the umbilic caustics. For the power-law power spectrum with the Gaussian smoothing at the length scale $R_s=5\text{ Mpc}$ considered in this paper, the characteristic correlation length for the random field near the caustics is about $20\text{ Mpc}$.
+The mean field of the elliptic and the swallowtail caustic are plotted in figure \ref{fig:meanHyperbolic}. The most outstanding observation is that both the elliptic and hyperbolic umbilic cluster are connected to three cusp curves, revealing the natural association of the clusters with three filaments in the cosmic web.
 
 \begin{figure}
 \centering
@@ -1398,6 +1418,24 @@ By definition, the residual field $\delta f$ vanishes at the point where we impo
 \end{subfigure}
 \caption{Mean and the variance of the density field around the caustics in a $[80\text{ Mpc},120 \text{ Mpc}]^2$ box. \textit{Left to right:} the cusp, the swallowtail, the elliptic umbilic, and the hyperbolic umbilic caustic. \textit{Top:} the mean density field. \textit{Bottom:} the variance of the density field.}\label{fig:mean_var_dens}
 \end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{{\it Umbilic residual field}}
+We implement the umbilic caustics by sampling random fields with the linear constraints
+\begin{align}
+T_{11}&=T_{22}=1/b_+\,,\\
+T_{12}&=0\,.
+\end{align}
+We subsequently determine the sign of the determinant $\det\left( \mathcal{H}\left[\det (I- b_+ \bm{\psi})\right]\right)$ to identify whether it is an elliptic or an hyperbolic caustic. Given the identification, we compute its orientation. By rotating the second-order and third-order derivatives (using appendix \ref{ap:rotations}), we generate linear constrained conditions corresponding to elliptic and hyperbolic caustics with a specified orientation. Given the appropriate sampling of the constraint manifold $\mathcal{M}_\mathcal{\tilde C}$, we can evaluate the mean field, the variance of the residual field, and representative realizations.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Residual field \& constrained field variance}
+By definition, the residual field $\delta f$ vanishes at the point where we impose the caustic condition. However, the caustic condition not only fixes the random field at a point but influences the direct environment of the condition. This behaviour is formally described by the variance $\left \langle \delta f (\bm{q})^2\,|\,\Gamma\right\rangle$ in the density perturbation near the constraint (equation \eqref{eq:variance_Linear} for linear and equation \eqref{eq:variance_Nonlinear} for non-linear constraints).
+
+To this end, figure \ref{fig:mean_var_dens} presents the variance (density) fields of the cusp, swallowtail and umbilic caustics.
+For reference, the residual fields are depicted together with the corresponding mean density fields of the caustics. An important observation is that statistical properties of the residual field near the cusp and swallowtail caustic are not isotropic or homogeneous. On the other hand, the residual field is (nearly) isotropic near the umbilic caustics.
+
+Finally, for reference note that for the power-law power spectrum with the Gaussian smoothing at the length scale $R_s=5\text{ Mpc}$ considered in this paper, the characteristic correlation length for the random field near the caustics is about $20\text{ Mpc}$.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Composite constrained realizations}\label{sec:composite_constraints}
@@ -1505,7 +1543,7 @@ In an upcoming paper, we will use non-linear constrained Gaussian random field t
 
 This will in particular be interesting when it comes to filaments, as caustic skeleton theory -- as yet not fully appreciated -- predicts the existence of two filament classes \cite{Feldbrugge:2018}. The major share of the filamentary network is represented by $A_4$ swallowtail caustics, representing the sectional interfaces between two wall-like membranes. These have not yet fully collapsed along two directions. Umbilic $D_4$ caustics are also filaments, corresponding to the more prominent and dense filamentary extensions of the cluster nodes in the cosmic web and representing filaments that have fully collapsed along two directions. These classes are expected to form at different times and have different characteristic geometric properties. Recently, some numerical evidence on different filament classes has been found \cite{Galarraga-Espinosa:2020}. However, it is currently not yet clear whether these theoretical and numerical populations are related to each other.
 
-Another fruitful field where this method might be very valuable is the systematic investigation of the influence of the cosmic web on the embedded galaxies. Different caustics mark different environments of the cosmic web, with distinct formation histories. It is expected that the formation history of a patch of the cosmic web correlates with the embedded galaxies. In a future paper, we for example plan to use these techniques to systematically investigate the recently discovered galaxy alignment at different locations of the cosmic web \cite{Aragon:2007, Ganeshaiah:2018, Ganeshaiah:2019, Hellwing:2021,Lopez:2021,Ganeshaiah:2021, Rien}.
+Another fruitful field where this method might be very valuable is the systematic investigation of the influence of the cosmic web on the embedded galaxies. Different caustics mark different environments of the cosmic web, with distinct formation histories. It is expected that the formation history of a patch of the cosmic web correlates with the embedded galaxies. In a future paper, we for example plan to use these techniques to systematically investigate the recently discovered galaxy alignment at different locations of the cosmic web \cite{Aragon:2007, Ganeshaiah:2018, Ganeshaiah:2019, Hellwing:2021,Lopez:2021,Ganeshaiah:2021}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{Acknowledgement}
